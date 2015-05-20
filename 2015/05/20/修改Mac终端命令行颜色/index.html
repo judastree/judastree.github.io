@@ -3,29 +3,35 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Mac OS X 中配置Apache 相关 | Judastree</title>
+  <title>修改Mac终端命令行颜色 | Judastree</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="启动服务Mac中自带了Apache环境，直接一行命令搞定了。
-$sudo apachectl start
-这时，打开你得浏览器，输入“http://localhost”, 可以看到“It Works！”的页面。这个index.html 文件位于“/Library(资源库)/WebServer/Documents/”下。这是Apache的默认根目录。
-
-修改配置Apache 的安装目录在:/etc/">
+  <meta name="description" content="打开终端，输入命令
+$sudo vim .bash_profile
+这时在出来的编辑器中输入下面两行配置，然后保存
+export CLICOLOR=1
+export LSCOLORS=cxfxaxdxcxegedabagacad
+重新打开一个命令行终端，输入“ls”命令，你就能看到颜色变成了绿色。
+详解LSCOLORS是用来设置当CLICOLOR被启用后，各种文件类型的颜色。LSCOLORS的值中">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Mac OS X 中配置Apache 相关">
-<meta property="og:url" content="http://judastree.github.io/2015/03/30/Mac-OS-X-中配置Apache/index.html">
+<meta property="og:title" content="修改Mac终端命令行颜色">
+<meta property="og:url" content="http://judastree.github.io/2015/05/20/修改Mac终端命令行颜色/index.html">
 <meta property="og:site_name" content="Judastree">
-<meta property="og:description" content="启动服务Mac中自带了Apache环境，直接一行命令搞定了。
-$sudo apachectl start
-这时，打开你得浏览器，输入“http://localhost”, 可以看到“It Works！”的页面。这个index.html 文件位于“/Library(资源库)/WebServer/Documents/”下。这是Apache的默认根目录。
-
-修改配置Apache 的安装目录在:/etc/">
+<meta property="og:description" content="打开终端，输入命令
+$sudo vim .bash_profile
+这时在出来的编辑器中输入下面两行配置，然后保存
+export CLICOLOR=1
+export LSCOLORS=cxfxaxdxcxegedabagacad
+重新打开一个命令行终端，输入“ls”命令，你就能看到颜色变成了绿色。
+详解LSCOLORS是用来设置当CLICOLOR被启用后，各种文件类型的颜色。LSCOLORS的值中">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mac OS X 中配置Apache 相关">
-<meta name="twitter:description" content="启动服务Mac中自带了Apache环境，直接一行命令搞定了。
-$sudo apachectl start
-这时，打开你得浏览器，输入“http://localhost”, 可以看到“It Works！”的页面。这个index.html 文件位于“/Library(资源库)/WebServer/Documents/”下。这是Apache的默认根目录。
-
-修改配置Apache 的安装目录在:/etc/">
+<meta name="twitter:title" content="修改Mac终端命令行颜色">
+<meta name="twitter:description" content="打开终端，输入命令
+$sudo vim .bash_profile
+这时在出来的编辑器中输入下面两行配置，然后保存
+export CLICOLOR=1
+export LSCOLORS=cxfxaxdxcxegedabagacad
+重新打开一个命令行终端，输入“ls”命令，你就能看到颜色变成了绿色。
+详解LSCOLORS是用来设置当CLICOLOR被启用后，各种文件类型的颜色。LSCOLORS的值中">
   
     <link rel="alternative" href="/atom.xml" title="Judastree" type="application/atom+xml">
   
@@ -79,10 +85,10 @@ $sudo apachectl start
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-Mac-OS-X-中配置Apache" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-修改Mac终端命令行颜色" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2015/03/30/Mac-OS-X-中配置Apache/" class="article-date">
-  <time datetime="2015-03-30T14:23:41.000Z" itemprop="datePublished">2015-03-30</time>
+    <a href="/2015/05/20/修改Mac终端命令行颜色/" class="article-date">
+  <time datetime="2015-05-20T14:15:55.000Z" itemprop="datePublished">2015-05-20</time>
 </a>
     
   </div>
@@ -93,7 +99,7 @@ $sudo apachectl start
         
   
     <h1 class="article-title" itemprop="name">
-      Mac OS X 中配置Apache 相关
+      修改Mac终端命令行颜色
     </h1>
   
 
@@ -101,52 +107,50 @@ $sudo apachectl start
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="启动服务">启动服务</h3><p>Mac中自带了Apache环境，直接一行命令搞定了。</p>
-<pre><code><span class="variable">$sudo</span> apachectl start
-</code></pre><p>这时，打开你得浏览器，输入“<a href="http://localhost”" target="_blank" rel="external">http://localhost”</a>, 可以看到“It Works！”的页面。这个<strong>index.html</strong> 文件位于“/Library(资源库)/WebServer/Documents/”下。这是Apache的默认根目录。</p>
-<hr>
-<h3 id="修改配置">修改配置</h3><p>Apache 的安装目录在:<strong>/etc/apache2/</strong> 默认是隐藏的。</p>
-<pre><code><span class="variable">$open</span> /etc/apache2
-</code></pre><p>让隐藏文件可以见，或者让隐藏文件不可见的命令如下：</p>
-<pre><code><span class="variable">$defaults</span> write com<span class="class">.apple</span><span class="class">.finder</span> AppleShowAllFiles -bool true
-
-<span class="variable">$defaults</span> write com<span class="class">.apple</span><span class="class">.finder</span> AppleShowAllFiles -bool false
-</code></pre><p>修改<strong>/etc/apache2/httpd.conf</strong> 文件，就是修改apache的配置文件。这个文件默认是只读的，修改请加管理员权限 <strong>sudo</strong></p>
-<p>修改完之后，记得重启apache 服务</p>
-<pre><code><span class="variable">$sudo</span> apachectl restart
-</code></pre><hr>
-<h3 id="修改Apache默认根目录">修改Apache默认根目录</h3><ol>
-<li><p>打开 <strong>/etc/apache2/httpd.conf</strong>文件</p>
-<pre><code><span class="label">$sudo</span> vim /etc/apache2/httpd.<span class="keyword">conf</span>
-</code></pre></li>
-</ol>
-<ol>
-<li><p>找到<strong>/Library/WebServer/Documents</strong>,你换成你自己的目录：</p>
-<pre><code>如<span class="regexp">/Users/</span>{username}/Sites
-</code></pre></li>
-<li><p>重启服务。</p>
-<pre><code><span class="variable">$sudo</span> apachectl restart   
-</code></pre></li>
-</ol>
-<hr>
-<h3 id="修改默认端口">修改默认端口</h3><ol>
-<li><p>打开 <strong>/etc/apache2/httpd.conf</strong>文件</p>
-<pre><code><span class="label">$sudo</span> vim /etc/apache2/httpd.<span class="keyword">conf</span>
-</code></pre></li>
-<li><p>找到<strong>Listen</strong> 关键字,后面跟的就是端口号了，改掉！</p>
-<pre><code><span class="keyword"><span class="common">Listen</span></span> 8089
-</code></pre></li>
-<li><p>然后继续重启</p>
-</li>
-</ol>
-
+        <p>打开终端，输入命令</p>
+<pre><code><span class="variable">$sudo</span> vim .bash_profile
+</code></pre><p>这时在出来的编辑器中输入下面两行配置，然后保存</p>
+<pre><code><span class="built_in">export</span> CLICOLOR=<span class="number">1</span>
+<span class="built_in">export</span> LSCOLORS=cxfxaxdxcxegedabagacad
+</code></pre><p>重新打开一个命令行终端，输入“ls”命令，你就能看到颜色变成了绿色。</p>
+<h3 id="详解">详解</h3><p>LSCOLORS是用来设置当CLICOLOR被启用后，各种文件类型的颜色。LSCOLORS的值中每两个字母为一组，分别设置某个文件类型的文字颜色和背景颜色。</p>
+<pre><code>a 黑色  
+b 红色  
+c 绿色  
+<span class="keyword">d</span> 棕色  
+<span class="keyword">e</span> 蓝色  
+f 洋红色  
+<span class="keyword">g</span> 青色  
+<span class="keyword">h</span> 浅灰色  
+A 黑色粗体  
+B 红色粗体  
+C 绿色粗体  
+<span class="keyword">D</span> 棕色粗体  
+<span class="keyword">E</span> 蓝色粗体  
+F 洋红色粗体  
+<span class="keyword">G</span> 青色粗体  
+<span class="keyword">H</span> 浅灰色粗体  
+x 系统默认颜色 
+</code></pre><p>LSCOLORS中一共 11 组颜色设置（所以一共22个字符），按照先后顺序，分别对以下的文件类型进行设置：</p>
+<pre><code>-<span class="ruby">directory  
+</span>-<span class="ruby">symbolic link  
+</span>-<span class="ruby">socket  
+</span>-<span class="ruby">pipe  
+</span>-<span class="ruby">executable  
+</span>-<span class="ruby">block special  
+</span>-<span class="ruby">character special  
+</span>-<span class="ruby">executable with setuid bit set  
+</span>-<span class="ruby">executable with setgid bit set  
+</span>-<span class="ruby">directory writable to others, with sticky bit  
+</span>-<span class="ruby">directory writable to others, without sticky bit  </span>
+</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://judastree.github.io/2015/03/30/Mac-OS-X-中配置Apache/" data-id="ci9wui3vh000el5cc3z0wn89d" class="article-share-link">Share</a>
+      <a data-url="http://judastree.github.io/2015/05/20/修改Mac终端命令行颜色/" data-id="ci9wui3va0004l5cc4cec1n0l" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Apache/">Apache</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mac/">mac</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mac/">mac</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/terminal/">terminal</a></li></ul>
 
     </footer>
   </div>
@@ -154,19 +158,10 @@ $sudo apachectl start
     
 <nav id="article-nav">
   
-    <a href="/2015/05/20/Mac中修改host/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Mac中修改host
-        
-      </div>
-    </a>
   
-  
-    <a href="/2015/03/29/Android-Studio-启动找不到JVM/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2015/05/20/Mac中修改host/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Android Studio 启动时找不到JVM</div>
+      <div class="article-nav-title">Mac中修改host</div>
     </a>
   
 </nav>
@@ -177,7 +172,7 @@ $sudo apachectl start
   
   <section id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="post-Mac-OS-X-中配置Apache" data-title="Mac OS X 中配置Apache 相关" data-url="http://judastree.github.io/2015/03/30/Mac-OS-X-中配置Apache/"></div>
+    <div class="ds-thread" data-thread-key="post-修改Mac终端命令行颜色" data-title="修改Mac终端命令行颜色" data-url="http://judastree.github.io/2015/05/20/修改Mac终端命令行颜色/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
