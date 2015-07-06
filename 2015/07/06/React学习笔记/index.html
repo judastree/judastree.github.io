@@ -5,18 +5,30 @@
   
   <title>React 学习 笔记  | Judastree</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="其实早就有听闻React很火了，但脑子里一直没有概念，于是花了一个小时去找了相关介绍。
-知乎上的一篇翻译的文章ReactJS 傻瓜教程">
+  <meta name="description" content="其实早就有听闻React很火了，但脑子里一直没有概念，于是花了一个小时去找了几篇相关介绍。
+其中知乎上的一篇翻译的文章ReactJS 傻瓜教程
+然后就记住了两点。
+1. React是组件化的，而且是仅仅View层面的，还需要配合其他MVC的框架。
+2. React有自己的渲染方式，一种类似XML的，将Html和Javascript结合的叫JSX的东西。
+虽然这个时候还是不清楚什么是JSX，也对组件">
 <meta property="og:type" content="article">
 <meta property="og:title" content="React 学习 笔记 ">
 <meta property="og:url" content="http://judastree.github.io/2015/07/06/React学习笔记/index.html">
 <meta property="og:site_name" content="Judastree">
-<meta property="og:description" content="其实早就有听闻React很火了，但脑子里一直没有概念，于是花了一个小时去找了相关介绍。
-知乎上的一篇翻译的文章ReactJS 傻瓜教程">
+<meta property="og:description" content="其实早就有听闻React很火了，但脑子里一直没有概念，于是花了一个小时去找了几篇相关介绍。
+其中知乎上的一篇翻译的文章ReactJS 傻瓜教程
+然后就记住了两点。
+1. React是组件化的，而且是仅仅View层面的，还需要配合其他MVC的框架。
+2. React有自己的渲染方式，一种类似XML的，将Html和Javascript结合的叫JSX的东西。
+虽然这个时候还是不清楚什么是JSX，也对组件">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="React 学习 笔记 ">
-<meta name="twitter:description" content="其实早就有听闻React很火了，但脑子里一直没有概念，于是花了一个小时去找了相关介绍。
-知乎上的一篇翻译的文章ReactJS 傻瓜教程">
+<meta name="twitter:description" content="其实早就有听闻React很火了，但脑子里一直没有概念，于是花了一个小时去找了几篇相关介绍。
+其中知乎上的一篇翻译的文章ReactJS 傻瓜教程
+然后就记住了两点。
+1. React是组件化的，而且是仅仅View层面的，还需要配合其他MVC的框架。
+2. React有自己的渲染方式，一种类似XML的，将Html和Javascript结合的叫JSX的东西。
+虽然这个时候还是不清楚什么是JSX，也对组件">
   
     <link rel="alternative" href="/atom.xml" title="Judastree" type="application/atom+xml">
   
@@ -92,13 +104,64 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>其实早就有听闻React很火了，但脑子里一直没有概念，于是花了一个小时去找了相关介绍。</p>
-<p>知乎上的一篇翻译的文章<a href="http://zhuanlan.zhihu.com/FrontendMagazine/19896745" target="_blank" rel="external">ReactJS 傻瓜教程</a></p>
+        <p>其实早就有听闻React很火了，但脑子里一直没有概念，于是花了一个小时去找了几篇相关介绍。</p>
+<p>其中知乎上的一篇翻译的文章<a href="http://zhuanlan.zhihu.com/FrontendMagazine/19896745" target="_blank" rel="external">ReactJS 傻瓜教程</a></p>
+<p>然后就记住了两点。</p>
+<pre><code><span class="bullet">1. </span>React是组件化的，而且是仅仅View层面的，还需要配合其他MVC的框架。
+<span class="bullet">2. </span>React有自己的渲染方式，一种类似XML的，将Html和Javascript结合的叫JSX的东西。
+</code></pre><p>虽然这个时候还是不清楚什么是JSX，也对组件化的概念很模糊。</p>
+<p>于是就去React官网找了快速入门来看。有中文版当然还是看<a href="http://reactjs.cn/react/docs/getting-started.html" target="_blank" rel="external">中文版</a>。</p>
+<p>仅是看quick start这一篇，只记住了一点。</p>
+<pre><code><span class="number">1.</span>html分离，在单独的js文件中通过React.<span class="keyword">render</span>来渲染html
+</code></pre><p>接着继续看下一篇<a href="http://reactjs.cn/react/docs/tutorial.html" target="_blank" rel="external">教程</a>。<br>这个看起来就相当于更完整的一个例子了，实现评论+展示评论列表。</p>
+<p>教程里一步一步讲的很详细。到这里就稍微清晰一些之前的两个概念。</p>
+<pre><code>1.组件化
+2.JSX
+</code></pre><p>不得不说，中文理解起来就是方便快捷。如果是英文，虽然能看懂单词但理解还是会有偏差。【英语不好的借口</p>
+<p>先理解下组件化。</p>
+<p>CommentBox组件中包括CommentList组件和CommentForm组件。而CommentList组件又循环渲染Comment组件。<br>每个组件都是React Create出来的一个element,它们包含但不仅限于html。</p>
+<p>数据的传递在自定义标签的属性中，所以这里又出现了一个新的名词props。</p>
+<pre><code>var CommentBox = React.createClass({
+  render: function() {
+    return (
+      <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"commentBox"</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">h1</span>&gt;</span>Comments<span class="tag">&lt;/<span class="title">h1</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">CommentList</span> <span class="attribute">data</span>=<span class="value">{this.props.data}</span> /&gt;</span>
+        <span class="tag">&lt;<span class="title">CommentForm</span> /&gt;</span>
+      <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    );
+  }
+});
+</code></pre><p>但数据处理和渲染还是在自定义的组件中。</p>
+<pre><code><span class="keyword">var</span> CommentList = React.createClass({
+  render: <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{
+    <span class="keyword">var</span> commentNodes = <span class="keyword">this</span>.props.data.map(<span class="function"><span class="keyword">function</span> <span class="params">(comment)</span> </span>{
+      <span class="keyword">return</span> (
+        &lt;Comment author={comment.author}&gt;
+          {comment.text}
+        &lt;/Comment&gt;
+      );
+    });
+    <span class="keyword">return</span> (
+      &lt;div className=<span class="string">"commentList"</span>&gt;
+        {commentNodes}
+      &lt;/div&gt;
+    );
+  }
+}); 
+</code></pre><p>然后什么是JSX？</p>
+<p>我们看到在进行Html渲染的时候，出现了很多自定义html标签，或者说是类xml的标签。<br>React里有一个简单的预编译器，用于将JSX这种语法糖转换成纯的JavaScript代码。作为语法糖，确实JSX 语句比纯 JavaScript 更加容易使用</p>
+<blockquote>
+<blockquote>
+<p>&gt;<br>   这个 div 标签不是真实的DOM节点；他们是 React div 组件的实例。</p>
+</blockquote>
+</blockquote>
+<p>这句话我不是很理解。明明在chrome运行的时候，审查元素能看到div，为什么说不是真实的DOM节点呢？</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://judastree.github.io/2015/07/06/React学习笔记/" data-id="cibrpvape000d0zcctat2fy16" class="article-share-link">Share</a>
+      <a data-url="http://judastree.github.io/2015/07/06/React学习笔记/" data-id="cibrqr3e0000e1uccuc5wy0uc" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/">React</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/入门/">入门</a></li></ul>
@@ -108,6 +171,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2015/07/06/markdown语法总忘/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          markdown语法总忘
+        
+      </div>
+    </a>
   
   
     <a href="/2015/07/06/Mac版Webstorm的一些快捷键/" id="article-nav-older" class="article-nav-link-wrap">
@@ -167,7 +239,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">3</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">3</span></li></ul>
     </div>
   </div>
 
@@ -177,6 +249,10 @@
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2015/07/06/markdown语法总忘/">markdown语法总忘</a>
+          </li>
         
           <li>
             <a href="/2015/07/06/React学习笔记/">React 学习 笔记 </a>
@@ -192,10 +268,6 @@
         
           <li>
             <a href="/2015/06/29/Mac下取消Chrome的ajax请求跨域/">Mac下取消Chrome的ajax请求跨域</a>
-          </li>
-        
-          <li>
-            <a href="/2015/05/20/修改Mac终端命令行颜色/">修改Mac终端命令行颜色</a>
           </li>
         
       </ul>
