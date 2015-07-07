@@ -3,23 +3,32 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Mac下取消Chrome的ajax请求跨域 | Judastree</title>
+  <title>mac调出adb shell | Judastree</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="本地调试的时候总是说Origin * is not allowed by Access-Control-Allow-Origin好烦。
-打开终端，输入命令
-$open -a &quot;Google Chrome&quot; --args --disable-web-security">
+  <meta name="description" content="已安装了android studio， 但在mac的命令行输入adb，提示-bash: adb: command not found
+解决办法：
+
+首先找到你的android sdk目录。比如我的目录是在 /Users/Alice/Library/Android/sdk
+终端切换至sdk目录下的platform-tools中，adb就在这个目录中。输入pwd命令，拷贝这个目录路径XXXX。
+然后输">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Mac下取消Chrome的ajax请求跨域">
-<meta property="og:url" content="http://judastree.github.io/2015/06/29/Mac下取消Chrome的ajax请求跨域/index.html">
+<meta property="og:title" content="mac调出adb shell">
+<meta property="og:url" content="http://judastree.github.io/2015/07/07/mac 调出adb shell/index.html">
 <meta property="og:site_name" content="Judastree">
-<meta property="og:description" content="本地调试的时候总是说Origin * is not allowed by Access-Control-Allow-Origin好烦。
-打开终端，输入命令
-$open -a &quot;Google Chrome&quot; --args --disable-web-security">
+<meta property="og:description" content="已安装了android studio， 但在mac的命令行输入adb，提示-bash: adb: command not found
+解决办法：
+
+首先找到你的android sdk目录。比如我的目录是在 /Users/Alice/Library/Android/sdk
+终端切换至sdk目录下的platform-tools中，adb就在这个目录中。输入pwd命令，拷贝这个目录路径XXXX。
+然后输">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mac下取消Chrome的ajax请求跨域">
-<meta name="twitter:description" content="本地调试的时候总是说Origin * is not allowed by Access-Control-Allow-Origin好烦。
-打开终端，输入命令
-$open -a &quot;Google Chrome&quot; --args --disable-web-security">
+<meta name="twitter:title" content="mac调出adb shell">
+<meta name="twitter:description" content="已安装了android studio， 但在mac的命令行输入adb，提示-bash: adb: command not found
+解决办法：
+
+首先找到你的android sdk目录。比如我的目录是在 /Users/Alice/Library/Android/sdk
+终端切换至sdk目录下的platform-tools中，adb就在这个目录中。输入pwd命令，拷贝这个目录路径XXXX。
+然后输">
   
     <link rel="alternative" href="/atom.xml" title="Judastree" type="application/atom+xml">
   
@@ -73,10 +82,10 @@ $open -a &quot;Google Chrome&quot; --args --disable-web-security">
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-Mac下取消Chrome的ajax请求跨域" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-mac 调出adb shell" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2015/06/29/Mac下取消Chrome的ajax请求跨域/" class="article-date">
-  <time datetime="2015-06-29T09:33:36.000Z" itemprop="datePublished">2015-06-29</time>
+    <a href="/2015/07/07/mac 调出adb shell/" class="article-date">
+  <time datetime="2015-07-07T13:30:01.000Z" itemprop="datePublished">2015-07-07</time>
 </a>
     
   </div>
@@ -87,7 +96,7 @@ $open -a &quot;Google Chrome&quot; --args --disable-web-security">
         
   
     <h1 class="article-title" itemprop="name">
-      Mac下取消Chrome的ajax请求跨域
+      mac调出adb shell
     </h1>
   
 
@@ -95,17 +104,32 @@ $open -a &quot;Google Chrome&quot; --args --disable-web-security">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>本地调试的时候总是说Origin * is not allowed by Access-Control-Allow-Origin好烦。</p>
-<p>打开终端，输入命令</p>
-<pre><code>$<span class="built_in">open</span> -<span class="operator">a</span> <span class="string">"Google Chrome"</span> <span class="comment">--args --disable-web-security</span>
-</code></pre>
+        <p>已安装了android studio， 但在mac的命令行输入adb，提示-bash: adb: command not found</p>
+<p>解决办法：</p>
+<ol>
+<li>首先找到你的android sdk目录。比如我的目录是在 /Users/Alice/Library/Android/sdk</li>
+<li>终端切换至sdk目录下的platform-tools中，adb就在这个目录中。输入pwd命令，拷贝这个目录路径XXXX。</li>
+<li><p>然后输入下面两个命令</p>
+<pre><code>touch .bash_profile
+<span class="keyword">open</span> -<span class="keyword">e</span> .bash_profile
+</code></pre></li>
+<li><p>如果打开的文档里面已经有内容,我们只要之后添加;XXXX(注意前面一定要用分号隔开)，<br>如果是一个空白文档的话，我们就输入以下内容,然后保存。</p>
+<pre><code>export <span class="constant">PATH=</span><span class="variable">${</span><span class="constant">PATH}</span><span class="symbol">:/Users/Alice/Library/Android/sdk/platform-tools</span>    
+</code></pre></li>
+<li><p>更新一下这个文件：</p>
+<pre><code><span class="built_in">source</span> .bash_profile
+</code></pre></li>
+<li><p>之后再输入adb,应该就不会提示adb: command not found了。        </p>
+</li>
+</ol>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://judastree.github.io/2015/06/29/Mac下取消Chrome的ajax请求跨域/" data-id="cibtecj5l000x0fccwv4kllq7" class="article-share-link">Share</a>
+      <a data-url="http://judastree.github.io/2015/07/07/mac 调出adb shell/" data-id="cibtecj53000c0fccnjg2isuk" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mac/">mac</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/adb/">adb</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mac/">mac</a></li></ul>
 
     </footer>
   </div>
@@ -113,19 +137,10 @@ $open -a &quot;Google Chrome&quot; --args --disable-web-security">
     
 <nav id="article-nav">
   
-    <a href="/2015/06/30/currentColor关键字/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          currentColor关键字
-        
-      </div>
-    </a>
   
-  
-    <a href="/2015/05/20/修改Mac终端命令行颜色/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2015/07/06/markdown语法总忘/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">修改Mac终端命令行颜色</div>
+      <div class="article-nav-title">markdown语法总忘</div>
     </a>
   
 </nav>
@@ -136,7 +151,7 @@ $open -a &quot;Google Chrome&quot; --args --disable-web-security">
   
   <section id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="post-Mac下取消Chrome的ajax请求跨域" data-title="Mac下取消Chrome的ajax请求跨域" data-url="http://judastree.github.io/2015/06/29/Mac下取消Chrome的ajax请求跨域/"></div>
+    <div class="ds-thread" data-thread-key="post-mac 调出adb shell" data-title="mac调出adb shell" data-url="http://judastree.github.io/2015/07/07/mac 调出adb shell/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">

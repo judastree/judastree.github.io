@@ -69,6 +69,62 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-mac 调出adb shell" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/07/07/mac 调出adb shell/" class="article-date">
+  <time datetime="2015-07-07T13:30:01.000Z" itemprop="datePublished">2015-07-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/07/07/mac 调出adb shell/">mac调出adb shell</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>已安装了android studio， 但在mac的命令行输入adb，提示-bash: adb: command not found</p>
+<p>解决办法：</p>
+<ol>
+<li>首先找到你的android sdk目录。比如我的目录是在 /Users/Alice/Library/Android/sdk</li>
+<li>终端切换至sdk目录下的platform-tools中，adb就在这个目录中。输入pwd命令，拷贝这个目录路径XXXX。</li>
+<li><p>然后输入下面两个命令</p>
+<pre><code>touch .bash_profile
+<span class="keyword">open</span> -<span class="keyword">e</span> .bash_profile
+</code></pre></li>
+<li><p>如果打开的文档里面已经有内容,我们只要之后添加;XXXX(注意前面一定要用分号隔开)，<br>如果是一个空白文档的话，我们就输入以下内容,然后保存。</p>
+<pre><code>export <span class="constant">PATH=</span><span class="variable">${</span><span class="constant">PATH}</span><span class="symbol">:/Users/Alice/Library/Android/sdk/platform-tools</span>    
+</code></pre></li>
+<li><p>更新一下这个文件：</p>
+<pre><code><span class="built_in">source</span> .bash_profile
+</code></pre></li>
+<li><p>之后再输入adb,应该就不会提示adb: command not found了。        </p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://judastree.github.io/2015/07/07/mac 调出adb shell/" data-id="cibtecj53000c0fccnjg2isuk" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/adb/">adb</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mac/">mac</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+  
+  
     <article id="post-markdown语法总忘" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/07/06/markdown语法总忘/" class="article-date">
@@ -288,7 +344,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://judastree.github.io/2015/07/06/markdown语法总忘/" data-id="cibrtni9h00093ucchy1t04f1" class="article-share-link">Share</a>
+      <a data-url="http://judastree.github.io/2015/07/06/markdown语法总忘/" data-id="cibtecj5100090fccvx6fvxne" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/markdown/">markdown</a></li></ul>
@@ -378,7 +434,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://judastree.github.io/2015/07/06/React学习笔记/" data-id="cibrtni9m000g3uccx1xafphq" class="article-share-link">Share</a>
+      <a data-url="http://judastree.github.io/2015/07/06/React学习笔记/" data-id="cibtecj59000k0fccb3oa4yqu" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/">React</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/入门/">入门</a></li></ul>
@@ -422,7 +478,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://judastree.github.io/2015/07/06/Mac版Webstorm的一些快捷键/" data-id="cibrtni9o000l3uccgsa383hq" class="article-share-link">Share</a>
+      <a data-url="http://judastree.github.io/2015/07/06/Mac版Webstorm的一些快捷键/" data-id="cibtecj5e000p0fccwfo2g1ke" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mac/">mac</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webstorm/">webstorm</a></li></ul>
@@ -470,7 +526,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://judastree.github.io/2015/06/30/currentColor关键字/" data-id="cibrtni9k000d3ucc8o8kh8p8" class="article-share-link">Share</a>
+      <a data-url="http://judastree.github.io/2015/06/30/currentColor关键字/" data-id="cibtecj57000h0fccfhjv9dyk" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
@@ -511,7 +567,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://judastree.github.io/2015/06/29/Mac下取消Chrome的ajax请求跨域/" data-id="cibrtni9v000t3uccnjz1893v" class="article-share-link">Share</a>
+      <a data-url="http://judastree.github.io/2015/06/29/Mac下取消Chrome的ajax请求跨域/" data-id="cibtecj5l000x0fccwv4kllq7" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mac/">mac</a></li></ul>
@@ -585,7 +641,7 @@ x 系统默认颜色
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://judastree.github.io/2015/05/20/修改Mac终端命令行颜色/" data-id="cibrtni9e00043ucc0giyx5lo" class="article-share-link">Share</a>
+      <a data-url="http://judastree.github.io/2015/05/20/修改Mac终端命令行颜色/" data-id="cibtecj4y00040fcci0xcisik" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mac/">mac</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/terminal/">terminal</a></li></ul>
@@ -644,7 +700,7 @@ x 系统默认颜色
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://judastree.github.io/2015/05/20/Mac中修改host/" data-id="cibrtni9q000p3ucct26xrx7c" class="article-share-link">Share</a>
+      <a data-url="http://judastree.github.io/2015/05/20/Mac中修改host/" data-id="cibtecj5h000t0fccooc55jk0" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/host/">host</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mac/">mac</a></li></ul>
@@ -720,7 +776,7 @@ x 系统默认颜色
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://judastree.github.io/2015/03/30/Mac-OS-X-中配置Apache/" data-id="cibrtni9z000v3uccd3rlpexv" class="article-share-link">Share</a>
+      <a data-url="http://judastree.github.io/2015/03/30/Mac-OS-X-中配置Apache/" data-id="cibtecj5o000z0fcch18c4qkq" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Apache/">Apache</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mac/">mac</a></li></ul>
@@ -768,7 +824,7 @@ x 系统默认颜色
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://judastree.github.io/2015/03/29/Android-Studio-启动找不到JVM/" data-id="cibrtni8l00003ucc89tk3gjd" class="article-share-link">Share</a>
+      <a data-url="http://judastree.github.io/2015/03/29/Android-Studio-启动找不到JVM/" data-id="cibtecj4600000fcctugodmcp" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
@@ -780,51 +836,10 @@ x 系统默认颜色
 
   
   
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/03/29/hello-world/" class="article-date">
-  <time datetime="2015-03-29T13:09:05.000Z" itemprop="datePublished">2015-03-29</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/03/29/hello-world/">Hello World !</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://judastree.github.io/2015/03/29/hello-world/" data-id="cibrtni9j000c3uccrv76go6d" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-  
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
   
 </section>
         
@@ -836,7 +851,7 @@ x 系统默认颜色
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Apache/">Apache</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/">React</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/host/">host</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mac/">mac</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/terminal/">terminal</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webstorm/">webstorm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/入门/">入门</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Apache/">Apache</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/">React</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/adb/">adb</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/host/">host</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mac/">mac</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/terminal/">terminal</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webstorm/">webstorm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/入门/">入门</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -845,7 +860,7 @@ x 系统默认颜色
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Android/" style="font-size: 10px;">Android</a><a href="/tags/Apache/" style="font-size: 10px;">Apache</a><a href="/tags/React/" style="font-size: 10px;">React</a><a href="/tags/css/" style="font-size: 10px;">css</a><a href="/tags/host/" style="font-size: 10px;">host</a><a href="/tags/mac/" style="font-size: 20px;">mac</a><a href="/tags/markdown/" style="font-size: 10px;">markdown</a><a href="/tags/terminal/" style="font-size: 10px;">terminal</a><a href="/tags/webstorm/" style="font-size: 10px;">webstorm</a><a href="/tags/入门/" style="font-size: 10px;">入门</a>
+      <a href="/tags/Android/" style="font-size: 10px;">Android</a><a href="/tags/Apache/" style="font-size: 10px;">Apache</a><a href="/tags/React/" style="font-size: 10px;">React</a><a href="/tags/adb/" style="font-size: 10px;">adb</a><a href="/tags/css/" style="font-size: 10px;">css</a><a href="/tags/host/" style="font-size: 10px;">host</a><a href="/tags/mac/" style="font-size: 20px;">mac</a><a href="/tags/markdown/" style="font-size: 10px;">markdown</a><a href="/tags/terminal/" style="font-size: 10px;">terminal</a><a href="/tags/webstorm/" style="font-size: 10px;">webstorm</a><a href="/tags/入门/" style="font-size: 10px;">入门</a>
     </div>
   </div>
 
@@ -854,7 +869,7 @@ x 系统默认颜色
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">3</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">3</span></li></ul>
     </div>
   </div>
 
@@ -864,6 +879,10 @@ x 系统默认颜色
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2015/07/07/mac 调出adb shell/">mac调出adb shell</a>
+          </li>
         
           <li>
             <a href="/2015/07/06/markdown语法总忘/">markdown语法总忘</a>
@@ -879,10 +898,6 @@ x 系统默认颜色
         
           <li>
             <a href="/2015/06/30/currentColor关键字/">currentColor关键字</a>
-          </li>
-        
-          <li>
-            <a href="/2015/06/29/Mac下取消Chrome的ajax请求跨域/">Mac下取消Chrome的ajax请求跨域</a>
           </li>
         
       </ul>
