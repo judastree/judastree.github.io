@@ -3,29 +3,17 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Mac OS X 中配置Apache 相关 | Judastree</title>
+  <title>Judastree</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="启动服务Mac中自带了Apache环境，直接一行命令搞定了。
-$sudo apachectl start
-这时，打开你得浏览器，输入“http://localhost”, 可以看到“It Works！”的页面。这个index.html 文件位于“/Library(资源库)/WebServer/Documents/”下。这是Apache的默认根目录。
-
-修改配置Apache 的安装目录在:/etc/">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Mac OS X 中配置Apache 相关">
-<meta property="og:url" content="http://judastree.github.io/2015/03/30/Mac-OS-X-中配置Apache/index.html">
+  <meta name="description" content="You are the pretty sunshine of my life">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Judastree">
+<meta property="og:url" content="http://judastree.github.io/tags/box-sizing/index.html">
 <meta property="og:site_name" content="Judastree">
-<meta property="og:description" content="启动服务Mac中自带了Apache环境，直接一行命令搞定了。
-$sudo apachectl start
-这时，打开你得浏览器，输入“http://localhost”, 可以看到“It Works！”的页面。这个index.html 文件位于“/Library(资源库)/WebServer/Documents/”下。这是Apache的默认根目录。
-
-修改配置Apache 的安装目录在:/etc/">
+<meta property="og:description" content="You are the pretty sunshine of my life">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mac OS X 中配置Apache 相关">
-<meta name="twitter:description" content="启动服务Mac中自带了Apache环境，直接一行命令搞定了。
-$sudo apachectl start
-这时，打开你得浏览器，输入“http://localhost”, 可以看到“It Works！”的页面。这个index.html 文件位于“/Library(资源库)/WebServer/Documents/”下。这是Apache的默认根目录。
-
-修改配置Apache 的安装目录在:/etc/">
+<meta name="twitter:title" content="Judastree">
+<meta name="twitter:description" content="You are the pretty sunshine of my life">
   
     <link rel="alternative" href="/atom.xml" title="Judastree" type="application/atom+xml">
   
@@ -79,121 +67,40 @@ $sudo apachectl start
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-Mac-OS-X-中配置Apache" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/03/30/Mac-OS-X-中配置Apache/" class="article-date">
-  <time datetime="2015-03-30T14:23:41.000Z" itemprop="datePublished">2015-03-30</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+        <section id="main">
   
-    <h1 class="article-title" itemprop="name">
-      Mac OS X 中配置Apache 相关
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2015" class="archive-year">2015</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2015/07/14/box-sizing是什么东西/" class="archive-article-date">
+  <time datetime="2015-07-14T01:59:02.000Z" itemprop="datePublished">Jul 14</time>
+</a>
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2015/07/14/box-sizing是什么东西/">box-sizing 是什么东西</a>
     </h1>
   
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="启动服务">启动服务</h3><p>Mac中自带了Apache环境，直接一行命令搞定了。</p>
-<pre><code><span class="variable">$sudo</span> apachectl start
-</code></pre><p>这时，打开你得浏览器，输入“<a href="http://localhost”" target="_blank" rel="external">http://localhost”</a>, 可以看到“It Works！”的页面。这个<strong>index.html</strong> 文件位于“/Library(资源库)/WebServer/Documents/”下。这是Apache的默认根目录。</p>
-<hr>
-<h3 id="修改配置">修改配置</h3><p>Apache 的安装目录在:<strong>/etc/apache2/</strong> 默认是隐藏的。</p>
-<pre><code><span class="variable">$open</span> /etc/apache2
-</code></pre><p>让隐藏文件可以见，或者让隐藏文件不可见的命令如下：</p>
-<pre><code><span class="variable">$defaults</span> write com<span class="class">.apple</span><span class="class">.finder</span> AppleShowAllFiles -bool true
-
-<span class="variable">$defaults</span> write com<span class="class">.apple</span><span class="class">.finder</span> AppleShowAllFiles -bool false
-</code></pre><p>修改<strong>/etc/apache2/httpd.conf</strong> 文件，就是修改apache的配置文件。这个文件默认是只读的，修改请加管理员权限 <strong>sudo</strong></p>
-<p>修改完之后，记得重启apache 服务</p>
-<pre><code><span class="variable">$sudo</span> apachectl restart
-</code></pre><hr>
-<h3 id="修改Apache默认根目录">修改Apache默认根目录</h3><ol>
-<li><p>打开 <strong>/etc/apache2/httpd.conf</strong>文件</p>
-<pre><code><span class="label">$sudo</span> vim /etc/apache2/httpd.<span class="keyword">conf</span>
-</code></pre></li>
-</ol>
-<ol>
-<li><p>找到<strong>/Library/WebServer/Documents</strong>,你换成你自己的目录：</p>
-<pre><code>如<span class="regexp">/Users/</span>{username}/Sites
-</code></pre></li>
-<li><p>重启服务。</p>
-<pre><code><span class="variable">$sudo</span> apachectl restart   
-</code></pre></li>
-</ol>
-<hr>
-<h3 id="修改默认端口">修改默认端口</h3><ol>
-<li><p>打开 <strong>/etc/apache2/httpd.conf</strong>文件</p>
-<pre><code><span class="label">$sudo</span> vim /etc/apache2/httpd.<span class="keyword">conf</span>
-</code></pre></li>
-<li><p>找到<strong>Listen</strong> 关键字,后面跟的就是端口号了，改掉！</p>
-<pre><code><span class="keyword"><span class="common">Listen</span></span> 8089
-</code></pre></li>
-<li><p>然后继续重启</p>
-</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://judastree.github.io/2015/03/30/Mac-OS-X-中配置Apache/" data-id="cic2qjg2r001dypcc8cg49jk5" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Apache/">Apache</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mac/">mac</a></li></ul>
-
-    </footer>
+    </header>
   </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2015/05/20/Mac中修改host/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Mac中修改host
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2015/03/29/Android-Studio-启动找不到JVM/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Android Studio 启动时找不到JVM</div>
-    </a>
-  
-</nav>
-
-  
 </article>
-
   
-  <section id="comments">
-    <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="post-Mac-OS-X-中配置Apache" data-title="Mac OS X 中配置Apache 相关" data-url="http://judastree.github.io/2015/03/30/Mac-OS-X-中配置Apache/"></div>
-    <!-- 多说评论框 end -->
-    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-    <script type="text/javascript">
-    var duoshuoQuery = {short_name:'judastree'};
-      (function() {
-        var ds = document.createElement('script');
-        ds.type = 'text/javascript';ds.async = true;
-        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-        ds.charset = 'UTF-8';
-        (document.getElementsByTagName('head')[0] 
-         || document.getElementsByTagName('body')[0]).appendChild(ds);
-      })();
-      </script>
-    <!-- 多说公共JS代码 end -->
-  </section>
-  </section>
+  
+    </div></section>
+  
+</section>
         
           <aside id="sidebar">
   
