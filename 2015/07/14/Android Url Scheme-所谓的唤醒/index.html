@@ -3,32 +3,32 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Android Studio 启动时找不到JVM | Judastree</title>
+  <title>Android Url Scheme 所谓的唤醒 | Judastree</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Mac OS-Android studio was unable to find a valid JVM解决办法
-
-Mac OSx 上安装Anroid Studio v1.0，官方说明是需要JDK 1.6以上&amp;amp;JRE 6以上版本的支持。
-出现找不到JVM时，请先检查是否安装了Java的环境。
-如果确认已经安装，但仍然出现这样的错误提示。原因是校验版本的时候出现问题。
-修改配置文件，将JVM">
+  <meta name="description" content="所谓的唤醒，就是从浏览器端（或者微信等第三方的app）打开指定app的动作。
+IOS上有Url scheme的概念，可以配置每个app的启动协议。就相当于用http的协议地址会默认打开Safari这个app一样。
+那么在安卓app中如何设置呢？
+只要在AndroidMainifest.xml中对你要启动的那个activity加入如下描述。
+&amp;lt;activity
+    android:name">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android Studio 启动时找不到JVM">
-<meta property="og:url" content="http://judastree.github.io/2015/03/29/Android-Studio-启动找不到JVM/index.html">
+<meta property="og:title" content="Android Url Scheme 所谓的唤醒">
+<meta property="og:url" content="http://judastree.github.io/2015/07/14/Android Url Scheme-所谓的唤醒/index.html">
 <meta property="og:site_name" content="Judastree">
-<meta property="og:description" content="Mac OS-Android studio was unable to find a valid JVM解决办法
-
-Mac OSx 上安装Anroid Studio v1.0，官方说明是需要JDK 1.6以上&amp;amp;JRE 6以上版本的支持。
-出现找不到JVM时，请先检查是否安装了Java的环境。
-如果确认已经安装，但仍然出现这样的错误提示。原因是校验版本的时候出现问题。
-修改配置文件，将JVM">
+<meta property="og:description" content="所谓的唤醒，就是从浏览器端（或者微信等第三方的app）打开指定app的动作。
+IOS上有Url scheme的概念，可以配置每个app的启动协议。就相当于用http的协议地址会默认打开Safari这个app一样。
+那么在安卓app中如何设置呢？
+只要在AndroidMainifest.xml中对你要启动的那个activity加入如下描述。
+&amp;lt;activity
+    android:name">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android Studio 启动时找不到JVM">
-<meta name="twitter:description" content="Mac OS-Android studio was unable to find a valid JVM解决办法
-
-Mac OSx 上安装Anroid Studio v1.0，官方说明是需要JDK 1.6以上&amp;amp;JRE 6以上版本的支持。
-出现找不到JVM时，请先检查是否安装了Java的环境。
-如果确认已经安装，但仍然出现这样的错误提示。原因是校验版本的时候出现问题。
-修改配置文件，将JVM">
+<meta name="twitter:title" content="Android Url Scheme 所谓的唤醒">
+<meta name="twitter:description" content="所谓的唤醒，就是从浏览器端（或者微信等第三方的app）打开指定app的动作。
+IOS上有Url scheme的概念，可以配置每个app的启动协议。就相当于用http的协议地址会默认打开Safari这个app一样。
+那么在安卓app中如何设置呢？
+只要在AndroidMainifest.xml中对你要启动的那个activity加入如下描述。
+&amp;lt;activity
+    android:name">
   
     <link rel="alternative" href="/atom.xml" title="Judastree" type="application/atom+xml">
   
@@ -82,10 +82,10 @@ Mac OSx 上安装Anroid Studio v1.0，官方说明是需要JDK 1.6以上&amp;amp
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-Android-Studio-启动找不到JVM" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Android Url Scheme-所谓的唤醒" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2015/03/29/Android-Studio-启动找不到JVM/" class="article-date">
-  <time datetime="2015-03-29T13:56:34.000Z" itemprop="datePublished">2015-03-29</time>
+    <a href="/2015/07/14/Android Url Scheme-所谓的唤醒/" class="article-date">
+  <time datetime="2015-07-14T02:47:58.000Z" itemprop="datePublished">2015-07-14</time>
 </a>
     
   </div>
@@ -96,7 +96,7 @@ Mac OSx 上安装Anroid Studio v1.0，官方说明是需要JDK 1.6以上&amp;amp
         
   
     <h1 class="article-title" itemprop="name">
-      Android Studio 启动时找不到JVM
+      Android Url Scheme 所谓的唤醒
     </h1>
   
 
@@ -104,21 +104,34 @@ Mac OSx 上安装Anroid Studio v1.0，官方说明是需要JDK 1.6以上&amp;amp
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Mac OS-Android studio was unable to find a valid JVM解决办法</p>
-<hr>
-<p>Mac OSx 上安装Anroid Studio v1.0，官方说明是需要JDK 1.6以上&amp;JRE 6以上版本的支持。</p>
-<p>出现找不到JVM时，请先检查是否安装了Java的环境。</p>
-<p>如果确认已经安装，但仍然出现这样的错误提示。原因是校验版本的时候出现问题。</p>
-<p>修改配置文件，将JVM版本信息改成你本机版本。</p>
-<hr>
-<h2 id="具体步骤">具体步骤</h2><p>1.<br>在应用程序中找到Android Studio.app </p>
-<p>2.<br>右键显示包内容，在目录下找到 info.plist 并用任意文本编辑器打开</p>
-<p>3.<br>找到 JVMVersion 并将 <string>1.6*</string>中的版本号改为你当前的JDK的版本号。 </p>
+        <p>所谓的唤醒，就是从浏览器端（或者微信等第三方的app）打开指定app的动作。</p>
+<p>IOS上有Url scheme的概念，可以配置每个app的启动协议。就相当于用http的协议地址会默认打开Safari这个app一样。</p>
+<p>那么在安卓app中如何设置呢？</p>
+<p>只要在AndroidMainifest.xml中对你要启动的那个activity加入如下描述。</p>
+<pre><code><span class="tag">&lt;<span class="title">activity</span>
+    <span class="attribute">android:name</span>=<span class="value">"com.android.demo.MainActivity"</span>
+    <span class="attribute">android:label</span>=<span class="value">"@string/app_name"</span> &gt;</span>
+    <span class="tag">&lt;<span class="title">intent-filter</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">action</span> <span class="attribute">android:name</span>=<span class="value">"android.intent.action.MAIN"</span> /&gt;</span>
+
+        <span class="tag">&lt;<span class="title">category</span> <span class="attribute">android:name</span>=<span class="value">"android.intent.category.LAUNCHER"</span> /&gt;</span>
+    <span class="tag">&lt;/<span class="title">intent-filter</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">intent-filter</span> <span class="attribute">android:priority</span>=<span class="value">"4000"</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">action</span> <span class="attribute">android:name</span>=<span class="value">"android.intent.action.VIEW"</span>/&gt;</span>
+        <span class="tag">&lt;<span class="title">category</span> <span class="attribute">android:name</span>=<span class="value">"android.intent.category.DEFAULT"</span> /&gt;</span>
+        <span class="tag">&lt;<span class="title">category</span> <span class="attribute">android:name</span>=<span class="value">"android.intent.category.BROWSABLE"</span> /&gt;</span>
+        <span class="tag">&lt;<span class="title">data</span>
+            <span class="attribute">android:host</span>=<span class="value">"homepae"</span>
+            <span class="attribute">android:scheme</span>=<span class="value">"myapp"</span> /&gt;</span>
+    <span class="tag">&lt;/<span class="title">intent-filter</span>&gt;</span>
+
+<span class="tag">&lt;/<span class="title">activity</span>&gt;</span>
+</code></pre><p>那么当我在浏览器中访问如 “myapp://homepage”这个协议地址时，它就会唤醒com.android.demo.MainActivity这个客户端的页面。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://judastree.github.io/2015/03/29/Android-Studio-启动找不到JVM/" data-id="cic2r48ek001hzaccoctssaes" class="article-share-link">Share</a>
+      <a data-url="http://judastree.github.io/2015/07/14/Android Url Scheme-所谓的唤醒/" data-id="cic2r48cr0000zaccdj3puchl" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
@@ -129,19 +142,10 @@ Mac OSx 上安装Anroid Studio v1.0，官方说明是需要JDK 1.6以上&amp;amp
     
 <nav id="article-nav">
   
-    <a href="/2015/03/30/Mac-OS-X-中配置Apache/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Mac OS X 中配置Apache 相关
-        
-      </div>
-    </a>
   
-  
-    <a href="/2015/03/29/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2015/07/14/git .ignore无效?/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Hello World !</div>
+      <div class="article-nav-title">git ignore 无效?</div>
     </a>
   
 </nav>
@@ -152,7 +156,7 @@ Mac OSx 上安装Anroid Studio v1.0，官方说明是需要JDK 1.6以上&amp;amp
   
   <section id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="post-Android-Studio-启动找不到JVM" data-title="Android Studio 启动时找不到JVM" data-url="http://judastree.github.io/2015/03/29/Android-Studio-启动找不到JVM/"></div>
+    <div class="ds-thread" data-thread-key="post-Android Url Scheme-所谓的唤醒" data-title="Android Url Scheme 所谓的唤醒" data-url="http://judastree.github.io/2015/07/14/Android Url Scheme-所谓的唤醒/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
