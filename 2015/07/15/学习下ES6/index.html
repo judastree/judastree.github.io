@@ -3,29 +3,29 @@
 <head>
   <meta charset="utf-8">
   
-  <title>box-sizing 是什么东西 | Judastree</title>
+  <title>学习下ES6 | Judastree</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="昨天有人问我知道盒子模型么？那必须的呀。width,height,margin,padding,border这些的嘛。
-然后又问什么是box-sizing?好熟悉，但没概念了。
-在说盒子模型的时候，肯定会说IE对盒子模型的支持和其他浏览器不一样。它的width是包含了padding和border的。
-CSS3中新增box-sizing属性刚好可以解决这个问题，不用费心去算是否盒子模型不一致了。
-b">
+  <meta name="description" content="主要是看阮一峰的入门教程还有csdn上的探秘ES6github上的es6 feature
+说起来好惭愧，一直都没有去了解ECMAScript,枉做前端。
+ES6有哪些酷炫的新特性呢？
+新增箭头操作符=&amp;gt; ,简化函数书写 coffeescript的语法糖里也是有样，各种回调需要写function,现在用=&amp;gt; 代替function关键字
+新增基本类型 JS有null,undefined,b">
 <meta property="og:type" content="article">
-<meta property="og:title" content="box-sizing 是什么东西">
-<meta property="og:url" content="http://judastree.github.io/2015/07/14/box-sizing是什么东西/index.html">
+<meta property="og:title" content="学习下ES6">
+<meta property="og:url" content="http://judastree.github.io/2015/07/15/学习下ES6/index.html">
 <meta property="og:site_name" content="Judastree">
-<meta property="og:description" content="昨天有人问我知道盒子模型么？那必须的呀。width,height,margin,padding,border这些的嘛。
-然后又问什么是box-sizing?好熟悉，但没概念了。
-在说盒子模型的时候，肯定会说IE对盒子模型的支持和其他浏览器不一样。它的width是包含了padding和border的。
-CSS3中新增box-sizing属性刚好可以解决这个问题，不用费心去算是否盒子模型不一致了。
-b">
+<meta property="og:description" content="主要是看阮一峰的入门教程还有csdn上的探秘ES6github上的es6 feature
+说起来好惭愧，一直都没有去了解ECMAScript,枉做前端。
+ES6有哪些酷炫的新特性呢？
+新增箭头操作符=&amp;gt; ,简化函数书写 coffeescript的语法糖里也是有样，各种回调需要写function,现在用=&amp;gt; 代替function关键字
+新增基本类型 JS有null,undefined,b">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="box-sizing 是什么东西">
-<meta name="twitter:description" content="昨天有人问我知道盒子模型么？那必须的呀。width,height,margin,padding,border这些的嘛。
-然后又问什么是box-sizing?好熟悉，但没概念了。
-在说盒子模型的时候，肯定会说IE对盒子模型的支持和其他浏览器不一样。它的width是包含了padding和border的。
-CSS3中新增box-sizing属性刚好可以解决这个问题，不用费心去算是否盒子模型不一致了。
-b">
+<meta name="twitter:title" content="学习下ES6">
+<meta name="twitter:description" content="主要是看阮一峰的入门教程还有csdn上的探秘ES6github上的es6 feature
+说起来好惭愧，一直都没有去了解ECMAScript,枉做前端。
+ES6有哪些酷炫的新特性呢？
+新增箭头操作符=&amp;gt; ,简化函数书写 coffeescript的语法糖里也是有样，各种回调需要写function,现在用=&amp;gt; 代替function关键字
+新增基本类型 JS有null,undefined,b">
   
     <link rel="alternative" href="/atom.xml" title="Judastree" type="application/atom+xml">
   
@@ -79,10 +79,10 @@ b">
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-box-sizing是什么东西" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-学习下ES6" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2015/07/14/box-sizing是什么东西/" class="article-date">
-  <time datetime="2015-07-14T01:59:02.000Z" itemprop="datePublished">2015-07-14</time>
+    <a href="/2015/07/15/学习下ES6/" class="article-date">
+  <time datetime="2015-07-15T03:26:29.000Z" itemprop="datePublished">2015-07-15</time>
 </a>
     
   </div>
@@ -93,7 +93,7 @@ b">
         
   
     <h1 class="article-title" itemprop="name">
-      box-sizing 是什么东西
+      学习下ES6
     </h1>
   
 
@@ -101,24 +101,44 @@ b">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>昨天有人问我知道盒子模型么？那必须的呀。width,height,margin,padding,border这些的嘛。</p>
-<p>然后又问什么是box-sizing?好熟悉，但没概念了。</p>
-<p>在说盒子模型的时候，肯定会说IE对盒子模型的支持和其他浏览器不一样。它的width是包含了padding和border的。</p>
-<p>CSS3中新增box-sizing属性刚好可以解决这个问题，不用费心去算是否盒子模型不一致了。</p>
-<pre><code><span class="built_in">box</span>-sizing: content-<span class="built_in">box</span>|border-<span class="built_in">box</span>|inherit;
-</code></pre><p>box-sizing的属性值有两种，(inherit继承就不说了)</p>
-<ul>
-<li>content-box：border 和 padding 不计入width和height （默认的）</li>
-<li>border-box ：border 和 padding 计入width和height  （IE那种的）</li>
-</ul>
+        <p>主要是看阮一峰的<a href="http://es6.ruanyifeng.com/#docs/intro" target="_blank" rel="external">入门教程</a><br>还有csdn上的<a href="http://www.csdn.net/tag/%E6%8E%A2%E7%A7%98es6/news" target="_blank" rel="external">探秘ES6</a><br>github上的<a href="https://github.com/lukehoban/es6features" target="_blank" rel="external">es6 feature</a></p>
+<p>说起来好惭愧，一直都没有去了解ECMAScript,枉做前端。</p>
+<p>ES6有哪些酷炫的新特性呢？</p>
+<h2 id="新增箭头操作符=&gt;_,简化函数书写">新增箭头操作符=&gt; ,简化函数书写</h2><p> coffeescript的语法糖里也是有样，各种回调需要写function,现在用=&gt; 代替function关键字</p>
+<h2 id="新增基本类型">新增基本类型</h2><p> JS有null,undefined,boolean,number,string五种基本类型，object是引用类型。<br> 现在新增Symbol这个基本类型，避免与已有代码命名冲突</p>
+<pre><code><span class="keyword">var</span> key = <span class="built_in">Symbol</span>(<span class="string">"key"</span>);
+</code></pre><h2 id="自带Promise">自带Promise</h2><p> 现在已经很多js的类库都支持Promise了，比如Jquery。ES6正式引入，提供原生的Promise对象。</p>
+<h2 id="新增块级变量的定义_关键字let">新增块级变量的定义 关键字let</h2><p> JS是变量var定义是不存在块级生命周期的。现在新增let关键字，仅可以在块级中使用。</p>
+<pre><code><span class="keyword">for</span>(<span class="reserved">let</span> i = <span class="number">0</span>; i &lt; arr.length; i++){}
+
+<span class="built_in">console</span>.log(i)
+<span class="regexp">//</span><span class="attribute">ReferenceError</span>: i <span class="keyword">is</span> <span class="keyword">not</span> defined
+</code></pre><h2 id="变量的解构赋值">变量的解构赋值</h2><p> 自动解析数组或对象中的值，并给对应变量进行赋值，这被称为解构（Destructuring）。</p>
+<pre><code><span class="keyword">var</span> [x,y]=getVal(),<span class="comment">//函数返回值的解构</span>
+    [name,,age]=[<span class="string">'wayou'</span>,<span class="string">'male'</span>,<span class="string">'secrect'</span>];<span class="comment">//数组解构</span>
+
+<span class="function"><span class="keyword">function</span> <span class="title">getVal</span><span class="params">()</span> </span>{
+    <span class="keyword">return</span> [ <span class="number">1</span>, <span class="number">2</span> ];
+}
+
+<span class="built_in">console</span>.log(<span class="string">'x:'</span>+x+<span class="string">', y:'</span>+y);<span class="comment">//输出：x:1, y:2 </span>
+<span class="built_in">console</span>.log(<span class="string">'name:'</span>+name+<span class="string">', age:'</span>+age);<span class="comment">//输出： name:wayou, age:secrect</span>
+</code></pre><p> 据说在函数传参中很有用。<br> 如果函数的参数列表很长，又不想记住他们的顺序，我们对参数对象使用解构赋值，这样，在访问对象属性时，便可以避免重复调用这一参数对象    </p>
+<h2 id="for_of_的遍历">for of 的遍历</h2><p>   我们以前用for in 遍历数组，但拿到的是数组的索引值，这点很烦。for of 拿到的值不是索引，完全没有这个烦恼。</p>
+<pre><code><span class="keyword">for</span> (var <span class="built_in">value</span> <span class="operator">of</span> myArray) { 
+    console.<span class="built_in">log</span>(<span class="built_in">value</span>); 
+}
+</code></pre><p>   另外，我们以前也用forEach遍历数组，for(var i of array){} 和forEach(function(i){})比起来，优势在于还可以有break,continue,return这些操作。</p>
+<h2 id="Generator函数">Generator函数</h2><p>  没有看明白这是干什么，mark下</p>
+<h2 id="引入模块化_Module">引入模块化 Module</h2><p>  模块功能主要由两个命令构成：export和import。<br>  export命令用于用户自定义模块，规定对外接口；<br>  import命令用于输入其他模块提供的功能，同时创造命名空间（namespace），防止函数名冲突。<br>  这个对于代码管理很有用啊。越来越像java了…</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://judastree.github.io/2015/07/14/box-sizing是什么东西/" data-id="cic4ck55o000y1pccfhe83ems" class="article-share-link">Share</a>
+      <a data-url="http://judastree.github.io/2015/07/15/学习下ES6/" data-id="cic4ck54y000a1pccgqv32njz" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
 
     </footer>
   </div>
@@ -126,19 +146,10 @@ b">
     
 <nav id="article-nav">
   
-    <a href="/2015/07/14/git .ignore无效?/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          git ignore 无效?
-        
-      </div>
-    </a>
   
-  
-    <a href="/2015/07/14/Android怎么打Log/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2015/07/15/快速排序算法/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Android怎么打Log</div>
+      <div class="article-nav-title">快速排序算法</div>
     </a>
   
 </nav>
@@ -149,7 +160,7 @@ b">
   
   <section id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="post-box-sizing是什么东西" data-title="box-sizing 是什么东西" data-url="http://judastree.github.io/2015/07/14/box-sizing是什么东西/"></div>
+    <div class="ds-thread" data-thread-key="post-学习下ES6" data-title="学习下ES6" data-url="http://judastree.github.io/2015/07/15/学习下ES6/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">

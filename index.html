@@ -69,6 +69,74 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-学习下ES6" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/07/15/学习下ES6/" class="article-date">
+  <time datetime="2015-07-15T03:26:29.000Z" itemprop="datePublished">2015-07-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/07/15/学习下ES6/">学习下ES6</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>主要是看阮一峰的<a href="http://es6.ruanyifeng.com/#docs/intro" target="_blank" rel="external">入门教程</a><br>还有csdn上的<a href="http://www.csdn.net/tag/%E6%8E%A2%E7%A7%98es6/news" target="_blank" rel="external">探秘ES6</a><br>github上的<a href="https://github.com/lukehoban/es6features" target="_blank" rel="external">es6 feature</a></p>
+<p>说起来好惭愧，一直都没有去了解ECMAScript,枉做前端。</p>
+<p>ES6有哪些酷炫的新特性呢？</p>
+<h2 id="新增箭头操作符=&gt;_,简化函数书写">新增箭头操作符=&gt; ,简化函数书写</h2><p> coffeescript的语法糖里也是有样，各种回调需要写function,现在用=&gt; 代替function关键字</p>
+<h2 id="新增基本类型">新增基本类型</h2><p> JS有null,undefined,boolean,number,string五种基本类型，object是引用类型。<br> 现在新增Symbol这个基本类型，避免与已有代码命名冲突</p>
+<pre><code><span class="keyword">var</span> key = <span class="built_in">Symbol</span>(<span class="string">"key"</span>);
+</code></pre><h2 id="自带Promise">自带Promise</h2><p> 现在已经很多js的类库都支持Promise了，比如Jquery。ES6正式引入，提供原生的Promise对象。</p>
+<h2 id="新增块级变量的定义_关键字let">新增块级变量的定义 关键字let</h2><p> JS是变量var定义是不存在块级生命周期的。现在新增let关键字，仅可以在块级中使用。</p>
+<pre><code><span class="keyword">for</span>(<span class="reserved">let</span> i = <span class="number">0</span>; i &lt; arr.length; i++){}
+
+<span class="built_in">console</span>.log(i)
+<span class="regexp">//</span><span class="attribute">ReferenceError</span>: i <span class="keyword">is</span> <span class="keyword">not</span> defined
+</code></pre><h2 id="变量的解构赋值">变量的解构赋值</h2><p> 自动解析数组或对象中的值，并给对应变量进行赋值，这被称为解构（Destructuring）。</p>
+<pre><code><span class="keyword">var</span> [x,y]=getVal(),<span class="comment">//函数返回值的解构</span>
+    [name,,age]=[<span class="string">'wayou'</span>,<span class="string">'male'</span>,<span class="string">'secrect'</span>];<span class="comment">//数组解构</span>
+
+<span class="function"><span class="keyword">function</span> <span class="title">getVal</span><span class="params">()</span> </span>{
+    <span class="keyword">return</span> [ <span class="number">1</span>, <span class="number">2</span> ];
+}
+
+<span class="built_in">console</span>.log(<span class="string">'x:'</span>+x+<span class="string">', y:'</span>+y);<span class="comment">//输出：x:1, y:2 </span>
+<span class="built_in">console</span>.log(<span class="string">'name:'</span>+name+<span class="string">', age:'</span>+age);<span class="comment">//输出： name:wayou, age:secrect</span>
+</code></pre><p> 据说在函数传参中很有用。<br> 如果函数的参数列表很长，又不想记住他们的顺序，我们对参数对象使用解构赋值，这样，在访问对象属性时，便可以避免重复调用这一参数对象    </p>
+<h2 id="for_of_的遍历">for of 的遍历</h2><p>   我们以前用for in 遍历数组，但拿到的是数组的索引值，这点很烦。for of 拿到的值不是索引，完全没有这个烦恼。</p>
+<pre><code><span class="keyword">for</span> (var <span class="built_in">value</span> <span class="operator">of</span> myArray) { 
+    console.<span class="built_in">log</span>(<span class="built_in">value</span>); 
+}
+</code></pre><p>   另外，我们以前也用forEach遍历数组，for(var i of array){} 和forEach(function(i){})比起来，优势在于还可以有break,continue,return这些操作。</p>
+<h2 id="Generator函数">Generator函数</h2><p>  没有看明白这是干什么，mark下</p>
+<h2 id="引入模块化_Module">引入模块化 Module</h2><p>  模块功能主要由两个命令构成：export和import。<br>  export命令用于用户自定义模块，规定对外接口；<br>  import命令用于输入其他模块提供的功能，同时创造命名空间（namespace），防止函数名冲突。<br>  这个对于代码管理很有用啊。越来越像java了…</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://judastree.github.io/2015/07/15/学习下ES6/" data-id="cic4ck54y000a1pccgqv32njz" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+  
+  
     <article id="post-快速排序算法" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/07/15/快速排序算法/" class="article-date">
@@ -96,7 +164,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://judastree.github.io/2015/07/15/快速排序算法/" data-id="cic474kwg0007ysccbd11zyt0" class="article-share-link">Share</a>
+      <a data-url="http://judastree.github.io/2015/07/15/快速排序算法/" data-id="cic4ck54w00071pccw68tpxqz" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
@@ -135,7 +203,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://judastree.github.io/2015/07/15/二分查找算法/" data-id="cic474kwo000hysccs09a22z5" class="article-share-link">Share</a>
+      <a data-url="http://judastree.github.io/2015/07/15/二分查找算法/" data-id="cic4ck556000j1pcc85amg4gy" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
@@ -174,7 +242,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://judastree.github.io/2015/07/15/前端自动化测试探索/" data-id="cic474kwk000dyscc5r487pt5" class="article-share-link">Share</a>
+      <a data-url="http://judastree.github.io/2015/07/15/前端自动化测试探索/" data-id="cic4ck552000f1pcczdpdpwpn" class="article-share-link">Share</a>
       
       
     </footer>
@@ -218,7 +286,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://judastree.github.io/2015/07/15/Chrome调试技巧/" data-id="cic474kxg001bysccybvwdqy1" class="article-share-link">Share</a>
+      <a data-url="http://judastree.github.io/2015/07/15/Chrome调试技巧/" data-id="cic4ck562001d1pcca8fbj3jy" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/chrome/">chrome</a></li></ul>
@@ -256,7 +324,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://judastree.github.io/2015/07/14/单线程的Javascript/" data-id="cic474kwj000aysccboepou4o" class="article-share-link">Share</a>
+      <a data-url="http://judastree.github.io/2015/07/14/单线程的Javascript/" data-id="cic4ck550000d1pccmzwc16e4" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -316,7 +384,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://judastree.github.io/2015/07/14/Android Url Scheme-所谓的唤醒/" data-id="cic474kvq0000yscce0xue8sg" class="article-share-link">Share</a>
+      <a data-url="http://judastree.github.io/2015/07/14/Android Url Scheme-所谓的唤醒/" data-id="cic4ck54800001pccgj40soiy" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
@@ -362,7 +430,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://judastree.github.io/2015/07/14/git .ignore无效?/" data-id="cic474kwz000qysccnlje55fw" class="article-share-link">Share</a>
+      <a data-url="http://judastree.github.io/2015/07/14/git .ignore无效?/" data-id="cic4ck55j000s1pccv9c2p6v2" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
@@ -410,7 +478,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://judastree.github.io/2015/07/14/box-sizing是什么东西/" data-id="cic474kx4000wyscc3aw3h138" class="article-share-link">Share</a>
+      <a data-url="http://judastree.github.io/2015/07/14/box-sizing是什么东西/" data-id="cic4ck55o000y1pccfhe83ems" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
@@ -525,52 +593,10 @@ ERROR 类型调试信息，错误信息
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://judastree.github.io/2015/07/14/Android怎么打Log/" data-id="cic474kxi001eysccs7mvv0sh" class="article-share-link">Share</a>
+      <a data-url="http://judastree.github.io/2015/07/14/Android怎么打Log/" data-id="cic4ck564001g1pcc84f73r08" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-  
-  
-    <article id="post-生活好Boring啊" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/07/13/生活好Boring啊/" class="article-date">
-  <time datetime="2015-07-13T02:10:53.000Z" itemprop="datePublished">2015-07-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/07/13/生活好Boring啊/">生活好boring啊</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>工作也好boring啊，虽然也是很有挑战性的项目，但又回到一个人工作的状态。</p>
-<p>flighting都说得越来越没底气。</p>
-<p>男朋友重新当了码农，也越来越忙了。一起加班一起写代码什么的真是够了。</p>
-<p>找一个自己不会迷路的目标，然后每天迁入吧。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://judastree.github.io/2015/07/13/生活好Boring啊/" data-id="cic474kwe0004ysccee9g7y6c" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日常/">日常</a></li></ul>
 
     </footer>
   </div>
@@ -594,7 +620,7 @@ ERROR 类型调试信息，错误信息
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/">React</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chrome/">chrome</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mac/">mac</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webstorm/">webstorm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日常/">日常</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a><span class="tag-list-count">2</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/">React</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chrome/">chrome</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mac/">mac</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webstorm/">webstorm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日常/">日常</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a><span class="tag-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -603,7 +629,7 @@ ERROR 类型调试信息，错误信息
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Android/" style="font-size: 16.67px;">Android</a><a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a><a href="/tags/React/" style="font-size: 10px;">React</a><a href="/tags/chrome/" style="font-size: 10px;">chrome</a><a href="/tags/css/" style="font-size: 13.33px;">css</a><a href="/tags/git/" style="font-size: 10px;">git</a><a href="/tags/mac/" style="font-size: 20px;">mac</a><a href="/tags/markdown/" style="font-size: 10px;">markdown</a><a href="/tags/webstorm/" style="font-size: 10px;">webstorm</a><a href="/tags/日常/" style="font-size: 10px;">日常</a><a href="/tags/算法/" style="font-size: 13.33px;">算法</a>
+      <a href="/tags/Android/" style="font-size: 16.67px;">Android</a><a href="/tags/JavaScript/" style="font-size: 13.33px;">JavaScript</a><a href="/tags/React/" style="font-size: 10px;">React</a><a href="/tags/chrome/" style="font-size: 10px;">chrome</a><a href="/tags/css/" style="font-size: 13.33px;">css</a><a href="/tags/git/" style="font-size: 10px;">git</a><a href="/tags/mac/" style="font-size: 20px;">mac</a><a href="/tags/markdown/" style="font-size: 10px;">markdown</a><a href="/tags/webstorm/" style="font-size: 10px;">webstorm</a><a href="/tags/日常/" style="font-size: 10px;">日常</a><a href="/tags/算法/" style="font-size: 13.33px;">算法</a>
     </div>
   </div>
 
@@ -612,7 +638,7 @@ ERROR 类型调试信息，错误信息
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">3</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">3</span></li></ul>
     </div>
   </div>
 
@@ -622,6 +648,10 @@ ERROR 类型调试信息，错误信息
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2015/07/15/学习下ES6/">学习下ES6</a>
+          </li>
         
           <li>
             <a href="/2015/07/15/快速排序算法/">快速排序算法</a>
@@ -637,10 +667,6 @@ ERROR 类型调试信息，错误信息
         
           <li>
             <a href="/2015/07/15/Chrome调试技巧/">Chrome 调试技巧</a>
-          </li>
-        
-          <li>
-            <a href="/2015/07/14/单线程的Javascript/">单线程的JavaScript</a>
           </li>
         
       </ul>
