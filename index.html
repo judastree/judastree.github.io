@@ -121,11 +121,11 @@
 </code></pre><p>   另外，我们以前也用forEach遍历数组，for(var i of array){} 和forEach(function(i){})比起来，优势在于还可以有break,continue,return这些操作。</p>
 <h2 id="Generator函数">Generator函数</h2><p>  没有看明白这是干什么，mark下</p>
 <h2 id="引入模块化_Module">引入模块化 Module</h2><p>  模块功能主要由两个命令构成：export和import。<br>  export命令用于用户自定义模块，规定对外接口；<br>  import命令用于输入其他模块提供的功能，同时创造命名空间（namespace），防止函数名冲突。<br>  这个对于代码管理很有用啊。越来越像java了…</p>
-
+<h2 id="还有一些其他的新增api，新增的map和set集合等等，到时再看了。">还有一些其他的新增api，新增的map和set集合等等，到时再看了。</h2>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://judastree.github.io/2015/07/15/学习下ES6/" data-id="cic4ck54y000a1pccgqv32njz" class="article-share-link">Share</a>
+      <a data-url="http://judastree.github.io/2015/07/15/学习下ES6/" data-id="cic4szbqu000ab4cce1edpxw8" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -164,7 +164,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://judastree.github.io/2015/07/15/快速排序算法/" data-id="cic4ck54w00071pccw68tpxqz" class="article-share-link">Share</a>
+      <a data-url="http://judastree.github.io/2015/07/15/快速排序算法/" data-id="cic4szbqr0007b4ccc73l8oe4" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
@@ -198,12 +198,33 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>先挖个坑，以后慢慢填。</p>
+        <h2 id="概念">概念</h2><p>二分查找又称折半查找，优点是比较次数少，查找速度快，平均性能好；<br>其缺点是要求待查表为有序表，且插入删除困难。<br>因此，折半查找方法适用于不经常变动而查找频繁的有序列表。</p>
+<h2 id="思路">思路</h2><p>将表中间位置记录的关键字与查找关键字比较，如果两者相等，则查找成功；<br>否则利用中间位置记录将表分成前、后两个子表，如果中间位置记录的关键字大于查找关键字，则进一步查找前一子表，否则进一步查找后一子表。<br>重复以上过程，直到找到满足条件的记录，使查找成功，或直到子表不存在为止，此时查找不成功。</p>
+<h2 id="时间复杂度">时间复杂度</h2><p>假设其数组长度为n，其算法复杂度为o（log（n））</p>
+<h2 id="Javascript实现">Javascript实现</h2><pre><code><span class="keyword">var</span> <span class="type">Arr</span>=[<span class="number">3</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">9</span>,<span class="number">12</span>,<span class="number">15</span>];
+function binary(<span class="built_in">find</span>,arr,low,high){
+    <span class="keyword">if</span>(low&lt;=high){
+        <span class="keyword">if</span>(arr[low]==<span class="built_in">find</span>) <span class="keyword">return</span> low;
+        <span class="keyword">if</span>(arr[high]==<span class="built_in">find</span>) <span class="keyword">return</span> high;
 
+        <span class="keyword">var</span> mid=<span class="type">Math</span>.ceil((high+low)/<span class="number">2</span>);
+
+        <span class="keyword">if</span>(arr[mid]==<span class="built_in">find</span>){
+            <span class="keyword">return</span> mid;
+        }<span class="keyword">else</span> <span class="keyword">if</span>(arr[mid]&gt;<span class="built_in">find</span>){
+            <span class="keyword">return</span> binary(<span class="built_in">find</span>,arr,low,mid-<span class="number">1</span>);
+        }<span class="keyword">else</span>{
+            <span class="keyword">return</span> binary(<span class="built_in">find</span>,arr,mid+<span class="number">1</span>,high);
+        }
+    }
+    <span class="keyword">return</span> -<span class="number">1</span>;
+}
+binary(<span class="number">15</span>,<span class="type">Arr</span>,<span class="number">0</span>,<span class="type">Arr</span>.length-<span class="number">1</span>);
+</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://judastree.github.io/2015/07/15/二分查找算法/" data-id="cic4ck556000j1pcc85amg4gy" class="article-share-link">Share</a>
+      <a data-url="http://judastree.github.io/2015/07/15/二分查找算法/" data-id="cic4szbr1000jb4ccupuixy2y" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
@@ -242,7 +263,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://judastree.github.io/2015/07/15/前端自动化测试探索/" data-id="cic4ck552000f1pcczdpdpwpn" class="article-share-link">Share</a>
+      <a data-url="http://judastree.github.io/2015/07/15/前端自动化测试探索/" data-id="cic4szbqy000fb4ccqojudgfp" class="article-share-link">Share</a>
       
       
     </footer>
@@ -286,7 +307,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://judastree.github.io/2015/07/15/Chrome调试技巧/" data-id="cic4ck562001d1pcca8fbj3jy" class="article-share-link">Share</a>
+      <a data-url="http://judastree.github.io/2015/07/15/Chrome调试技巧/" data-id="cic4szbrv001db4ccmlq67r1t" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/chrome/">chrome</a></li></ul>
@@ -324,7 +345,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://judastree.github.io/2015/07/14/单线程的Javascript/" data-id="cic4ck550000d1pccmzwc16e4" class="article-share-link">Share</a>
+      <a data-url="http://judastree.github.io/2015/07/14/单线程的Javascript/" data-id="cic4szbqw000db4ccemrj36wf" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -384,7 +405,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://judastree.github.io/2015/07/14/Android Url Scheme-所谓的唤醒/" data-id="cic4ck54800001pccgj40soiy" class="article-share-link">Share</a>
+      <a data-url="http://judastree.github.io/2015/07/14/Android Url Scheme-所谓的唤醒/" data-id="cic4szbpx0000b4cc5g3w1b3y" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
@@ -430,7 +451,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://judastree.github.io/2015/07/14/git .ignore无效?/" data-id="cic4ck55j000s1pccv9c2p6v2" class="article-share-link">Share</a>
+      <a data-url="http://judastree.github.io/2015/07/14/git .ignore无效?/" data-id="cic4szbrd000sb4ccn2knmeis" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
@@ -478,7 +499,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://judastree.github.io/2015/07/14/box-sizing是什么东西/" data-id="cic4ck55o000y1pccfhe83ems" class="article-share-link">Share</a>
+      <a data-url="http://judastree.github.io/2015/07/14/box-sizing是什么东西/" data-id="cic4szbri000yb4ccivha5riu" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
@@ -593,7 +614,7 @@ ERROR 类型调试信息，错误信息
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://judastree.github.io/2015/07/14/Android怎么打Log/" data-id="cic4ck564001g1pcc84f73r08" class="article-share-link">Share</a>
+      <a data-url="http://judastree.github.io/2015/07/14/Android怎么打Log/" data-id="cic4szbry001gb4cct8fjqc5x" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
