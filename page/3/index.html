@@ -69,6 +69,82 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Mac-OS-X-中配置Apache" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/03/30/Mac-OS-X-中配置Apache/" class="article-date">
+  <time datetime="2015-03-30T14:23:41.000Z" itemprop="datePublished">2015-03-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/03/30/Mac-OS-X-中配置Apache/">Mac OS X 中配置Apache 相关</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="启动服务">启动服务</h3><p>Mac中自带了Apache环境，直接一行命令搞定了。</p>
+<pre><code><span class="variable">$sudo</span> apachectl start
+</code></pre><p>这时，打开你得浏览器，输入“<a href="http://localhost”" target="_blank" rel="external">http://localhost”</a>, 可以看到“It Works！”的页面。这个<strong>index.html</strong> 文件位于“/Library(资源库)/WebServer/Documents/”下。这是Apache的默认根目录。</p>
+<hr>
+<h3 id="修改配置">修改配置</h3><p>Apache 的安装目录在:<strong>/etc/apache2/</strong> 默认是隐藏的。</p>
+<pre><code><span class="variable">$open</span> /etc/apache2
+</code></pre><p>让隐藏文件可以见，或者让隐藏文件不可见的命令如下：</p>
+<pre><code><span class="variable">$defaults</span> write com<span class="class">.apple</span><span class="class">.finder</span> AppleShowAllFiles -bool true
+
+<span class="variable">$defaults</span> write com<span class="class">.apple</span><span class="class">.finder</span> AppleShowAllFiles -bool false
+</code></pre><p>修改<strong>/etc/apache2/httpd.conf</strong> 文件，就是修改apache的配置文件。这个文件默认是只读的，修改请加管理员权限 <strong>sudo</strong></p>
+<p>修改完之后，记得重启apache 服务</p>
+<pre><code><span class="variable">$sudo</span> apachectl restart
+</code></pre><hr>
+<h3 id="修改Apache默认根目录">修改Apache默认根目录</h3><ol>
+<li><p>打开 <strong>/etc/apache2/httpd.conf</strong>文件</p>
+<pre><code><span class="label">$sudo</span> vim /etc/apache2/httpd.<span class="keyword">conf</span>
+</code></pre></li>
+</ol>
+<ol>
+<li><p>找到<strong>/Library/WebServer/Documents</strong>,你换成你自己的目录：</p>
+<pre><code>如<span class="regexp">/Users/</span>{username}/Sites
+</code></pre></li>
+<li><p>重启服务。</p>
+<pre><code><span class="variable">$sudo</span> apachectl restart   
+</code></pre></li>
+</ol>
+<hr>
+<h3 id="修改默认端口">修改默认端口</h3><ol>
+<li><p>打开 <strong>/etc/apache2/httpd.conf</strong>文件</p>
+<pre><code><span class="label">$sudo</span> vim /etc/apache2/httpd.<span class="keyword">conf</span>
+</code></pre></li>
+<li><p>找到<strong>Listen</strong> 关键字,后面跟的就是端口号了，改掉！</p>
+<pre><code><span class="keyword"><span class="common">Listen</span></span> 8089
+</code></pre></li>
+<li><p>然后继续重启</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://judastree.github.io/2015/03/30/Mac-OS-X-中配置Apache/" data-id="cic5nzq4s001dotf1mnjvxhmp" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mac/">mac</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+  
+  
     <article id="post-Android-Studio-启动找不到JVM" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/03/29/Android-Studio-启动找不到JVM/" class="article-date">
@@ -105,7 +181,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://judastree.github.io/2015/03/29/Android-Studio-启动找不到JVM/" data-id="cic4szbs0001ib4cchbxa1l91" class="article-share-link">Share</a>
+      <a data-url="http://judastree.github.io/2015/03/29/Android-Studio-启动找不到JVM/" data-id="cic5nzq4w001kotf1ccc630jj" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
@@ -152,7 +228,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://judastree.github.io/2015/03/29/hello-world/" data-id="cic4szbrb000rb4ccjnon2ncv" class="article-share-link">Share</a>
+      <a data-url="http://judastree.github.io/2015/03/29/hello-world/" data-id="cic5nzq44000rotf132cbojii" class="article-share-link">Share</a>
       
       
     </footer>
@@ -177,7 +253,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/">React</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chrome/">chrome</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mac/">mac</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webstorm/">webstorm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日常/">日常</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a><span class="tag-list-count">2</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/">React</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chrome/">chrome</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mac/">mac</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webstorm/">webstorm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日常/">日常</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a><span class="tag-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -186,7 +262,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Android/" style="font-size: 16.67px;">Android</a><a href="/tags/JavaScript/" style="font-size: 13.33px;">JavaScript</a><a href="/tags/React/" style="font-size: 10px;">React</a><a href="/tags/chrome/" style="font-size: 10px;">chrome</a><a href="/tags/css/" style="font-size: 13.33px;">css</a><a href="/tags/git/" style="font-size: 10px;">git</a><a href="/tags/mac/" style="font-size: 20px;">mac</a><a href="/tags/markdown/" style="font-size: 10px;">markdown</a><a href="/tags/webstorm/" style="font-size: 10px;">webstorm</a><a href="/tags/日常/" style="font-size: 10px;">日常</a><a href="/tags/算法/" style="font-size: 13.33px;">算法</a>
+      <a href="/tags/Android/" style="font-size: 17.5px;">Android</a><a href="/tags/JavaScript/" style="font-size: 15px;">JavaScript</a><a href="/tags/React/" style="font-size: 10px;">React</a><a href="/tags/chrome/" style="font-size: 10px;">chrome</a><a href="/tags/css/" style="font-size: 12.5px;">css</a><a href="/tags/git/" style="font-size: 10px;">git</a><a href="/tags/mac/" style="font-size: 20px;">mac</a><a href="/tags/markdown/" style="font-size: 10px;">markdown</a><a href="/tags/webstorm/" style="font-size: 10px;">webstorm</a><a href="/tags/日常/" style="font-size: 10px;">日常</a><a href="/tags/算法/" style="font-size: 12.5px;">算法</a>
     </div>
   </div>
 
@@ -195,7 +271,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">3</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">3</span></li></ul>
     </div>
   </div>
 
@@ -205,6 +281,10 @@
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2015/07/16/backbone的事件机制/">backbone的事件机制</a>
+          </li>
         
           <li>
             <a href="/2015/07/15/学习下ES6/">学习下ES6</a>
@@ -220,10 +300,6 @@
         
           <li>
             <a href="/2015/07/15/前端自动化测试探索/">前端自动化测试探索</a>
-          </li>
-        
-          <li>
-            <a href="/2015/07/15/Chrome调试技巧/">Chrome 调试技巧</a>
           </li>
         
       </ul>
