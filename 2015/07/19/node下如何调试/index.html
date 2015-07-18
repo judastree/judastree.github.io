@@ -3,39 +3,17 @@
 <head>
   <meta charset="utf-8">
   
-  <title>单线程的JavaScript | Judastree</title>
+  <title>node下如何调试 | Judastree</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在看别人的代码时发现setTimeout(func,0)的写法很不解。为什么要settimeout 0？在网上查资料都引入了单线程的JS这个话题。
-一点点来看。
-有这样一段代码
-alert(1); 
-setTimeout(&quot;alert(2)&quot;, 0); 
-alert(3); 
-按照正常的理解，延迟0秒就是不延迟执行嘛，但其实不是。输出的结果是1，3，2。
-为什么会这样呢？settimout函数造成">
+  <meta name="description" content="先占个坑，明天填。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="单线程的JavaScript">
-<meta property="og:url" content="http://judastree.github.io/2015/07/14/单线程的Javascript/index.html">
+<meta property="og:title" content="node下如何调试">
+<meta property="og:url" content="http://judastree.github.io/2015/07/19/node下如何调试/index.html">
 <meta property="og:site_name" content="Judastree">
-<meta property="og:description" content="在看别人的代码时发现setTimeout(func,0)的写法很不解。为什么要settimeout 0？在网上查资料都引入了单线程的JS这个话题。
-一点点来看。
-有这样一段代码
-alert(1); 
-setTimeout(&quot;alert(2)&quot;, 0); 
-alert(3); 
-按照正常的理解，延迟0秒就是不延迟执行嘛，但其实不是。输出的结果是1，3，2。
-为什么会这样呢？settimout函数造成">
-<meta property="og:image" content="http://t1.baidu.com/it/u=1569352962,3480269446&fm=21&gp=0.jpg">
+<meta property="og:description" content="先占个坑，明天填。">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="单线程的JavaScript">
-<meta name="twitter:description" content="在看别人的代码时发现setTimeout(func,0)的写法很不解。为什么要settimeout 0？在网上查资料都引入了单线程的JS这个话题。
-一点点来看。
-有这样一段代码
-alert(1); 
-setTimeout(&quot;alert(2)&quot;, 0); 
-alert(3); 
-按照正常的理解，延迟0秒就是不延迟执行嘛，但其实不是。输出的结果是1，3，2。
-为什么会这样呢？settimout函数造成">
+<meta name="twitter:title" content="node下如何调试">
+<meta name="twitter:description" content="先占个坑，明天填。">
   
     <link rel="alternative" href="/atom.xml" title="Judastree" type="application/atom+xml">
   
@@ -89,10 +67,10 @@ alert(3);
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-单线程的Javascript" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-node下如何调试" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2015/07/14/单线程的Javascript/" class="article-date">
-  <time datetime="2015-07-14T15:21:04.000Z" itemprop="datePublished">2015-07-14</time>
+    <a href="/2015/07/19/node下如何调试/" class="article-date">
+  <time datetime="2015-07-18T16:14:39.000Z" itemprop="datePublished">2015-07-19</time>
 </a>
     
   </div>
@@ -103,7 +81,7 @@ alert(3);
         
   
     <h1 class="article-title" itemprop="name">
-      单线程的JavaScript
+      node下如何调试
     </h1>
   
 
@@ -111,47 +89,12 @@ alert(3);
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>在看别人的代码时发现setTimeout(func,0)的写法很不解。为什么要settimeout 0？<br>在网上查资料都引入了单线程的JS这个话题。</p>
-<p>一点点来看。</p>
-<p>有这样一段代码</p>
-<pre><code><span class="function">alert</span>(1); 
-<span class="function">setTimeout</span>("<span class="function">alert</span>(2)", 0); 
-<span class="function">alert</span>(3); 
-</code></pre><p>按照正常的理解，延迟0秒就是不延迟执行嘛，但其实不是。输出的结果是1，3，2。</p>
-<h2 id="为什么会这样呢？">为什么会这样呢？</h2><p>settimout函数造成一种多线程异步的假象，让你认为js可以顺序执行主逻辑的代码，并同时开另外一个线程去处理要延迟的代码。</p>
-<p>但其实JS引擎是单线程，浏览器的一个页面只有一个线程在处理。</p>
-<p>那么JS为什么会给人多线程的假象呢？</p>
-<p><strong>因为JS的运行是事件驱动的。</strong></p>
-<p>浏览器中很多行为都是异步的，鼠标点击，窗口拖拽等。如果响应这些事件呢？浏览器把这些异步的事件都放在放入一个行为队列中。<br>JS引擎单线程的，顺序处理队列中任务。</p>
-<p>settimeout的延迟做某件事情并没有另开一个线程处理，而是在设定的延时时间到了之后在队列中新建了一个任务。</p>
-<p>那么上面的代码就很好理解了。</p>
-<p>alert(1)输出1之后，延迟0秒，队列中新建一个任务。</p>
-<p>现在队列中有两个任务，一个是执行alert(3),一个是执行alert(2)。</p>
-<p>由于js现在正处于alert(3)的任务中，所以会先执行完这个任务，再取任务队列中settimeout插入的alert(2)的任务。</p>
-<p>setTimeout的执行时间点只是加入js主执行队列中的时间点，至于什么时候执行，是由js引擎线程按顺序执行的队列来决定。所以很多时候用setTimeout做动画不流畅的原因。</p>
-<h2 id="为什么要settimeout_0_呢？">为什么要settimeout 0 呢？</h2><p>setTimeout(func, 0)神奇在哪儿？那就是告诉js引擎，在0ms以后把func放到主事件队列中，等待当前的代码执行完毕再执行。</p>
-<p>这里的关键就是<strong>改变了代码流程</strong>，把func的执行放到了等待当前的代码执行完毕再执行。</p>
-<ul>
-<li>让浏览器渲染当前的变化（很多浏览器UI render和js执行是放在一个线程中，线程阻塞会导致界面无法更新渲染）</li>
-<li>重新评估”script is running too long”警告</li>
-</ul>
-<h2 id="又引出一个问题">又引出一个问题</h2><h2 id="既然js多线程异步是假象，那么Ajax请求到底是不是异步呢？">既然js多线程异步是假象，那么Ajax请求到底是不是异步呢？</h2><p>继续查资料，查到了浏览器的一些工作机制。<br>浏览器是多线程的，每开一个页面都至少开有下面几个线程：</p>
-<ul>
-<li>javascript引擎线程</li>
-<li>UI界面渲染线程</li>
-<li>浏览器事件触发线程</li>
-<li>Http请求线程</li>
-</ul>
-<p>其中Http请求线程是执行完了就终止的线程，比如我们的Ajax请求。只要有一个ajax请求，浏览器就会开一个http请求线程去异步地执行。</p>
-<p>当请求的状态变更时，如果先前已设置回调，这异步线程就产生状态变更事件放到 JavaScript引擎的事件处理队列中等待处理。<br>所以JavaScript引擎始终是单线程运行回调函数。</p>
-<p><img src="http://t1.baidu.com/it/u=1569352962,3480269446&amp;fm=21&amp;gp=0.jpg" alt="浏览器线程机制"></p>
-<p><strong>参考资料：</strong></p>
-<p>1.<a href="http://blog.csdn.net/talking12391239/article/details/21168489" target="_blank" rel="external">Javascript是单线程的深入分析</a><br>2.<a href="http://www.2cto.com/kf/201204/129337.html" target="_blank" rel="external">Javascript可否多线程</a></p>
+        <p>先占个坑，明天填。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://judastree.github.io/2015/07/14/单线程的Javascript/" data-id="cic99akp9000ft3f1gktgn0ff" class="article-share-link">Share</a>
+      <a data-url="http://judastree.github.io/2015/07/19/node下如何调试/" data-id="cic99akpl000pt3f11utiwte4" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -162,19 +105,10 @@ alert(3);
     
 <nav id="article-nav">
   
-    <a href="/2015/07/15/Chrome调试技巧/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Chrome 调试技巧
-        
-      </div>
-    </a>
   
-  
-    <a href="/2015/07/14/Android Url Scheme-所谓的唤醒/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2015/07/18/求一个集合的所有子集/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Android Url Scheme 所谓的唤醒</div>
+      <div class="article-nav-title">求一个集合的所有子集</div>
     </a>
   
 </nav>
@@ -185,7 +119,7 @@ alert(3);
   
   <section id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="post-单线程的Javascript" data-title="单线程的JavaScript" data-url="http://judastree.github.io/2015/07/14/单线程的Javascript/"></div>
+    <div class="ds-thread" data-thread-key="post-node下如何调试" data-title="node下如何调试" data-url="http://judastree.github.io/2015/07/19/node下如何调试/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
