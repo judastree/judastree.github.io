@@ -69,6 +69,98 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-指定和的二叉树路径查找" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/07/19/指定和的二叉树路径查找/" class="article-date">
+  <time datetime="2015-07-19T14:37:32.000Z" itemprop="datePublished">2015-07-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/07/19/指定和的二叉树路径查找/">指定和的二叉树路径查找</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="题目来源">题目来源</h2><p> <a href="https://leetcode.com/problems/path-sum/" target="_blank" rel="external">指定和值的二叉树路径查找</a></p>
+<p> 现在有一个二叉树，找出这个二叉树中是否有存在这样一条根到叶子的路径能使路径节点上的值加起来等于给定的值。<br> <em>比如</em>下面这个二叉树，给定的值是22，5-&gt;4-&gt;11-&gt;2 这条路径是满足条件的。</p>
+<pre><code>      <span class="number">5</span>
+     / <span class="string">\</span>
+    <span class="number">4</span>   <span class="number">8</span>
+   /   / <span class="string">\</span>
+  <span class="number">11</span>  <span class="number">13</span>  <span class="number">4</span>
+ /  <span class="string">\</span>      <span class="string">\</span>
+<span class="number">7</span>    <span class="number">2</span>      <span class="number">1</span>
+</code></pre><h2 id="思路">思路</h2><p> 这就是一个简单的二叉树查找。只不过把查找叶子节点的值做个减法比较。关键是javascript中二叉树的数据结构的定义。 </p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://judastree.github.io/2015/07/19/指定和的二叉树路径查找/" data-id="cicalicti000acef1x8hr3ytl" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+  
+  
+    <article id="post-blink-chromium-webkit-是什么关系" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/07/19/blink-chromium-webkit-是什么关系/" class="article-date">
+  <time datetime="2015-07-19T14:06:01.000Z" itemprop="datePublished">2015-07-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/07/19/blink-chromium-webkit-是什么关系/">blink chromium webkit 是什么关系</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>转帖：<a href="http://blog.csdn.net/milado_nju/article/details/8805810" target="_blank" rel="external">原文</a></p>
+<p>Google退出WebKit项目，创建自己的渲染引擎Blink。这其实不能说完全没有先兆，合合分分，纯属正常。</p>
+<p>其实，之前关于WebKit2，双方的争论就非常的大。Apple希望它可以随便加入和删除代码而无需担心它会破坏其它Ports的代码，这遭到很多人的反对和不满。</p>
+<p>同时，另一方面，Google有很多新的功能希望加入WebKit中，但是WebKit可能并不认可他们。双方分歧越来越多，终于分道扬镳。</p>
+<p>这里面有个误区，就是Google的Blink是一个全新的引擎。其实不是这样，Blink目前就是从WebKit直接复制出一个版本出来，然后将与chromium无关的Ports全部移除掉，将代码结构重新整理，就目前而言，Blink的渲染和WebKit是一样，但是，以后两者将各自走不同的路。这有点类似于之前WebKit从KHTML中复制出来一样，历史总是惊人的相似。</p>
+<p>目前参与Blink和Chromium大致一样，拥有Chromium的commit权限对Blink也适用。原来一些WebKit的committer和reviewer也开始成为blink的committer。它的提交代码流程，review流程等都是chromium的风格，这对chromium的开发者来说非常熟悉。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://judastree.github.io/2015/07/19/blink-chromium-webkit-是什么关系/" data-id="cicalicug001acef1a1txnxuw" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/工具/">工具</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+  
+  
     <article id="post-node下如何调试" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/07/19/node下如何调试/" class="article-date">
@@ -91,12 +183,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>先占个坑，明天填。</p>
+        <p>目前遇到的场景，直接在webstorm上打断点，然后shift+ctrl+D, 就可以调试了。</p>
+<p>后面遇到更复杂的场景再继续研究。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://judastree.github.io/2015/07/19/node下如何调试/" data-id="cic99akpl000pt3f11utiwte4" class="article-share-link">Share</a>
+      <a data-url="http://judastree.github.io/2015/07/19/node下如何调试/" data-id="cicalictz000rcef1g12kmg3s" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -135,7 +228,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://judastree.github.io/2015/07/18/求一个集合的所有子集/" data-id="cic99akp20007t3f1o5d4kz2y" class="article-share-link">Share</a>
+      <a data-url="http://judastree.github.io/2015/07/18/求一个集合的所有子集/" data-id="cicalictf0007cef1x5sxa9p6" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
@@ -189,7 +282,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://judastree.github.io/2015/07/17/nodejs入门文章读后感/" data-id="cic99akpn000rt3f1grpp2xq0" class="article-share-link">Share</a>
+      <a data-url="http://judastree.github.io/2015/07/17/nodejs入门文章读后感/" data-id="cicalicu1000tcef1rh4uae4s" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -243,7 +336,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://judastree.github.io/2015/07/16/冥王星为什么有个心呢？/" data-id="cic99akpc000it3f1n4r2h221" class="article-share-link">Share</a>
+      <a data-url="http://judastree.github.io/2015/07/16/冥王星为什么有个心呢？/" data-id="cicalictr000kcef16c3i1j19" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日常/">日常</a></li></ul>
@@ -282,7 +375,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://judastree.github.io/2015/07/16/backbone的事件机制/" data-id="cic99akq00018t3f1x2punui5" class="article-share-link">Share</a>
+      <a data-url="http://judastree.github.io/2015/07/16/backbone的事件机制/" data-id="cicalicui001dcef12yq3ld1e" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -350,7 +443,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://judastree.github.io/2015/07/15/学习下ES6/" data-id="cic99akp7000ct3f1maopmesl" class="article-share-link">Share</a>
+      <a data-url="http://judastree.github.io/2015/07/15/学习下ES6/" data-id="cicalictm000ecef1hae0dj43" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -441,7 +534,7 @@ console.log(quickSort(<span class="keyword">array</span>).toString());
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://judastree.github.io/2015/07/15/快速排序算法/" data-id="cic99akp5000at3f1igow0si7" class="article-share-link">Share</a>
+      <a data-url="http://judastree.github.io/2015/07/15/快速排序算法/" data-id="cicalictk000ccef1ow2s3fry" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
@@ -502,93 +595,10 @@ binary(<span class="number">15</span>,<span class="type">Arr</span>,<span class=
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://judastree.github.io/2015/07/15/二分查找算法/" data-id="cic99akpj000nt3f1qvhvfebw" class="article-share-link">Share</a>
+      <a data-url="http://judastree.github.io/2015/07/15/二分查找算法/" data-id="cicalicty000pcef15l8b2v8t" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-  
-  
-    <article id="post-前端自动化测试探索" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/07/15/前端自动化测试探索/" class="article-date">
-  <time datetime="2015-07-15T03:13:10.000Z" itemprop="datePublished">2015-07-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/07/15/前端自动化测试探索/">前端自动化测试探索</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>先挖个坑，以后慢慢填。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://judastree.github.io/2015/07/15/前端自动化测试探索/" data-id="cic99akpb000ht3f19fzdq01a" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-  
-  
-    <article id="post-Chrome调试技巧" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/07/15/Chrome调试技巧/" class="article-date">
-  <time datetime="2015-07-15T02:54:54.000Z" itemprop="datePublished">2015-07-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/07/15/Chrome调试技巧/">Chrome 调试技巧</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在chrome调试的时候，有些技巧能大大提高自己调试的效率。不断学习总结中。</p>
-<ul>
-<li>command + p  文件查找</li>
-<li>shift + command + p 文件内函数查找</li>
-<li><p>在Elements页，上下键遍历页面元素，左右键进行元素展开</p>
-<p>Timeline ,Profiles,Audits一直没有机会用，以后找时间研究下这个吧。</p>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://judastree.github.io/2015/07/15/Chrome调试技巧/" data-id="cic99akqc001nt3f1v4apqe9q" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/chrome/">chrome</a></li></ul>
 
     </footer>
   </div>
@@ -612,7 +622,7 @@ binary(<span class="number">15</span>,<span class="type">Arr</span>,<span class=
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/">React</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chrome/">chrome</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mac/">mac</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webstorm/">webstorm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日常/">日常</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a><span class="tag-list-count">3</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/">React</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chrome/">chrome</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mac/">mac</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webstorm/">webstorm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具/">工具</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日常/">日常</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a><span class="tag-list-count">4</span></li></ul>
     </div>
   </div>
 
@@ -621,7 +631,7 @@ binary(<span class="number">15</span>,<span class="type">Arr</span>,<span class=
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Android/" style="font-size: 16px;">Android</a><a href="/tags/JavaScript/" style="font-size: 18px;">JavaScript</a><a href="/tags/React/" style="font-size: 10px;">React</a><a href="/tags/chrome/" style="font-size: 10px;">chrome</a><a href="/tags/css/" style="font-size: 12px;">css</a><a href="/tags/git/" style="font-size: 10px;">git</a><a href="/tags/mac/" style="font-size: 20px;">mac</a><a href="/tags/markdown/" style="font-size: 10px;">markdown</a><a href="/tags/webstorm/" style="font-size: 10px;">webstorm</a><a href="/tags/日常/" style="font-size: 12px;">日常</a><a href="/tags/算法/" style="font-size: 14px;">算法</a>
+      <a href="/tags/Android/" style="font-size: 15px;">Android</a><a href="/tags/JavaScript/" style="font-size: 17.5px;">JavaScript</a><a href="/tags/React/" style="font-size: 10px;">React</a><a href="/tags/chrome/" style="font-size: 10px;">chrome</a><a href="/tags/css/" style="font-size: 12.5px;">css</a><a href="/tags/git/" style="font-size: 10px;">git</a><a href="/tags/mac/" style="font-size: 20px;">mac</a><a href="/tags/markdown/" style="font-size: 10px;">markdown</a><a href="/tags/webstorm/" style="font-size: 10px;">webstorm</a><a href="/tags/工具/" style="font-size: 10px;">工具</a><a href="/tags/日常/" style="font-size: 12.5px;">日常</a><a href="/tags/算法/" style="font-size: 15px;">算法</a>
     </div>
   </div>
 
@@ -630,7 +640,7 @@ binary(<span class="number">15</span>,<span class="type">Arr</span>,<span class=
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">3</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">22</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">3</span></li></ul>
     </div>
   </div>
 
@@ -642,6 +652,14 @@ binary(<span class="number">15</span>,<span class="type">Arr</span>,<span class=
       <ul>
         
           <li>
+            <a href="/2015/07/19/指定和的二叉树路径查找/">指定和的二叉树路径查找</a>
+          </li>
+        
+          <li>
+            <a href="/2015/07/19/blink-chromium-webkit-是什么关系/">blink chromium webkit 是什么关系</a>
+          </li>
+        
+          <li>
             <a href="/2015/07/19/node下如何调试/">node下如何调试</a>
           </li>
         
@@ -651,14 +669,6 @@ binary(<span class="number">15</span>,<span class="type">Arr</span>,<span class=
         
           <li>
             <a href="/2015/07/17/nodejs入门文章读后感/">nodejs入门文章读后感</a>
-          </li>
-        
-          <li>
-            <a href="/2015/07/16/冥王星为什么有个心呢？/">冥王星为什么有个心呢？</a>
-          </li>
-        
-          <li>
-            <a href="/2015/07/16/backbone的事件机制/">backbone的事件机制</a>
           </li>
         
       </ul>

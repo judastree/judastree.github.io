@@ -3,17 +3,41 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Judastree</title>
+  <title>指定和的二叉树路径查找 | Judastree</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="You are the pretty sunshine of my life">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Judastree">
-<meta property="og:url" content="http://judastree.github.io/archives/2015/page/3/index.html">
+  <meta name="description" content="题目来源 指定和值的二叉树路径查找
+ 现在有一个二叉树，找出这个二叉树中是否有存在这样一条根到叶子的路径能使路径节点上的值加起来等于给定的值。 比如下面这个二叉树，给定的值是22，5-&amp;gt;4-&amp;gt;11-&amp;gt;2 这条路径是满足条件的。
+      5
+     / \
+    4   8
+   /   / \
+  11  13  4
+ /  \      \
+7    2      1">
+<meta property="og:type" content="article">
+<meta property="og:title" content="指定和的二叉树路径查找">
+<meta property="og:url" content="http://judastree.github.io/2015/07/19/指定和的二叉树路径查找/index.html">
 <meta property="og:site_name" content="Judastree">
-<meta property="og:description" content="You are the pretty sunshine of my life">
+<meta property="og:description" content="题目来源 指定和值的二叉树路径查找
+ 现在有一个二叉树，找出这个二叉树中是否有存在这样一条根到叶子的路径能使路径节点上的值加起来等于给定的值。 比如下面这个二叉树，给定的值是22，5-&amp;gt;4-&amp;gt;11-&amp;gt;2 这条路径是满足条件的。
+      5
+     / \
+    4   8
+   /   / \
+  11  13  4
+ /  \      \
+7    2      1">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Judastree">
-<meta name="twitter:description" content="You are the pretty sunshine of my life">
+<meta name="twitter:title" content="指定和的二叉树路径查找">
+<meta name="twitter:description" content="题目来源 指定和值的二叉树路径查找
+ 现在有一个二叉树，找出这个二叉树中是否有存在这样一条根到叶子的路径能使路径节点上的值加起来等于给定的值。 比如下面这个二叉树，给定的值是22，5-&amp;gt;4-&amp;gt;11-&amp;gt;2 这条路径是满足条件的。
+      5
+     / \
+    4   8
+   /   / \
+  11  13  4
+ /  \      \
+7    2      1">
   
     <link rel="alternative" href="/atom.xml" title="Judastree" type="application/atom+xml">
   
@@ -67,192 +91,84 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year">2015</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/07/06/React学习笔记/" class="archive-article-date">
-  <time datetime="2015-07-06T09:30:08.000Z" itemprop="datePublished">Jul 6</time>
+        <section id="main"><article id="post-指定和的二叉树路径查找" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/07/19/指定和的二叉树路径查找/" class="article-date">
+  <time datetime="2015-07-19T14:37:32.000Z" itemprop="datePublished">2015-07-19</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/07/06/React学习笔记/">React 学习 笔记 </a>
+    <h1 class="article-title" itemprop="name">
+      指定和的二叉树路径查找
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/07/06/Mac版Webstorm的一些快捷键/" class="archive-article-date">
-  <time datetime="2015-07-06T01:40:01.000Z" itemprop="datePublished">Jul 6</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/07/06/Mac版Webstorm的一些快捷键/">Mac版Webstorm的一些快捷键 </a>
-    </h1>
-  
+        <h2 id="题目来源">题目来源</h2><p> <a href="https://leetcode.com/problems/path-sum/" target="_blank" rel="external">指定和值的二叉树路径查找</a></p>
+<p> 现在有一个二叉树，找出这个二叉树中是否有存在这样一条根到叶子的路径能使路径节点上的值加起来等于给定的值。<br> <em>比如</em>下面这个二叉树，给定的值是22，5-&gt;4-&gt;11-&gt;2 这条路径是满足条件的。</p>
+<pre><code>      <span class="number">5</span>
+     / <span class="string">\</span>
+    <span class="number">4</span>   <span class="number">8</span>
+   /   / <span class="string">\</span>
+  <span class="number">11</span>  <span class="number">13</span>  <span class="number">4</span>
+ /  <span class="string">\</span>      <span class="string">\</span>
+<span class="number">7</span>    <span class="number">2</span>      <span class="number">1</span>
+</code></pre><h2 id="思路">思路</h2><p> 这就是一个简单的二叉树查找。只不过把查找叶子节点的值做个减法比较。关键是javascript中二叉树的数据结构的定义。 </p>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/06/30/currentColor关键字/" class="archive-article-date">
-  <time datetime="2015-06-30T05:31:24.000Z" itemprop="datePublished">Jun 30</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/06/30/currentColor关键字/">currentColor关键字</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/06/29/Mac下取消Chrome的ajax请求跨域/" class="archive-article-date">
-  <time datetime="2015-06-29T09:33:36.000Z" itemprop="datePublished">Jun 29</time>
-</a>
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://judastree.github.io/2015/07/19/指定和的二叉树路径查找/" data-id="cicalicti000acef1x8hr3ytl" class="article-share-link">Share</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/06/29/Mac下取消Chrome的ajax请求跨域/">Mac下取消Chrome的ajax请求跨域</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/05/20/修改Mac终端命令行颜色/" class="archive-article-date">
-  <time datetime="2015-05-20T14:15:55.000Z" itemprop="datePublished">May 20</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/05/20/修改Mac终端命令行颜色/">修改Mac终端命令行颜色</a>
-    </h1>
-  
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
 
-    </header>
+    </footer>
   </div>
-</article>
   
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/05/20/Mac中修改host/" class="archive-article-date">
-  <time datetime="2015-05-20T13:43:24.000Z" itemprop="datePublished">May 20</time>
-</a>
-      
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/05/20/Mac中修改host/">Mac中修改host</a>
-    </h1>
   
+    <a href="/2015/07/19/blink-chromium-webkit-是什么关系/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">blink chromium webkit 是什么关系</div>
+    </a>
+  
+</nav>
 
-    </header>
-  </div>
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/03/30/Mac-OS-X-中配置Apache/" class="archive-article-date">
-  <time datetime="2015-03-30T14:23:41.000Z" itemprop="datePublished">Mar 30</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/03/30/Mac-OS-X-中配置Apache/">Mac OS X 中配置Apache 相关</a>
-    </h1>
-  
 
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/03/29/Android-Studio-启动找不到JVM/" class="archive-article-date">
-  <time datetime="2015-03-29T13:56:34.000Z" itemprop="datePublished">Mar 29</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/03/29/Android-Studio-启动找不到JVM/">Android Studio 启动时找不到JVM</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/03/29/hello-world/" class="archive-article-date">
-  <time datetime="2015-03-29T13:09:05.000Z" itemprop="datePublished">Mar 29</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/03/29/hello-world/">Hello World !</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-</section>
+  <section id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="post-指定和的二叉树路径查找" data-title="指定和的二叉树路径查找" data-url="http://judastree.github.io/2015/07/19/指定和的二叉树路径查找/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:'judastree'};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+      </script>
+    <!-- 多说公共JS代码 end -->
+  </section>
+  </section>
         
           <aside id="sidebar">
   
