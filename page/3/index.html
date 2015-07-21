@@ -69,6 +69,121 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Android怎么打Log" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/07/14/Android怎么打Log/" class="article-date">
+  <time datetime="2015-07-14T01:36:07.000Z" itemprop="datePublished">2015-07-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/07/14/Android怎么打Log/">Android怎么打Log</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>android 中有五种类型的 Log .</p>
+<pre><code><span class="title">VERBOSE</span> 类型调试信息，verbose啰嗦的意思 
+DEBUG 类型调试信息, <span class="built_in">debug</span>调试信息 
+INFO  类型调试信息, 一般提示性的消息information 
+WARN  类型调试信息，warning警告类型信息 
+ERROR 类型调试信息，错误信息
+</code></pre><p>那么怎么在logcat中打印出这几种类型的日志呢。</p>
+<p>Android.util.Log类提供如下对应的方法。</p>
+<pre><code><span class="keyword">Log</span><span class="built_in">.</span>v(<span class="built_in">String</span> <span class="built_in">tag</span>, <span class="built_in">String</span> msg); <span class="comment">//VERBOSE </span>
+<span class="keyword">Log</span><span class="built_in">.</span>d(<span class="built_in">String</span> <span class="built_in">tag</span>, <span class="built_in">String</span> msg); <span class="comment">//DEBUG </span>
+<span class="keyword">Log</span><span class="built_in">.</span>i(<span class="built_in">String</span> <span class="built_in">tag</span>, <span class="built_in">String</span> msg); <span class="comment">//INFO </span>
+<span class="keyword">Log</span><span class="built_in">.</span>w(<span class="built_in">String</span> <span class="built_in">tag</span>, <span class="built_in">String</span> msg); <span class="comment">//WARN </span>
+<span class="keyword">Log</span><span class="built_in">.</span>e(<span class="built_in">String</span> <span class="built_in">tag</span>, <span class="built_in">String</span> msg); <span class="comment">//ERROR </span>
+</code></pre><p>Tag为调试信息标签名称，msg为添加的调试信息 。</p>
+<p>这样你可以根据tag，在DDMS中对不同类型的日志进行过滤查看。</p>
+<p>但真正的项目中，我们会在 debug 的版本中输出 log，而在 release 版本的产品中关闭 log 的输出。</p>
+<p>要控制日志的输出与否，我们仍需要自己根据当前环境去封装自己的Log类。</p>
+<p>比如，在Release 版本的软件上将 DEBUG 置为 false ：</p>
+<pre><code><span class="keyword">public</span> class <span class="keyword">Log</span> {
+ <span class="keyword">private</span> static final <span class="built_in">boolean</span> DEBUG <span class="subst">=</span> <span class="literal">true</span>;
+
+ <span class="keyword">public</span> static <span class="literal">void</span> v(<span class="built_in">String</span> <span class="built_in">tag</span>, <span class="built_in">String</span> msg) {
+     <span class="keyword">if</span>(DEBUG) {
+      android<span class="built_in">.</span>util<span class="built_in">.</span><span class="keyword">Log</span><span class="built_in">.</span>v(<span class="built_in">tag</span>, msg);
+     }
+    }
+    <span class="keyword">public</span> static <span class="literal">void</span> v(<span class="built_in">String</span> <span class="built_in">tag</span>, <span class="built_in">String</span> msg, Throwable tr) {
+        <span class="keyword">if</span>(DEBUG) {
+         android<span class="built_in">.</span>util<span class="built_in">.</span><span class="keyword">Log</span><span class="built_in">.</span>v(<span class="built_in">tag</span>, msg, tr);
+        }
+    }
+    <span class="keyword">public</span> static <span class="literal">void</span> d(<span class="built_in">String</span> <span class="built_in">tag</span>, <span class="built_in">String</span> msg) {
+        <span class="keyword">if</span>(DEBUG) {
+         android<span class="built_in">.</span>util<span class="built_in">.</span><span class="keyword">Log</span><span class="built_in">.</span>d(<span class="built_in">tag</span>, msg);
+        }
+    }
+    <span class="keyword">public</span> static <span class="literal">void</span> d(<span class="built_in">String</span> <span class="built_in">tag</span>, <span class="built_in">String</span> msg, Throwable tr) {
+        <span class="keyword">if</span>(DEBUG) {
+         android<span class="built_in">.</span>util<span class="built_in">.</span><span class="keyword">Log</span><span class="built_in">.</span>d(<span class="built_in">tag</span>, msg, tr);
+        }
+    }
+    <span class="keyword">public</span> static <span class="literal">void</span> i(<span class="built_in">String</span> <span class="built_in">tag</span>, <span class="built_in">String</span> msg) {
+        <span class="keyword">if</span>(DEBUG) {
+         android<span class="built_in">.</span>util<span class="built_in">.</span><span class="keyword">Log</span><span class="built_in">.</span>i(<span class="built_in">tag</span>, msg);
+        }
+    }
+    <span class="keyword">public</span> static <span class="literal">void</span> i(<span class="built_in">String</span> <span class="built_in">tag</span>, <span class="built_in">String</span> msg, Throwable tr) {
+        <span class="keyword">if</span>(DEBUG) {
+         android<span class="built_in">.</span>util<span class="built_in">.</span><span class="keyword">Log</span><span class="built_in">.</span>i(<span class="built_in">tag</span>, msg, tr);
+        }
+    }
+    <span class="keyword">public</span> static <span class="literal">void</span> w(<span class="built_in">String</span> <span class="built_in">tag</span>, <span class="built_in">String</span> msg) {
+        <span class="keyword">if</span>(DEBUG) {
+         android<span class="built_in">.</span>util<span class="built_in">.</span><span class="keyword">Log</span><span class="built_in">.</span>w(<span class="built_in">tag</span>, msg);
+        }
+    }
+    <span class="keyword">public</span> static <span class="literal">void</span> w(<span class="built_in">String</span> <span class="built_in">tag</span>, <span class="built_in">String</span> msg, Throwable tr) {
+        <span class="keyword">if</span>(DEBUG) {
+         android<span class="built_in">.</span>util<span class="built_in">.</span><span class="keyword">Log</span><span class="built_in">.</span>w(<span class="built_in">tag</span>, msg, tr);
+        }
+    }
+    <span class="keyword">public</span> static <span class="literal">void</span> w(<span class="built_in">String</span> <span class="built_in">tag</span>, Throwable tr) {
+        <span class="keyword">if</span>(DEBUG) {
+         android<span class="built_in">.</span>util<span class="built_in">.</span><span class="keyword">Log</span><span class="built_in">.</span>w(<span class="built_in">tag</span>, tr);
+        }
+    }
+    <span class="keyword">public</span> static <span class="literal">void</span> e(<span class="built_in">String</span> <span class="built_in">tag</span>, <span class="built_in">String</span> msg) {
+        <span class="keyword">if</span>(DEBUG) {
+         android<span class="built_in">.</span>util<span class="built_in">.</span><span class="keyword">Log</span><span class="built_in">.</span>e(<span class="built_in">tag</span>, msg);
+        }
+    }
+    <span class="keyword">public</span> static <span class="literal">void</span> e(<span class="built_in">String</span> <span class="built_in">tag</span>, <span class="built_in">String</span> msg, Throwable tr) {
+        <span class="keyword">if</span>(DEBUG) {
+         android<span class="built_in">.</span>util<span class="built_in">.</span><span class="keyword">Log</span><span class="built_in">.</span>e(<span class="built_in">tag</span>, msg, tr);
+        }
+    }
+}
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://judastree.github.io/2015/07/14/Android怎么打Log/" data-id="cicctvj3r0022wmztbenfsoam" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+  
+  
     <article id="post-生活好Boring啊" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/07/13/生活好Boring啊/" class="article-date">
@@ -99,7 +214,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://judastree.github.io/2015/07/13/生活好Boring啊/" data-id="cicbsiy3v000498zty4pd61ka" class="article-share-link">Share</a>
+      <a data-url="http://judastree.github.io/2015/07/13/生活好Boring啊/" data-id="cicctvj1t0004wmztud9rqe1a" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日常/">日常</a></li></ul>
@@ -155,7 +270,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://judastree.github.io/2015/07/07/mac 调出adb shell/" data-id="cicbsiy4w001298zta1o7ijx7" class="article-share-link">Share</a>
+      <a data-url="http://judastree.github.io/2015/07/07/mac 调出adb shell/" data-id="cicctvj2q0012wmzto7k6vo8m" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mac/">mac</a></li></ul>
@@ -386,7 +501,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://judastree.github.io/2015/07/06/markdown语法总忘/" data-id="cicbsiy4u000z98zt42zd9du9" class="article-share-link">Share</a>
+      <a data-url="http://judastree.github.io/2015/07/06/markdown语法总忘/" data-id="cicctvj2o000zwmztc0qsc7pa" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/markdown/">markdown</a></li></ul>
@@ -476,7 +591,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://judastree.github.io/2015/07/06/React学习笔记/" data-id="cicbsiy5j001j98zto17wd7j7" class="article-share-link">Share</a>
+      <a data-url="http://judastree.github.io/2015/07/06/React学习笔记/" data-id="cicctvj34001jwmzt6rzf11fj" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/">React</a></li></ul>
@@ -520,7 +635,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://judastree.github.io/2015/07/06/Mac版Webstorm的一些快捷键/" data-id="cicbsiy5l001m98ztoiwpf6kb" class="article-share-link">Share</a>
+      <a data-url="http://judastree.github.io/2015/07/06/Mac版Webstorm的一些快捷键/" data-id="cicctvj35001mwmztyotjwday" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mac/">mac</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webstorm/">webstorm</a></li></ul>
@@ -568,7 +683,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://judastree.github.io/2015/06/30/currentColor关键字/" data-id="cicbsiy53001998zt6f382vy4" class="article-share-link">Share</a>
+      <a data-url="http://judastree.github.io/2015/06/30/currentColor关键字/" data-id="cicctvj2w0019wmzt3zvyyi4v" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
@@ -609,7 +724,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://judastree.github.io/2015/06/29/Mac下取消Chrome的ajax请求跨域/" data-id="cicbsiy5r001s98ztx5lc7fj5" class="article-share-link">Share</a>
+      <a data-url="http://judastree.github.io/2015/06/29/Mac下取消Chrome的ajax请求跨域/" data-id="cicctvj3a001swmztgsmau7zg" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mac/">mac</a></li></ul>
@@ -683,7 +798,7 @@ x 系统默认颜色
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://judastree.github.io/2015/05/20/修改Mac终端命令行颜色/" data-id="cicbsiy4h000m98ztazkc57b1" class="article-share-link">Share</a>
+      <a data-url="http://judastree.github.io/2015/05/20/修改Mac终端命令行颜色/" data-id="cicctvj2c000mwmzthg3cvlm3" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mac/">mac</a></li></ul>
@@ -742,83 +857,7 @@ x 系统默认颜色
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://judastree.github.io/2015/05/20/Mac中修改host/" data-id="cicbsiy5n001q98ztvieejscg" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mac/">mac</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-  
-  
-    <article id="post-Mac-OS-X-中配置Apache" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/03/30/Mac-OS-X-中配置Apache/" class="article-date">
-  <time datetime="2015-03-30T14:23:41.000Z" itemprop="datePublished">2015-03-30</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/03/30/Mac-OS-X-中配置Apache/">Mac OS X 中配置Apache 相关</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="启动服务">启动服务</h3><p>Mac中自带了Apache环境，直接一行命令搞定了。</p>
-<pre><code><span class="variable">$sudo</span> apachectl start
-</code></pre><p>这时，打开你得浏览器，输入“<a href="http://localhost”" target="_blank" rel="external">http://localhost”</a>, 可以看到“It Works！”的页面。这个<strong>index.html</strong> 文件位于“/Library(资源库)/WebServer/Documents/”下。这是Apache的默认根目录。</p>
-<hr>
-<h3 id="修改配置">修改配置</h3><p>Apache 的安装目录在:<strong>/etc/apache2/</strong> 默认是隐藏的。</p>
-<pre><code><span class="variable">$open</span> /etc/apache2
-</code></pre><p>让隐藏文件可以见，或者让隐藏文件不可见的命令如下：</p>
-<pre><code><span class="variable">$defaults</span> write com<span class="class">.apple</span><span class="class">.finder</span> AppleShowAllFiles -bool true
-
-<span class="variable">$defaults</span> write com<span class="class">.apple</span><span class="class">.finder</span> AppleShowAllFiles -bool false
-</code></pre><p>修改<strong>/etc/apache2/httpd.conf</strong> 文件，就是修改apache的配置文件。这个文件默认是只读的，修改请加管理员权限 <strong>sudo</strong></p>
-<p>修改完之后，记得重启apache 服务</p>
-<pre><code><span class="variable">$sudo</span> apachectl restart
-</code></pre><hr>
-<h3 id="修改Apache默认根目录">修改Apache默认根目录</h3><ol>
-<li><p>打开 <strong>/etc/apache2/httpd.conf</strong>文件</p>
-<pre><code><span class="label">$sudo</span> vim /etc/apache2/httpd.<span class="keyword">conf</span>
-</code></pre></li>
-</ol>
-<ol>
-<li><p>找到<strong>/Library/WebServer/Documents</strong>,你换成你自己的目录：</p>
-<pre><code>如<span class="regexp">/Users/</span>{username}/Sites
-</code></pre></li>
-<li><p>重启服务。</p>
-<pre><code><span class="variable">$sudo</span> apachectl restart   
-</code></pre></li>
-</ol>
-<hr>
-<h3 id="修改默认端口">修改默认端口</h3><ol>
-<li><p>打开 <strong>/etc/apache2/httpd.conf</strong>文件</p>
-<pre><code><span class="label">$sudo</span> vim /etc/apache2/httpd.<span class="keyword">conf</span>
-</code></pre></li>
-<li><p>找到<strong>Listen</strong> 关键字,后面跟的就是端口号了，改掉！</p>
-<pre><code><span class="keyword"><span class="common">Listen</span></span> 8089
-</code></pre></li>
-<li><p>然后继续重启</p>
-</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://judastree.github.io/2015/03/30/Mac-OS-X-中配置Apache/" data-id="cicbsiy5u001u98zthz5kmi6o" class="article-share-link">Share</a>
+      <a data-url="http://judastree.github.io/2015/05/20/Mac中修改host/" data-id="cicctvj38001qwmzt8zkzcv5g" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mac/">mac</a></li></ul>
@@ -845,7 +884,7 @@ x 系统默认颜色
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/">React</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chrome/">chrome</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mac/">mac</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webstorm/">webstorm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具/">工具</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日常/">日常</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a><span class="tag-list-count">6</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/">React</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mac/">mac</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webstorm/">webstorm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具/">工具</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日常/">日常</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a><span class="tag-list-count">6</span></li></ul>
     </div>
   </div>
 
@@ -854,7 +893,7 @@ x 系统默认颜色
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Android/" style="font-size: 15px;">Android</a><a href="/tags/JavaScript/" style="font-size: 17.5px;">JavaScript</a><a href="/tags/React/" style="font-size: 10px;">React</a><a href="/tags/chrome/" style="font-size: 10px;">chrome</a><a href="/tags/css/" style="font-size: 12.5px;">css</a><a href="/tags/git/" style="font-size: 10px;">git</a><a href="/tags/mac/" style="font-size: 20px;">mac</a><a href="/tags/markdown/" style="font-size: 10px;">markdown</a><a href="/tags/webstorm/" style="font-size: 10px;">webstorm</a><a href="/tags/工具/" style="font-size: 12.5px;">工具</a><a href="/tags/日常/" style="font-size: 12.5px;">日常</a><a href="/tags/算法/" style="font-size: 20px;">算法</a>
+      <a href="/tags/Android/" style="font-size: 15px;">Android</a><a href="/tags/JavaScript/" style="font-size: 17.5px;">JavaScript</a><a href="/tags/React/" style="font-size: 10px;">React</a><a href="/tags/css/" style="font-size: 12.5px;">css</a><a href="/tags/git/" style="font-size: 10px;">git</a><a href="/tags/mac/" style="font-size: 20px;">mac</a><a href="/tags/markdown/" style="font-size: 10px;">markdown</a><a href="/tags/webstorm/" style="font-size: 10px;">webstorm</a><a href="/tags/工具/" style="font-size: 15px;">工具</a><a href="/tags/日常/" style="font-size: 12.5px;">日常</a><a href="/tags/算法/" style="font-size: 20px;">算法</a>
     </div>
   </div>
 
@@ -863,7 +902,7 @@ x 系统默认颜色
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">3</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">26</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">3</span></li></ul>
     </div>
   </div>
 
@@ -873,6 +912,10 @@ x 系统默认颜色
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2015/07/21/Chrome-timeline-检测页面性能/">Chrome timeline 检测页面性能</a>
+          </li>
         
           <li>
             <a href="/2015/07/20/二叉排序树的实现/">二叉排序树的实现</a>
@@ -888,10 +931,6 @@ x 系统默认颜色
         
           <li>
             <a href="/2015/07/19/指定和的二叉树路径查找/">指定和的二叉树路径查找</a>
-          </li>
-        
-          <li>
-            <a href="/2015/07/19/blink-chromium-webkit-是什么关系/">blink chromium webkit 是什么关系</a>
           </li>
         
       </ul>
