@@ -27,6 +27,7 @@
   11  13  4
  /  \      \
 7    2      1">
+<meta property="og:image" content="/images/pathsumruntime.png">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="指定和的二叉树路径查找">
 <meta name="twitter:description" content="题目来源 指定和值的二叉树路径查找
@@ -122,12 +123,54 @@
   <span class="number">11</span>  <span class="number">13</span>  <span class="number">4</span>
  /  <span class="string">\</span>      <span class="string">\</span>
 <span class="number">7</span>    <span class="number">2</span>      <span class="number">1</span>
-</code></pre><h2 id="思路">思路</h2><p> 这就是一个简单的二叉树查找。只不过把查找叶子节点的值做个减法比较。关键是javascript中二叉树的数据结构的定义。 </p>
+</code></pre><h2 id="思路">思路</h2><p> 这就是一个简单的二叉树遍历，从根节点往下，每找到一个节点将姐弟单value和当前路径相加，判断是否和sum相等。</p>
+<ul>
+<li>如果相等，并且是叶子节点，则返回true，找到</li>
+<li>如果不相等，相等但不是叶子节点，则继续查找，直到所有的节点都遍历过。</li>
+</ul>
+<h2 id="实现">实现</h2><pre><code><span class="keyword">var</span> checkNext =<span class="function"><span class="keyword">function</span><span class="params">(root, sum, currentSum,flag)</span></span>{
+    <span class="keyword">if</span> (root) {
+
+        <span class="keyword">if</span> (root.val + currentSum === sum) {
+            <span class="keyword">if</span> (root.left === <span class="literal">null</span> &amp;&amp; root.right === <span class="literal">null</span>) {
+                <span class="keyword">return</span> <span class="literal">true</span>;
+            }
+        }
+        <span class="keyword">if</span>(root.left===<span class="literal">null</span>&amp;&amp;root.right===<span class="literal">null</span>){
+            <span class="keyword">return</span> <span class="literal">false</span>;
+        }
+
+        <span class="keyword">if</span> (root.left !== <span class="literal">null</span>) {
+            flag = checkNext(root.left, sum, root.val + currentSum,flag);
+        }
+        <span class="keyword">if</span>(flag){
+            <span class="keyword">return</span> <span class="literal">true</span>;
+        }
+        <span class="keyword">if</span> (root.right !== <span class="literal">null</span>) {
+            flag = checkNext(root.right, sum, root.val + currentSum,flag);
+        }
+        <span class="keyword">return</span> flag;
+
+
+    } <span class="keyword">else</span> {
+        <span class="keyword">return</span> <span class="literal">false</span>;
+    }
+}
+<span class="keyword">var</span> hasPathSum = <span class="function"><span class="keyword">function</span> <span class="params">(root, sum)</span> </span>{
+
+    <span class="keyword">if</span>(checkNext(root, sum, <span class="number">0</span>,<span class="literal">false</span>)){
+        <span class="keyword">return</span> <span class="literal">true</span>
+    }<span class="keyword">else</span>{
+        <span class="keyword">return</span> <span class="literal">false</span>
+    }
+</code></pre><p>  };</p>
+<p>PS:这是我在leetcode上做的第一个题，最初没有搞明白玩法，一直在自己实现二叉树，后面才发现原来二叉树已经写好，只要给遍历方法就好了。</p>
+<p><img src="/images/pathsumruntime.png" alt="Runtime"></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://judastree.github.io/2015/07/19/指定和的二叉树路径查找/" data-id="cicctz1tv000ax0ztg2mc6brj" class="article-share-link">Share</a>
+      <a data-url="http://judastree.github.io/2015/07/19/指定和的二叉树路径查找/" data-id="ciccy6qfc000a3xztq2nfifhe" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
