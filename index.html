@@ -69,6 +69,70 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-LeetCode-Single-Number" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/07/22/LeetCode-Single-Number/" class="article-date">
+  <time datetime="2015-07-22T02:58:33.000Z" itemprop="datePublished">2015-07-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/07/22/LeetCode-Single-Number/">LeetCode:Single Number</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="题目来源">题目来源</h2><p><a href="https://leetcode.com/problems/single-number/" target="_blank" rel="external">找出落单的数字</a></p>
+<p>有一个都是整型的数组，它除了一个元素只有出现一次之外，其他的都出现了二次。求这个落单的数字。</p>
+<p>比如[1,2,3,5,2,1,3]这个数组中5是落单的数字，其他数字都出现了两次。</p>
+<h2 id="思路">思路</h2><p>最先写的是两层for循环来比较是否有相等的。但是提交之后发现Time Limit Exceeded，时间复杂度是n^2。</p>
+<p>题目有标注是线性的事件复杂度，而且空间复杂度也是线性级别的,所以递归调用也是不行的。</p>
+<p>然后百度了下，发现有人用异或操作来判断。</p>
+<pre><code><span class="tag">a</span> ^ <span class="tag">b</span> = <span class="tag">b</span> ^ <span class="tag">a</span>
+<span class="tag">a</span> ^ <span class="tag">a</span> = <span class="number">0</span>
+<span class="number">0</span> ^ <span class="tag">a</span> = <span class="tag">a</span>
+
+<span class="tag">a</span> ^ <span class="tag">b</span> ^ <span class="tag">a</span> = <span class="tag">a</span> ^ <span class="tag">a</span> ^ <span class="tag">b</span> = <span class="number">0</span> ^ <span class="tag">b</span> = b
+</code></pre><p> 这样就可以把这个b找出来了。</p>
+<h2 id="实现">实现</h2><pre><code>/**
+ * @param {number[]} nums
+ * @<span class="keyword">return</span> {number}
+ */
+<span class="keyword">var</span> singleNumber = function(nums) {
+    <span class="keyword">var</span> <span class="literal">result</span> = nums[<span class="number">0</span>];
+
+    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">1</span>; i &lt; nums.length; i++){
+        <span class="literal">result</span> = <span class="literal">result</span> ^ nums[i];
+    }
+    <span class="keyword">return</span> <span class="literal">result</span>;
+
+}
+</code></pre><p> <img src="/images/singlenumber.png" alt="SingleNumberRuntime">      </p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://judastree.github.io/2015/07/22/LeetCode-Single-Number/" data-id="cice75kjt001yxfztupv18k88" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LeetCode/">LeetCode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+  
+  
     <article id="post-LeetCode-Power-of-Two" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/07/22/LeetCode-Power-of-Two/" class="article-date">
@@ -126,7 +190,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://judastree.github.io/2015/07/22/LeetCode-Power-of-Two/" data-id="cice67brq001yw9zttpc27r4p" class="article-share-link">Share</a>
+      <a data-url="http://judastree.github.io/2015/07/22/LeetCode-Power-of-Two/" data-id="cice75kjv0021xfztujwf5jmc" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LeetCode/">LeetCode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
@@ -167,7 +231,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://judastree.github.io/2015/07/21/Chrome-timeline-检测页面性能/" data-id="cice67brx0025w9zt8kd4t5h8" class="article-share-link">Share</a>
+      <a data-url="http://judastree.github.io/2015/07/21/Chrome-timeline-检测页面性能/" data-id="cice75kk40028xfztl7joegzm" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/工具/">工具</a></li></ul>
@@ -332,7 +396,7 @@ bst.postOrder(bst.root, <span class="function"><span class="keyword">function</s
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://judastree.github.io/2015/07/20/二叉排序树的实现/" data-id="cice67bqh000pw9zt3alccd6m" class="article-share-link">Share</a>
+      <a data-url="http://judastree.github.io/2015/07/20/二叉排序树的实现/" data-id="cice75kil000pxfzt4v4j14gz" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
@@ -374,7 +438,7 @@ bst.postOrder(bst.root, <span class="function"><span class="keyword">function</s
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://judastree.github.io/2015/07/20/Chrome和Chromium的区别/" data-id="cice67bru0023w9zt57vr06yp" class="article-share-link">Share</a>
+      <a data-url="http://judastree.github.io/2015/07/20/Chrome和Chromium的区别/" data-id="cice75kk30026xfztn82havoo" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/工具/">工具</a></li></ul>
@@ -415,7 +479,7 @@ bst.postOrder(bst.root, <span class="function"><span class="keyword">function</s
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://judastree.github.io/2015/07/19/二叉树的实现/" data-id="cice67bqf000nw9ztiowujos9" class="article-share-link">Share</a>
+      <a data-url="http://judastree.github.io/2015/07/19/二叉树的实现/" data-id="cice75kij000nxfztv3izu035" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
@@ -505,7 +569,7 @@ bst.postOrder(bst.root, <span class="function"><span class="keyword">function</s
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://judastree.github.io/2015/07/19/LeetCode:Path Sum/" data-id="cice67bro001uw9ztrc01qkey" class="article-share-link">Share</a>
+      <a data-url="http://judastree.github.io/2015/07/19/LeetCode:Path Sum/" data-id="cice75kjr001uxfzt9in0272f" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LeetCode/">LeetCode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
@@ -549,7 +613,7 @@ bst.postOrder(bst.root, <span class="function"><span class="keyword">function</s
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://judastree.github.io/2015/07/19/blink-chromium-webkit-是什么关系/" data-id="cice67br9001cw9ztqxdewqvf" class="article-share-link">Share</a>
+      <a data-url="http://judastree.github.io/2015/07/19/blink-chromium-webkit-是什么关系/" data-id="cice75kj6001cxfzt53mwa6m0" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/工具/">工具</a></li></ul>
@@ -589,7 +653,7 @@ bst.postOrder(bst.root, <span class="function"><span class="keyword">function</s
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://judastree.github.io/2015/07/19/node下如何调试/" data-id="cice67bql000tw9ztlw3mqjcp" class="article-share-link">Share</a>
+      <a data-url="http://judastree.github.io/2015/07/19/node下如何调试/" data-id="cice75kip000txfztouf0sayc" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -628,64 +692,10 @@ bst.postOrder(bst.root, <span class="function"><span class="keyword">function</s
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://judastree.github.io/2015/07/18/求一个集合的所有子集/" data-id="cice67bpx0007w9zt2atxr262" class="article-share-link">Share</a>
+      <a data-url="http://judastree.github.io/2015/07/18/求一个集合的所有子集/" data-id="cice75ki10007xfztycuizw4m" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-  
-  
-    <article id="post-nodejs入门文章读后感" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/07/17/nodejs入门文章读后感/" class="article-date">
-  <time datetime="2015-07-17T02:38:43.000Z" itemprop="datePublished">2015-07-17</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/07/17/nodejs入门文章读后感/">nodejs入门文章读后感</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="http://www.nodebeginner.org/index-zh-cn.html" target="_blank" rel="external">Node入门</a></p>
-<p>很久前就把它加入了手机的书签栏，然后陆陆续续利用吃饭排队的事件看完的。</p>
-<p>文章是翻译的，写得很清晰易懂，node细节的我就不说了，因为也不是完全懂，就谈谈读后感。</p>
-<p>nodejs很早就听过，也很早就去看过一些介绍的文章、入门的文章，快速搭建的文章，在JS权威指南里也有关于nodejs的介绍。</p>
-<p>为什么这次看的这篇文章和以前看的感觉就不一样呢？</p>
-<p>我仔细地想了下。</p>
-<p><strong>因为那时我还不知道JS是单线程的，是基于事件驱动的</strong></p>
-<p>没有这样的一层基础去看node(注意是【看】 不是【学习】)，根本理解不了，只能是别人说什么是什么，然后转天就忘了。</p>
-<p><strong>在学习的路上，我们看了很多东西。</strong></p>
-<p>有些让你豁然开朗，有些让你越看越迷糊。豁然开朗的就很有兴趣地看下去，越看越迷糊的就被搁浅了，而搁浅的时间以年为单位。</p>
-<p>看完文章，我想到之前ES6中的一个generator概念还是不清楚，或许现在可以更好地理解了。</p>
-<ul>
-<li>事件轮询</li>
-<li>非阻塞的实现机制</li>
-<li>generator</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://judastree.github.io/2015/07/17/nodejs入门文章读后感/" data-id="cice67bqp000vw9ztmvk8rnub" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
 
     </footer>
   </div>
@@ -709,7 +719,7 @@ bst.postOrder(bst.root, <span class="function"><span class="keyword">function</s
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LeetCode/">LeetCode</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/">React</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mac/">mac</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webstorm/">webstorm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具/">工具</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日常/">日常</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a><span class="tag-list-count">7</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LeetCode/">LeetCode</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/">React</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mac/">mac</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webstorm/">webstorm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具/">工具</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日常/">日常</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a><span class="tag-list-count">8</span></li></ul>
     </div>
   </div>
 
@@ -718,7 +728,7 @@ bst.postOrder(bst.root, <span class="function"><span class="keyword">function</s
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Android/" style="font-size: 14px;">Android</a><a href="/tags/JavaScript/" style="font-size: 16px;">JavaScript</a><a href="/tags/LeetCode/" style="font-size: 12px;">LeetCode</a><a href="/tags/React/" style="font-size: 10px;">React</a><a href="/tags/css/" style="font-size: 12px;">css</a><a href="/tags/git/" style="font-size: 10px;">git</a><a href="/tags/mac/" style="font-size: 18px;">mac</a><a href="/tags/markdown/" style="font-size: 10px;">markdown</a><a href="/tags/webstorm/" style="font-size: 10px;">webstorm</a><a href="/tags/工具/" style="font-size: 14px;">工具</a><a href="/tags/日常/" style="font-size: 12px;">日常</a><a href="/tags/算法/" style="font-size: 20px;">算法</a>
+      <a href="/tags/Android/" style="font-size: 15px;">Android</a><a href="/tags/JavaScript/" style="font-size: 16.67px;">JavaScript</a><a href="/tags/LeetCode/" style="font-size: 13.33px;">LeetCode</a><a href="/tags/React/" style="font-size: 10px;">React</a><a href="/tags/css/" style="font-size: 11.67px;">css</a><a href="/tags/git/" style="font-size: 10px;">git</a><a href="/tags/mac/" style="font-size: 18.33px;">mac</a><a href="/tags/markdown/" style="font-size: 10px;">markdown</a><a href="/tags/webstorm/" style="font-size: 10px;">webstorm</a><a href="/tags/工具/" style="font-size: 15px;">工具</a><a href="/tags/日常/" style="font-size: 11.67px;">日常</a><a href="/tags/算法/" style="font-size: 20px;">算法</a>
     </div>
   </div>
 
@@ -727,7 +737,7 @@ bst.postOrder(bst.root, <span class="function"><span class="keyword">function</s
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">27</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">3</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">3</span></li></ul>
     </div>
   </div>
 
@@ -737,6 +747,10 @@ bst.postOrder(bst.root, <span class="function"><span class="keyword">function</s
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2015/07/22/LeetCode-Single-Number/">LeetCode:Single Number</a>
+          </li>
         
           <li>
             <a href="/2015/07/22/LeetCode-Power-of-Two/">LeetCode:Power of Two</a>
@@ -752,10 +766,6 @@ bst.postOrder(bst.root, <span class="function"><span class="keyword">function</s
         
           <li>
             <a href="/2015/07/20/Chrome和Chromium的区别/">Chrome和Chromium的区别</a>
-          </li>
-        
-          <li>
-            <a href="/2015/07/19/二叉树的实现/">二叉树的实现</a>
           </li>
         
       </ul>

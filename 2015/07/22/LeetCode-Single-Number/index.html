@@ -3,17 +3,30 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Judastree</title>
+  <title>LeetCode:Single Number | Judastree</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="You are the pretty sunshine of my life">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Judastree">
-<meta property="og:url" content="http://judastree.github.io/tags/日常/index.html">
+  <meta name="description" content="题目来源找出落单的数字
+有一个都是整型的数组，它除了一个元素只有出现一次之外，其他的都出现了二次。求这个落单的数字。
+比如[1,2,3,5,2,1,3]这个数组中5是落单的数字，其他数字都出现了两次。
+思路最先写的是两层for循环来比较是否有相等的。但是提交之后发现Time Limit Exceeded，时间复杂度是n^2。
+题目有标注是线性的事件复杂度，而且空间复杂度也是线性级别的,所以递归调用">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LeetCode:Single Number">
+<meta property="og:url" content="http://judastree.github.io/2015/07/22/LeetCode-Single-Number/index.html">
 <meta property="og:site_name" content="Judastree">
-<meta property="og:description" content="You are the pretty sunshine of my life">
+<meta property="og:description" content="题目来源找出落单的数字
+有一个都是整型的数组，它除了一个元素只有出现一次之外，其他的都出现了二次。求这个落单的数字。
+比如[1,2,3,5,2,1,3]这个数组中5是落单的数字，其他数字都出现了两次。
+思路最先写的是两层for循环来比较是否有相等的。但是提交之后发现Time Limit Exceeded，时间复杂度是n^2。
+题目有标注是线性的事件复杂度，而且空间复杂度也是线性级别的,所以递归调用">
+<meta property="og:image" content="/images/singlenumber.png">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Judastree">
-<meta name="twitter:description" content="You are the pretty sunshine of my life">
+<meta name="twitter:title" content="LeetCode:Single Number">
+<meta name="twitter:description" content="题目来源找出落单的数字
+有一个都是整型的数组，它除了一个元素只有出现一次之外，其他的都出现了二次。求这个落单的数字。
+比如[1,2,3,5,2,1,3]这个数组中5是落单的数字，其他数字都出现了两次。
+思路最先写的是两层for循环来比较是否有相等的。但是提交之后发现Time Limit Exceeded，时间复杂度是n^2。
+题目有标注是线性的事件复杂度，而且空间复杂度也是线性级别的,所以递归调用">
   
     <link rel="alternative" href="/atom.xml" title="Judastree" type="application/atom+xml">
   
@@ -67,59 +80,100 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year">2015</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/07/16/冥王星为什么有个心呢？/" class="archive-article-date">
-  <time datetime="2015-07-16T10:54:42.000Z" itemprop="datePublished">Jul 16</time>
+        <section id="main"><article id="post-LeetCode-Single-Number" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/07/22/LeetCode-Single-Number/" class="article-date">
+  <time datetime="2015-07-22T02:58:33.000Z" itemprop="datePublished">2015-07-22</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/07/16/冥王星为什么有个心呢？/">冥王星为什么有个心呢？</a>
+    <h1 class="article-title" itemprop="name">
+      LeetCode:Single Number
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/07/13/生活好Boring啊/" class="archive-article-date">
-  <time datetime="2015-07-13T02:10:53.000Z" itemprop="datePublished">Jul 13</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/07/13/生活好Boring啊/">生活好boring啊</a>
-    </h1>
-  
+        <h2 id="题目来源">题目来源</h2><p><a href="https://leetcode.com/problems/single-number/" target="_blank" rel="external">找出落单的数字</a></p>
+<p>有一个都是整型的数组，它除了一个元素只有出现一次之外，其他的都出现了二次。求这个落单的数字。</p>
+<p>比如[1,2,3,5,2,1,3]这个数组中5是落单的数字，其他数字都出现了两次。</p>
+<h2 id="思路">思路</h2><p>最先写的是两层for循环来比较是否有相等的。但是提交之后发现Time Limit Exceeded，时间复杂度是n^2。</p>
+<p>题目有标注是线性的事件复杂度，而且空间复杂度也是线性级别的,所以递归调用也是不行的。</p>
+<p>然后百度了下，发现有人用异或操作来判断。</p>
+<pre><code><span class="tag">a</span> ^ <span class="tag">b</span> = <span class="tag">b</span> ^ <span class="tag">a</span>
+<span class="tag">a</span> ^ <span class="tag">a</span> = <span class="number">0</span>
+<span class="number">0</span> ^ <span class="tag">a</span> = <span class="tag">a</span>
 
-    </header>
+<span class="tag">a</span> ^ <span class="tag">b</span> ^ <span class="tag">a</span> = <span class="tag">a</span> ^ <span class="tag">a</span> ^ <span class="tag">b</span> = <span class="number">0</span> ^ <span class="tag">b</span> = b
+</code></pre><p> 这样就可以把这个b找出来了。</p>
+<h2 id="实现">实现</h2><pre><code>/**
+ * @param {number[]} nums
+ * @<span class="keyword">return</span> {number}
+ */
+<span class="keyword">var</span> singleNumber = function(nums) {
+    <span class="keyword">var</span> <span class="literal">result</span> = nums[<span class="number">0</span>];
+
+    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">1</span>; i &lt; nums.length; i++){
+        <span class="literal">result</span> = <span class="literal">result</span> ^ nums[i];
+    }
+    <span class="keyword">return</span> <span class="literal">result</span>;
+
+}
+</code></pre><p> <img src="/images/singlenumber.png" alt="SingleNumberRuntime">      </p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://judastree.github.io/2015/07/22/LeetCode-Single-Number/" data-id="cice75kjt001yxfztupv18k88" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LeetCode/">LeetCode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
+
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/07/22/LeetCode-Power-of-Two/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">LeetCode:Power of Two</div>
+    </a>
+  
+</nav>
+
+  
 </article>
+
   
-  
-    </div></section>
-  
-</section>
+  <section id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="post-LeetCode-Single-Number" data-title="LeetCode:Single Number" data-url="http://judastree.github.io/2015/07/22/LeetCode-Single-Number/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:'judastree'};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+      </script>
+    <!-- 多说公共JS代码 end -->
+  </section>
+  </section>
         
           <aside id="sidebar">
   
