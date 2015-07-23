@@ -3,26 +3,17 @@
 <head>
   <meta charset="utf-8">
   
-  <title>blink chromium webkit 是什么关系 | Judastree</title>
+  <title>Judastree</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="转帖：原文
-Google退出WebKit项目，创建自己的渲染引擎Blink。这其实不能说完全没有先兆，合合分分，纯属正常。
-其实，之前关于WebKit2，双方的争论就非常的大。Apple希望它可以随便加入和删除代码而无需担心它会破坏其它Ports的代码，这遭到很多人的反对和不满。
-同时，另一方面，Google有很多新的功能希望加入WebKit中，但是WebKit可能并不认可他们。双方分歧越来越多，">
-<meta property="og:type" content="article">
-<meta property="og:title" content="blink chromium webkit 是什么关系">
-<meta property="og:url" content="http://judastree.github.io/2015/07/19/blink-chromium-webkit-是什么关系/index.html">
+  <meta name="description" content="You are the pretty sunshine of my life">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Judastree">
+<meta property="og:url" content="http://judastree.github.io/archives/2015/07/page/4/index.html">
 <meta property="og:site_name" content="Judastree">
-<meta property="og:description" content="转帖：原文
-Google退出WebKit项目，创建自己的渲染引擎Blink。这其实不能说完全没有先兆，合合分分，纯属正常。
-其实，之前关于WebKit2，双方的争论就非常的大。Apple希望它可以随便加入和删除代码而无需担心它会破坏其它Ports的代码，这遭到很多人的反对和不满。
-同时，另一方面，Google有很多新的功能希望加入WebKit中，但是WebKit可能并不认可他们。双方分歧越来越多，">
+<meta property="og:description" content="You are the pretty sunshine of my life">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="blink chromium webkit 是什么关系">
-<meta name="twitter:description" content="转帖：原文
-Google退出WebKit项目，创建自己的渲染引擎Blink。这其实不能说完全没有先兆，合合分分，纯属正常。
-其实，之前关于WebKit2，双方的争论就非常的大。Apple希望它可以随便加入和删除代码而无需担心它会破坏其它Ports的代码，这遭到很多人的反对和不满。
-同时，另一方面，Google有很多新的功能希望加入WebKit中，但是WebKit可能并不认可他们。双方分歧越来越多，">
+<meta name="twitter:title" content="Judastree">
+<meta name="twitter:description" content="You are the pretty sunshine of my life">
   
     <link rel="alternative" href="/atom.xml" title="Judastree" type="application/atom+xml">
   
@@ -76,89 +67,40 @@ Google退出WebKit项目，创建自己的渲染引擎Blink。这其实不能说
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-blink-chromium-webkit-是什么关系" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/07/19/blink-chromium-webkit-是什么关系/" class="article-date">
-  <time datetime="2015-07-19T14:06:01.000Z" itemprop="datePublished">2015-07-19</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+        <section id="main">
   
-    <h1 class="article-title" itemprop="name">
-      blink chromium webkit 是什么关系
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2015" class="archive-year">2015</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2015/07/06/Mac版Webstorm的一些快捷键/" class="archive-article-date">
+  <time datetime="2015-07-06T01:40:01.000Z" itemprop="datePublished">Jul 6</time>
+</a>
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2015/07/06/Mac版Webstorm的一些快捷键/">Mac版Webstorm的一些快捷键 </a>
     </h1>
   
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>转帖：<a href="http://blog.csdn.net/milado_nju/article/details/8805810" target="_blank" rel="external">原文</a></p>
-<p>Google退出WebKit项目，创建自己的渲染引擎Blink。这其实不能说完全没有先兆，合合分分，纯属正常。</p>
-<p>其实，之前关于WebKit2，双方的争论就非常的大。Apple希望它可以随便加入和删除代码而无需担心它会破坏其它Ports的代码，这遭到很多人的反对和不满。</p>
-<p>同时，另一方面，Google有很多新的功能希望加入WebKit中，但是WebKit可能并不认可他们。双方分歧越来越多，终于分道扬镳。</p>
-<p>这里面有个误区，就是Google的Blink是一个全新的引擎。其实不是这样，Blink目前就是从WebKit直接复制出一个版本出来，然后将与chromium无关的Ports全部移除掉，将代码结构重新整理，就目前而言，Blink的渲染和WebKit是一样，但是，以后两者将各自走不同的路。这有点类似于之前WebKit从KHTML中复制出来一样，历史总是惊人的相似。</p>
-<p>目前参与Blink和Chromium大致一样，拥有Chromium的commit权限对Blink也适用。原来一些WebKit的committer和reviewer也开始成为blink的committer。它的提交代码流程，review流程等都是chromium的风格，这对chromium的开发者来说非常熟悉。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://judastree.github.io/2015/07/19/blink-chromium-webkit-是什么关系/" data-id="cicfmxxva001cn8zt6uftm6dw" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/工具/">工具</a></li></ul>
-
-    </footer>
+    </header>
   </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2015/07/19/LeetCode:Path Sum/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          LeetCode:Path-Sum
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2015/07/19/node下如何调试/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">node下如何调试</div>
-    </a>
-  
-</nav>
-
-  
 </article>
-
   
-  <section id="comments">
-    <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="post-blink-chromium-webkit-是什么关系" data-title="blink chromium webkit 是什么关系" data-url="http://judastree.github.io/2015/07/19/blink-chromium-webkit-是什么关系/"></div>
-    <!-- 多说评论框 end -->
-    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-    <script type="text/javascript">
-    var duoshuoQuery = {short_name:'judastree'};
-      (function() {
-        var ds = document.createElement('script');
-        ds.type = 'text/javascript';ds.async = true;
-        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-        ds.charset = 'UTF-8';
-        (document.getElementsByTagName('head')[0] 
-         || document.getElementsByTagName('body')[0]).appendChild(ds);
-      })();
-      </script>
-    <!-- 多说公共JS代码 end -->
-  </section>
-  </section>
+  
+    </div></section>
+  
+</section>
         
           <aside id="sidebar">
   
