@@ -3,17 +3,39 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Judastree</title>
+  <title>LeetCode:Maximum Depth of Binary Tree | Judastree</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="You are the pretty sunshine of my life">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Judastree">
-<meta property="og:url" content="http://judastree.github.io/tags/日常/index.html">
+  <meta name="description" content="题目来源查找二叉树的最大深度
+思路二叉树的最大深度，等于根节点的深度。根节点的深度等于左子树和右子树深度的较大者。
+所以这个题可以递归遍历每一个节点的深度。
+实现/**
+ * Definition for a binary tree node.
+ * function TreeNode(val) {
+ *     this.val = val;
+ *     this.left = this.ri">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LeetCode:Maximum Depth of Binary Tree">
+<meta property="og:url" content="http://judastree.github.io/2015/07/23/LeetCode-Maximum-Depth-of-Binary-Tree/index.html">
 <meta property="og:site_name" content="Judastree">
-<meta property="og:description" content="You are the pretty sunshine of my life">
+<meta property="og:description" content="题目来源查找二叉树的最大深度
+思路二叉树的最大深度，等于根节点的深度。根节点的深度等于左子树和右子树深度的较大者。
+所以这个题可以递归遍历每一个节点的深度。
+实现/**
+ * Definition for a binary tree node.
+ * function TreeNode(val) {
+ *     this.val = val;
+ *     this.left = this.ri">
+<meta property="og:image" content="/images/maxdepth.png">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Judastree">
-<meta name="twitter:description" content="You are the pretty sunshine of my life">
+<meta name="twitter:title" content="LeetCode:Maximum Depth of Binary Tree">
+<meta name="twitter:description" content="题目来源查找二叉树的最大深度
+思路二叉树的最大深度，等于根节点的深度。根节点的深度等于左子树和右子树深度的较大者。
+所以这个题可以递归遍历每一个节点的深度。
+实现/**
+ * Definition for a binary tree node.
+ * function TreeNode(val) {
+ *     this.val = val;
+ *     this.left = this.ri">
   
     <link rel="alternative" href="/atom.xml" title="Judastree" type="application/atom+xml">
   
@@ -67,59 +89,104 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year">2015</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/07/16/冥王星为什么有个心呢？/" class="archive-article-date">
-  <time datetime="2015-07-16T10:54:42.000Z" itemprop="datePublished">Jul 16</time>
+        <section id="main"><article id="post-LeetCode-Maximum-Depth-of-Binary-Tree" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/07/23/LeetCode-Maximum-Depth-of-Binary-Tree/" class="article-date">
+  <time datetime="2015-07-23T02:37:29.000Z" itemprop="datePublished">2015-07-23</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/07/16/冥王星为什么有个心呢？/">冥王星为什么有个心呢？</a>
+    <h1 class="article-title" itemprop="name">
+      LeetCode:Maximum Depth of Binary Tree
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/07/13/生活好Boring啊/" class="archive-article-date">
-  <time datetime="2015-07-13T02:10:53.000Z" itemprop="datePublished">Jul 13</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/07/13/生活好Boring啊/">生活好boring啊</a>
-    </h1>
-  
+        <h2 id="题目来源">题目来源</h2><p><a href="https://leetcode.com/problems/maximum-depth-of-binary-tree/" target="_blank" rel="external">查找二叉树的最大深度</a></p>
+<h2 id="思路">思路</h2><p>二叉树的最大深度，等于根节点的深度。根节点的深度等于左子树和右子树深度的较大者。</p>
+<p>所以这个题可以递归遍历每一个节点的深度。</p>
+<h2 id="实现">实现</h2><pre><code><span class="comment">/**
+ * Definition for a binary tree node.
+ * function TreeNode(val) {
+ *     this.val = val;
+ *     this.left = this.right = null;
+ * }
+ */</span>
+<span class="comment">/**
+ *<span class="phpdoc"> @param</span> {TreeNode} root
+ *<span class="phpdoc"> @return</span> {number}
+ */</span>
+<span class="keyword">var</span> maxDepth = <span class="function"><span class="keyword">function</span><span class="params">(root)</span> </span>{
+    <span class="function"><span class="keyword">function</span> <span class="title">findDepth</span><span class="params">(node,currentDepth)</span></span>{
+        <span class="keyword">if</span>(node!==<span class="keyword">null</span>){
+            currentDepth++;
+            <span class="comment">//每个节点的深度，等于左深度和右深度的较大者</span>
+            <span class="keyword">var</span> leftDepth =  findDepth(node.left,currentDepth);
+            <span class="keyword">var</span> rightDepth = findDepth(node.right,currentDepth);
+            <span class="keyword">return</span> leftDepth&gt;rightDepth?leftDepth:rightDepth;
+        }<span class="keyword">else</span>{
+            <span class="keyword">return</span> currentDepth;
+        }
+    }
+    <span class="comment">//返回根节点的深度</span>
+    <span class="keyword">return</span> findDepth(root,<span class="number">0</span>);
+};
+</code></pre><p><img src="/images/maxdepth.png" alt="MaxDepth">        </p>
 
-    </header>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://judastree.github.io/2015/07/23/LeetCode-Maximum-Depth-of-Binary-Tree/" data-id="cicflit2o0027lzztllpb436y" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LeetCode/">LeetCode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
+
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/07/22/LeetCode-Plus-One/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">LeetCode:Plus One</div>
+    </a>
+  
+</nav>
+
+  
 </article>
+
   
-  
-    </div></section>
-  
-</section>
+  <section id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="post-LeetCode-Maximum-Depth-of-Binary-Tree" data-title="LeetCode:Maximum Depth of Binary Tree" data-url="http://judastree.github.io/2015/07/23/LeetCode-Maximum-Depth-of-Binary-Tree/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:'judastree'};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+      </script>
+    <!-- 多说公共JS代码 end -->
+  </section>
+  </section>
         
           <aside id="sidebar">
   
