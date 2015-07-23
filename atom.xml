@@ -82,8 +82,8 @@
  * }
  */</span>
 <span class="comment">/**
- *<span class="phpdoc"> @param</span> {TreeNode} root
- *<span class="phpdoc"> @return</span> {number}
+ * <span class="doctag">@param</span> {TreeNode} root
+ * <span class="doctag">@return</span> {number}
  */</span>
 <span class="keyword">var</span> maxDepth = <span class="function"><span class="keyword">function</span><span class="params">(root)</span> </span>{
     <span class="function"><span class="keyword">function</span> <span class="title">findDepth</span><span class="params">(node,currentDepth)</span></span>{
@@ -121,28 +121,28 @@
     <content type="html"><![CDATA[<h2 id="题目来源">题目来源</h2><p><a href="https://leetcode.com/problems/plus-one/" target="_blank" rel="external">Plus One</a></p>
 <p>有一个数组代表一个非负的数字，求这个数字+1之后的数组。<br>比如这个数组是[1,2,3,4]它代表数字1234，那么这个数字加1之后是1235。希望得到这个数字代表的数组[1,2,3,5]</p>
 <h2 id="思路">思路</h2><p>从最后一位开始，对当前值+1，如果当前值不为9则正常返回结果。如果当前值为9，则当前值变为0，再递归调用前一位的+1操作。</p>
-<h2 id="实现">实现</h2><pre><code><span class="comment">/**
- *<span class="phpdoc"> @param</span> {number[]} digits
- *<span class="phpdoc"> @return</span> {number[]}
- */</span>
-<span class="keyword">var</span> plusOne = <span class="function"><span class="keyword">function</span><span class="params">(digits)</span> </span>{
-    <span class="function"><span class="keyword">function</span> <span class="title">plus</span><span class="params">(digits,i)</span></span>{
-        <span class="keyword">if</span>(digits[i]===<span class="number">9</span>){
-            digits[i]=<span class="number">0</span>;
+<h2 id="实现">实现</h2><pre><code>/**
+ * @param {<span class="keyword">number</span>[]} <span class="built_in">digits</span>
+ * @<span class="keyword">return</span> {<span class="keyword">number</span>[]}
+ */
+var plusOne = <span class="function"><span class="keyword">function</span><span class="params">(digits)</span></span> {
+    <span class="function"><span class="keyword">function</span></span> plus(<span class="built_in">digits</span>,i){
+        <span class="keyword">if</span>(<span class="built_in">digits</span>[i]===<span class="number">9</span>){
+            <span class="built_in">digits</span>[i]=<span class="number">0</span>;
             <span class="keyword">if</span>(i===<span class="number">0</span>){
-                <span class="keyword">var</span> head = [<span class="number">1</span>];
-                <span class="keyword">return</span> head.concat(digits);
+                var head = [<span class="number">1</span>];
+                <span class="keyword">return</span> head.concat(<span class="built_in">digits</span>);
             }<span class="keyword">else</span>{
-                <span class="keyword">return</span> plus(digits,i-<span class="number">1</span>);
+                <span class="keyword">return</span> plus(<span class="built_in">digits</span>,i-<span class="number">1</span>);
             }
 
         }<span class="keyword">else</span>{
-            digits[i] = digits[i]+<span class="number">1</span>;
-            <span class="keyword">return</span> digits;
+            <span class="built_in">digits</span>[i] = <span class="built_in">digits</span>[i]+<span class="number">1</span>;
+            <span class="keyword">return</span> <span class="built_in">digits</span>;
         }
 
     }
-    <span class="keyword">return</span> plus(digits,digits.length-<span class="number">1</span>);
+    <span class="keyword">return</span> plus(<span class="built_in">digits</span>,<span class="built_in">digits</span>.length-<span class="number">1</span>);
 };
 </code></pre><p>PS：上面的代码性能不是很好，肯定有更好的算法的。</p>
 <p> <img src="/images/plusone.png" alt="PlusOneRuntime">     </p>
@@ -215,13 +215,13 @@
 <span class="number">4</span> : <span class="number">100</span>
 <span class="number">8</span> : <span class="number">1000</span>
 <span class="number">16</span>: <span class="number">10000</span>
-<span class="keyword">...</span>
+...
 </code></pre><p>  2的X次方，其二进制是1后面跟X个0；而2的X次方减1的二进制都是1.</p>
 <pre><code><span class="number">1</span> : <span class="number">1</span>
 <span class="number">3</span> : <span class="number">11</span>
 <span class="number">7</span> : <span class="number">111</span>
 <span class="number">15</span>: <span class="number">1111</span>
-<span class="keyword">...</span>
+...
 </code></pre><p>  而2^x 和2^x-1 进行<strong>位与</strong>操作，结果是0.比如8和7</p>
 <pre><code><span class="code">  1000</span>
 <span class="header">&amp; 0111
@@ -229,8 +229,8 @@
 <span class="code">  0000</span>
 </code></pre><p>  那么我们就可以利用这一点来判断一个数是否为2的次方。     </p>
 <h2 id="实现">实现</h2><pre><code><span class="comment">/**
- *<span class="phpdoc"> @param</span> {number} n
- *<span class="phpdoc"> @return</span> {boolean}
+ * <span class="doctag">@param</span> {number} n
+ * <span class="doctag">@return</span> {boolean}
  */</span>
 <span class="keyword">var</span> isPowerOfTwo = <span class="function"><span class="keyword">function</span><span class="params">(n)</span> </span>{
 
@@ -284,16 +284,16 @@
  */</span>
 
 
-<span class="function"><span class="keyword">function</span> <span class="title">Node</span><span class="params">(value, left, right)</span> </span>{
+<span class="function"><span class="keyword">function</span> <span class="title">Node</span>(<span class="params">value, left, right</span>) </span>{
     <span class="keyword">this</span>.value = value;
     <span class="keyword">this</span>.left = left;
     <span class="keyword">this</span>.right = right;
 }
-<span class="function"><span class="keyword">function</span> <span class="title">BST</span><span class="params">()</span> </span>{
+<span class="function"><span class="keyword">function</span> <span class="title">BST</span>(<span class="params"></span>) </span>{
     <span class="keyword">this</span>.root = <span class="literal">null</span>;
 }
 BST.prototype = {
-    add: <span class="function"><span class="keyword">function</span> <span class="params">(value)</span> </span>{
+    add: <span class="function"><span class="keyword">function</span> (<span class="params">value</span>) </span>{
         <span class="keyword">var</span> n = <span class="keyword">new</span> Node(value, <span class="literal">null</span>, <span class="literal">null</span>);
         <span class="keyword">if</span> (<span class="keyword">this</span>.root == <span class="literal">null</span>) {
             <span class="comment">//根节点为空，直接插入</span>
@@ -331,7 +331,7 @@ BST.prototype = {
 
     },
     <span class="comment">//中序遍历</span>
-    inOrder: <span class="function"><span class="keyword">function</span> <span class="params">(node, fn)</span> </span>{
+    inOrder: <span class="function"><span class="keyword">function</span> (<span class="params">node, fn</span>) </span>{
         <span class="keyword">if</span> (node) {
             <span class="keyword">if</span> (node.left != <span class="literal">null</span>) {
                 <span class="keyword">this</span>.inOrder(node.left, fn);
@@ -344,7 +344,7 @@ BST.prototype = {
         }
     },
     <span class="comment">//先序遍历</span>
-    preOrder: <span class="function"><span class="keyword">function</span> <span class="params">(node, fn)</span> </span>{
+    preOrder: <span class="function"><span class="keyword">function</span> (<span class="params">node, fn</span>) </span>{
         <span class="keyword">if</span> (node) {
             fn.call(<span class="keyword">this</span>, node);
             <span class="keyword">if</span> (node.left != <span class="literal">null</span>) {
@@ -356,7 +356,7 @@ BST.prototype = {
         }
     },
     <span class="comment">//后序遍历</span>
-    postOrder: <span class="function"><span class="keyword">function</span> <span class="params">(node, fn)</span> </span>{
+    postOrder: <span class="function"><span class="keyword">function</span> (<span class="params">node, fn</span>) </span>{
         <span class="keyword">if</span> (node) {
 
             <span class="keyword">if</span> (node.left != <span class="literal">null</span>) {
@@ -369,14 +369,14 @@ BST.prototype = {
         }
     },
     <span class="comment">//默认调用中序遍历</span>
-    toArray: <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{
+    toArray: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{
         <span class="keyword">var</span> result = [];
-        <span class="keyword">this</span>.inOrder(<span class="keyword">this</span>.root, <span class="function"><span class="keyword">function</span> <span class="params">(node)</span> </span>{
+        <span class="keyword">this</span>.inOrder(<span class="keyword">this</span>.root, <span class="function"><span class="keyword">function</span> (<span class="params">node</span>) </span>{
             result.push(node.value);
         });
         <span class="keyword">return</span> result;
     },
-    toString: <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{
+    toString: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{
         <span class="keyword">return</span> <span class="keyword">this</span>.toArray().toString();
     }
 };
@@ -393,13 +393,13 @@ bst.add(<span class="number">2</span>);
 <span class="built_in">console</span>.log(bst.toString());
 <span class="built_in">console</span>.log(<span class="string">"先序遍历"</span>);
 <span class="keyword">var</span> preResults = [];
-bst.preOrder(bst.root, <span class="function"><span class="keyword">function</span> <span class="params">(node)</span> </span>{
+bst.preOrder(bst.root, <span class="function"><span class="keyword">function</span> (<span class="params">node</span>) </span>{
     preResults.push(node.value);
 });
 <span class="built_in">console</span>.log(preResults.toString());
 <span class="built_in">console</span>.log(<span class="string">"后序遍历"</span>);
 <span class="keyword">var</span> postResults = [];
-bst.postOrder(bst.root, <span class="function"><span class="keyword">function</span> <span class="params">(node)</span> </span>{
+bst.postOrder(bst.root, <span class="function"><span class="keyword">function</span> (<span class="params">node</span>) </span>{
     postResults.push(node.value);
 });
 <span class="built_in">console</span>.log(postResults.toString());
@@ -680,15 +680,15 @@ bst.postOrder(bst.root, <span class="function"><span class="keyword">function</s
 <pre><code><span class="keyword">var</span> key = <span class="built_in">Symbol</span>(<span class="string">"key"</span>);
 </code></pre><h2 id="自带Promise">自带Promise</h2><p> 现在已经很多js的类库都支持Promise了，比如Jquery。ES6正式引入，提供原生的Promise对象。</p>
 <h2 id="新增块级变量的定义_关键字let">新增块级变量的定义 关键字let</h2><p> JS是变量var定义是不存在块级生命周期的。现在新增let关键字，仅可以在块级中使用。</p>
-<pre><code><span class="keyword">for</span>(<span class="reserved">let</span> i = <span class="number">0</span>; i &lt; arr.length; i++){}
+<pre><code><span class="keyword">for</span><span class="params">(let i = <span class="number">0</span>; i &lt; arr.length; i++)</span>{}
 
-<span class="built_in">console</span>.log(i)
-<span class="regexp">//</span><span class="attribute">ReferenceError</span>: i <span class="keyword">is</span> <span class="keyword">not</span> defined
+console.<span class="built_in">log</span><span class="params">(i)</span>
+<span class="comment">//ReferenceError: i is not defined</span>
 </code></pre><h2 id="变量的解构赋值">变量的解构赋值</h2><p> 自动解析数组或对象中的值，并给对应变量进行赋值，这被称为解构（Destructuring）。</p>
 <pre><code><span class="keyword">var</span> [x,y]=getVal(),<span class="comment">//函数返回值的解构</span>
     [name,,age]=[<span class="string">'wayou'</span>,<span class="string">'male'</span>,<span class="string">'secrect'</span>];<span class="comment">//数组解构</span>
 
-<span class="function"><span class="keyword">function</span> <span class="title">getVal</span><span class="params">()</span> </span>{
+<span class="function"><span class="keyword">function</span> <span class="title">getVal</span>(<span class="params"></span>) </span>{
     <span class="keyword">return</span> [ <span class="number">1</span>, <span class="number">2</span> ];
 }
 

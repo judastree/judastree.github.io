@@ -20,8 +20,6 @@
 
 
 
-  <link href='//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-
 
 <link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.4"/>
 
@@ -61,7 +59,7 @@
 
     <title> Judastree </title>
 </head>
-<body itemscope itemtype="http://schema.org/WebPage" lang="Chinese/English">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 <!--[if lte IE 8]>
   <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
     <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
@@ -106,34 +104,34 @@
     <ul id="menu" class="menu ">
       
         
-        <li class="menu-item menu-item-主页">
+        <li class="menu-item menu-item-home">
           <a href="/" rel="section">
-            <i class="menu-item-icon icon-主页"></i> <br />
-            menu.主页
+            <i class="menu-item-icon icon-home"></i> <br />
+            首页
           </a>
         </li>
       
         
-        <li class="menu-item menu-item-文章">
+        <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
-            <i class="menu-item-icon icon-文章"></i> <br />
-            menu.文章
+            <i class="menu-item-icon icon-archives"></i> <br />
+            归档
           </a>
         </li>
       
         
-        <li class="menu-item menu-item-日常">
-          <a href="/tags/日常/" rel="section">
-            <i class="menu-item-icon icon-日常"></i> <br />
-            menu.日常
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-关于">
+        <li class="menu-item menu-item-about">
           <a href="/about" rel="section">
-            <i class="menu-item-icon icon-关于"></i> <br />
-            menu.关于
+            <i class="menu-item-icon icon-about"></i> <br />
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            <i class="menu-item-icon icon-tags"></i> <br />
+            标签
           </a>
         </li>
       
@@ -174,7 +172,7 @@
 
       <div class="post-meta">
         <span class="post-time">
-          發表於
+          发表于
           <time itemprop="dateCreated" datetime="2015-07-15T10:54:54+08:00" content="2015-07-15">
             2015-07-15
           </time>
@@ -250,7 +248,7 @@
 
       <div class="post-meta">
         <span class="post-time">
-          發表於
+          发表于
           <time itemprop="dateCreated" datetime="2015-07-14T23:21:04+08:00" content="2015-07-14">
             2015-07-14
           </time>
@@ -281,9 +279,9 @@
           <span itemprop="articleBody"><p>在看别人的代码时发现setTimeout(func,0)的写法很不解。为什么要settimeout 0？<br>在网上查资料都引入了单线程的JS这个话题。</p>
 <p>一点点来看。</p>
 <p>有这样一段代码</p>
-<pre><code><span class="function">alert</span>(1); 
-<span class="function">setTimeout</span>("<span class="function">alert</span>(2)", 0); 
-<span class="function">alert</span>(3); 
+<pre><code>alert<span class="list">(<span class="number">1</span>)</span><span class="comment">; </span>
+setTimeout<span class="list">(<span class="string">"alert(2)"</span>, <span class="number">0</span>)</span><span class="comment">; </span>
+alert<span class="list">(<span class="number">3</span>)</span><span class="comment">; </span>
 </code></pre><p>按照正常的理解，延迟0秒就是不延迟执行嘛，但其实不是。输出的结果是1，3，2。</p>
 <h2 id="为什么会这样呢？">为什么会这样呢？</h2><p>settimout函数造成一种多线程异步的假象，让你认为js可以顺序执行主逻辑的代码，并同时开另外一个线程去处理要延迟的代码。</p>
 <p>但其实JS引擎是单线程，浏览器的一个页面只有一个线程在处理。</p>
@@ -354,7 +352,7 @@
 
       <div class="post-meta">
         <span class="post-time">
-          發表於
+          发表于
           <time itemprop="dateCreated" datetime="2015-07-14T10:47:58+08:00" content="2015-07-14">
             2015-07-14
           </time>
@@ -444,7 +442,7 @@
 
       <div class="post-meta">
         <span class="post-time">
-          發表於
+          发表于
           <time itemprop="dateCreated" datetime="2015-07-14T10:23:49+08:00" content="2015-07-14">
             2015-07-14
           </time>
@@ -520,7 +518,7 @@
 
       <div class="post-meta">
         <span class="post-time">
-          發表於
+          发表于
           <time itemprop="dateCreated" datetime="2015-07-14T09:59:02+08:00" content="2015-07-14">
             2015-07-14
           </time>
@@ -552,7 +550,7 @@
 <p>然后又问什么是box-sizing?好熟悉，但没概念了。</p>
 <p>在说盒子模型的时候，肯定会说IE对盒子模型的支持和其他浏览器不一样。它的width是包含了padding和border的。</p>
 <p>CSS3中新增box-sizing属性刚好可以解决这个问题，不用费心去算是否盒子模型不一致了。</p>
-<pre><code><span class="built_in">box</span>-sizing: content-<span class="built_in">box</span>|border-<span class="built_in">box</span>|inherit;
+<pre><code><span class="rule"><span class="attribute">box-sizing</span>:<span class="value"> content-box|border-box|inherit</span></span>;
 </code></pre><p>box-sizing的属性值有两种，(inherit继承就不说了)</p>
 <ul>
 <li>content-box：border 和 padding 不计入width和height （默认的）</li>
@@ -598,7 +596,7 @@
 
       <div class="post-meta">
         <span class="post-time">
-          發表於
+          发表于
           <time itemprop="dateCreated" datetime="2015-07-14T09:36:07+08:00" content="2015-07-14">
             2015-07-14
           </time>
@@ -743,7 +741,7 @@ ERROR 类型调试信息，错误信息
 
       <div class="post-meta">
         <span class="post-time">
-          發表於
+          发表于
           <time itemprop="dateCreated" datetime="2015-07-13T10:10:53+08:00" content="2015-07-13">
             2015-07-13
           </time>
@@ -815,7 +813,7 @@ ERROR 类型调试信息，错误信息
 
       <div class="post-meta">
         <span class="post-time">
-          發表於
+          发表于
           <time itemprop="dateCreated" datetime="2015-07-07T21:30:01+08:00" content="2015-07-07">
             2015-07-07
           </time>
@@ -849,8 +847,8 @@ ERROR 类型调试信息，错误信息
 <li>首先找到你的android sdk目录。比如我的目录是在 /Users/Alice/Library/Android/sdk</li>
 <li>终端切换至sdk目录下的platform-tools中，adb就在这个目录中。输入pwd命令，拷贝这个目录路径XXXX。</li>
 <li><p>然后输入下面两个命令</p>
-<pre><code>touch .bash_profile
-<span class="keyword">open</span> -<span class="keyword">e</span> .bash_profile
+<pre><code><span class="tag">touch</span> <span class="class">.bash_profile</span>
+<span class="tag">open</span> <span class="tag">-e</span> <span class="class">.bash_profile</span>
 </code></pre></li>
 <li><p>如果打开的文档里面已经有内容,我们只要之后添加;XXXX(注意前面一定要用分号隔开)，<br>如果是一个空白文档的话，我们就输入以下内容,然后保存。</p>
 <pre><code>export <span class="constant">PATH=</span><span class="variable">${</span><span class="constant">PATH}</span><span class="symbol">:/Users/Alice/Library/Android/sdk/platform-tools</span>    
@@ -901,7 +899,7 @@ ERROR 类型调试信息，错误信息
 
       <div class="post-meta">
         <span class="post-time">
-          發表於
+          发表于
           <time itemprop="dateCreated" datetime="2015-07-06T17:48:26+08:00" content="2015-07-06">
             2015-07-06
           </time>
@@ -1162,7 +1160,7 @@ ERROR 类型调试信息，错误信息
 
       <div class="post-meta">
         <span class="post-time">
-          發表於
+          发表于
           <time itemprop="dateCreated" datetime="2015-07-06T17:30:08+08:00" content="2015-07-06">
             2015-07-06
           </time>
@@ -1198,11 +1196,11 @@ ERROR 类型调试信息，错误信息
 </code></pre><p>虽然这个时候还是不清楚什么是JSX，也对组件化的概念很模糊。</p>
 <p>于是就去React官网找了快速入门来看。有中文版当然还是看<a href="http://reactjs.cn/react/docs/getting-started.html" target="_blank" rel="external">中文版</a>。</p>
 <p>仅是看quick start这一篇，只记住了一点。</p>
-<pre><code><span class="number">1.</span>html分离，在单独的js文件中通过React.<span class="keyword">render</span>来渲染html
+<pre><code>1<span class="class">.html</span>分离，在单独的<span class="tag">js</span>文件中通过<span class="tag">React</span><span class="class">.render</span>来渲染<span class="tag">html</span>
 </code></pre><p>接着继续看下一篇<a href="http://reactjs.cn/react/docs/tutorial.html" target="_blank" rel="external">教程</a>。<br>这个看起来就相当于更完整的一个例子了，实现评论+展示评论列表。</p>
 <p>教程里一步一步讲的很详细。到这里就稍微清晰一些之前的两个概念。</p>
 <pre><code>1.组件化
-2.JSX
+2<span class="class">.JSX</span>
 </code></pre><p>不得不说，中文理解起来就是方便快捷。如果是英文，虽然能看懂单词但理解还是会有偏差。【英语不好的借口</p>
 <p>先理解下组件化。</p>
 <p>CommentBox组件中包括CommentList组件和CommentForm组件。而CommentList组件又循环渲染Comment组件。<br>每个组件都是React Create出来的一个element,它们包含但不仅限于html。</p>
@@ -1293,30 +1291,30 @@ ERROR 类型调试信息，错误信息
 
       <section class="site-overview">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" src="/images/default_avatar.jpg" alt="Judastree" itemprop="image"/>
+          <img class="site-author-image" src="/images/profile.jpeg" alt="Judastree" itemprop="image"/>
           <p class="site-author-name" itemprop="name">Judastree</p>
         </div>
         <p class="site-description motion-element" itemprop="description">You are the pretty sunshine of my life</p>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
-            <a href="/">
+            <a href="/archives">
               <span class="site-state-item-count">38</span>
-              <span class="site-state-item-name">文章</span>
+              <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             
               <span class="site-state-item-count">0</span>
-              <span class="site-state-item-name">分類</span>
+              <span class="site-state-item-name">分类</span>
               
           </div>
 
           <div class="site-state-item site-state-tags">
-            
+            <a href="/tags">
               <span class="site-state-item-count">12</span>
-              <span class="site-state-item-name">標籤</span>
-              
+              <span class="site-state-item-name">标签</span>
+              </a>
           </div>
 
         </nav>
@@ -1331,6 +1329,16 @@ ERROR 类型调试信息，错误信息
         
 
         <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/judastree" target="_blank">github</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="wechat" target="_blank">wechat</a>
+              </span>
+            
           
         </div>
 
@@ -1364,11 +1372,11 @@ ERROR 类型调试信息，错误信息
 </div>
 
 <div class="powered-by">
-  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 強力驅動
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
-  主題 -
+  主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
     NexT.Mist
   </a>

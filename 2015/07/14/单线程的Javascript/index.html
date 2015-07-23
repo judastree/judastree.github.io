@@ -20,8 +20,6 @@
 
 
 
-  <link href='//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-
 
 <link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.4"/>
 
@@ -83,7 +81,7 @@ alert(3);
 
     <title> 单线程的JavaScript // Judastree </title>
 </head>
-<body itemscope itemtype="http://schema.org/WebPage" lang="Chinese/English">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 <!--[if lte IE 8]>
   <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
     <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
@@ -126,34 +124,34 @@ alert(3);
     <ul id="menu" class="menu ">
       
         
-        <li class="menu-item menu-item-主页">
+        <li class="menu-item menu-item-home">
           <a href="/" rel="section">
-            <i class="menu-item-icon icon-主页"></i> <br />
-            menu.主页
+            <i class="menu-item-icon icon-home"></i> <br />
+            首页
           </a>
         </li>
       
         
-        <li class="menu-item menu-item-文章">
+        <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
-            <i class="menu-item-icon icon-文章"></i> <br />
-            menu.文章
+            <i class="menu-item-icon icon-archives"></i> <br />
+            归档
           </a>
         </li>
       
         
-        <li class="menu-item menu-item-日常">
-          <a href="/tags/日常/" rel="section">
-            <i class="menu-item-icon icon-日常"></i> <br />
-            menu.日常
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-关于">
+        <li class="menu-item menu-item-about">
           <a href="/about" rel="section">
-            <i class="menu-item-icon icon-关于"></i> <br />
-            menu.关于
+            <i class="menu-item-icon icon-about"></i> <br />
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            <i class="menu-item-icon icon-tags"></i> <br />
+            标签
           </a>
         </li>
       
@@ -192,7 +190,7 @@ alert(3);
 
       <div class="post-meta">
         <span class="post-time">
-          發表於
+          发表于
           <time itemprop="dateCreated" datetime="2015-07-14T23:21:04+08:00" content="2015-07-14">
             2015-07-14
           </time>
@@ -222,9 +220,9 @@ alert(3);
         <span itemprop="articleBody"><p>在看别人的代码时发现setTimeout(func,0)的写法很不解。为什么要settimeout 0？<br>在网上查资料都引入了单线程的JS这个话题。</p>
 <p>一点点来看。</p>
 <p>有这样一段代码</p>
-<pre><code><span class="function">alert</span>(1); 
-<span class="function">setTimeout</span>("<span class="function">alert</span>(2)", 0); 
-<span class="function">alert</span>(3); 
+<pre><code>alert<span class="list">(<span class="number">1</span>)</span><span class="comment">; </span>
+setTimeout<span class="list">(<span class="string">"alert(2)"</span>, <span class="number">0</span>)</span><span class="comment">; </span>
+alert<span class="list">(<span class="number">3</span>)</span><span class="comment">; </span>
 </code></pre><p>按照正常的理解，延迟0秒就是不延迟执行嘛，但其实不是。输出的结果是1，3，2。</p>
 <h2 id="为什么会这样呢？">为什么会这样呢？</h2><p>settimout函数造成一种多线程异步的假象，让你认为js可以顺序执行主逻辑的代码，并同时开另外一个线程去处理要延迟的代码。</p>
 <p>但其实JS引擎是单线程，浏览器的一个页面只有一个线程在处理。</p>
@@ -328,40 +326,40 @@ alert(3);
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目錄
+            文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            本站概覽
+            站点概览
           </li>
         </ul>
       
 
       <section class="site-overview">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" src="/images/default_avatar.jpg" alt="Judastree" itemprop="image"/>
+          <img class="site-author-image" src="/images/profile.jpeg" alt="Judastree" itemprop="image"/>
           <p class="site-author-name" itemprop="name">Judastree</p>
         </div>
         <p class="site-description motion-element" itemprop="description">You are the pretty sunshine of my life</p>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
-            <a href="/">
+            <a href="/archives">
               <span class="site-state-item-count">38</span>
-              <span class="site-state-item-name">文章</span>
+              <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             
               <span class="site-state-item-count">0</span>
-              <span class="site-state-item-name">分類</span>
+              <span class="site-state-item-name">分类</span>
               
           </div>
 
           <div class="site-state-item site-state-tags">
-            
+            <a href="/tags">
               <span class="site-state-item-count">12</span>
-              <span class="site-state-item-name">標籤</span>
-              
+              <span class="site-state-item-name">标签</span>
+              </a>
           </div>
 
         </nav>
@@ -376,6 +374,16 @@ alert(3);
         
 
         <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/judastree" target="_blank">github</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="wechat" target="_blank">wechat</a>
+              </span>
+            
           
         </div>
 
@@ -420,11 +428,11 @@ alert(3);
 </div>
 
 <div class="powered-by">
-  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 強力驅動
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
-  主題 -
+  主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
     NexT.Mist
   </a>

@@ -20,8 +20,6 @@
 
 
 
-  <link href='//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-
 
 <link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.4"/>
 
@@ -61,7 +59,7 @@
 
     <title> Judastree </title>
 </head>
-<body itemscope itemtype="http://schema.org/WebPage" lang="Chinese/English">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 <!--[if lte IE 8]>
   <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
     <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
@@ -106,34 +104,34 @@
     <ul id="menu" class="menu ">
       
         
-        <li class="menu-item menu-item-主页">
+        <li class="menu-item menu-item-home">
           <a href="/" rel="section">
-            <i class="menu-item-icon icon-主页"></i> <br />
-            menu.主页
+            <i class="menu-item-icon icon-home"></i> <br />
+            首页
           </a>
         </li>
       
         
-        <li class="menu-item menu-item-文章">
+        <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
-            <i class="menu-item-icon icon-文章"></i> <br />
-            menu.文章
+            <i class="menu-item-icon icon-archives"></i> <br />
+            归档
           </a>
         </li>
       
         
-        <li class="menu-item menu-item-日常">
-          <a href="/tags/日常/" rel="section">
-            <i class="menu-item-icon icon-日常"></i> <br />
-            menu.日常
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-关于">
+        <li class="menu-item menu-item-about">
           <a href="/about" rel="section">
-            <i class="menu-item-icon icon-关于"></i> <br />
-            menu.关于
+            <i class="menu-item-icon icon-about"></i> <br />
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            <i class="menu-item-icon icon-tags"></i> <br />
+            标签
           </a>
         </li>
       
@@ -174,7 +172,7 @@
 
       <div class="post-meta">
         <span class="post-time">
-          發表於
+          发表于
           <time itemprop="dateCreated" datetime="2015-07-19T22:06:01+08:00" content="2015-07-19">
             2015-07-19
           </time>
@@ -248,7 +246,7 @@
 
       <div class="post-meta">
         <span class="post-time">
-          發表於
+          发表于
           <time itemprop="dateCreated" datetime="2015-07-19T00:14:39+08:00" content="2015-07-19">
             2015-07-19
           </time>
@@ -318,7 +316,7 @@
 
       <div class="post-meta">
         <span class="post-time">
-          發表於
+          发表于
           <time itemprop="dateCreated" datetime="2015-07-18T11:35:17+08:00" content="2015-07-18">
             2015-07-18
           </time>
@@ -387,7 +385,7 @@
 
       <div class="post-meta">
         <span class="post-time">
-          發表於
+          发表于
           <time itemprop="dateCreated" datetime="2015-07-17T10:38:43+08:00" content="2015-07-17">
             2015-07-17
           </time>
@@ -471,7 +469,7 @@
 
       <div class="post-meta">
         <span class="post-time">
-          發表於
+          发表于
           <time itemprop="dateCreated" datetime="2015-07-16T18:54:42+08:00" content="2015-07-16">
             2015-07-16
           </time>
@@ -555,7 +553,7 @@
 
       <div class="post-meta">
         <span class="post-time">
-          發表於
+          发表于
           <time itemprop="dateCreated" datetime="2015-07-16T11:54:57+08:00" content="2015-07-16">
             2015-07-16
           </time>
@@ -624,7 +622,7 @@
 
       <div class="post-meta">
         <span class="post-time">
-          發表於
+          发表于
           <time itemprop="dateCreated" datetime="2015-07-15T11:26:29+08:00" content="2015-07-15">
             2015-07-15
           </time>
@@ -660,15 +658,15 @@
 <pre><code><span class="keyword">var</span> key = <span class="built_in">Symbol</span>(<span class="string">"key"</span>);
 </code></pre><h2 id="自带Promise">自带Promise</h2><p> 现在已经很多js的类库都支持Promise了，比如Jquery。ES6正式引入，提供原生的Promise对象。</p>
 <h2 id="新增块级变量的定义_关键字let">新增块级变量的定义 关键字let</h2><p> JS是变量var定义是不存在块级生命周期的。现在新增let关键字，仅可以在块级中使用。</p>
-<pre><code><span class="keyword">for</span>(<span class="reserved">let</span> i = <span class="number">0</span>; i &lt; arr.length; i++){}
+<pre><code><span class="keyword">for</span><span class="params">(let i = <span class="number">0</span>; i &lt; arr.length; i++)</span>{}
 
-<span class="built_in">console</span>.log(i)
-<span class="regexp">//</span><span class="attribute">ReferenceError</span>: i <span class="keyword">is</span> <span class="keyword">not</span> defined
+console.<span class="built_in">log</span><span class="params">(i)</span>
+<span class="comment">//ReferenceError: i is not defined</span>
 </code></pre><h2 id="变量的解构赋值">变量的解构赋值</h2><p> 自动解析数组或对象中的值，并给对应变量进行赋值，这被称为解构（Destructuring）。</p>
 <pre><code><span class="keyword">var</span> [x,y]=getVal(),<span class="comment">//函数返回值的解构</span>
     [name,,age]=[<span class="string">'wayou'</span>,<span class="string">'male'</span>,<span class="string">'secrect'</span>];<span class="comment">//数组解构</span>
 
-<span class="function"><span class="keyword">function</span> <span class="title">getVal</span><span class="params">()</span> </span>{
+<span class="function"><span class="keyword">function</span> <span class="title">getVal</span>(<span class="params"></span>) </span>{
     <span class="keyword">return</span> [ <span class="number">1</span>, <span class="number">2</span> ];
 }
 
@@ -722,7 +720,7 @@
 
       <div class="post-meta">
         <span class="post-time">
-          發表於
+          发表于
           <time itemprop="dateCreated" datetime="2015-07-15T11:15:22+08:00" content="2015-07-15">
             2015-07-15
           </time>
@@ -843,7 +841,7 @@ console.log(quickSort(<span class="keyword">array</span>).toString());
 
       <div class="post-meta">
         <span class="post-time">
-          發表於
+          发表于
           <time itemprop="dateCreated" datetime="2015-07-15T11:15:06+08:00" content="2015-07-15">
             2015-07-15
           </time>
@@ -934,7 +932,7 @@ binary(<span class="number">15</span>,<span class="type">Arr</span>,<span class=
 
       <div class="post-meta">
         <span class="post-time">
-          發表於
+          发表于
           <time itemprop="dateCreated" datetime="2015-07-15T11:13:10+08:00" content="2015-07-15">
             2015-07-15
           </time>
@@ -1014,30 +1012,30 @@ binary(<span class="number">15</span>,<span class="type">Arr</span>,<span class=
 
       <section class="site-overview">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" src="/images/default_avatar.jpg" alt="Judastree" itemprop="image"/>
+          <img class="site-author-image" src="/images/profile.jpeg" alt="Judastree" itemprop="image"/>
           <p class="site-author-name" itemprop="name">Judastree</p>
         </div>
         <p class="site-description motion-element" itemprop="description">You are the pretty sunshine of my life</p>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
-            <a href="/">
+            <a href="/archives">
               <span class="site-state-item-count">38</span>
-              <span class="site-state-item-name">文章</span>
+              <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             
               <span class="site-state-item-count">0</span>
-              <span class="site-state-item-name">分類</span>
+              <span class="site-state-item-name">分类</span>
               
           </div>
 
           <div class="site-state-item site-state-tags">
-            
+            <a href="/tags">
               <span class="site-state-item-count">12</span>
-              <span class="site-state-item-name">標籤</span>
-              
+              <span class="site-state-item-name">标签</span>
+              </a>
           </div>
 
         </nav>
@@ -1052,6 +1050,16 @@ binary(<span class="number">15</span>,<span class="type">Arr</span>,<span class=
         
 
         <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/judastree" target="_blank">github</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="wechat" target="_blank">wechat</a>
+              </span>
+            
           
         </div>
 
@@ -1085,11 +1093,11 @@ binary(<span class="number">15</span>,<span class="type">Arr</span>,<span class=
 </div>
 
 <div class="powered-by">
-  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 強力驅動
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
-  主題 -
+  主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
     NexT.Mist
   </a>

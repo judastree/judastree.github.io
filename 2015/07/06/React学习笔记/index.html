@@ -20,8 +20,6 @@
 
 
 
-  <link href='//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-
 
 <link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.4"/>
 
@@ -76,7 +74,7 @@
 
     <title> React 学习 笔记  // Judastree </title>
 </head>
-<body itemscope itemtype="http://schema.org/WebPage" lang="Chinese/English">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 <!--[if lte IE 8]>
   <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
     <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
@@ -119,34 +117,34 @@
     <ul id="menu" class="menu ">
       
         
-        <li class="menu-item menu-item-主页">
+        <li class="menu-item menu-item-home">
           <a href="/" rel="section">
-            <i class="menu-item-icon icon-主页"></i> <br />
-            menu.主页
+            <i class="menu-item-icon icon-home"></i> <br />
+            首页
           </a>
         </li>
       
         
-        <li class="menu-item menu-item-文章">
+        <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
-            <i class="menu-item-icon icon-文章"></i> <br />
-            menu.文章
+            <i class="menu-item-icon icon-archives"></i> <br />
+            归档
           </a>
         </li>
       
         
-        <li class="menu-item menu-item-日常">
-          <a href="/tags/日常/" rel="section">
-            <i class="menu-item-icon icon-日常"></i> <br />
-            menu.日常
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-关于">
+        <li class="menu-item menu-item-about">
           <a href="/about" rel="section">
-            <i class="menu-item-icon icon-关于"></i> <br />
-            menu.关于
+            <i class="menu-item-icon icon-about"></i> <br />
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            <i class="menu-item-icon icon-tags"></i> <br />
+            标签
           </a>
         </li>
       
@@ -185,7 +183,7 @@
 
       <div class="post-meta">
         <span class="post-time">
-          發表於
+          发表于
           <time itemprop="dateCreated" datetime="2015-07-06T17:30:08+08:00" content="2015-07-06">
             2015-07-06
           </time>
@@ -220,11 +218,11 @@
 </code></pre><p>虽然这个时候还是不清楚什么是JSX，也对组件化的概念很模糊。</p>
 <p>于是就去React官网找了快速入门来看。有中文版当然还是看<a href="http://reactjs.cn/react/docs/getting-started.html" target="_blank" rel="external">中文版</a>。</p>
 <p>仅是看quick start这一篇，只记住了一点。</p>
-<pre><code><span class="number">1.</span>html分离，在单独的js文件中通过React.<span class="keyword">render</span>来渲染html
+<pre><code>1<span class="class">.html</span>分离，在单独的<span class="tag">js</span>文件中通过<span class="tag">React</span><span class="class">.render</span>来渲染<span class="tag">html</span>
 </code></pre><p>接着继续看下一篇<a href="http://reactjs.cn/react/docs/tutorial.html" target="_blank" rel="external">教程</a>。<br>这个看起来就相当于更完整的一个例子了，实现评论+展示评论列表。</p>
 <p>教程里一步一步讲的很详细。到这里就稍微清晰一些之前的两个概念。</p>
 <pre><code>1.组件化
-2.JSX
+2<span class="class">.JSX</span>
 </code></pre><p>不得不说，中文理解起来就是方便快捷。如果是英文，虽然能看懂单词但理解还是会有偏差。【英语不好的借口</p>
 <p>先理解下组件化。</p>
 <p>CommentBox组件中包括CommentList组件和CommentForm组件。而CommentList组件又循环渲染Comment组件。<br>每个组件都是React Create出来的一个element,它们包含但不仅限于html。</p>
@@ -337,40 +335,40 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目錄
+            文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            本站概覽
+            站点概览
           </li>
         </ul>
       
 
       <section class="site-overview">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" src="/images/default_avatar.jpg" alt="Judastree" itemprop="image"/>
+          <img class="site-author-image" src="/images/profile.jpeg" alt="Judastree" itemprop="image"/>
           <p class="site-author-name" itemprop="name">Judastree</p>
         </div>
         <p class="site-description motion-element" itemprop="description">You are the pretty sunshine of my life</p>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
-            <a href="/">
+            <a href="/archives">
               <span class="site-state-item-count">38</span>
-              <span class="site-state-item-name">文章</span>
+              <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             
               <span class="site-state-item-count">0</span>
-              <span class="site-state-item-name">分類</span>
+              <span class="site-state-item-name">分类</span>
               
           </div>
 
           <div class="site-state-item site-state-tags">
-            
+            <a href="/tags">
               <span class="site-state-item-count">12</span>
-              <span class="site-state-item-name">標籤</span>
-              
+              <span class="site-state-item-name">标签</span>
+              </a>
           </div>
 
         </nav>
@@ -385,6 +383,16 @@
         
 
         <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/judastree" target="_blank">github</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="wechat" target="_blank">wechat</a>
+              </span>
+            
           
         </div>
 
@@ -403,7 +411,7 @@
           <div class="post-toc">
             
             
-              <p class="post-toc-empty">此文章未包含目錄</p>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
@@ -429,11 +437,11 @@
 </div>
 
 <div class="powered-by">
-  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 強力驅動
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
-  主題 -
+  主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
     NexT.Mist
   </a>

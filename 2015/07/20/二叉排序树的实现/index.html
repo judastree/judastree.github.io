@@ -20,8 +20,6 @@
 
 
 
-  <link href='//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-
 
 <link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.4"/>
 
@@ -82,7 +80,7 @@ function Node(value">
 
     <title> 二叉排序树的实现 // Judastree </title>
 </head>
-<body itemscope itemtype="http://schema.org/WebPage" lang="Chinese/English">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 <!--[if lte IE 8]>
   <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
     <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
@@ -125,34 +123,34 @@ function Node(value">
     <ul id="menu" class="menu ">
       
         
-        <li class="menu-item menu-item-主页">
+        <li class="menu-item menu-item-home">
           <a href="/" rel="section">
-            <i class="menu-item-icon icon-主页"></i> <br />
-            menu.主页
+            <i class="menu-item-icon icon-home"></i> <br />
+            首页
           </a>
         </li>
       
         
-        <li class="menu-item menu-item-文章">
+        <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
-            <i class="menu-item-icon icon-文章"></i> <br />
-            menu.文章
+            <i class="menu-item-icon icon-archives"></i> <br />
+            归档
           </a>
         </li>
       
         
-        <li class="menu-item menu-item-日常">
-          <a href="/tags/日常/" rel="section">
-            <i class="menu-item-icon icon-日常"></i> <br />
-            menu.日常
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-关于">
+        <li class="menu-item menu-item-about">
           <a href="/about" rel="section">
-            <i class="menu-item-icon icon-关于"></i> <br />
-            menu.关于
+            <i class="menu-item-icon icon-about"></i> <br />
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            <i class="menu-item-icon icon-tags"></i> <br />
+            标签
           </a>
         </li>
       
@@ -191,7 +189,7 @@ function Node(value">
 
       <div class="post-meta">
         <span class="post-time">
-          發表於
+          发表于
           <time itemprop="dateCreated" datetime="2015-07-20T18:44:33+08:00" content="2015-07-20">
             2015-07-20
           </time>
@@ -225,16 +223,16 @@ function Node(value">
  */</span>
 
 
-<span class="function"><span class="keyword">function</span> <span class="title">Node</span><span class="params">(value, left, right)</span> </span>{
+<span class="function"><span class="keyword">function</span> <span class="title">Node</span>(<span class="params">value, left, right</span>) </span>{
     <span class="keyword">this</span>.value = value;
     <span class="keyword">this</span>.left = left;
     <span class="keyword">this</span>.right = right;
 }
-<span class="function"><span class="keyword">function</span> <span class="title">BST</span><span class="params">()</span> </span>{
+<span class="function"><span class="keyword">function</span> <span class="title">BST</span>(<span class="params"></span>) </span>{
     <span class="keyword">this</span>.root = <span class="literal">null</span>;
 }
 BST.prototype = {
-    add: <span class="function"><span class="keyword">function</span> <span class="params">(value)</span> </span>{
+    add: <span class="function"><span class="keyword">function</span> (<span class="params">value</span>) </span>{
         <span class="keyword">var</span> n = <span class="keyword">new</span> Node(value, <span class="literal">null</span>, <span class="literal">null</span>);
         <span class="keyword">if</span> (<span class="keyword">this</span>.root == <span class="literal">null</span>) {
             <span class="comment">//根节点为空，直接插入</span>
@@ -272,7 +270,7 @@ BST.prototype = {
 
     },
     <span class="comment">//中序遍历</span>
-    inOrder: <span class="function"><span class="keyword">function</span> <span class="params">(node, fn)</span> </span>{
+    inOrder: <span class="function"><span class="keyword">function</span> (<span class="params">node, fn</span>) </span>{
         <span class="keyword">if</span> (node) {
             <span class="keyword">if</span> (node.left != <span class="literal">null</span>) {
                 <span class="keyword">this</span>.inOrder(node.left, fn);
@@ -285,7 +283,7 @@ BST.prototype = {
         }
     },
     <span class="comment">//先序遍历</span>
-    preOrder: <span class="function"><span class="keyword">function</span> <span class="params">(node, fn)</span> </span>{
+    preOrder: <span class="function"><span class="keyword">function</span> (<span class="params">node, fn</span>) </span>{
         <span class="keyword">if</span> (node) {
             fn.call(<span class="keyword">this</span>, node);
             <span class="keyword">if</span> (node.left != <span class="literal">null</span>) {
@@ -297,7 +295,7 @@ BST.prototype = {
         }
     },
     <span class="comment">//后序遍历</span>
-    postOrder: <span class="function"><span class="keyword">function</span> <span class="params">(node, fn)</span> </span>{
+    postOrder: <span class="function"><span class="keyword">function</span> (<span class="params">node, fn</span>) </span>{
         <span class="keyword">if</span> (node) {
 
             <span class="keyword">if</span> (node.left != <span class="literal">null</span>) {
@@ -310,14 +308,14 @@ BST.prototype = {
         }
     },
     <span class="comment">//默认调用中序遍历</span>
-    toArray: <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{
+    toArray: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{
         <span class="keyword">var</span> result = [];
-        <span class="keyword">this</span>.inOrder(<span class="keyword">this</span>.root, <span class="function"><span class="keyword">function</span> <span class="params">(node)</span> </span>{
+        <span class="keyword">this</span>.inOrder(<span class="keyword">this</span>.root, <span class="function"><span class="keyword">function</span> (<span class="params">node</span>) </span>{
             result.push(node.value);
         });
         <span class="keyword">return</span> result;
     },
-    toString: <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{
+    toString: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{
         <span class="keyword">return</span> <span class="keyword">this</span>.toArray().toString();
     }
 };
@@ -334,13 +332,13 @@ bst.add(<span class="number">2</span>);
 <span class="built_in">console</span>.log(bst.toString());
 <span class="built_in">console</span>.log(<span class="string">"先序遍历"</span>);
 <span class="keyword">var</span> preResults = [];
-bst.preOrder(bst.root, <span class="function"><span class="keyword">function</span> <span class="params">(node)</span> </span>{
+bst.preOrder(bst.root, <span class="function"><span class="keyword">function</span> (<span class="params">node</span>) </span>{
     preResults.push(node.value);
 });
 <span class="built_in">console</span>.log(preResults.toString());
 <span class="built_in">console</span>.log(<span class="string">"后序遍历"</span>);
 <span class="keyword">var</span> postResults = [];
-bst.postOrder(bst.root, <span class="function"><span class="keyword">function</span> <span class="params">(node)</span> </span>{
+bst.postOrder(bst.root, <span class="function"><span class="keyword">function</span> (<span class="params">node</span>) </span>{
     postResults.push(node.value);
 });
 <span class="built_in">console</span>.log(postResults.toString());
@@ -418,40 +416,40 @@ bst.postOrder(bst.root, <span class="function"><span class="keyword">function</s
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目錄
+            文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            本站概覽
+            站点概览
           </li>
         </ul>
       
 
       <section class="site-overview">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" src="/images/default_avatar.jpg" alt="Judastree" itemprop="image"/>
+          <img class="site-author-image" src="/images/profile.jpeg" alt="Judastree" itemprop="image"/>
           <p class="site-author-name" itemprop="name">Judastree</p>
         </div>
         <p class="site-description motion-element" itemprop="description">You are the pretty sunshine of my life</p>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
-            <a href="/">
+            <a href="/archives">
               <span class="site-state-item-count">38</span>
-              <span class="site-state-item-name">文章</span>
+              <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             
               <span class="site-state-item-count">0</span>
-              <span class="site-state-item-name">分類</span>
+              <span class="site-state-item-name">分类</span>
               
           </div>
 
           <div class="site-state-item site-state-tags">
-            
+            <a href="/tags">
               <span class="site-state-item-count">12</span>
-              <span class="site-state-item-name">標籤</span>
-              
+              <span class="site-state-item-name">标签</span>
+              </a>
           </div>
 
         </nav>
@@ -466,6 +464,16 @@ bst.postOrder(bst.root, <span class="function"><span class="keyword">function</s
         
 
         <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/judastree" target="_blank">github</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="wechat" target="_blank">wechat</a>
+              </span>
+            
           
         </div>
 
@@ -484,7 +492,7 @@ bst.postOrder(bst.root, <span class="function"><span class="keyword">function</s
           <div class="post-toc">
             
             
-              <p class="post-toc-empty">此文章未包含目錄</p>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
@@ -510,11 +518,11 @@ bst.postOrder(bst.root, <span class="function"><span class="keyword">function</s
 </div>
 
 <div class="powered-by">
-  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 強力驅動
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
-  主題 -
+  主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
     NexT.Mist
   </a>

@@ -20,8 +20,6 @@
 
 
 
-  <link href='//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-
 
 <link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.4"/>
 
@@ -61,7 +59,7 @@
 
     <title> Judastree </title>
 </head>
-<body itemscope itemtype="http://schema.org/WebPage" lang="Chinese/English">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 <!--[if lte IE 8]>
   <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
     <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
@@ -106,34 +104,34 @@
     <ul id="menu" class="menu ">
       
         
-        <li class="menu-item menu-item-主页">
+        <li class="menu-item menu-item-home">
           <a href="/" rel="section">
-            <i class="menu-item-icon icon-主页"></i> <br />
-            menu.主页
+            <i class="menu-item-icon icon-home"></i> <br />
+            首页
           </a>
         </li>
       
         
-        <li class="menu-item menu-item-文章">
+        <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
-            <i class="menu-item-icon icon-文章"></i> <br />
-            menu.文章
+            <i class="menu-item-icon icon-archives"></i> <br />
+            归档
           </a>
         </li>
       
         
-        <li class="menu-item menu-item-日常">
-          <a href="/tags/日常/" rel="section">
-            <i class="menu-item-icon icon-日常"></i> <br />
-            menu.日常
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-关于">
+        <li class="menu-item menu-item-about">
           <a href="/about" rel="section">
-            <i class="menu-item-icon icon-关于"></i> <br />
-            menu.关于
+            <i class="menu-item-icon icon-about"></i> <br />
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            <i class="menu-item-icon icon-tags"></i> <br />
+            标签
           </a>
         </li>
       
@@ -174,7 +172,7 @@
 
       <div class="post-meta">
         <span class="post-time">
-          發表於
+          发表于
           <time itemprop="dateCreated" datetime="2015-07-23T11:12:43+08:00" content="2015-07-23">
             2015-07-23
           </time>
@@ -274,7 +272,7 @@
 
       <div class="post-meta">
         <span class="post-time">
-          發表於
+          发表于
           <time itemprop="dateCreated" datetime="2015-07-23T10:37:29+08:00" content="2015-07-23">
             2015-07-23
           </time>
@@ -313,8 +311,8 @@
  * }
  */</span>
 <span class="comment">/**
- *<span class="phpdoc"> @param</span> {TreeNode} root
- *<span class="phpdoc"> @return</span> {number}
+ * <span class="doctag">@param</span> {TreeNode} root
+ * <span class="doctag">@return</span> {number}
  */</span>
 <span class="keyword">var</span> maxDepth = <span class="function"><span class="keyword">function</span><span class="params">(root)</span> </span>{
     <span class="function"><span class="keyword">function</span> <span class="title">findDepth</span><span class="params">(node,currentDepth)</span></span>{
@@ -372,7 +370,7 @@
 
       <div class="post-meta">
         <span class="post-time">
-          發表於
+          发表于
           <time itemprop="dateCreated" datetime="2015-07-22T11:17:26+08:00" content="2015-07-22">
             2015-07-22
           </time>
@@ -403,28 +401,28 @@
           <span itemprop="articleBody"><h2 id="题目来源">题目来源</h2><p><a href="https://leetcode.com/problems/plus-one/" target="_blank" rel="external">Plus One</a></p>
 <p>有一个数组代表一个非负的数字，求这个数字+1之后的数组。<br>比如这个数组是[1,2,3,4]它代表数字1234，那么这个数字加1之后是1235。希望得到这个数字代表的数组[1,2,3,5]</p>
 <h2 id="思路">思路</h2><p>从最后一位开始，对当前值+1，如果当前值不为9则正常返回结果。如果当前值为9，则当前值变为0，再递归调用前一位的+1操作。</p>
-<h2 id="实现">实现</h2><pre><code><span class="comment">/**
- *<span class="phpdoc"> @param</span> {number[]} digits
- *<span class="phpdoc"> @return</span> {number[]}
- */</span>
-<span class="keyword">var</span> plusOne = <span class="function"><span class="keyword">function</span><span class="params">(digits)</span> </span>{
-    <span class="function"><span class="keyword">function</span> <span class="title">plus</span><span class="params">(digits,i)</span></span>{
-        <span class="keyword">if</span>(digits[i]===<span class="number">9</span>){
-            digits[i]=<span class="number">0</span>;
+<h2 id="实现">实现</h2><pre><code>/**
+ * @param {<span class="keyword">number</span>[]} <span class="built_in">digits</span>
+ * @<span class="keyword">return</span> {<span class="keyword">number</span>[]}
+ */
+var plusOne = <span class="function"><span class="keyword">function</span><span class="params">(digits)</span></span> {
+    <span class="function"><span class="keyword">function</span></span> plus(<span class="built_in">digits</span>,i){
+        <span class="keyword">if</span>(<span class="built_in">digits</span>[i]===<span class="number">9</span>){
+            <span class="built_in">digits</span>[i]=<span class="number">0</span>;
             <span class="keyword">if</span>(i===<span class="number">0</span>){
-                <span class="keyword">var</span> head = [<span class="number">1</span>];
-                <span class="keyword">return</span> head.concat(digits);
+                var head = [<span class="number">1</span>];
+                <span class="keyword">return</span> head.concat(<span class="built_in">digits</span>);
             }<span class="keyword">else</span>{
-                <span class="keyword">return</span> plus(digits,i-<span class="number">1</span>);
+                <span class="keyword">return</span> plus(<span class="built_in">digits</span>,i-<span class="number">1</span>);
             }
 
         }<span class="keyword">else</span>{
-            digits[i] = digits[i]+<span class="number">1</span>;
-            <span class="keyword">return</span> digits;
+            <span class="built_in">digits</span>[i] = <span class="built_in">digits</span>[i]+<span class="number">1</span>;
+            <span class="keyword">return</span> <span class="built_in">digits</span>;
         }
 
     }
-    <span class="keyword">return</span> plus(digits,digits.length-<span class="number">1</span>);
+    <span class="keyword">return</span> plus(<span class="built_in">digits</span>,<span class="built_in">digits</span>.length-<span class="number">1</span>);
 };
 </code></pre><p>PS：上面的代码性能不是很好，肯定有更好的算法的。</p>
 <p> <img src="/images/plusone.png" alt="PlusOneRuntime">     </p>
@@ -468,7 +466,7 @@
 
       <div class="post-meta">
         <span class="post-time">
-          發表於
+          发表于
           <time itemprop="dateCreated" datetime="2015-07-22T10:58:33+08:00" content="2015-07-22">
             2015-07-22
           </time>
@@ -562,7 +560,7 @@
 
       <div class="post-meta">
         <span class="post-time">
-          發表於
+          发表于
           <time itemprop="dateCreated" datetime="2015-07-22T10:30:48+08:00" content="2015-07-22">
             2015-07-22
           </time>
@@ -597,13 +595,13 @@
 <span class="number">4</span> : <span class="number">100</span>
 <span class="number">8</span> : <span class="number">1000</span>
 <span class="number">16</span>: <span class="number">10000</span>
-<span class="keyword">...</span>
+...
 </code></pre><p>  2的X次方，其二进制是1后面跟X个0；而2的X次方减1的二进制都是1.</p>
 <pre><code><span class="number">1</span> : <span class="number">1</span>
 <span class="number">3</span> : <span class="number">11</span>
 <span class="number">7</span> : <span class="number">111</span>
 <span class="number">15</span>: <span class="number">1111</span>
-<span class="keyword">...</span>
+...
 </code></pre><p>  而2^x 和2^x-1 进行<strong>位与</strong>操作，结果是0.比如8和7</p>
 <pre><code><span class="code">  1000</span>
 <span class="header">&amp; 0111
@@ -611,8 +609,8 @@
 <span class="code">  0000</span>
 </code></pre><p>  那么我们就可以利用这一点来判断一个数是否为2的次方。     </p>
 <h2 id="实现">实现</h2><pre><code><span class="comment">/**
- *<span class="phpdoc"> @param</span> {number} n
- *<span class="phpdoc"> @return</span> {boolean}
+ * <span class="doctag">@param</span> {number} n
+ * <span class="doctag">@return</span> {boolean}
  */</span>
 <span class="keyword">var</span> isPowerOfTwo = <span class="function"><span class="keyword">function</span><span class="params">(n)</span> </span>{
 
@@ -661,7 +659,7 @@
 
       <div class="post-meta">
         <span class="post-time">
-          發表於
+          发表于
           <time itemprop="dateCreated" datetime="2015-07-21T12:13:58+08:00" content="2015-07-21">
             2015-07-21
           </time>
@@ -732,7 +730,7 @@
 
       <div class="post-meta">
         <span class="post-time">
-          發表於
+          发表于
           <time itemprop="dateCreated" datetime="2015-07-20T18:44:33+08:00" content="2015-07-20">
             2015-07-20
           </time>
@@ -767,16 +765,16 @@
  */</span>
 
 
-<span class="function"><span class="keyword">function</span> <span class="title">Node</span><span class="params">(value, left, right)</span> </span>{
+<span class="function"><span class="keyword">function</span> <span class="title">Node</span>(<span class="params">value, left, right</span>) </span>{
     <span class="keyword">this</span>.value = value;
     <span class="keyword">this</span>.left = left;
     <span class="keyword">this</span>.right = right;
 }
-<span class="function"><span class="keyword">function</span> <span class="title">BST</span><span class="params">()</span> </span>{
+<span class="function"><span class="keyword">function</span> <span class="title">BST</span>(<span class="params"></span>) </span>{
     <span class="keyword">this</span>.root = <span class="literal">null</span>;
 }
 BST.prototype = {
-    add: <span class="function"><span class="keyword">function</span> <span class="params">(value)</span> </span>{
+    add: <span class="function"><span class="keyword">function</span> (<span class="params">value</span>) </span>{
         <span class="keyword">var</span> n = <span class="keyword">new</span> Node(value, <span class="literal">null</span>, <span class="literal">null</span>);
         <span class="keyword">if</span> (<span class="keyword">this</span>.root == <span class="literal">null</span>) {
             <span class="comment">//根节点为空，直接插入</span>
@@ -814,7 +812,7 @@ BST.prototype = {
 
     },
     <span class="comment">//中序遍历</span>
-    inOrder: <span class="function"><span class="keyword">function</span> <span class="params">(node, fn)</span> </span>{
+    inOrder: <span class="function"><span class="keyword">function</span> (<span class="params">node, fn</span>) </span>{
         <span class="keyword">if</span> (node) {
             <span class="keyword">if</span> (node.left != <span class="literal">null</span>) {
                 <span class="keyword">this</span>.inOrder(node.left, fn);
@@ -827,7 +825,7 @@ BST.prototype = {
         }
     },
     <span class="comment">//先序遍历</span>
-    preOrder: <span class="function"><span class="keyword">function</span> <span class="params">(node, fn)</span> </span>{
+    preOrder: <span class="function"><span class="keyword">function</span> (<span class="params">node, fn</span>) </span>{
         <span class="keyword">if</span> (node) {
             fn.call(<span class="keyword">this</span>, node);
             <span class="keyword">if</span> (node.left != <span class="literal">null</span>) {
@@ -839,7 +837,7 @@ BST.prototype = {
         }
     },
     <span class="comment">//后序遍历</span>
-    postOrder: <span class="function"><span class="keyword">function</span> <span class="params">(node, fn)</span> </span>{
+    postOrder: <span class="function"><span class="keyword">function</span> (<span class="params">node, fn</span>) </span>{
         <span class="keyword">if</span> (node) {
 
             <span class="keyword">if</span> (node.left != <span class="literal">null</span>) {
@@ -852,14 +850,14 @@ BST.prototype = {
         }
     },
     <span class="comment">//默认调用中序遍历</span>
-    toArray: <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{
+    toArray: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{
         <span class="keyword">var</span> result = [];
-        <span class="keyword">this</span>.inOrder(<span class="keyword">this</span>.root, <span class="function"><span class="keyword">function</span> <span class="params">(node)</span> </span>{
+        <span class="keyword">this</span>.inOrder(<span class="keyword">this</span>.root, <span class="function"><span class="keyword">function</span> (<span class="params">node</span>) </span>{
             result.push(node.value);
         });
         <span class="keyword">return</span> result;
     },
-    toString: <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{
+    toString: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{
         <span class="keyword">return</span> <span class="keyword">this</span>.toArray().toString();
     }
 };
@@ -876,13 +874,13 @@ bst.add(<span class="number">2</span>);
 <span class="built_in">console</span>.log(bst.toString());
 <span class="built_in">console</span>.log(<span class="string">"先序遍历"</span>);
 <span class="keyword">var</span> preResults = [];
-bst.preOrder(bst.root, <span class="function"><span class="keyword">function</span> <span class="params">(node)</span> </span>{
+bst.preOrder(bst.root, <span class="function"><span class="keyword">function</span> (<span class="params">node</span>) </span>{
     preResults.push(node.value);
 });
 <span class="built_in">console</span>.log(preResults.toString());
 <span class="built_in">console</span>.log(<span class="string">"后序遍历"</span>);
 <span class="keyword">var</span> postResults = [];
-bst.postOrder(bst.root, <span class="function"><span class="keyword">function</span> <span class="params">(node)</span> </span>{
+bst.postOrder(bst.root, <span class="function"><span class="keyword">function</span> (<span class="params">node</span>) </span>{
     postResults.push(node.value);
 });
 <span class="built_in">console</span>.log(postResults.toString());
@@ -927,7 +925,7 @@ bst.postOrder(bst.root, <span class="function"><span class="keyword">function</s
 
       <div class="post-meta">
         <span class="post-time">
-          發表於
+          发表于
           <time itemprop="dateCreated" datetime="2015-07-20T12:06:10+08:00" content="2015-07-20">
             2015-07-20
           </time>
@@ -999,7 +997,7 @@ bst.postOrder(bst.root, <span class="function"><span class="keyword">function</s
 
       <div class="post-meta">
         <span class="post-time">
-          發表於
+          发表于
           <time itemprop="dateCreated" datetime="2015-07-19T22:59:35+08:00" content="2015-07-19">
             2015-07-19
           </time>
@@ -1070,7 +1068,7 @@ bst.postOrder(bst.root, <span class="function"><span class="keyword">function</s
 
       <div class="post-meta">
         <span class="post-time">
-          發表於
+          发表于
           <time itemprop="dateCreated" datetime="2015-07-19T22:37:32+08:00" content="2015-07-19">
             2015-07-19
           </time>
@@ -1201,30 +1199,30 @@ bst.postOrder(bst.root, <span class="function"><span class="keyword">function</s
 
       <section class="site-overview">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" src="/images/default_avatar.jpg" alt="Judastree" itemprop="image"/>
+          <img class="site-author-image" src="/images/profile.jpeg" alt="Judastree" itemprop="image"/>
           <p class="site-author-name" itemprop="name">Judastree</p>
         </div>
         <p class="site-description motion-element" itemprop="description">You are the pretty sunshine of my life</p>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
-            <a href="/">
+            <a href="/archives">
               <span class="site-state-item-count">38</span>
-              <span class="site-state-item-name">文章</span>
+              <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             
               <span class="site-state-item-count">0</span>
-              <span class="site-state-item-name">分類</span>
+              <span class="site-state-item-name">分类</span>
               
           </div>
 
           <div class="site-state-item site-state-tags">
-            
+            <a href="/tags">
               <span class="site-state-item-count">12</span>
-              <span class="site-state-item-name">標籤</span>
-              
+              <span class="site-state-item-name">标签</span>
+              </a>
           </div>
 
         </nav>
@@ -1239,6 +1237,16 @@ bst.postOrder(bst.root, <span class="function"><span class="keyword">function</s
         
 
         <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/judastree" target="_blank">github</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="wechat" target="_blank">wechat</a>
+              </span>
+            
           
         </div>
 
@@ -1272,11 +1280,11 @@ bst.postOrder(bst.root, <span class="function"><span class="keyword">function</s
 </div>
 
 <div class="powered-by">
-  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 強力驅動
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
-  主題 -
+  主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
     NexT.Mist
   </a>
