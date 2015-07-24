@@ -28,7 +28,7 @@
 
 
 
-  <meta name="keywords" content="工具," />
+  <meta name="keywords" content="LeetCode,算法," />
 
 
 
@@ -39,24 +39,40 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.4" />
 
 
-<meta name="description" content="转帖：原文
-Google退出WebKit项目，创建自己的渲染引擎Blink。这其实不能说完全没有先兆，合合分分，纯属正常。
-其实，之前关于WebKit2，双方的争论就非常的大。Apple希望它可以随便加入和删除代码而无需担心它会破坏其它Ports的代码，这遭到很多人的反对和不满。
-同时，另一方面，Google有很多新的功能希望加入WebKit中，但是WebKit可能并不认可他们。双方分歧越来越多，">
+<meta name="description" content="题目查找两个链表相同的尾链
+A:          a1 → a2
+                   ↘
+                     c1 → c2 → c3
+                   ↗            
+B:     b1 → b2 → b3
+ 如果两个链表没有相同尾链，返回null。
+ 两个链表在输出时应保持原来的结构。 链表结构中没有循环。
+ 时间复杂度">
 <meta property="og:type" content="article">
-<meta property="og:title" content="blink chromium webkit 是什么关系">
-<meta property="og:url" content="http://judastree.github.io/2015/07/19/blink-chromium-webkit-是什么关系/index.html">
+<meta property="og:title" content="LeetCode:Intersection of Two Linked Lists">
+<meta property="og:url" content="http://judastree.github.io/2015/07/24/LeetCode-Intersection-of-Two-Linked-Lists/index.html">
 <meta property="og:site_name" content="Judastree">
-<meta property="og:description" content="转帖：原文
-Google退出WebKit项目，创建自己的渲染引擎Blink。这其实不能说完全没有先兆，合合分分，纯属正常。
-其实，之前关于WebKit2，双方的争论就非常的大。Apple希望它可以随便加入和删除代码而无需担心它会破坏其它Ports的代码，这遭到很多人的反对和不满。
-同时，另一方面，Google有很多新的功能希望加入WebKit中，但是WebKit可能并不认可他们。双方分歧越来越多，">
+<meta property="og:description" content="题目查找两个链表相同的尾链
+A:          a1 → a2
+                   ↘
+                     c1 → c2 → c3
+                   ↗            
+B:     b1 → b2 → b3
+ 如果两个链表没有相同尾链，返回null。
+ 两个链表在输出时应保持原来的结构。 链表结构中没有循环。
+ 时间复杂度">
+<meta property="og:image" content="/images/intersection.png">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="blink chromium webkit 是什么关系">
-<meta name="twitter:description" content="转帖：原文
-Google退出WebKit项目，创建自己的渲染引擎Blink。这其实不能说完全没有先兆，合合分分，纯属正常。
-其实，之前关于WebKit2，双方的争论就非常的大。Apple希望它可以随便加入和删除代码而无需担心它会破坏其它Ports的代码，这遭到很多人的反对和不满。
-同时，另一方面，Google有很多新的功能希望加入WebKit中，但是WebKit可能并不认可他们。双方分歧越来越多，">
+<meta name="twitter:title" content="LeetCode:Intersection of Two Linked Lists">
+<meta name="twitter:description" content="题目查找两个链表相同的尾链
+A:          a1 → a2
+                   ↘
+                     c1 → c2 → c3
+                   ↗            
+B:     b1 → b2 → b3
+ 如果两个链表没有相同尾链，返回null。
+ 两个链表在输出时应保持原来的结构。 链表结构中没有循环。
+ 时间复杂度">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -66,7 +82,7 @@ Google退出WebKit项目，创建自己的渲染引擎Blink。这其实不能说
   };
 </script>
 
-    <title> blink chromium webkit 是什么关系 // Judastree </title>
+    <title> LeetCode:Intersection of Two Linked Lists // Judastree </title>
 </head>
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 <!--[if lte IE 8]>
@@ -178,7 +194,7 @@ Google退出WebKit项目，创建自己的渲染引擎Blink。这其实不能说
           
           
             
-              blink chromium webkit 是什么关系
+              LeetCode:Intersection of Two Linked Lists
             
           
         </h1>
@@ -187,8 +203,8 @@ Google退出WebKit项目，创建自己的渲染引擎Blink。这其实不能说
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-07-19T22:06:01+08:00" content="2015-07-19">
-            2015-07-19
+          <time itemprop="dateCreated" datetime="2015-07-24T10:47:40+08:00" content="2015-07-24">
+            2015-07-24
           </time>
         </span>
 
@@ -198,8 +214,8 @@ Google退出WebKit项目，创建自己的渲染引擎Blink。这其实不能说
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/07/19/blink-chromium-webkit-是什么关系/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/19/blink-chromium-webkit-是什么关系/" itemprop="commentsCount"></span>
+              <a href="/2015/07/24/LeetCode-Intersection-of-Two-Linked-Lists/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/24/LeetCode-Intersection-of-Two-Linked-Lists/" itemprop="commentsCount"></span>
               </a>
             </span>
           
@@ -213,12 +229,95 @@ Google退出WebKit项目，创建自己的渲染引擎Blink。这其实不能说
       
 
       
-        <span itemprop="articleBody"><p>转帖：<a href="http://blog.csdn.net/milado_nju/article/details/8805810" target="_blank" rel="external">原文</a></p>
-<p>Google退出WebKit项目，创建自己的渲染引擎Blink。这其实不能说完全没有先兆，合合分分，纯属正常。</p>
-<p>其实，之前关于WebKit2，双方的争论就非常的大。Apple希望它可以随便加入和删除代码而无需担心它会破坏其它Ports的代码，这遭到很多人的反对和不满。</p>
-<p>同时，另一方面，Google有很多新的功能希望加入WebKit中，但是WebKit可能并不认可他们。双方分歧越来越多，终于分道扬镳。</p>
-<p>这里面有个误区，就是Google的Blink是一个全新的引擎。其实不是这样，Blink目前就是从WebKit直接复制出一个版本出来，然后将与chromium无关的Ports全部移除掉，将代码结构重新整理，就目前而言，Blink的渲染和WebKit是一样，但是，以后两者将各自走不同的路。这有点类似于之前WebKit从KHTML中复制出来一样，历史总是惊人的相似。</p>
-<p>目前参与Blink和Chromium大致一样，拥有Chromium的commit权限对Blink也适用。原来一些WebKit的committer和reviewer也开始成为blink的committer。它的提交代码流程，review流程等都是chromium的风格，这对chromium的开发者来说非常熟悉。</p>
+        <span itemprop="articleBody"><h2 id="题目">题目</h2><p><a href="https://leetcode.com/problems/intersection-of-two-linked-lists/" target="_blank" rel="external">查找两个链表相同的尾链</a></p>
+<pre><code>A:          <span class="literal">a1</span> → <span class="literal">a2</span>
+                   ↘
+                     <span class="literal">c1</span> → <span class="literal">c2</span> → <span class="literal">c3</span>
+                   ↗            
+<span class="keyword">B: </span>    <span class="keyword">b1 </span>→ <span class="keyword">b2 </span>→ <span class="keyword">b3</span>
+</code></pre><p> <em>如果两个链表没有相同尾链，返回null。
+ </em>两个链表在输出时应保持原来的结构。<br> <em>链表结构中没有循环。
+ </em>时间复杂度要求O(n),空间复杂度要求O(1)</p>
+<h2 id="思路">思路</h2><p> 先取A，B链的长度，找出哪个是短链，哪个是长链。</p>
+<p> 然后找到长链尾部和短链长度相同的位置，开始比较它和短链是否相等。</p>
+<p> 如果当前节点不相等，则两者后移一位继续比较，直到找到第一个相等的节点，记录之。</p>
+<p> 如果当前节点不相等，但前一个节点相等，说明没有相同的尾链，返回null。</p>
+<h2 id="实现">实现</h2><pre><code><span class="comment">/**
+ * @param {ListNode} headA
+ * @param {ListNode} headB
+ * @return {ListNode}
+ */</span>
+var <span class="variable">getIntersectionNode =</span> function(headA, headB) {
+
+    <span class="keyword">if</span>(headA&amp;&amp;headB){
+        var <span class="variable">node=</span>headA,<span class="variable">aLength=</span><span class="number">1</span>,<span class="variable">bLength=</span><span class="number">1</span>;
+        while(node.next){
+            aLength++;
+            <span class="variable">node =</span> node.next;
+        }
+        <span class="variable">node=</span> headB;
+        while(node.next){
+            bLength++;
+            <span class="variable">node=</span>node.next;
+        }
+        var pointer1 ,pointer2;
+        //将ab链截取到尾部位数相同
+        <span class="keyword">if</span>(aLength &gt; bLength){
+            <span class="variable">pointer1 =</span> headB;
+            <span class="variable">pointer2 =</span> headA;
+            for(var <span class="variable">i =</span> bLength;i&lt;aLength;i++){
+                <span class="variable">pointer2 =</span> pointer2.next;
+            }
+        }<span class="keyword">else</span> <span class="keyword">if</span>(aLength&lt;bLength){
+            <span class="variable">pointer1 =</span> headA;
+            <span class="variable">pointer2 =</span> headB;
+            for(<span class="variable">i =</span> aLength;i&lt;bLength;i++){
+                <span class="variable">pointer2 =</span> pointer2.next;
+            }
+        }<span class="keyword">else</span>{
+            <span class="variable">pointer1 =</span> headA;
+            <span class="variable">pointer2 =</span> headB;
+        }
+
+        <span class="variable">node =</span> <span class="constant">null</span>;
+        //保留上次比较结果
+        var <span class="variable">sameFlag =</span> <span class="constant">false</span>;
+        while(pointer1){
+
+            <span class="keyword">if</span>(pointer1.<span class="variable">val=</span>==pointer2.val){
+                //当前相等，继续比较。
+                // 如果上次比较不相等，则赋值node，说明是第一个相等的节点
+                <span class="keyword">if</span>(!sameFlag){
+                    <span class="variable">node =</span> pointer1;
+                }
+                <span class="variable">sameFlag=</span><span class="constant">true</span>;
+                <span class="variable">pointer1 =</span> pointer1.next;
+                <span class="variable">pointer2 =</span> pointer2.next;
+                continue;
+
+            }
+            <span class="keyword">if</span>(pointer1.val!==pointer2.val){
+                //当前不相等，判断上次比较是否相等。
+                <span class="keyword">if</span>(sameFlag){
+                    //上次比较相等，则直接返回<span class="constant">null</span>，说明没有相同的尾链
+                    return <span class="constant">null</span>;
+                }<span class="keyword">else</span>{
+                    //上次比较不相等，则继续比较
+                    <span class="variable">pointer1 =</span> pointer1.next;
+                    <span class="variable">pointer2 =</span> pointer2.next;
+                    <span class="variable">sameFlag=</span><span class="constant">false</span>;
+                    continue;
+                }
+
+            }
+        }
+        return node;
+
+    }<span class="keyword">else</span>{
+        return <span class="constant">null</span>;
+    }
+};
+</code></pre><p> <img src="/images/intersection.png" alt="intersection"></p>
 </span>
       
     </div>
@@ -227,7 +326,9 @@ Google退出WebKit项目，创建自己的渲染引擎Blink。这其实不能说
       
         <div class="post-tags">
           
-            <a href="/tags/工具/" rel="tag">#工具</a>
+            <a href="/tags/LeetCode/" rel="tag">#LeetCode</a>
+          
+            <a href="/tags/算法/" rel="tag">#算法</a>
           
         </div>
       
@@ -236,13 +337,11 @@ Google退出WebKit项目，创建自己的渲染引擎Blink。这其实不能说
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/07/19/LeetCode:Path Sum/" rel="prev">LeetCode:Path-Sum</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/07/19/node下如何调试/" rel="next">node下如何调试</a>
+              <a href="/2015/07/23/页面性能分析工具/" rel="next">页面性能分析工具</a>
             
           </div>
         </div>
@@ -268,8 +367,8 @@ Google退出WebKit项目，创建自己的渲染引擎Blink。这其实不能说
             
               <div class="comments" id="comments">
                 
-                  <div class="ds-thread" data-thread-key="2015/07/19/blink-chromium-webkit-是什么关系/"
-                       data-title="blink chromium webkit 是什么关系" data-url="http://judastree.github.io/2015/07/19/blink-chromium-webkit-是什么关系/">
+                  <div class="ds-thread" data-thread-key="2015/07/24/LeetCode-Intersection-of-Two-Linked-Lists/"
+                       data-title="LeetCode:Intersection of Two Linked Lists" data-url="http://judastree.github.io/2015/07/24/LeetCode-Intersection-of-Two-Linked-Lists/">
                   </div>
                 
               </div>
@@ -368,7 +467,7 @@ Google退出WebKit项目，创建自己的渲染引擎Blink。这其实不能说
           <div class="post-toc">
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目"><span class="nav-number">1.</span> <span class="nav-text">题目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#思路"><span class="nav-number">2.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现"><span class="nav-number">3.</span> <span class="nav-text">实现</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
