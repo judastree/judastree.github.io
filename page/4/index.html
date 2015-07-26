@@ -171,6 +171,151 @@
           
           
             
+              <a class="post-title-link" href="/2015/07/14/Android怎么打Log/" itemprop="url">
+                Android怎么打Log
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-07-14T09:36:07+08:00" content="2015-07-14">
+            2015-07-14
+          </time>
+        </span>
+
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2015/07/14/Android怎么打Log/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/14/Android怎么打Log/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p>android 中有五种类型的 Log .</p>
+<pre><code><span class="title">VERBOSE</span> 类型调试信息，verbose啰嗦的意思 
+DEBUG 类型调试信息, <span class="built_in">debug</span>调试信息 
+INFO  类型调试信息, 一般提示性的消息information 
+WARN  类型调试信息，warning警告类型信息 
+ERROR 类型调试信息，错误信息
+</code></pre><p>那么怎么在logcat中打印出这几种类型的日志呢。</p>
+<p>Android.util.Log类提供如下对应的方法。</p>
+<pre><code><span class="keyword">Log</span><span class="built_in">.</span>v(<span class="built_in">String</span> <span class="built_in">tag</span>, <span class="built_in">String</span> msg); <span class="comment">//VERBOSE </span>
+<span class="keyword">Log</span><span class="built_in">.</span>d(<span class="built_in">String</span> <span class="built_in">tag</span>, <span class="built_in">String</span> msg); <span class="comment">//DEBUG </span>
+<span class="keyword">Log</span><span class="built_in">.</span>i(<span class="built_in">String</span> <span class="built_in">tag</span>, <span class="built_in">String</span> msg); <span class="comment">//INFO </span>
+<span class="keyword">Log</span><span class="built_in">.</span>w(<span class="built_in">String</span> <span class="built_in">tag</span>, <span class="built_in">String</span> msg); <span class="comment">//WARN </span>
+<span class="keyword">Log</span><span class="built_in">.</span>e(<span class="built_in">String</span> <span class="built_in">tag</span>, <span class="built_in">String</span> msg); <span class="comment">//ERROR </span>
+</code></pre><p>Tag为调试信息标签名称，msg为添加的调试信息 。</p>
+<p>这样你可以根据tag，在DDMS中对不同类型的日志进行过滤查看。</p>
+<p>但真正的项目中，我们会在 debug 的版本中输出 log，而在 release 版本的产品中关闭 log 的输出。</p>
+<p>要控制日志的输出与否，我们仍需要自己根据当前环境去封装自己的Log类。</p>
+<p>比如，在Release 版本的软件上将 DEBUG 置为 false ：</p>
+<pre><code><span class="keyword">public</span> class <span class="keyword">Log</span> {
+ <span class="keyword">private</span> static final <span class="built_in">boolean</span> DEBUG <span class="subst">=</span> <span class="literal">true</span>;
+
+ <span class="keyword">public</span> static <span class="literal">void</span> v(<span class="built_in">String</span> <span class="built_in">tag</span>, <span class="built_in">String</span> msg) {
+     <span class="keyword">if</span>(DEBUG) {
+      android<span class="built_in">.</span>util<span class="built_in">.</span><span class="keyword">Log</span><span class="built_in">.</span>v(<span class="built_in">tag</span>, msg);
+     }
+    }
+    <span class="keyword">public</span> static <span class="literal">void</span> v(<span class="built_in">String</span> <span class="built_in">tag</span>, <span class="built_in">String</span> msg, Throwable tr) {
+        <span class="keyword">if</span>(DEBUG) {
+         android<span class="built_in">.</span>util<span class="built_in">.</span><span class="keyword">Log</span><span class="built_in">.</span>v(<span class="built_in">tag</span>, msg, tr);
+        }
+    }
+    <span class="keyword">public</span> static <span class="literal">void</span> d(<span class="built_in">String</span> <span class="built_in">tag</span>, <span class="built_in">String</span> msg) {
+        <span class="keyword">if</span>(DEBUG) {
+         android<span class="built_in">.</span>util<span class="built_in">.</span><span class="keyword">Log</span><span class="built_in">.</span>d(<span class="built_in">tag</span>, msg);
+        }
+    }
+    <span class="keyword">public</span> static <span class="literal">void</span> d(<span class="built_in">String</span> <span class="built_in">tag</span>, <span class="built_in">String</span> msg, Throwable tr) {
+        <span class="keyword">if</span>(DEBUG) {
+         android<span class="built_in">.</span>util<span class="built_in">.</span><span class="keyword">Log</span><span class="built_in">.</span>d(<span class="built_in">tag</span>, msg, tr);
+        }
+    }
+    <span class="keyword">public</span> static <span class="literal">void</span> i(<span class="built_in">String</span> <span class="built_in">tag</span>, <span class="built_in">String</span> msg) {
+        <span class="keyword">if</span>(DEBUG) {
+         android<span class="built_in">.</span>util<span class="built_in">.</span><span class="keyword">Log</span><span class="built_in">.</span>i(<span class="built_in">tag</span>, msg);
+        }
+    }
+    <span class="keyword">public</span> static <span class="literal">void</span> i(<span class="built_in">String</span> <span class="built_in">tag</span>, <span class="built_in">String</span> msg, Throwable tr) {
+        <span class="keyword">if</span>(DEBUG) {
+         android<span class="built_in">.</span>util<span class="built_in">.</span><span class="keyword">Log</span><span class="built_in">.</span>i(<span class="built_in">tag</span>, msg, tr);
+        }
+    }
+    <span class="keyword">public</span> static <span class="literal">void</span> w(<span class="built_in">String</span> <span class="built_in">tag</span>, <span class="built_in">String</span> msg) {
+        <span class="keyword">if</span>(DEBUG) {
+         android<span class="built_in">.</span>util<span class="built_in">.</span><span class="keyword">Log</span><span class="built_in">.</span>w(<span class="built_in">tag</span>, msg);
+        }
+    }
+    <span class="keyword">public</span> static <span class="literal">void</span> w(<span class="built_in">String</span> <span class="built_in">tag</span>, <span class="built_in">String</span> msg, Throwable tr) {
+        <span class="keyword">if</span>(DEBUG) {
+         android<span class="built_in">.</span>util<span class="built_in">.</span><span class="keyword">Log</span><span class="built_in">.</span>w(<span class="built_in">tag</span>, msg, tr);
+        }
+    }
+    <span class="keyword">public</span> static <span class="literal">void</span> w(<span class="built_in">String</span> <span class="built_in">tag</span>, Throwable tr) {
+        <span class="keyword">if</span>(DEBUG) {
+         android<span class="built_in">.</span>util<span class="built_in">.</span><span class="keyword">Log</span><span class="built_in">.</span>w(<span class="built_in">tag</span>, tr);
+        }
+    }
+    <span class="keyword">public</span> static <span class="literal">void</span> e(<span class="built_in">String</span> <span class="built_in">tag</span>, <span class="built_in">String</span> msg) {
+        <span class="keyword">if</span>(DEBUG) {
+         android<span class="built_in">.</span>util<span class="built_in">.</span><span class="keyword">Log</span><span class="built_in">.</span>e(<span class="built_in">tag</span>, msg);
+        }
+    }
+    <span class="keyword">public</span> static <span class="literal">void</span> e(<span class="built_in">String</span> <span class="built_in">tag</span>, <span class="built_in">String</span> msg, Throwable tr) {
+        <span class="keyword">if</span>(DEBUG) {
+         android<span class="built_in">.</span>util<span class="built_in">.</span><span class="keyword">Log</span><span class="built_in">.</span>e(<span class="built_in">tag</span>, msg, tr);
+        }
+    }
+}
+</code></pre></span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2015/07/13/生活好Boring啊/" itemprop="url">
                 生活好boring啊
               </a>
@@ -1115,112 +1260,6 @@ x 系统默认颜色
 
 
     
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/03/30/Mac-OS-X-中配置Apache/" itemprop="url">
-                Mac OS X 中配置Apache 相关
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-03-30T22:23:41+08:00" content="2015-03-30">
-            2015-03-30
-          </time>
-        </span>
-
-        
-
-        
-          
-            <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2015/03/30/Mac-OS-X-中配置Apache/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/03/30/Mac-OS-X-中配置Apache/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><h3 id="启动服务">启动服务</h3><p>Mac中自带了Apache环境，直接一行命令搞定了。</p>
-<pre><code><span class="variable">$sudo</span> apachectl start
-</code></pre><p>这时，打开你得浏览器，输入“<a href="http://localhost”" target="_blank" rel="external">http://localhost”</a>, 可以看到“It Works！”的页面。这个<strong>index.html</strong> 文件位于“/Library(资源库)/WebServer/Documents/”下。这是Apache的默认根目录。</p>
-<hr>
-<h3 id="修改配置">修改配置</h3><p>Apache 的安装目录在:<strong>/etc/apache2/</strong> 默认是隐藏的。</p>
-<pre><code><span class="variable">$open</span> /etc/apache2
-</code></pre><p>让隐藏文件可以见，或者让隐藏文件不可见的命令如下：</p>
-<pre><code><span class="variable">$defaults</span> write com<span class="class">.apple</span><span class="class">.finder</span> AppleShowAllFiles -bool true
-
-<span class="variable">$defaults</span> write com<span class="class">.apple</span><span class="class">.finder</span> AppleShowAllFiles -bool false
-</code></pre><p>修改<strong>/etc/apache2/httpd.conf</strong> 文件，就是修改apache的配置文件。这个文件默认是只读的，修改请加管理员权限 <strong>sudo</strong></p>
-<p>修改完之后，记得重启apache 服务</p>
-<pre><code><span class="variable">$sudo</span> apachectl restart
-</code></pre><hr>
-<h3 id="修改Apache默认根目录">修改Apache默认根目录</h3><ol>
-<li><p>打开 <strong>/etc/apache2/httpd.conf</strong>文件</p>
-<pre><code><span class="label">$sudo</span> vim /etc/apache2/httpd.<span class="keyword">conf</span>
-</code></pre></li>
-</ol>
-<ol>
-<li><p>找到<strong>/Library/WebServer/Documents</strong>,你换成你自己的目录：</p>
-<pre><code>如<span class="regexp">/Users/</span>{username}/Sites
-</code></pre></li>
-<li><p>重启服务。</p>
-<pre><code><span class="variable">$sudo</span> apachectl restart   
-</code></pre></li>
-</ol>
-<hr>
-<h3 id="修改默认端口">修改默认端口</h3><ol>
-<li><p>打开 <strong>/etc/apache2/httpd.conf</strong>文件</p>
-<pre><code><span class="label">$sudo</span> vim /etc/apache2/httpd.<span class="keyword">conf</span>
-</code></pre></li>
-<li><p>找到<strong>Listen</strong> 关键字,后面跟的就是端口号了，改掉！</p>
-<pre><code><span class="keyword"><span class="common">Listen</span></span> 8089
-</code></pre></li>
-<li><p>然后继续重启</p>
-</li>
-</ol>
-</span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1260,7 +1299,7 @@ x 系统默认颜色
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">42</span>
+              <span class="site-state-item-count">43</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

@@ -5,7 +5,7 @@
   <subtitle><![CDATA[You are the pretty sunshine of my life]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://judastree.github.io//"/>
-  <updated>2015-07-25T16:07:52.000Z</updated>
+  <updated>2015-07-26T04:48:18.000Z</updated>
   <id>http://judastree.github.io//</id>
   
   <author>
@@ -16,21 +16,88 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[LeetCode:Number of 1 Bits]]></title>
+    <link href="http://judastree.github.io/2015/07/26/LeetCode-Number-of-1-Bits/"/>
+    <id>http://judastree.github.io/2015/07/26/LeetCode-Number-of-1-Bits/</id>
+    <published>2015-07-26T04:36:48.000Z</published>
+    <updated>2015-07-26T04:48:18.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="题目">题目</h2><p> <a href="https://leetcode.com/problems/number-of-1-bits/" target="_blank" rel="external">找出一个数字的二进制中有多少个1</a></p>
+<p> 给定一个无符号的整型数字，比如11,它的二进制是1011,所以返回1的个数3.</p>
+<h2 id="思路">思路</h2><p>对二进制进行位操作，每向右移1位和1做位与操作。是1的话计数器加1，直到右移到0截止。</p>
+<p>这个方法写得很轻松，但是耗时长。</p>
+<h2 id="实现">实现</h2><pre><code><span class="comment">/**
+ * @param {number} n - a positive integer
+ * @return {number}
+ */</span>
+<span class="keyword">var</span> hammingWeight = function(<span class="keyword">n</span>,<span class="keyword">count</span>) {
+    <span class="keyword">if</span>(!<span class="keyword">count</span>){
+        <span class="keyword">count</span> = 0;
+    }
+    <span class="keyword">if</span>(<span class="keyword">n</span>&amp;1===1){
+        <span class="keyword">count</span>++;
+    }
+    <span class="keyword">if</span>(<span class="keyword">n</span>&gt;1){
+        <span class="keyword">return</span> hammingWeight(<span class="keyword">n</span>&gt;&gt;&gt;1,<span class="keyword">count</span>);
+    }<span class="keyword">else</span>{
+        <span class="keyword">return</span> <span class="keyword">count</span>;
+    }
+};
+</code></pre>]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="题目">题目</h2><p> <a href="https://leetcode.com/problems/number-of-1-bits/" target="_blank" rel="external">找出一个数字的二进制中有多少个1</a></p>
+<p>]]>
+    </summary>
+    
+      <category term="LeetCode" scheme="http://judastree.github.io/tags/LeetCode/"/>
+    
+      <category term="算法" scheme="http://judastree.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[LeetCode:Palindrome Linked List]]></title>
     <link href="http://judastree.github.io/2015/07/26/LeetCode-Palindrome-Linked-List/"/>
     <id>http://judastree.github.io/2015/07/26/LeetCode-Palindrome-Linked-List/</id>
     <published>2015-07-25T16:03:00.000Z</published>
-    <updated>2015-07-25T16:07:52.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="题目">题目</h2><p>(Palindrome Linked List)[<a href="https://leetcode.com/problems/palindrome-linked-list/" target="_blank" rel="external">https://leetcode.com/problems/palindrome-linked-list/</a>]</p>
+    <updated>2015-07-26T04:35:55.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="题目">题目</h2><p><a href="https://leetcode.com/problems/palindrome-linked-list/" target="_blank" rel="external">Palindrome Linked List</a></p>
 <p>判断一个单向链表（没有环）是否是回文链表。</p>
-<p>要求时间复杂度在O(n), O(1)</p>
+<p>要求时间复杂度在O(n),空间复杂度 O(1)</p>
 <h2 id="思路">思路</h2><pre><code>1, 找到链表的中间节点。
 2, 反转链表后半部分。
 3, 比较前半部分和后半部分的值是否相等
 4, 还原现场，将后半部分反转回原貌
-</code></pre><h2 id="查到链表的中间节点">查到链表的中间节点</h2><h2 id="反转链表">反转链表</h2>]]></content>
+</code></pre><h2 id="查到链表的中间节点">查到链表的中间节点</h2><pre><code>var fPointer = sPointer = midPos= head;
+<span class="keyword">while</span> (fPointer.<span class="keyword">next</span>) {
+    sPointer = sPointer.<span class="keyword">next</span>;
+    fPointer = fPointer.<span class="keyword">next</span>;
+    <span class="keyword">if</span>(fPointer.<span class="keyword">next</span>){
+        fPointer = fPointer.<span class="keyword">next</span>;
+    }<span class="keyword">else</span>{
+        <span class="keyword">break</span>;
+    }
+}
+midPos = sPointer;
+</code></pre><h2 id="反转链表">反转链表</h2><p>PS: 反转还没有写出来，下面是错误的。</p>
+<p>  反转链表的方法是从第2个节点到第N个节点，依次逐节点插入到第1个节点(head节点)之后，最后将第一个节点挪到新表的表尾。</p>
+<p>  我们此时的head是midPos,移动sPointer指针。</p>
+<pre><code>fPointer = misPos;
+sPointer = sPointer.<span class="keyword">next</span>;
+
+<span class="keyword">while</span>(sPointer){
+    <span class="regexp">//</span>暂时保存head.<span class="keyword">next</span>
+    fPointer = midPos.<span class="keyword">next</span>;
+    <span class="regexp">//</span>将要插入的节点放到head的<span class="keyword">next</span>
+    midPos.<span class="keyword">next</span> = sPointer;
+    <span class="regexp">//</span>将插入节点的<span class="keyword">next</span>赋值为前面保存的head.<span class="keyword">next</span>
+    sPointer.<span class="keyword">next</span> = fPointer;
+
+    <span class="regexp">//</span>移动sPointer
+    sPointer = sPointer.<span class="keyword">next</span>   
+}
+</code></pre>]]></content>
     <summary type="html">
-    <![CDATA[<h2 id="题目">题目</h2><p>(Palindrome Linked List)[<a href="https://leetcode.com/problems/palindrome-linked-list/" target="_blank" rel="external]]>
+    <![CDATA[<h2 id="题目">题目</h2><p><a href="https://leetcode.com/problems/palindrome-linked-list/" target="_blank" rel="external">Palindrome Linked List<]]>
     </summary>
     
       <category term="LeetCode" scheme="http://judastree.github.io/tags/LeetCode/"/>
@@ -843,23 +910,6 @@ bst.postOrder(bst.root, <span class="function"><span class="keyword">function</s
     </summary>
     
       <category term="日常" scheme="http://judastree.github.io/tags/%E6%97%A5%E5%B8%B8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[backbone的事件机制]]></title>
-    <link href="http://judastree.github.io/2015/07/16/backbone%E7%9A%84%E4%BA%8B%E4%BB%B6%E6%9C%BA%E5%88%B6/"/>
-    <id>http://judastree.github.io/2015/07/16/backbone的事件机制/</id>
-    <published>2015-07-16T03:54:57.000Z</published>
-    <updated>2015-07-16T03:56:06.000Z</updated>
-    <content type="html"><![CDATA[<p>因为最近在做事件绑定的时候总是出现一些问题，看来有必要去研究下了。<br>先占个坑，以后再填。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>因为最近在做事件绑定的时候总是出现一些问题，看来有必要去研究下了。<br>先占个坑，以后再填。</p>
-]]>
-    </summary>
-    
-      <category term="JavaScript" scheme="http://judastree.github.io/tags/JavaScript/"/>
     
   </entry>
   
