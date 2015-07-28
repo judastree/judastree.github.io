@@ -5,7 +5,7 @@
   <subtitle><![CDATA[You are the pretty sunshine of my life]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://judastree.github.io//"/>
-  <updated>2015-07-27T12:19:22.000Z</updated>
+  <updated>2015-07-28T02:41:42.000Z</updated>
   <id>http://judastree.github.io//</id>
   
   <author>
@@ -14,6 +14,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Android Studio Gradle Error:java.io.IOException: Operation not supported]]></title>
+    <link href="http://judastree.github.io/2015/07/28/Android-Studio-Gradle-Error-java-io-IOException-Operation-not-supported/"/>
+    <id>http://judastree.github.io/2015/07/28/Android-Studio-Gradle-Error-java-io-IOException-Operation-not-supported/</id>
+    <published>2015-07-28T02:38:06.000Z</published>
+    <updated>2015-07-28T02:41:42.000Z</updated>
+    <content type="html"><![CDATA[<p>在mac上每次build gradle 都报这样的错误，java.io.IOException: Operation not supported</p>
+<p>原因是我的代码放在了windows上共享给mac，gradle不支持远程</p>
+<h2 id="参考">参考</h2><p><a href="http://stackoverflow.com/questions/28751793/android-studio-on-mac" target="_blank" rel="external">same problem in stackoverflow</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>在mac上每次build gradle 都报这样的错误，java.io.IOException: Operation not supported</p>
+<p>原因是我的代码放在了windows上共享给mac，gradle不支持远程</p>
+<h2 id="参考">参考</]]>
+    </summary>
+    
+      <category term="Android" scheme="http://judastree.github.io/tags/Android/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[style currentStyle getComputedStyle 三者区别]]></title>
@@ -936,25 +956,6 @@ bst.postOrder(bst.root, <span class="function"><span class="keyword">function</s
     </summary>
     
       <category term="工具" scheme="http://judastree.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[node下如何调试]]></title>
-    <link href="http://judastree.github.io/2015/07/19/node%E4%B8%8B%E5%A6%82%E4%BD%95%E8%B0%83%E8%AF%95/"/>
-    <id>http://judastree.github.io/2015/07/19/node下如何调试/</id>
-    <published>2015-07-18T16:14:39.000Z</published>
-    <updated>2015-07-19T13:31:15.000Z</updated>
-    <content type="html"><![CDATA[<p>目前遇到的场景，直接在webstorm上打断点，然后shift+ctrl+D, 就可以调试了。</p>
-<p>后面遇到更复杂的场景再继续研究。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>目前遇到的场景，直接在webstorm上打断点，然后shift+ctrl+D, 就可以调试了。</p>
-<p>后面遇到更复杂的场景再继续研究。</p>
-]]>
-    </summary>
-    
-      <category term="JavaScript" scheme="http://judastree.github.io/tags/JavaScript/"/>
     
   </entry>
   

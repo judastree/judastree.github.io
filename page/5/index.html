@@ -171,6 +171,84 @@
           
           
             
+              <a class="post-title-link" href="/2015/06/30/currentColor关键字/" itemprop="url">
+                currentColor关键字
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-06-30T13:31:24+08:00" content="2015-06-30">
+            2015-06-30
+          </time>
+        </span>
+
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2015/06/30/currentColor关键字/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/06/30/currentColor关键字/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p>与其说这是一个css的关键字，但其实说是个变量更好理解一点。</p>
+<p>currentColor 代表了当前元素被应用的color颜色值。使用它可以将当前这个颜色值应用到其他属性上，或者嵌套元素的其他属性上。</p>
+<p>如果当前元素没有显示地指定一个color值，那么它的颜色值从父级集成而来。</p>
+<p>使用了currentColor之后，css更好维护了，一改全改。</p>
+<pre><code><span class="tag">div</span><span class="rules">{
+    <span class="rule"><span class="attribute">color</span>:<span class="value"> <span class="hexcolor">#33</span></span></span>; 
+    <span class="rule"><span class="attribute">border</span>:<span class="value"> <span class="number">5px</span> solid currentColor</span></span>;
+    <span class="rule"><span class="attribute">box-shadow</span>:<span class="value"> <span class="number">0</span> <span class="number">0</span> <span class="number">5px</span> solid currentColor</span></span>;
+}</span>
+</code></pre><p>除了IE8，PC和手机上的浏览器基本都支持这个关键字。</p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2015/06/29/Mac下取消Chrome的ajax请求跨域/" itemprop="url">
                 Mac下取消Chrome的ajax请求跨域
               </a>
@@ -724,7 +802,7 @@ x 系统默认颜色
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">46</span>
+              <span class="site-state-item-count">47</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
