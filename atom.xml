@@ -5,7 +5,7 @@
   <subtitle><![CDATA[You are the pretty sunshine of my life]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://judastree.github.io//"/>
-  <updated>2015-07-28T02:41:42.000Z</updated>
+  <updated>2015-07-28T10:00:17.000Z</updated>
   <id>http://judastree.github.io//</id>
   
   <author>
@@ -14,6 +14,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[requirejs 的运行机制]]></title>
+    <link href="http://judastree.github.io/2015/07/28/requirejs-%E7%9A%84%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6/"/>
+    <id>http://judastree.github.io/2015/07/28/requirejs-的运行机制/</id>
+    <published>2015-07-28T09:06:25.000Z</published>
+    <updated>2015-07-28T10:00:17.000Z</updated>
+    <content type="html"><![CDATA[<p>在requirejs的官网找到这样一段话：<br>    RequireJS loads each dependency as a script tag, using head.appendChild().<br>    RequireJS waits for all dependencies to load, figures out the right order in which to call the functions that define the modules,<br>    then calls the module definition functions once the dependencies for those functions have been called. </p>
+<p>翻译过来是：</p>
+<pre><code>RequireJS通过head.<span class="function"><span class="title">appendChild</span><span class="params">()</span></span>将每一个依赖加载为一个script标签。
+
+等到所有的依赖都加载完成之后，RequireJS计算出模块定义函数的调用顺序。
+
+一旦依赖这些功能的地方被调用时requiredjs会调用这些功能的模块定义。
+</code></pre><p><strong>requirejs是怎么做到模块化的？</strong> </p>
+<p>requirejs有个loader来保存和监听所有依赖的状态。script标签来加载这些文件，加载成功和失败都会更新依赖的状态。</p>
+<p><em>是否有重复引用?</em></p>
+<p>Requirejs是单例的设计，只要同名的被引入过一次（这里的同名相当于amd define的id）就一直是用这个模块的定义。</p>
+<p>为了避免全局污染，遵循AMD的规范，define和export。</p>
+<p>理想状况下，每个加载的脚本都是通过define()来定义的一个模块；</p>
+<p>但有些”浏览器全局变量注入”型的传统/遗留库并没有使用define()来定义它们的依赖关系，就必须为此使用shim config来指明它们的依赖关系。 </p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>在requirejs的官网找到这样一段话：<br>    RequireJS loads each dependency as a script tag, using head.appendChild().<br>    RequireJS waits for all de]]>
+    </summary>
+    
+      <category term="JavaScript" scheme="http://judastree.github.io/tags/JavaScript/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Android Studio Gradle Error:java.io.IOException: Operation not supported]]></title>
@@ -934,28 +963,6 @@ bst.postOrder(bst.root, <span class="function"><span class="keyword">function</s
       <category term="LeetCode" scheme="http://judastree.github.io/tags/LeetCode/"/>
     
       <category term="算法" scheme="http://judastree.github.io/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[blink chromium webkit 是什么关系]]></title>
-    <link href="http://judastree.github.io/2015/07/19/blink-chromium-webkit-%E6%98%AF%E4%BB%80%E4%B9%88%E5%85%B3%E7%B3%BB/"/>
-    <id>http://judastree.github.io/2015/07/19/blink-chromium-webkit-是什么关系/</id>
-    <published>2015-07-19T14:06:01.000Z</published>
-    <updated>2015-07-19T14:11:56.000Z</updated>
-    <content type="html"><![CDATA[<p>转帖：<a href="http://blog.csdn.net/milado_nju/article/details/8805810" target="_blank" rel="external">原文</a></p>
-<p>Google退出WebKit项目，创建自己的渲染引擎Blink。这其实不能说完全没有先兆，合合分分，纯属正常。</p>
-<p>其实，之前关于WebKit2，双方的争论就非常的大。Apple希望它可以随便加入和删除代码而无需担心它会破坏其它Ports的代码，这遭到很多人的反对和不满。</p>
-<p>同时，另一方面，Google有很多新的功能希望加入WebKit中，但是WebKit可能并不认可他们。双方分歧越来越多，终于分道扬镳。</p>
-<p>这里面有个误区，就是Google的Blink是一个全新的引擎。其实不是这样，Blink目前就是从WebKit直接复制出一个版本出来，然后将与chromium无关的Ports全部移除掉，将代码结构重新整理，就目前而言，Blink的渲染和WebKit是一样，但是，以后两者将各自走不同的路。这有点类似于之前WebKit从KHTML中复制出来一样，历史总是惊人的相似。</p>
-<p>目前参与Blink和Chromium大致一样，拥有Chromium的commit权限对Blink也适用。原来一些WebKit的committer和reviewer也开始成为blink的committer。它的提交代码流程，review流程等都是chromium的风格，这对chromium的开发者来说非常熟悉。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>转帖：<a href="http://blog.csdn.net/milado_nju/article/details/8805810" target="_blank" rel="external">原文</a></p>
-<p>Google退出WebKit项目，创建自己的渲]]>
-    </summary>
-    
-      <category term="工具" scheme="http://judastree.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   

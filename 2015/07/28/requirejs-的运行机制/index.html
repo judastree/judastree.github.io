@@ -28,7 +28,7 @@
 
 
 
-  <meta name="keywords" content="css," />
+  <meta name="keywords" content="JavaScript," />
 
 
 
@@ -39,33 +39,15 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.4" />
 
 
-<meta name="description" content="与其说这是一个css的关键字，但其实说是个变量更好理解一点。
-currentColor 代表了当前元素被应用的color颜色值。使用它可以将当前这个颜色值应用到其他属性上，或者嵌套元素的其他属性上。
-如果当前元素没有显示地指定一个color值，那么它的颜色值从父级集成而来。
-使用了currentColor之后，css更好维护了，一改全改。
-div{
-    color: #33; 
-    bor">
+<meta name="description" content="在requirejs的官网找到这样一段话：    RequireJS loads each dependency as a script tag, using head.appendChild().    RequireJS waits for all dependencies to load, figures out the right order in which to call the fu">
 <meta property="og:type" content="article">
-<meta property="og:title" content="currentColor关键字">
-<meta property="og:url" content="http://judastree.github.io/2015/06/30/currentColor关键字/index.html">
+<meta property="og:title" content="requirejs 的运行机制">
+<meta property="og:url" content="http://judastree.github.io/2015/07/28/requirejs-的运行机制/index.html">
 <meta property="og:site_name" content="Judastree">
-<meta property="og:description" content="与其说这是一个css的关键字，但其实说是个变量更好理解一点。
-currentColor 代表了当前元素被应用的color颜色值。使用它可以将当前这个颜色值应用到其他属性上，或者嵌套元素的其他属性上。
-如果当前元素没有显示地指定一个color值，那么它的颜色值从父级集成而来。
-使用了currentColor之后，css更好维护了，一改全改。
-div{
-    color: #33; 
-    bor">
+<meta property="og:description" content="在requirejs的官网找到这样一段话：    RequireJS loads each dependency as a script tag, using head.appendChild().    RequireJS waits for all dependencies to load, figures out the right order in which to call the fu">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="currentColor关键字">
-<meta name="twitter:description" content="与其说这是一个css的关键字，但其实说是个变量更好理解一点。
-currentColor 代表了当前元素被应用的color颜色值。使用它可以将当前这个颜色值应用到其他属性上，或者嵌套元素的其他属性上。
-如果当前元素没有显示地指定一个color值，那么它的颜色值从父级集成而来。
-使用了currentColor之后，css更好维护了，一改全改。
-div{
-    color: #33; 
-    bor">
+<meta name="twitter:title" content="requirejs 的运行机制">
+<meta name="twitter:description" content="在requirejs的官网找到这样一段话：    RequireJS loads each dependency as a script tag, using head.appendChild().    RequireJS waits for all dependencies to load, figures out the right order in which to call the fu">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -75,7 +57,7 @@ div{
   };
 </script>
 
-    <title> currentColor关键字 // Judastree </title>
+    <title> requirejs 的运行机制 // Judastree </title>
 </head>
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 <!--[if lte IE 8]>
@@ -187,7 +169,7 @@ div{
           
           
             
-              currentColor关键字
+              requirejs 的运行机制
             
           
         </h1>
@@ -196,8 +178,8 @@ div{
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-06-30T13:31:24+08:00" content="2015-06-30">
-            2015-06-30
+          <time itemprop="dateCreated" datetime="2015-07-28T17:06:25+08:00" content="2015-07-28">
+            2015-07-28
           </time>
         </span>
 
@@ -207,8 +189,8 @@ div{
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/06/30/currentColor关键字/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/06/30/currentColor关键字/" itemprop="commentsCount"></span>
+              <a href="/2015/07/28/requirejs-的运行机制/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/28/requirejs-的运行机制/" itemprop="commentsCount"></span>
               </a>
             </span>
           
@@ -222,16 +204,20 @@ div{
       
 
       
-        <span itemprop="articleBody"><p>与其说这是一个css的关键字，但其实说是个变量更好理解一点。</p>
-<p>currentColor 代表了当前元素被应用的color颜色值。使用它可以将当前这个颜色值应用到其他属性上，或者嵌套元素的其他属性上。</p>
-<p>如果当前元素没有显示地指定一个color值，那么它的颜色值从父级集成而来。</p>
-<p>使用了currentColor之后，css更好维护了，一改全改。</p>
-<pre><code><span class="tag">div</span><span class="rules">{
-    <span class="rule"><span class="attribute">color</span>:<span class="value"> <span class="hexcolor">#33</span></span></span>; 
-    <span class="rule"><span class="attribute">border</span>:<span class="value"> <span class="number">5px</span> solid currentColor</span></span>;
-    <span class="rule"><span class="attribute">box-shadow</span>:<span class="value"> <span class="number">0</span> <span class="number">0</span> <span class="number">5px</span> solid currentColor</span></span>;
-}</span>
-</code></pre><p>除了IE8，PC和手机上的浏览器基本都支持这个关键字。</p>
+        <span itemprop="articleBody"><p>在requirejs的官网找到这样一段话：<br>    RequireJS loads each dependency as a script tag, using head.appendChild().<br>    RequireJS waits for all dependencies to load, figures out the right order in which to call the functions that define the modules,<br>    then calls the module definition functions once the dependencies for those functions have been called. </p>
+<p>翻译过来是：</p>
+<pre><code>RequireJS通过head.<span class="function"><span class="title">appendChild</span><span class="params">()</span></span>将每一个依赖加载为一个script标签。
+
+等到所有的依赖都加载完成之后，RequireJS计算出模块定义函数的调用顺序。
+
+一旦依赖这些功能的地方被调用时requiredjs会调用这些功能的模块定义。
+</code></pre><p><strong>requirejs是怎么做到模块化的？</strong> </p>
+<p>requirejs有个loader来保存和监听所有依赖的状态。script标签来加载这些文件，加载成功和失败都会更新依赖的状态。</p>
+<p><em>是否有重复引用?</em></p>
+<p>Requirejs是单例的设计，只要同名的被引入过一次（这里的同名相当于amd define的id）就一直是用这个模块的定义。</p>
+<p>为了避免全局污染，遵循AMD的规范，define和export。</p>
+<p>理想状况下，每个加载的脚本都是通过define()来定义的一个模块；</p>
+<p>但有些”浏览器全局变量注入”型的传统/遗留库并没有使用define()来定义它们的依赖关系，就必须为此使用shim config来指明它们的依赖关系。 </p>
 </span>
       
     </div>
@@ -240,7 +226,7 @@ div{
       
         <div class="post-tags">
           
-            <a href="/tags/css/" rel="tag">#css</a>
+            <a href="/tags/JavaScript/" rel="tag">#JavaScript</a>
           
         </div>
       
@@ -249,13 +235,11 @@ div{
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/07/06/Mac版Webstorm的一些快捷键/" rel="prev">Mac版Webstorm的一些快捷键 </a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/06/29/Mac下取消Chrome的ajax请求跨域/" rel="next">Mac下取消Chrome的ajax请求跨域</a>
+              <a href="/2015/07/28/Android-Studio-Gradle-Error-java-io-IOException-Operation-not-supported/" rel="next">Android Studio Gradle Error:java.io.IOException: Operation not supported</a>
             
           </div>
         </div>
@@ -281,8 +265,8 @@ div{
             
               <div class="comments" id="comments">
                 
-                  <div class="ds-thread" data-thread-key="2015/06/30/currentColor关键字/"
-                       data-title="currentColor关键字" data-url="http://judastree.github.io/2015/06/30/currentColor关键字/">
+                  <div class="ds-thread" data-thread-key="2015/07/28/requirejs-的运行机制/"
+                       data-title="requirejs 的运行机制" data-url="http://judastree.github.io/2015/07/28/requirejs-的运行机制/">
                   </div>
                 
               </div>
