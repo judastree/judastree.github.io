@@ -171,6 +171,95 @@
           
           
             
+              <a class="post-title-link" href="/2015/07/26/LeetCode-Number-of-1-Bits/" itemprop="url">
+                LeetCode:Number of 1 Bits
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-07-26T12:36:48+08:00" content="2015-07-26">
+            2015-07-26
+          </time>
+        </span>
+
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2015/07/26/LeetCode-Number-of-1-Bits/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/26/LeetCode-Number-of-1-Bits/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><h2 id="题目">题目</h2><p> <a href="https://leetcode.com/problems/number-of-1-bits/" target="_blank" rel="external">找出一个数字的二进制中有多少个1</a></p>
+<p> 给定一个无符号的整型数字，比如11,它的二进制是1011,所以返回1的个数3.</p>
+<h2 id="思路">思路</h2><p>对二进制进行位操作，每向右移1位和1做位与操作。是1的话计数器加1，直到右移到0截止。</p>
+<p>这个方法写得很轻松，但是耗时长。</p>
+<h2 id="实现">实现</h2><pre><code><span class="comment">/**
+ * @param {number} n - a positive integer
+ * @return {number}
+ */</span>
+<span class="keyword">var</span> hammingWeight = function(<span class="keyword">n</span>,<span class="keyword">count</span>) {
+    <span class="keyword">if</span>(!<span class="keyword">count</span>){
+        <span class="keyword">count</span> = 0;
+    }
+    <span class="keyword">if</span>(<span class="keyword">n</span>&amp;1===1){
+        <span class="keyword">count</span>++;
+    }
+    <span class="keyword">if</span>(<span class="keyword">n</span>&gt;1){
+        <span class="keyword">return</span> hammingWeight(<span class="keyword">n</span>&gt;&gt;&gt;1,<span class="keyword">count</span>);
+    }<span class="keyword">else</span>{
+        <span class="keyword">return</span> <span class="keyword">count</span>;
+    }
+};
+</code></pre></span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2015/07/26/LeetCode-Palindrome-Linked-List/" itemprop="url">
                 LeetCode:Palindrome Linked List
               </a>
@@ -1047,105 +1136,6 @@ var plusOne = <span class="function"><span class="keyword">function</span><span 
 
 
     
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/07/22/LeetCode-Power-of-Two/" itemprop="url">
-                LeetCode:Power of Two
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-07-22T10:30:48+08:00" content="2015-07-22">
-            2015-07-22
-          </time>
-        </span>
-
-        
-
-        
-          
-            <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2015/07/22/LeetCode-Power-of-Two/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/22/LeetCode-Power-of-Two/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><h2 id="题目来源">题目来源</h2><p> <a href="https://leetcode.com/problems/power-of-two/" target="_blank" rel="external">给定一个数判断它是否为2的次方</a></p>
-<p> 给你一个数字N，求判断它是否是2的次方。比如8是2的3次方，返回true，9不是2的次方，返回false。</p>
-<h2 id="思路">思路</h2><p>  这个题目最初想到的是递归除以2。但考虑到2这个数字比较特殊，它的次方在计算机中的位存储也是很特殊的，所以可以试下位操作。</p>
-<pre><code><span class="number">2</span> : <span class="number">10</span>
-<span class="number">4</span> : <span class="number">100</span>
-<span class="number">8</span> : <span class="number">1000</span>
-<span class="number">16</span>: <span class="number">10000</span>
-...
-</code></pre><p>  2的X次方，其二进制是1后面跟X个0；而2的X次方减1的二进制都是1.</p>
-<pre><code><span class="number">1</span> : <span class="number">1</span>
-<span class="number">3</span> : <span class="number">11</span>
-<span class="number">7</span> : <span class="number">111</span>
-<span class="number">15</span>: <span class="number">1111</span>
-...
-</code></pre><p>  而2^x 和2^x-1 进行<strong>位与</strong>操作，结果是0.比如8和7</p>
-<pre><code><span class="code">  1000</span>
-<span class="header">&amp; 0111
--------</span>
-<span class="code">  0000</span>
-</code></pre><p>  那么我们就可以利用这一点来判断一个数是否为2的次方。     </p>
-<h2 id="实现">实现</h2><pre><code><span class="comment">/**
- * <span class="doctag">@param</span> {number} n
- * <span class="doctag">@return</span> {boolean}
- */</span>
-<span class="keyword">var</span> isPowerOfTwo = <span class="function"><span class="keyword">function</span><span class="params">(n)</span> </span>{
-
-    <span class="keyword">if</span>(n&lt;=<span class="number">0</span>){<span class="keyword">return</span> <span class="keyword">false</span>}
-
-    <span class="keyword">return</span> (n&amp;n-<span class="number">1</span>)===<span class="number">0</span>
-};
-</code></pre><p><img src="/images/poweroftwo.png" alt="Runtime"></p>
-</span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1185,7 +1175,7 @@ var plusOne = <span class="function"><span class="keyword">function</span><span 
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">52</span>
+              <span class="site-state-item-count">53</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
