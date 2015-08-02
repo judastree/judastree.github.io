@@ -171,6 +171,84 @@
           
           
             
+              <a class="post-title-link" href="/2015/07/14/box-sizing是什么东西/" itemprop="url">
+                box-sizing 是什么东西
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-07-14T09:59:02+08:00" content="2015-07-14">
+            2015-07-14
+          </time>
+        </span>
+
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2015/07/14/box-sizing是什么东西/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/14/box-sizing是什么东西/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p>昨天有人问我知道盒子模型么？那必须的呀。width,height,margin,padding,border这些的嘛。</p>
+<p>然后又问什么是box-sizing?好熟悉，但没概念了。</p>
+<p>在说盒子模型的时候，肯定会说IE对盒子模型的支持和其他浏览器不一样。它的width是包含了padding和border的。</p>
+<p>CSS3中新增box-sizing属性刚好可以解决这个问题，不用费心去算是否盒子模型不一致了。</p>
+<pre><code><span class="rule"><span class="attribute">box-sizing</span>:<span class="value"> content-box|border-box|inherit</span></span>;
+</code></pre><p>box-sizing的属性值有两种，(inherit继承就不说了)</p>
+<ul>
+<li>content-box：border 和 padding 不计入width和height （默认的）</li>
+<li>border-box ：border 和 padding 计入width和height  （IE那种的）</li>
+</ul>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2015/07/14/Android怎么打Log/" itemprop="url">
                 Android怎么打Log
               </a>
@@ -1171,95 +1249,6 @@ x 系统默认颜色
 
 
     
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/05/20/Mac中修改host/" itemprop="url">
-                Mac中修改host
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-05-20T21:43:24+08:00" content="2015-05-20">
-            2015-05-20
-          </time>
-        </span>
-
-        
-
-        
-          
-            <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2015/05/20/Mac中修改host/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/05/20/Mac中修改host/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><h3 id="打开终端">打开终端</h3><pre><code><span class="variable">$sudo</span> vim /etc/hosts
-</code></pre><h3 id="输入开机密码出现如下所示界面">输入开机密码出现如下所示界面</h3><pre><code><span class="preprocessor">##</span>
-<span class="preprocessor"># Host Database#</span>
-<span class="preprocessor"># localhost is used to configure the loopback     interface</span>
-<span class="preprocessor"># when the system is booting.  Do not change this     entry.</span>
-<span class="preprocessor">##</span>
-<span class="number">127.0</span>.0.1       localhost
-<span class="number">255.255</span>.255.255 broadcasthost
-::<span class="number">1</span>             localhost
-
-<span class="preprocessor">#74.125.237.1   dl-ssl.google.com</span>
-
-~                                                                               
-~                                                                               
-~                                                                               
-~                                                                               
-~                                                                               
-~                                                                               
-~                                                                               
---<span class="constant"> INSERT </span>--
-</code></pre><h3 id="输入‘i’进入insert模式，修改你要配置的host，">输入‘i’进入insert模式，修改你要配置的host，</h3><p>编辑完成后，先按esc，然后输入:wq<br>最后回车。</p>
-</span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1299,7 +1288,7 @@ x 系统默认颜色
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">53</span>
+              <span class="site-state-item-count">54</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
