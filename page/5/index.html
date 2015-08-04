@@ -171,6 +171,82 @@
           
           
             
+              <a class="post-title-link" href="/2015/07/14/git .ignore无效?/" itemprop="url">
+                git ignore 无效?
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-07-14T10:23:49+08:00" content="2015-07-14">
+            2015-07-14
+          </time>
+        </span>
+
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2015/07/14/git .ignore无效?/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/14/git .ignore无效?/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p>有一些build文件总是自动生成，为了不想每次提交都更新到仓库里，可以在git的.gitignore文件中设置，忽略这些文件。</p>
+<p>但是。</p>
+<p>有的时候ignore失效，即使添加了忽略然并卵，为什么呢？</p>
+<p>因为在git库中已存在了这些build文件，只要之前push过，这些文件都会加入git的跟踪中。</p>
+<p>而.gitignore文件只对还没有加入跟踪的文件起作用。</p>
+<p>那么解决办法就很明显了，两个字，删掉！</p>
+<p>把原来在仓库里的文件删掉，重新和更新过的.gitignore文件一起提交。</p>
+<p>之后ignore文件就生效了。</p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2015/07/14/box-sizing是什么东西/" itemprop="url">
                 box-sizing 是什么东西
               </a>
@@ -1145,110 +1221,6 @@ ERROR 类型调试信息，错误信息
 
 
     
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/05/20/修改Mac终端命令行颜色/" itemprop="url">
-                修改Mac终端命令行颜色
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-05-20T22:15:55+08:00" content="2015-05-20">
-            2015-05-20
-          </time>
-        </span>
-
-        
-
-        
-          
-            <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2015/05/20/修改Mac终端命令行颜色/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/05/20/修改Mac终端命令行颜色/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><p>打开终端，输入命令</p>
-<pre><code><span class="variable">$sudo</span> vim .bash_profile
-</code></pre><p>这时在出来的编辑器中输入下面两行配置，然后保存</p>
-<pre><code><span class="built_in">export</span> CLICOLOR=<span class="number">1</span>
-<span class="built_in">export</span> LSCOLORS=cxfxaxdxcxegedabagacad
-</code></pre><p>重新打开一个命令行终端，输入“ls”命令，你就能看到颜色变成了绿色。</p>
-<h3 id="详解">详解</h3><p>LSCOLORS是用来设置当CLICOLOR被启用后，各种文件类型的颜色。LSCOLORS的值中每两个字母为一组，分别设置某个文件类型的文字颜色和背景颜色。</p>
-<pre><code>a 黑色  
-b 红色  
-c 绿色  
-<span class="keyword">d</span> 棕色  
-<span class="keyword">e</span> 蓝色  
-f 洋红色  
-<span class="keyword">g</span> 青色  
-<span class="keyword">h</span> 浅灰色  
-A 黑色粗体  
-B 红色粗体  
-C 绿色粗体  
-<span class="keyword">D</span> 棕色粗体  
-<span class="keyword">E</span> 蓝色粗体  
-F 洋红色粗体  
-<span class="keyword">G</span> 青色粗体  
-<span class="keyword">H</span> 浅灰色粗体  
-x 系统默认颜色 
-</code></pre><p>LSCOLORS中一共 11 组颜色设置（所以一共22个字符），按照先后顺序，分别对以下的文件类型进行设置：</p>
-<pre><code>-<span class="ruby">directory  
-</span>-<span class="ruby">symbolic link  
-</span>-<span class="ruby">socket  
-</span>-<span class="ruby">pipe  
-</span>-<span class="ruby">executable  
-</span>-<span class="ruby">block special  
-</span>-<span class="ruby">character special  
-</span>-<span class="ruby">executable with setuid bit set  
-</span>-<span class="ruby">executable with setgid bit set  
-</span>-<span class="ruby">directory writable to others, with sticky bit  
-</span>-<span class="ruby">directory writable to others, without sticky bit  </span>
-</code></pre></span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1288,7 +1260,7 @@ x 系统默认颜色
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">54</span>
+              <span class="site-state-item-count">55</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
