@@ -171,6 +171,76 @@
           
           
             
+              <a class="post-title-link" href="/2015/07/19/node下如何调试/" itemprop="url">
+                node下如何调试
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-07-19T00:14:39+08:00" content="2015-07-19">
+            2015-07-19
+          </time>
+        </span>
+
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2015/07/19/node下如何调试/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/19/node下如何调试/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p>目前遇到的场景，直接在webstorm上打断点，然后shift+ctrl+D, 就可以调试了。</p>
+<p>后面遇到更复杂的场景再继续研究。</p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2015/07/18/求一个集合的所有子集/" itemprop="url">
                 求一个集合的所有子集
               </a>
@@ -921,110 +991,6 @@ binary(<span class="number">15</span>,<span class="type">Arr</span>,<span class=
 
 
     
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/07/14/单线程的Javascript/" itemprop="url">
-                单线程的JavaScript
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-07-14T23:21:04+08:00" content="2015-07-14">
-            2015-07-14
-          </time>
-        </span>
-
-        
-
-        
-          
-            <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2015/07/14/单线程的Javascript/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/14/单线程的Javascript/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><p>在看别人的代码时发现setTimeout(func,0)的写法很不解。为什么要settimeout 0？<br>在网上查资料都引入了单线程的JS这个话题。</p>
-<p>一点点来看。</p>
-<p>有这样一段代码</p>
-<pre><code>alert<span class="list">(<span class="number">1</span>)</span><span class="comment">; </span>
-setTimeout<span class="list">(<span class="string">"alert(2)"</span>, <span class="number">0</span>)</span><span class="comment">; </span>
-alert<span class="list">(<span class="number">3</span>)</span><span class="comment">; </span>
-</code></pre><p>按照正常的理解，延迟0秒就是不延迟执行嘛，但其实不是。输出的结果是1，3，2。</p>
-<h2 id="为什么会这样呢？">为什么会这样呢？</h2><p>settimout函数造成一种多线程异步的假象，让你认为js可以顺序执行主逻辑的代码，并同时开另外一个线程去处理要延迟的代码。</p>
-<p>但其实JS引擎是单线程，浏览器的一个页面只有一个线程在处理。</p>
-<p>那么JS为什么会给人多线程的假象呢？</p>
-<p><strong>因为JS的运行是事件驱动的。</strong></p>
-<p>浏览器中很多行为都是异步的，鼠标点击，窗口拖拽等。如果响应这些事件呢？浏览器把这些异步的事件都放在放入一个行为队列中。<br>JS引擎单线程的，顺序处理队列中任务。</p>
-<p>settimeout的延迟做某件事情并没有另开一个线程处理，而是在设定的延时时间到了之后在队列中新建了一个任务。</p>
-<p>那么上面的代码就很好理解了。</p>
-<p>alert(1)输出1之后，延迟0秒，队列中新建一个任务。</p>
-<p>现在队列中有两个任务，一个是执行alert(3),一个是执行alert(2)。</p>
-<p>由于js现在正处于alert(3)的任务中，所以会先执行完这个任务，再取任务队列中settimeout插入的alert(2)的任务。</p>
-<p>setTimeout的执行时间点只是加入js主执行队列中的时间点，至于什么时候执行，是由js引擎线程按顺序执行的队列来决定。所以很多时候用setTimeout做动画不流畅的原因。</p>
-<h2 id="为什么要settimeout_0_呢？">为什么要settimeout 0 呢？</h2><p>setTimeout(func, 0)神奇在哪儿？那就是告诉js引擎，在0ms以后把func放到主事件队列中，等待当前的代码执行完毕再执行。</p>
-<p>这里的关键就是<strong>改变了代码流程</strong>，把func的执行放到了等待当前的代码执行完毕再执行。</p>
-<ul>
-<li>让浏览器渲染当前的变化（很多浏览器UI render和js执行是放在一个线程中，线程阻塞会导致界面无法更新渲染）</li>
-<li>重新评估”script is running too long”警告</li>
-</ul>
-<h2 id="又引出一个问题">又引出一个问题</h2><h2 id="既然js多线程异步是假象，那么Ajax请求到底是不是异步呢？">既然js多线程异步是假象，那么Ajax请求到底是不是异步呢？</h2><p>继续查资料，查到了浏览器的一些工作机制。<br>浏览器是多线程的，每开一个页面都至少开有下面几个线程：</p>
-<ul>
-<li>javascript引擎线程</li>
-<li>UI界面渲染线程</li>
-<li>浏览器事件触发线程</li>
-<li>Http请求线程</li>
-</ul>
-<p>其中Http请求线程是执行完了就终止的线程，比如我们的Ajax请求。只要有一个ajax请求，浏览器就会开一个http请求线程去异步地执行。</p>
-<p>当请求的状态变更时，如果先前已设置回调，这异步线程就产生状态变更事件放到 JavaScript引擎的事件处理队列中等待处理。<br>所以JavaScript引擎始终是单线程运行回调函数。</p>
-<p><img src="http://t1.baidu.com/it/u=1569352962,3480269446&amp;fm=21&amp;gp=0.jpg" alt="浏览器线程机制"></p>
-<p><strong>参考资料：</strong></p>
-<p>1.<a href="http://blog.csdn.net/talking12391239/article/details/21168489" target="_blank" rel="external">Javascript是单线程的深入分析</a><br>2.<a href="http://www.2cto.com/kf/201204/129337.html" target="_blank" rel="external">Javascript可否多线程</a></p>
-</span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1064,7 +1030,7 @@ alert<span class="list">(<span class="number">3</span>)</span><span class="comme
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">56</span>
+              <span class="site-state-item-count">57</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

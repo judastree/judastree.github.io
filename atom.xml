@@ -5,7 +5,7 @@
   <subtitle><![CDATA[You are the pretty sunshine of my life]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://judastree.github.io//"/>
-  <updated>2015-08-04T11:36:34.000Z</updated>
+  <updated>2015-08-05T02:36:40.000Z</updated>
   <id>http://judastree.github.io//</id>
   
   <author>
@@ -14,6 +14,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[世界那么大翻墙出去看看]]></title>
+    <link href="http://judastree.github.io/2015/08/05/%E4%B8%96%E7%95%8C%E9%82%A3%E4%B9%88%E5%A4%A7%E7%BF%BB%E5%A2%99%E5%87%BA%E5%8E%BB%E7%9C%8B%E7%9C%8B/"/>
+    <id>http://judastree.github.io/2015/08/05/世界那么大翻墙出去看看/</id>
+    <published>2015-08-05T02:31:28.000Z</published>
+    <updated>2015-08-05T02:36:40.000Z</updated>
+    <content type="html"><![CDATA[<p>一直用的红杏，前几天发现另外一个挺好用的翻墙方法，<a href="https://zqt.pw/" target="_blank" rel="external">最前台</a>的zpn。</p>
+<p>现在还在内测阶段，需要申请账号。</p>
+<p><img src="zqtzhanghao.png" alt="zqtzhanghao"></p>
+<p>PS：已经在mac上有线链接成功了，很方便很好用，不过无线还没有试出来。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>一直用的红杏，前几天发现另外一个挺好用的翻墙方法，<a href="https://zqt.pw/" target="_blank" rel="external">最前台</a>的zpn。</p>
+<p>现在还在内测阶段，需要申请账号。</p>
+<p><img src="z]]>
+    </summary>
+    
+      <category term="工具" scheme="http://judastree.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[微信、手Q、Qzone之x5内核inspect调试解决方案]]></title>
@@ -805,56 +826,6 @@ var <span class="variable">getIntersectionNode =</span> function(headA, headB) {
     </summary>
     
       <category term="工具" scheme="http://judastree.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[LeetCode:Rotate Array ]]></title>
-    <link href="http://judastree.github.io/2015/07/23/LeetCode-Rotate-Array/"/>
-    <id>http://judastree.github.io/2015/07/23/LeetCode-Rotate-Array/</id>
-    <published>2015-07-23T03:12:43.000Z</published>
-    <updated>2015-07-23T03:24:35.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="题目来源">题目来源</h2><p> <a href="https://leetcode.com/problems/rotate-array/" target="_blank" rel="external">数组向右移K位</a></p>
-<p> 有一个数组[1,2,3,4,5],向右移k位，k=3输出[3,4,5,1,2],k=1输出[5,1,2,3,4]</p>
-<p> 要求时间复杂度线性，空间复杂度可控O(1)</p>
-<h2 id="思路">思路</h2><p>找到每个元素移位后的位置，在新的数组上追一赋值。</p>
-<pre><code>/**
- * @param {number[]} nums
- * @param {number} k
- * @<span class="keyword">return</span> {<span class="type">void</span>} <span class="type">Do</span> <span class="keyword">not</span> <span class="keyword">return</span> anything, modify nums <span class="keyword">in</span>-place instead.
- */
-<span class="keyword">var</span> rotate = function(nums, k) {
-      //步数是长度的倍数则直接返回
-      <span class="keyword">if</span>(k%nums.length===<span class="number">0</span>){
-        <span class="keyword">return</span>;
-    }<span class="keyword">else</span>{
-        //取模，拿到真正的步数，因为k可能大于length
-        <span class="keyword">var</span> step = k%nums.length;
-        <span class="keyword">var</span> <span class="literal">result</span> = [];
-        <span class="literal">result</span>.length =nums.length;
-
-        <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;nums.length;i++){
-            //确定每个元素的新的位置
-            <span class="literal">result</span>[(i+step)%nums.length] = nums[i]
-        }
-        //重新赋值
-        <span class="keyword">for</span>( i=<span class="number">0</span>;i&lt;nums.length;i++){
-            nums[i] = <span class="literal">result</span>[i];
-        }
-
-    }
-};
-</code></pre><p>PS：验证虽然通过了，但总感觉有点投机，因为我重新复制了一下这个数组。虽然只用了这一个额外变量，但从空间存储上还是O(n)的。</p>
-<p><img src="/images/rotatearray.png" alt="RotateArray"></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h2 id="题目来源">题目来源</h2><p> <a href="https://leetcode.com/problems/rotate-array/" target="_blank" rel="external">数组向右移K位</a></p>
-<p> 有一个数组[1,]]>
-    </summary>
-    
-      <category term="LeetCode" scheme="http://judastree.github.io/tags/LeetCode/"/>
-    
-      <category term="算法" scheme="http://judastree.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
