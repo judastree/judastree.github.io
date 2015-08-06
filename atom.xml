@@ -5,7 +5,7 @@
   <subtitle><![CDATA[You are the pretty sunshine of my life]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://judastree.github.io//"/>
-  <updated>2015-08-05T13:11:02.000Z</updated>
+  <updated>2015-08-06T03:01:29.000Z</updated>
   <id>http://judastree.github.io//</id>
   
   <author>
@@ -14,6 +14,60 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[LeetCode:Count and Say]]></title>
+    <link href="http://judastree.github.io/2015/08/06/LeetCode-Count-and-Say/"/>
+    <id>http://judastree.github.io/2015/08/06/LeetCode-Count-and-Say/</id>
+    <published>2015-08-06T02:53:41.000Z</published>
+    <updated>2015-08-06T03:01:29.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="题目">题目</h2><p><a href="https://leetcode.com/problems/count-and-say/" target="_blank" rel="external">Count And Say</a></p>
+<p>The count-and-say sequence is the sequence of integers beginning as follows:<br>1, 11, 21, 1211, 111221, …</p>
+<p>1 is read off as “one 1” or 11.<br>11 is read off as “two 1s” or 21.<br>21 is read off as “one 2, then one 1” or 1211.<br>Given an integer n, generate the nth sequence.</p>
+<p>Note: The sequence of integers will be represented as a string.</p>
+<h2 id="思路">思路</h2><p>递归的实现，找出CountAndSay(n)和CountAndSay(n-1)的关系。<br>比如1211拿一个数组记录下有多少个数组。</p>
+<h2 id="实现">实现</h2><pre><code><span class="comment">/**
+ * @param {number} n
+ * @return {string}
+ */</span>
+var countAndSay = <span class="function"><span class="keyword">function</span><span class="params">(n)</span> {</span>
+    <span class="keyword">if</span><span class="params">(n===<span class="number">0</span>)</span> return <span class="string">""</span>;
+    <span class="keyword">if</span><span class="params">(n===<span class="number">1</span>)</span> return <span class="string">"1"</span>;
+    <span class="keyword">if</span><span class="params">(n===<span class="number">2</span>)</span> return <span class="string">"11"</span>;
+
+    var preStrArray = countAndSay<span class="params">(n-<span class="number">1</span>)</span>.split<span class="params">(<span class="string">""</span>)</span>;
+    var tempArray=[];
+
+    tempArray[<span class="number">0</span>] = <span class="number">1</span>;
+    tempArray[<span class="number">1</span>] = preStrArray[<span class="number">0</span>];
+    <span class="keyword">for</span><span class="params">(var i = <span class="number">1</span>; i&lt;preStrArray.length-<span class="number">1</span>;i++)</span>{
+        <span class="keyword">if</span><span class="params">(preStrArray[i]!==preStrArray[i-<span class="number">1</span>])</span>{
+            tempArray.push<span class="params">(<span class="number">1</span>)</span>;
+            tempArray.push<span class="params">(preStrArray[i])</span>;
+        }<span class="keyword">else</span>{
+            tempArray[tempArray.length-<span class="number">2</span>]++;
+        }
+    }
+    <span class="keyword">if</span><span class="params">(preStrArray[i]!==preStrArray[i-<span class="number">1</span>])</span>{
+        tempArray.push<span class="params">(<span class="number">1</span>)</span>;
+        tempArray.push<span class="params">(preStrArray[i])</span>;
+    }<span class="keyword">else</span>{
+        tempArray[tempArray.length-<span class="number">2</span>] ++;
+    }
+    return tempArray.toString<span class="params">()</span>.replace<span class="params">(/,/g,<span class="string">""</span>)</span>;
+}
+</code></pre><h2 id="耗时">耗时</h2><p><img src="/images/countandsay.png" alt="countandsay.png"></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="题目">题目</h2><p><a href="https://leetcode.com/problems/count-and-say/" target="_blank" rel="external">Count And Say</a></p>
+<p>The cou]]>
+    </summary>
+    
+      <category term="LeetCode" scheme="http://judastree.github.io/tags/LeetCode/"/>
+    
+      <category term="算法" scheme="http://judastree.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[世界那么大翻墙出去看看]]></title>
@@ -809,24 +863,6 @@ var <span class="variable">getIntersectionNode =</span> function(headA, headB) {
       <category term="LeetCode" scheme="http://judastree.github.io/tags/LeetCode/"/>
     
       <category term="算法" scheme="http://judastree.github.io/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[页面性能分析工具]]></title>
-    <link href="http://judastree.github.io/2015/07/23/%E9%A1%B5%E9%9D%A2%E6%80%A7%E8%83%BD%E5%88%86%E6%9E%90%E5%B7%A5%E5%85%B7/"/>
-    <id>http://judastree.github.io/2015/07/23/页面性能分析工具/</id>
-    <published>2015-07-23T14:09:38.000Z</published>
-    <updated>2015-07-23T14:26:10.000Z</updated>
-    <content type="html"><![CDATA[<p><a href="https://developers.google.com/speed/pagespeed/insights/" target="_blank" rel="external">Google Page Speed Insights</a></p>
-<p><a href="http://www.webpagetest.org/" target="_blank" rel="external">webpagetest</a></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p><a href="https://developers.google.com/speed/pagespeed/insights/" target="_blank" rel="external">Google Page Speed Insights</a></p>
-<p><a]]>
-    </summary>
-    
-      <category term="工具" scheme="http://judastree.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   
