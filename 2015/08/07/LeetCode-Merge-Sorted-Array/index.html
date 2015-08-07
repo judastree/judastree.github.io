@@ -28,7 +28,7 @@
 
 
 
-  <meta name="keywords" content="git," />
+  <meta name="keywords" content="LeetCode,算法," />
 
 
 
@@ -39,33 +39,22 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.4" />
 
 
-<meta name="description" content="有一些build文件总是自动生成，为了不想每次提交都更新到仓库里，可以在git的.gitignore文件中设置，忽略这些文件。
-但是。
-有的时候ignore失效，即使添加了忽略然并卵，为什么呢？
-因为在git库中已存在了这些build文件，只要之前push过，这些文件都会加入git的跟踪中。
-而.gitignore文件只对还没有加入跟踪的文件起作用。
-那么解决办法就很明显了，两个字，删掉！
-把原来">
-<meta property="og:type" content="website">
-<meta property="og:title" content="git ignore 无效?">
-<meta property="og:url" content="http://judastree.github.io/2015/07/14/git .ignore无效">
+<meta name="description" content="题目把两个有序的数组合并成一个，数组1有m个元素，数组2有n个元素。假设数组1有足够的长度（m+n）来容纳数组1和数组2，求合并后的数组1.
+思路因为不能用额外的存储空间，考虑用类似选择排序的方式来重新生成nums1.
+即，原nums1的最大值和num2的最大值比较，大者放到新nums1[m+n-1]位置。并且指针向前移一位，继续比较原nums1和num2的最大值，把大的放到新nums1[m+n-">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LeetCode: Merge Sorted Array">
+<meta property="og:url" content="http://judastree.github.io/2015/08/07/LeetCode-Merge-Sorted-Array/index.html">
 <meta property="og:site_name" content="Judastree">
-<meta property="og:description" content="有一些build文件总是自动生成，为了不想每次提交都更新到仓库里，可以在git的.gitignore文件中设置，忽略这些文件。
-但是。
-有的时候ignore失效，即使添加了忽略然并卵，为什么呢？
-因为在git库中已存在了这些build文件，只要之前push过，这些文件都会加入git的跟踪中。
-而.gitignore文件只对还没有加入跟踪的文件起作用。
-那么解决办法就很明显了，两个字，删掉！
-把原来">
+<meta property="og:description" content="题目把两个有序的数组合并成一个，数组1有m个元素，数组2有n个元素。假设数组1有足够的长度（m+n）来容纳数组1和数组2，求合并后的数组1.
+思路因为不能用额外的存储空间，考虑用类似选择排序的方式来重新生成nums1.
+即，原nums1的最大值和num2的最大值比较，大者放到新nums1[m+n-1]位置。并且指针向前移一位，继续比较原nums1和num2的最大值，把大的放到新nums1[m+n-">
+<meta property="og:image" content="/images/mergesortedarray.png">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="git ignore 无效?">
-<meta name="twitter:description" content="有一些build文件总是自动生成，为了不想每次提交都更新到仓库里，可以在git的.gitignore文件中设置，忽略这些文件。
-但是。
-有的时候ignore失效，即使添加了忽略然并卵，为什么呢？
-因为在git库中已存在了这些build文件，只要之前push过，这些文件都会加入git的跟踪中。
-而.gitignore文件只对还没有加入跟踪的文件起作用。
-那么解决办法就很明显了，两个字，删掉！
-把原来">
+<meta name="twitter:title" content="LeetCode: Merge Sorted Array">
+<meta name="twitter:description" content="题目把两个有序的数组合并成一个，数组1有m个元素，数组2有n个元素。假设数组1有足够的长度（m+n）来容纳数组1和数组2，求合并后的数组1.
+思路因为不能用额外的存储空间，考虑用类似选择排序的方式来重新生成nums1.
+即，原nums1的最大值和num2的最大值比较，大者放到新nums1[m+n-1]位置。并且指针向前移一位，继续比较原nums1和num2的最大值，把大的放到新nums1[m+n-">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -75,7 +64,7 @@
   };
 </script>
 
-    <title> git ignore 无效? // Judastree </title>
+    <title> LeetCode: Merge Sorted Array // Judastree </title>
 </head>
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 <!--[if lte IE 8]>
@@ -187,7 +176,7 @@
           
           
             
-              git ignore 无效?
+              LeetCode: Merge Sorted Array
             
           
         </h1>
@@ -196,8 +185,8 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-07-14T10:23:49+08:00" content="2015-07-14">
-            2015-07-14
+          <time itemprop="dateCreated" datetime="2015-08-07T08:54:00+08:00" content="2015-08-07">
+            2015-08-07
           </time>
         </span>
 
@@ -207,8 +196,8 @@
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/07/14/git .ignore无效?/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/14/git .ignore无效?/" itemprop="commentsCount"></span>
+              <a href="/2015/08/07/LeetCode-Merge-Sorted-Array/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/07/LeetCode-Merge-Sorted-Array/" itemprop="commentsCount"></span>
               </a>
             </span>
           
@@ -222,14 +211,56 @@
       
 
       
-        <span itemprop="articleBody"><p>有一些build文件总是自动生成，为了不想每次提交都更新到仓库里，可以在git的.gitignore文件中设置，忽略这些文件。</p>
-<p>但是。</p>
-<p>有的时候ignore失效，即使添加了忽略然并卵，为什么呢？</p>
-<p>因为在git库中已存在了这些build文件，只要之前push过，这些文件都会加入git的跟踪中。</p>
-<p>而.gitignore文件只对还没有加入跟踪的文件起作用。</p>
-<p>那么解决办法就很明显了，两个字，删掉！</p>
-<p>把原来在仓库里的文件删掉，重新和更新过的.gitignore文件一起提交。</p>
-<p>之后ignore文件就生效了。</p>
+        <span itemprop="articleBody"><h2 id="题目">题目</h2><p>把两个有序的数组合并成一个，数组1有m个元素，数组2有n个元素。假设数组1有足够的长度（m+n）来容纳数组1和数组2，求合并后的数组1.</p>
+<h2 id="思路">思路</h2><p>因为不能用额外的存储空间，考虑用类似选择排序的方式来重新生成nums1.</p>
+<p>即，原nums1的最大值和num2的最大值比较，大者放到新nums1[m+n-1]位置。<br>并且指针向前移一位，继续比较原nums1和num2的最大值，把大的放到新nums1[m+n-2]位置，直到一个数组的指针已经到头了。</p>
+<h2 id="实现">实现</h2><pre><code><span class="comment">/**
+ * @param {number[]} nums1
+ * @param {number} m
+ * @param {number[]} nums2
+ * @param {number} n
+ * @return {void} Do not return anything, modify nums1 in-place instead.
+ */</span>
+<span class="keyword">var</span> <span class="keyword">merge</span> = function(nums1, <span class="keyword">m</span>, nums2, <span class="keyword">n</span>) {
+
+    <span class="keyword">var</span> k = 0,i= 0,j=0;
+
+    <span class="keyword">if</span>(<span class="keyword">m</span>===0&amp;&amp;<span class="keyword">n</span>===0){
+        nums1.length = 0;
+        <span class="keyword">return</span> nums1;
+    }
+    <span class="keyword">if</span>(<span class="keyword">n</span>===0){
+        nums1.length = <span class="keyword">m</span>;
+        <span class="keyword">return</span> nums1;
+    }
+    <span class="keyword">if</span>(<span class="keyword">m</span>===0){
+        <span class="keyword">for</span>(;i&lt;<span class="keyword">n</span>;i++){
+            nums1[i] = nums2[i];
+        }
+        nums1.length=<span class="keyword">n</span>;
+        <span class="keyword">return</span> nums1;
+    }
+    <span class="comment">//i指向原nums1中最大的数，j指向nums2中最大的数</span>
+    <span class="keyword">while</span>(i&lt;<span class="keyword">m</span>&amp;&amp;j&lt;<span class="keyword">n</span>){
+        <span class="comment">//把较大的数放在nums1[m+n-1-k]中</span>
+        <span class="keyword">if</span>(nums1[<span class="keyword">m</span>-1-i]&gt;=nums2[<span class="keyword">n</span>-1-j]){
+            nums1[<span class="keyword">m</span>+<span class="keyword">n</span>-1-k]  = nums1[<span class="keyword">m</span>-1-i];
+            i++;
+        }<span class="keyword">else</span>{
+            nums1[<span class="keyword">m</span>+<span class="keyword">n</span>-1-k]  = nums2[<span class="keyword">n</span>-1-j];
+            j++;
+        }
+        k++;
+    }
+    <span class="keyword">if</span>(i===<span class="keyword">m</span>){
+        <span class="keyword">while</span>(j&lt;<span class="keyword">n</span>){
+            nums1[<span class="keyword">m</span>+<span class="keyword">n</span>-1-k] = nums2[<span class="keyword">n</span>-1-j];
+            j++;
+            k++;
+        }
+    }
+};
+</code></pre><h2 id="耗时">耗时</h2><p> <img src="/images/mergesortedarray.png" alt="mergesortedarray"></p>
 </span>
       
     </div>
@@ -238,7 +269,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/git/" rel="tag">#git</a>
+            <a href="/tags/LeetCode/" rel="tag">#LeetCode</a>
+          
+            <a href="/tags/算法/" rel="tag">#算法</a>
           
         </div>
       
@@ -247,13 +280,11 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/07/14/Android Url Scheme-所谓的唤醒/" rel="prev">Android Url Scheme 所谓的唤醒</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/07/14/box-sizing是什么东西/" rel="next">box-sizing 是什么东西</a>
+              <a href="/2015/08/06/LeetCode-Count-and-Say/" rel="next">LeetCode:Count and Say</a>
             
           </div>
         </div>
@@ -279,8 +310,8 @@
             
               <div class="comments" id="comments">
                 
-                  <div class="ds-thread" data-thread-key="2015/07/14/git .ignore无效?/"
-                       data-title="git ignore 无效?" data-url="http://judastree.github.io/2015/07/14/git .ignore无效?/">
+                  <div class="ds-thread" data-thread-key="2015/08/07/LeetCode-Merge-Sorted-Array/"
+                       data-title="LeetCode: Merge Sorted Array" data-url="http://judastree.github.io/2015/08/07/LeetCode-Merge-Sorted-Array/">
                   </div>
                 
               </div>
@@ -383,7 +414,7 @@
           <div class="post-toc">
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目"><span class="nav-number">1.</span> <span class="nav-text">题目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#思路"><span class="nav-number">2.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现"><span class="nav-number">3.</span> <span class="nav-text">实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#耗时"><span class="nav-number">4.</span> <span class="nav-text">耗时</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
