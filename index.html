@@ -189,6 +189,105 @@
           
           
             
+              <a class="post-title-link" href="/2015/08/09/LeetCode-Longest-Common-Prefix/" itemprop="url">
+                LeetCode:Longest Common Prefix
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-08-09T13:52:02+08:00" content="2015-08-09">
+            2015-08-09
+          </time>
+        </span>
+
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2015/08/09/LeetCode-Longest-Common-Prefix/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/09/LeetCode-Longest-Common-Prefix/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><h2 id="题目">题目</h2><p>   <a href="https://leetcode.com/problems/longest-common-prefix/" target="_blank" rel="external">LeetCode:Longest Common Prefix</a></p>
+<p>   找出一个字符串数组中所有元素的最长公共前缀。</p>
+<h2 id="思路">思路</h2><p>   先找出这个数组中最短的字符串，然后再遍历数组比较这个最短字符串是否当前元素的前缀。<br>   如果是的话，比较下一个数组元素。<br>   如果不是的话，最短字符串截断最后一位再和当前数组数组元素比较，直到最短字符串长度为0.</p>
+<h2 id="实现">实现</h2><pre><code><span class="comment">/**
+ * <span class="doctag">@param</span> {string[]} strs
+ * <span class="doctag">@return</span> {string}
+ */</span>
+<span class="keyword">var</span> longestCommonPrefix = <span class="function"><span class="keyword">function</span><span class="params">(strs)</span> </span>{
+    <span class="keyword">if</span>(strs.length===<span class="number">0</span>){
+        <span class="keyword">return</span> <span class="string">""</span>;
+    }
+    <span class="keyword">var</span> shortestStr=strs[<span class="number">0</span>];
+    <span class="comment">//找出最短的字符串</span>
+    <span class="keyword">for</span>(<span class="keyword">var</span> i =<span class="number">1</span>; i&lt;strs.length;i++){
+        <span class="keyword">if</span>(strs[i].length&lt;shortestStr.length){
+            shortestStr = strs[i]
+        }
+    }
+    <span class="comment">//判断最短字符串是否是当前元素的前缀</span>
+    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;strs.length;i++){
+        <span class="keyword">while</span>(shortestStr.length&gt;<span class="number">0</span>) {
+            <span class="keyword">if</span> (strs[i].indexOf(shortestStr) === <span class="number">0</span>) {
+                <span class="keyword">break</span>;
+            } <span class="keyword">else</span> {
+                shortestStr = shortestStr.substring(<span class="number">0</span>,shortestStr.length-<span class="number">1</span>);
+            }
+        }
+    }
+    <span class="keyword">return</span> shortestStr;
+};
+</code></pre><h2 id="耗时">耗时</h2><p><img src="/images/longestcommonprefix.png" alt="Runtime"></p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2015/08/07/LeetCode-Remove-Nth-from-end/" itemprop="url">
                 LeetCode:Remove Nth Node from End of List
               </a>
@@ -227,7 +326,7 @@
 
       
         
-          <span itemprop="articleBody"><h2 id="题目">题目</h2><p>Remove Nth Node from End of List</p>
+          <span itemprop="articleBody"><h2 id="题目">题目</h2><p><a href="https://leetcode.com/problems/remove-nth-node-from-end-of-list/" target="_blank" rel="external">Remove Nth Node from End of List</a></p>
 <p>把倒数第N个元素从链表中删除。</p>
 <p>比如链表1-&gt;2-&gt;3-&gt;4-&gt;5,  把倒数第二个删除（n=2），返回1-&gt;2-&gt;3-&gt;5</p>
 <h2 id="思路">思路</h2><p>首先是遍历整个链表，拿到链表的长度，然后根据这个长度值length和指定的n值再遍历一次链表，找到要删除节点的父节点。</p>
@@ -335,7 +434,8 @@ var removeNthFromEnd = function(head, n) {
 
       
         
-          <span itemprop="articleBody"><h2 id="题目">题目</h2><p>把两个有序的数组合并成一个，数组1有m个元素，数组2有n个元素。假设数组1有足够的长度（m+n）来容纳数组1和数组2，求合并后的数组1.</p>
+          <span itemprop="articleBody"><h2 id="题目">题目</h2><p><a href="https://leetcode.com/problems/merge-sorted-array/" target="_blank" rel="external">Merge Sorted Array</a></p>
+<p>把两个有序的数组合并成一个，数组1有m个元素，数组2有n个元素。假设数组1有足够的长度（m+n）来容纳数组1和数组2，求合并后的数组1.</p>
 <h2 id="思路">思路</h2><p>因为不能用额外的存储空间，考虑用类似选择排序的方式来重新生成nums1.</p>
 <p>即，原nums1的最大值和num2的最大值比较，大者放到新nums1[m+n-1]位置。<br>并且指针向前移一位，继续比较原nums1和num2的最大值，把大的放到新nums1[m+n-2]位置，直到一个数组的指针已经到头了。</p>
 <h2 id="实现">实现</h2><pre><code><span class="comment">/**
@@ -999,81 +1099,11 @@ var reverseList = <span class="function"><span class="keyword">function</span>(<
 
 
     
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/07/30/setWebChromeClient-setWebClient的区别/" itemprop="url">
-                setWebChromeClient setWebviewClient的区别
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-07-30T14:23:10+08:00" content="2015-07-30">
-            2015-07-30
-          </time>
-        </span>
-
-        
-
-        
-          
-            <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2015/07/30/setWebChromeClient-setWebClient的区别/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/30/setWebChromeClient-setWebClient的区别/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><p>webChromeClient 比webviewclient功能更强大，支持页面js。</p>
-<p><a href="http://stackoverflow.com/questions/2835556/whats-the-difference-between-setwebviewclient-vs-setwebchromeclient" target="_blank" rel="external">same question in stackoverflow</a></p>
-</span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/">&raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/2/">&raquo;</a>
   </nav>
 
 
@@ -1108,7 +1138,7 @@ var reverseList = <span class="function"><span class="keyword">function</span>(<
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">60</span>
+              <span class="site-state-item-count">61</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

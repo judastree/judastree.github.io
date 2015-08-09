@@ -5,7 +5,7 @@
   <subtitle><![CDATA[You are the pretty sunshine of my life]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://judastree.github.io//"/>
-  <updated>2015-08-07T01:15:28.000Z</updated>
+  <updated>2015-08-09T05:58:03.000Z</updated>
   <id>http://judastree.github.io//</id>
   
   <author>
@@ -16,12 +16,60 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[LeetCode:Longest Common Prefix]]></title>
+    <link href="http://judastree.github.io/2015/08/09/LeetCode-Longest-Common-Prefix/"/>
+    <id>http://judastree.github.io/2015/08/09/LeetCode-Longest-Common-Prefix/</id>
+    <published>2015-08-09T05:52:02.000Z</published>
+    <updated>2015-08-09T05:58:03.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="题目">题目</h2><p>   <a href="https://leetcode.com/problems/longest-common-prefix/" target="_blank" rel="external">LeetCode:Longest Common Prefix</a></p>
+<p>   找出一个字符串数组中所有元素的最长公共前缀。</p>
+<h2 id="思路">思路</h2><p>   先找出这个数组中最短的字符串，然后再遍历数组比较这个最短字符串是否当前元素的前缀。<br>   如果是的话，比较下一个数组元素。<br>   如果不是的话，最短字符串截断最后一位再和当前数组数组元素比较，直到最短字符串长度为0.</p>
+<h2 id="实现">实现</h2><pre><code><span class="comment">/**
+ * <span class="doctag">@param</span> {string[]} strs
+ * <span class="doctag">@return</span> {string}
+ */</span>
+<span class="keyword">var</span> longestCommonPrefix = <span class="function"><span class="keyword">function</span><span class="params">(strs)</span> </span>{
+    <span class="keyword">if</span>(strs.length===<span class="number">0</span>){
+        <span class="keyword">return</span> <span class="string">""</span>;
+    }
+    <span class="keyword">var</span> shortestStr=strs[<span class="number">0</span>];
+    <span class="comment">//找出最短的字符串</span>
+    <span class="keyword">for</span>(<span class="keyword">var</span> i =<span class="number">1</span>; i&lt;strs.length;i++){
+        <span class="keyword">if</span>(strs[i].length&lt;shortestStr.length){
+            shortestStr = strs[i]
+        }
+    }
+    <span class="comment">//判断最短字符串是否是当前元素的前缀</span>
+    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;strs.length;i++){
+        <span class="keyword">while</span>(shortestStr.length&gt;<span class="number">0</span>) {
+            <span class="keyword">if</span> (strs[i].indexOf(shortestStr) === <span class="number">0</span>) {
+                <span class="keyword">break</span>;
+            } <span class="keyword">else</span> {
+                shortestStr = shortestStr.substring(<span class="number">0</span>,shortestStr.length-<span class="number">1</span>);
+            }
+        }
+    }
+    <span class="keyword">return</span> shortestStr;
+};
+</code></pre><h2 id="耗时">耗时</h2><p><img src="/images/longestcommonprefix.png" alt="Runtime"></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="题目">题目</h2><p>   <a href="https://leetcode.com/problems/longest-common-prefix/" target="_blank" rel="external">LeetCode:Longest Comm]]>
+    </summary>
+    
+      <category term="LeetCode" scheme="http://judastree.github.io/tags/LeetCode/"/>
+    
+      <category term="算法" scheme="http://judastree.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[LeetCode:Remove Nth Node from End of List]]></title>
     <link href="http://judastree.github.io/2015/08/07/LeetCode-Remove-Nth-from-end/"/>
     <id>http://judastree.github.io/2015/08/07/LeetCode-Remove-Nth-from-end/</id>
     <published>2015-08-07T01:07:42.000Z</published>
-    <updated>2015-08-07T01:15:28.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="题目">题目</h2><p>Remove Nth Node from End of List</p>
+    <updated>2015-08-08T01:29:00.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="题目">题目</h2><p><a href="https://leetcode.com/problems/remove-nth-node-from-end-of-list/" target="_blank" rel="external">Remove Nth Node from End of List</a></p>
 <p>把倒数第N个元素从链表中删除。</p>
 <p>比如链表1-&gt;2-&gt;3-&gt;4-&gt;5,  把倒数第二个删除（n=2），返回1-&gt;2-&gt;3-&gt;5</p>
 <h2 id="思路">思路</h2><p>首先是遍历整个链表，拿到链表的长度，然后根据这个长度值length和指定的n值再遍历一次链表，找到要删除节点的父节点。</p>
@@ -63,9 +111,7 @@ var removeNthFromEnd = function(head, n) {
 </code></pre><h2 id="耗时">耗时</h2><p><img src="/images/removenthfromend.png" alt="removenthfromend"></p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h2 id="题目">题目</h2><p>Remove Nth Node from End of List</p>
-<p>把倒数第N个元素从链表中删除。</p>
-<p>比如链表1-&gt;2-&gt;3-&gt;4-&gt;5,  把倒数第二个删除（n=2），返回1-&gt;2]]>
+    <![CDATA[<h2 id="题目">题目</h2><p><a href="https://leetcode.com/problems/remove-nth-node-from-end-of-list/" target="_blank" rel="external">Remove Nth No]]>
     </summary>
     
       <category term="LeetCode" scheme="http://judastree.github.io/tags/LeetCode/"/>
@@ -79,8 +125,9 @@ var removeNthFromEnd = function(head, n) {
     <link href="http://judastree.github.io/2015/08/07/LeetCode-Merge-Sorted-Array/"/>
     <id>http://judastree.github.io/2015/08/07/LeetCode-Merge-Sorted-Array/</id>
     <published>2015-08-07T00:54:00.000Z</published>
-    <updated>2015-08-07T01:05:02.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="题目">题目</h2><p>把两个有序的数组合并成一个，数组1有m个元素，数组2有n个元素。假设数组1有足够的长度（m+n）来容纳数组1和数组2，求合并后的数组1.</p>
+    <updated>2015-08-08T01:30:31.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="题目">题目</h2><p><a href="https://leetcode.com/problems/merge-sorted-array/" target="_blank" rel="external">Merge Sorted Array</a></p>
+<p>把两个有序的数组合并成一个，数组1有m个元素，数组2有n个元素。假设数组1有足够的长度（m+n）来容纳数组1和数组2，求合并后的数组1.</p>
 <h2 id="思路">思路</h2><p>因为不能用额外的存储空间，考虑用类似选择排序的方式来重新生成nums1.</p>
 <p>即，原nums1的最大值和num2的最大值比较，大者放到新nums1[m+n-1]位置。<br>并且指针向前移一位，继续比较原nums1和num2的最大值，把大的放到新nums1[m+n-2]位置，直到一个数组的指针已经到头了。</p>
 <h2 id="实现">实现</h2><pre><code><span class="comment">/**
@@ -132,8 +179,8 @@ var removeNthFromEnd = function(head, n) {
 </code></pre><h2 id="耗时">耗时</h2><p> <img src="/images/mergesortedarray.png" alt="mergesortedarray"></p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h2 id="题目">题目</h2><p>把两个有序的数组合并成一个，数组1有m个元素，数组2有n个元素。假设数组1有足够的长度（m+n）来容纳数组1和数组2，求合并后的数组1.</p>
-<h2 id="思路">思路</h2><p>因为不能用额外的存储空间，考虑用类似选择排序的]]>
+    <![CDATA[<h2 id="题目">题目</h2><p><a href="https://leetcode.com/problems/merge-sorted-array/" target="_blank" rel="external">Merge Sorted Array</a></p>
+]]>
     </summary>
     
       <category term="LeetCode" scheme="http://judastree.github.io/tags/LeetCode/"/>
@@ -815,49 +862,6 @@ sPointer = sPointer.<span class="keyword">next</span>;
       <category term="LeetCode" scheme="http://judastree.github.io/tags/LeetCode/"/>
     
       <category term="算法" scheme="http://judastree.github.io/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[将数字转换为千分位的金额格式]]></title>
-    <link href="http://judastree.github.io/2015/07/25/%E5%B0%86%E6%95%B0%E5%AD%97%E8%BD%AC%E6%8D%A2%E4%B8%BA%E5%8D%83%E5%88%86%E4%BD%8D%E7%9A%84%E9%87%91%E9%A2%9D%E6%A0%BC%E5%BC%8F/"/>
-    <id>http://judastree.github.io/2015/07/25/将数字转换为千分位的金额格式/</id>
-    <published>2015-07-25T02:58:43.000Z</published>
-    <updated>2015-07-25T03:55:27.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="实现">实现</h2><p>将一个数字转换为千分位的金额格式，找了酱一个正则表达式。</p>
-<pre><code>var num =<span class="number">12345</span>;
-console.<span class="built_in">log</span> <span class="params">(<span class="params">(num.toFixed<span class="params">(<span class="number">2</span>)</span> + '')</span>.replace<span class="params">(/\d{<span class="number">1</span>,<span class="number">3</span>}<span class="params">(?=<span class="params">(\d{<span class="number">3</span>})</span>+<span class="params">(\.\d*)</span>?$)</span>/g, '$&amp;,')</span>)</span>;
-</code></pre><h2 id="解析">解析</h2><p> 一点点来看这个正则式什么意思。</p>
-<p> <strong>toFixed(2)</strong> : 数字保留2位小数。</p>
-<p> <strong>\d{1,3}</strong>    : 包含1个或者3个数字的字符串。（为简便表述，这个字符串先记做A）</p>
-<p> <strong>\d{3}</strong>      : 包含3个数字</p>
-<p> <strong>(\d{3})+</strong>   : 包含至少1个的3个数字的组合    </p>
-<p> <strong>(.\d*)?$</strong>  : 以小数点以及其n位数字为结尾</p>
-<p> <strong>(\d{3})+(.\d*)?$</strong>     : 小数点前至少1个3个数组，小数点后有n为数字的字符串（为简便表述，这个字符串先记做B）</p>
-<p> <strong>?=(\d{3})+(.\d*)?$</strong>   : 找出任何其后紧接指定字符串B的字符串A</p>
-<p> <strong> /g</strong>    : 全局匹配</p>
-<p> <strong>$&amp;,</strong>     : 当前匹配的字符串，集合上面的，这个匹配字符串为A,并将A后面加个逗号“,”</p>
-<p> 字面的意思就酱了。</p>
-<h2 id="验证">验证</h2><p> 我们举几个例子来验证一下。</p>
-<p> 假设num 是2位数或1位数，那么字符串B是为空的，不做逗号替换，直接返回;</p>
-<p> num是3位数，则B = num，但是字符串A是空的，不做逗号替换，直接返回。</p>
-<p> num是4,5位数，B是后三位，A是B前一位，找到这样的A，对A进行逗号替换。然后继续找，发现找不到了。</p>
-<p> num是6位数，B = num， 找不到A，继续， B = num的后三位，找到A是B的前一位，加逗号。</p>
-<p> num是7位数（1234567），B = num的后六位（234567），A是第一位（1），加逗号，此时结果为(1,234567).</p>
-<p> 再继续查找，B是567，找到A是4，加逗号，结果为（1,234,567）.这就递归num是6为数的情况了。</p>
-<p> 我们先找字符串B为345.00,然后找到2是满足字符串A的要求的。2后面加逗号。<br> g 继续找，发现没有了，结果是12,345.00;</p>
-<p> 话说其实试验下来发现字符串A可以直接是<strong>\d{1}</strong></p>
-<h2 id="PS：">PS：</h2><p>正则中$1,$2,$3,..$99,代表第1,2,3,…99匹配的字符串。</p>
-<p>$’代表当前匹配字符串后面的字符串。<br>$`代表当前匹配字符串前面的字符串。</p>
-<p>比如字符串“Hello,World”， 匹配字符串为”,”的话，$`代表“Hello”,$’代表“World”</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h2 id="实现">实现</h2><p>将一个数字转换为千分位的金额格式，找了酱一个正则表达式。</p>
-<pre><code>var num =<span class="number">12345</span>;
-console.<span class="built_in"]]>
-    </summary>
-    
-      <category term="正则" scheme="http://judastree.github.io/tags/%E6%AD%A3%E5%88%99/"/>
     
   </entry>
   
