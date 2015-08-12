@@ -252,7 +252,8 @@ Given “paper”, “title”, return true.
 <p>Given “paper”, “title”, return true.</p>
 <p>如果s字符串的字母被替换可以得到t字符串的话，则说明s和t字符串的构造是相同的。</p>
 <h2 id="思路">思路</h2><p>按照同形构造的定义来，如果字母替换可以得到目标字符串，我们先建一个map来存储s和t/t和s字母的对应关系。<br>然后分别遍历s和t的字符串，只要出现当前字母和map表的字母不匹配的，就说明s和t不是同源的字母。</p>
-<h2 id="实现">实现</h2><pre><code><span class="comment">/**
+<h2 id="实现">实现</h2><p>JavaScript:</p>
+<pre><code><span class="comment">/**
  * @param {string} s
  * @param {string} t
  * @return {boolean}
@@ -388,7 +389,7 @@ Given “paper”, “title”, return true.
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">61</span>
+              <span class="site-state-item-count">62</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

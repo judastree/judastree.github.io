@@ -189,6 +189,77 @@
           
           
             
+              <a class="post-title-link" href="/2015/07/21/Chrome-timeline-检测页面性能/" itemprop="url">
+                Chrome timeline 检测页面性能
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-07-21T12:13:58+08:00" content="2015-07-21">
+            2015-07-21
+          </time>
+        </span>
+
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2015/07/21/Chrome-timeline-检测页面性能/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/21/Chrome-timeline-检测页面性能/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p>还是先占个坑。</p>
+<p>今天要做页面性能优化，终于有机会用到这个了。</p>
+<p>参考资料:<a href="https://developer.chrome.com/devtools/docs/timeline" target="_blank" rel="external">Performance profiling with the timeline</a></p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2015/07/20/二叉排序树的实现/" itemprop="url">
                 二叉排序树的实现
               </a>
@@ -508,7 +579,8 @@ bst.postOrder(bst.root, <span class="function"><span class="keyword">function</s
 <li>如果相等，并且是叶子节点，则返回true，找到</li>
 <li>如果不相等，相等但不是叶子节点，则继续查找，直到所有的节点都遍历过。</li>
 </ul>
-<h2 id="实现">实现</h2><pre><code><span class="keyword">var</span> checkNext =<span class="function"><span class="keyword">function</span><span class="params">(root, sum, currentSum,flag)</span></span>{
+<h2 id="实现">实现</h2><p> JavaScript:</p>
+<pre><code><span class="keyword">var</span> checkNext =<span class="function"><span class="keyword">function</span><span class="params">(root, sum, currentSum,flag)</span></span>{
     <span class="keyword">if</span> (root) {
 
         <span class="keyword">if</span> (root.val + currentSum === sum) {
@@ -1015,104 +1087,6 @@ bst.postOrder(bst.root, <span class="function"><span class="keyword">function</s
 
 
     
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/07/15/学习下ES6/" itemprop="url">
-                学习下ES6
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-07-15T11:26:29+08:00" content="2015-07-15">
-            2015-07-15
-          </time>
-        </span>
-
-        
-
-        
-          
-            <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2015/07/15/学习下ES6/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/15/学习下ES6/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><p>主要是看阮一峰的<a href="http://es6.ruanyifeng.com/#docs/intro" target="_blank" rel="external">入门教程</a><br>还有csdn上的<a href="http://www.csdn.net/tag/%E6%8E%A2%E7%A7%98es6/news" target="_blank" rel="external">探秘ES6</a><br>github上的<a href="https://github.com/lukehoban/es6features" target="_blank" rel="external">es6 feature</a></p>
-<p>说起来好惭愧，一直都没有去了解ECMAScript,枉做前端。</p>
-<p>ES6有哪些酷炫的新特性呢？</p>
-<h2 id="新增箭头操作符=&gt;_,简化函数书写">新增箭头操作符=&gt; ,简化函数书写</h2><p> coffeescript的语法糖里也是有样，各种回调需要写function,现在用=&gt; 代替function关键字</p>
-<h2 id="新增基本类型">新增基本类型</h2><p> JS有null,undefined,boolean,number,string五种基本类型，object是引用类型。<br> 现在新增Symbol这个基本类型，避免与已有代码命名冲突</p>
-<pre><code><span class="keyword">var</span> key = <span class="built_in">Symbol</span>(<span class="string">"key"</span>);
-</code></pre><h2 id="自带Promise">自带Promise</h2><p> 现在已经很多js的类库都支持Promise了，比如Jquery。ES6正式引入，提供原生的Promise对象。</p>
-<h2 id="新增块级变量的定义_关键字let">新增块级变量的定义 关键字let</h2><p> JS是变量var定义是不存在块级生命周期的。现在新增let关键字，仅可以在块级中使用。</p>
-<pre><code><span class="keyword">for</span><span class="params">(let i = <span class="number">0</span>; i &lt; arr.length; i++)</span>{}
-
-console.<span class="built_in">log</span><span class="params">(i)</span>
-<span class="comment">//ReferenceError: i is not defined</span>
-</code></pre><h2 id="变量的解构赋值">变量的解构赋值</h2><p> 自动解析数组或对象中的值，并给对应变量进行赋值，这被称为解构（Destructuring）。</p>
-<pre><code><span class="keyword">var</span> [x,y]=getVal(),<span class="comment">//函数返回值的解构</span>
-    [name,,age]=[<span class="string">'wayou'</span>,<span class="string">'male'</span>,<span class="string">'secrect'</span>];<span class="comment">//数组解构</span>
-
-<span class="function"><span class="keyword">function</span> <span class="title">getVal</span>(<span class="params"></span>) </span>{
-    <span class="keyword">return</span> [ <span class="number">1</span>, <span class="number">2</span> ];
-}
-
-<span class="built_in">console</span>.log(<span class="string">'x:'</span>+x+<span class="string">', y:'</span>+y);<span class="comment">//输出：x:1, y:2 </span>
-<span class="built_in">console</span>.log(<span class="string">'name:'</span>+name+<span class="string">', age:'</span>+age);<span class="comment">//输出： name:wayou, age:secrect</span>
-</code></pre><p> 据说在函数传参中很有用。<br> 如果函数的参数列表很长，又不想记住他们的顺序，我们对参数对象使用解构赋值，这样，在访问对象属性时，便可以避免重复调用这一参数对象    </p>
-<h2 id="for_of_的遍历">for of 的遍历</h2><p>   我们以前用for in 遍历数组，但拿到的是数组的索引值，这点很烦。for of 拿到的值不是索引，完全没有这个烦恼。</p>
-<pre><code><span class="keyword">for</span> (var <span class="built_in">value</span> <span class="operator">of</span> myArray) { 
-    console.<span class="built_in">log</span>(<span class="built_in">value</span>); 
-}
-</code></pre><p>   另外，我们以前也用forEach遍历数组，for(var i of array){} 和forEach(function(i){})比起来，优势在于还可以有break,continue,return这些操作。</p>
-<h2 id="Generator函数">Generator函数</h2><p>  没有看明白这是干什么，mark下</p>
-<h2 id="引入模块化_Module">引入模块化 Module</h2><p>  模块功能主要由两个命令构成：export和import。<br>  export命令用于用户自定义模块，规定对外接口；<br>  import命令用于输入其他模块提供的功能，同时创造命名空间（namespace），防止函数名冲突。<br>  这个对于代码管理很有用啊。越来越像java了…</p>
-<h2 id="还有一些其他的新增api，新增的map和set集合等等，到时再看了。">还有一些其他的新增api，新增的map和set集合等等，到时再看了。</h2></span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1152,7 +1126,7 @@ console.<span class="built_in">log</span><span class="params">(i)</span>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">61</span>
+              <span class="site-state-item-count">62</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

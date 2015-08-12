@@ -265,7 +265,8 @@ PS:Excel2003版之前最大是255列，2007版最大是16384列，当然这和�
 </code></pre><p>PS:Excel2003版之前最大是255列，2007版最大是16384列，当然这和题目无关。</p>
 <h2 id="思路">思路</h2><p>这个题目其实是把十进制的数字转化成26进制。想到之前求一个数的二进制是通过不断除2的方式，这个也一样。</p>
 <p>只要除以26之后得到商比26大就拿这商除26，并把每次除法的余数保存起来，直到商为0，将余数们反向输出就是26进制表达了。</p>
-<h2 id="实现">实现</h2><pre><code><span class="comment">/**
+<h2 id="实现">实现</h2><p>JavaScript:</p>
+<pre><code><span class="comment">/**
  * @param {number} n
  * @return {string}
  */</span>
@@ -384,7 +385,7 @@ PS:Excel2003版之前最大是255列，2007版最大是16384列，当然这和�
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">61</span>
+              <span class="site-state-item-count">62</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

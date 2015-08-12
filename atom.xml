@@ -5,7 +5,7 @@
   <subtitle><![CDATA[You are the pretty sunshine of my life]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://judastree.github.io//"/>
-  <updated>2015-08-09T05:58:03.000Z</updated>
+  <updated>2015-08-12T15:03:50.000Z</updated>
   <id>http://judastree.github.io//</id>
   
   <author>
@@ -16,15 +16,61 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[正则获取url中的参数]]></title>
+    <link href="http://judastree.github.io/2015/08/12/%E6%AD%A3%E5%88%99%E8%8E%B7%E5%8F%96url%E4%B8%AD%E7%9A%84%E5%8F%82%E6%95%B0/"/>
+    <id>http://judastree.github.io/2015/08/12/正则获取url中的参数/</id>
+    <published>2015-08-12T14:26:32.000Z</published>
+    <updated>2015-08-12T15:03:50.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="思路">思路</h2><p>url中的参数都是以[&amp;]name=value的形式带在url后面的，而location.search中可以拿到url中？之后的字符串（包括？在内）。</p>
+<p>那么通过处理location.search的字符串，即可得到想要的参数。</p>
+<p>我们用正则匹配的方式,给一个参数name，求它的value。</p>
+<pre><code><span class="function"><span class="keyword">function</span> <span class="title">getQueryString</span>(<span class="params">param</span>)</span>{
+    <span class="keyword">var</span> reg = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">'(^|&amp;)'</span> + name + <span class="string">'=([^&amp;]*)(&amp;|$)'</span>, <span class="string">'i'</span>);
+    <span class="keyword">var</span> r = <span class="built_in">window</span>.location.search.substr(<span class="number">1</span>).match(reg);
+    <span class="keyword">if</span> (r != <span class="literal">null</span>) {
+        <span class="keyword">return</span> <span class="built_in">unescape</span>(r[<span class="number">2</span>]);      
+    }
+    <span class="keyword">return</span> <span class="literal">null</span>;
+}
+</code></pre><p>这个正则是找以 &amp;name 或者 name 为开头，以 =value&amp; 或者 =value 结尾的字符串，忽略大小写，一次匹配不循环。</p>
+<p>以 a=2&amp;b=3&amp;c=4 为例子.</p>
+<p>当name=a时:</p>
+<pre><code><span class="setting">r= <span class="value">[<span class="string">"a=2&amp;"</span>,<span class="string">""</span>,<span class="number">2</span>,<span class="string">"$"</span>]</span></span>
+</code></pre><p>当name=b时:</p>
+<pre><code><span class="setting">r = <span class="value">[<span class="string">"&amp;b=3&amp;"</span>,<span class="string">"&amp;"</span>,<span class="string">"3"</span>,<span class="string">"&amp;"</span>]</span></span>
+</code></pre><p>当name=c时:</p>
+<pre><code><span class="setting">r = <span class="value">[<span class="string">"&amp;c=4"</span>,<span class="string">"&amp;"</span>,<span class="string">"4"</span>,<span class="string">""</span>]</span></span>
+</code></pre><h2 id="match的用法">match的用法</h2><p>match() 方法将检索字符串 stringObject，以找到一个或多个与 regexp 匹配的文本。</p>
+<p>这个方法的行为在很大程度上有赖于 regexp 是否具有标志 g。</p>
+<p>如果 regexp 没有标志 g，那么 match() 方法就只能在 stringObject 中执行一次匹配。</p>
+<p>如果没有找到任何匹配的文本， match() 将返回 null。否则，它将返回一个数组，其中存放了与它找到的匹配文本有关的信息。</p>
+<p>该数组的第 0 个元素存放的是匹配文本，而其余的元素存放的是与正则表达式的子表达式匹配的文本。</p>
+<p>除了这些常规的数组元素之外，返回的数组还含有两个对象属性。index 属性声明的是匹配文本的起始字符在 stringObject 中的位置，input 属性声明的是对 stringObject 的引用。</p>
+<p>如果 regexp 具有标志 g，则 match() 方法将执行全局检索，找到 stringObject 中的所有匹配子字符串。若没有找到任何匹配的子串，则返回 null。如果找到了一个或多个匹配子串，则返回一个数组。不过全局匹配返回的数组的内容与前者大不相同，它的数组元素中存放的是 stringObject 中所有的匹配子串，而且也没有 index 属性或 input 属性。</p>
+<p>注意：在全局检索模式下，match() 即不提供与子表达式匹配的文本的信息，也不声明每个匹配子串的位置。如果您需要这些全局检索的信息，可以使用 RegExp.exec()。    </p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="思路">思路</h2><p>url中的参数都是以[&amp;]name=value的形式带在url后面的，而location.search中可以拿到url中？之后的字符串（包括？在内）。</p>
+<p>那么通过处理location.search的字符串，即可得到想]]>
+    </summary>
+    
+      <category term="JavaScript" scheme="http://judastree.github.io/tags/JavaScript/"/>
+    
+      <category term="正则" scheme="http://judastree.github.io/tags/%E6%AD%A3%E5%88%99/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[LeetCode:Longest Common Prefix]]></title>
     <link href="http://judastree.github.io/2015/08/09/LeetCode-Longest-Common-Prefix/"/>
     <id>http://judastree.github.io/2015/08/09/LeetCode-Longest-Common-Prefix/</id>
     <published>2015-08-09T05:52:02.000Z</published>
-    <updated>2015-08-09T05:58:03.000Z</updated>
+    <updated>2015-08-12T14:31:20.000Z</updated>
     <content type="html"><![CDATA[<h2 id="题目">题目</h2><p>   <a href="https://leetcode.com/problems/longest-common-prefix/" target="_blank" rel="external">LeetCode:Longest Common Prefix</a></p>
 <p>   找出一个字符串数组中所有元素的最长公共前缀。</p>
 <h2 id="思路">思路</h2><p>   先找出这个数组中最短的字符串，然后再遍历数组比较这个最短字符串是否当前元素的前缀。<br>   如果是的话，比较下一个数组元素。<br>   如果不是的话，最短字符串截断最后一位再和当前数组数组元素比较，直到最短字符串长度为0.</p>
-<h2 id="实现">实现</h2><pre><code><span class="comment">/**
+<h2 id="实现">实现</h2><p>JavaScript:</p>
+<pre><code><span class="comment">/**
  * <span class="doctag">@param</span> {string[]} strs
  * <span class="doctag">@return</span> {string}
  */</span>
@@ -68,12 +114,13 @@
     <link href="http://judastree.github.io/2015/08/07/LeetCode-Remove-Nth-from-end/"/>
     <id>http://judastree.github.io/2015/08/07/LeetCode-Remove-Nth-from-end/</id>
     <published>2015-08-07T01:07:42.000Z</published>
-    <updated>2015-08-08T01:29:00.000Z</updated>
+    <updated>2015-08-12T14:30:34.000Z</updated>
     <content type="html"><![CDATA[<h2 id="题目">题目</h2><p><a href="https://leetcode.com/problems/remove-nth-node-from-end-of-list/" target="_blank" rel="external">Remove Nth Node from End of List</a></p>
 <p>把倒数第N个元素从链表中删除。</p>
 <p>比如链表1-&gt;2-&gt;3-&gt;4-&gt;5,  把倒数第二个删除（n=2），返回1-&gt;2-&gt;3-&gt;5</p>
 <h2 id="思路">思路</h2><p>首先是遍历整个链表，拿到链表的长度，然后根据这个长度值length和指定的n值再遍历一次链表，找到要删除节点的父节点。</p>
-<h2 id="实现">实现</h2><pre><code><span class="comment">/**
+<h2 id="实现">实现</h2><p>JavaScript:</p>
+<pre><code><span class="comment">/**
  * Definition for singly-linked list.
  */</span>
   function ListNode(val) {
@@ -125,12 +172,13 @@ var removeNthFromEnd = function(head, n) {
     <link href="http://judastree.github.io/2015/08/07/LeetCode-Merge-Sorted-Array/"/>
     <id>http://judastree.github.io/2015/08/07/LeetCode-Merge-Sorted-Array/</id>
     <published>2015-08-07T00:54:00.000Z</published>
-    <updated>2015-08-08T01:30:31.000Z</updated>
+    <updated>2015-08-12T14:31:09.000Z</updated>
     <content type="html"><![CDATA[<h2 id="题目">题目</h2><p><a href="https://leetcode.com/problems/merge-sorted-array/" target="_blank" rel="external">Merge Sorted Array</a></p>
 <p>把两个有序的数组合并成一个，数组1有m个元素，数组2有n个元素。假设数组1有足够的长度（m+n）来容纳数组1和数组2，求合并后的数组1.</p>
 <h2 id="思路">思路</h2><p>因为不能用额外的存储空间，考虑用类似选择排序的方式来重新生成nums1.</p>
 <p>即，原nums1的最大值和num2的最大值比较，大者放到新nums1[m+n-1]位置。<br>并且指针向前移一位，继续比较原nums1和num2的最大值，把大的放到新nums1[m+n-2]位置，直到一个数组的指针已经到头了。</p>
-<h2 id="实现">实现</h2><pre><code><span class="comment">/**
+<h2 id="实现">实现</h2><p>JavaScript:</p>
+<pre><code><span class="comment">/**
  * @param {number[]} nums1
  * @param {number} m
  * @param {number[]} nums2
@@ -194,13 +242,14 @@ var removeNthFromEnd = function(head, n) {
     <link href="http://judastree.github.io/2015/08/06/LeetCode-Count-and-Say/"/>
     <id>http://judastree.github.io/2015/08/06/LeetCode-Count-and-Say/</id>
     <published>2015-08-06T02:53:41.000Z</published>
-    <updated>2015-08-06T03:01:29.000Z</updated>
+    <updated>2015-08-12T14:32:02.000Z</updated>
     <content type="html"><![CDATA[<h2 id="题目">题目</h2><p><a href="https://leetcode.com/problems/count-and-say/" target="_blank" rel="external">Count And Say</a></p>
 <p>The count-and-say sequence is the sequence of integers beginning as follows:<br>1, 11, 21, 1211, 111221, …</p>
 <p>1 is read off as “one 1” or 11.<br>11 is read off as “two 1s” or 21.<br>21 is read off as “one 2, then one 1” or 1211.<br>Given an integer n, generate the nth sequence.</p>
 <p>Note: The sequence of integers will be represented as a string.</p>
 <h2 id="思路">思路</h2><p>递归的实现，找出CountAndSay(n)和CountAndSay(n-1)的关系。<br>比如1211拿一个数组记录下有多少个数组。</p>
-<h2 id="实现">实现</h2><pre><code><span class="comment">/**
+<h2 id="实现">实现</h2><p>JavaScript:</p>
+<pre><code><span class="comment">/**
  * @param {number} n
  * @return {string}
  */</span>
@@ -288,10 +337,11 @@ var countAndSay = <span class="function"><span class="keyword">function</span><s
     <link href="http://judastree.github.io/2015/08/04/LeetCode-Reverse-Linked-List/"/>
     <id>http://judastree.github.io/2015/08/04/LeetCode-Reverse-Linked-List/</id>
     <published>2015-08-04T02:40:27.000Z</published>
-    <updated>2015-08-04T02:50:51.000Z</updated>
+    <updated>2015-08-12T14:30:26.000Z</updated>
     <content type="html"><![CDATA[<h2 id="题目Topic">题目Topic</h2><p>反转链表<br><a href="https://leetcode.com/problems/reverse-linked-list/" target="_blank" rel="external">Reverse Linked List</a></p>
 <h2 id="思路How_to">思路How to</h2><p>递归实现，先反转head后面的链表，这时原来的第二个节点(head-&gt;next)已经移到链尾了，把head赋给原来第二个节点的next，并以原head收尾，实现反转。</p>
-<h2 id="实现_Implementation">实现 Implementation</h2><pre><code>/**
+<h2 id="实现_Implementation">实现 Implementation</h2><p>JavaScript:</p>
+<pre><code>/**
  * 递归实现
  * @param {ListNode} head
  * @<span class="keyword">return</span> {ListNode}
@@ -323,13 +373,14 @@ var reverseList = <span class="function"><span class="keyword">function</span>(<
     <link href="http://judastree.github.io/2015/08/02/LeetCode-Valid-Anagram/"/>
     <id>http://judastree.github.io/2015/08/02/LeetCode-Valid-Anagram/</id>
     <published>2015-08-02T04:00:06.000Z</published>
-    <updated>2015-08-02T04:19:09.000Z</updated>
+    <updated>2015-08-12T14:29:43.000Z</updated>
     <content type="html"><![CDATA[<h2 id="题目">题目</h2><p><a href="https://leetcode.com/problems/valid-anagram/" target="_blank" rel="external">Valid Anagram</a></p>
 <p>判断两个字符串是否易位构造，也就是字母种类和出现的次数一样。</p>
 <p>比如：</p>
 <p>  dear   和  read<br>  listen 和  silent<br>  loop   和  pool</p>
 <h2 id="思路">思路</h2><p>统计两个字符串的字母种类和出现的次数，如果相等则是易位构造。</p>
-<h2 id="实现">实现</h2><pre><code><span class="comment">/**
+<h2 id="实现">实现</h2><p>JavaScript:</p>
+<pre><code><span class="comment">/**
  * <span class="doctag">@param</span> {string} s
  * <span class="doctag">@param</span> {string} t
  * <span class="doctag">@return</span> {boolean}
@@ -447,7 +498,7 @@ var reverseList = <span class="function"><span class="keyword">function</span>(<
     <link href="http://judastree.github.io/2015/07/30/LeetCode-Excel-Sheet-Column-Title/"/>
     <id>http://judastree.github.io/2015/07/30/LeetCode-Excel-Sheet-Column-Title/</id>
     <published>2015-07-30T02:34:14.000Z</published>
-    <updated>2015-07-30T02:55:04.000Z</updated>
+    <updated>2015-08-12T14:31:57.000Z</updated>
     <content type="html"><![CDATA[<h2 id="题目">题目</h2><p><a href="https://leetcode.com/problems/excel-sheet-column-title/" target="_blank" rel="external">Excel Sheet Column Title</a></p>
 <p>给定一个正数，求它在excel中对应的标头值。</p>
 <pre><code><span class="number">1</span> <span class="subst">-&gt; </span>A
@@ -460,7 +511,8 @@ var reverseList = <span class="function"><span class="keyword">function</span>(<
 </code></pre><p>PS:Excel2003版之前最大是255列，2007版最大是16384列，当然这和题目无关。</p>
 <h2 id="思路">思路</h2><p>这个题目其实是把十进制的数字转化成26进制。想到之前求一个数的二进制是通过不断除2的方式，这个也一样。</p>
 <p>只要除以26之后得到商比26大就拿这商除26，并把每次除法的余数保存起来，直到商为0，将余数们反向输出就是26进制表达了。</p>
-<h2 id="实现">实现</h2><pre><code><span class="comment">/**
+<h2 id="实现">实现</h2><p>JavaScript:</p>
+<pre><code><span class="comment">/**
  * @param {number} n
  * @return {string}
  */</span>
@@ -499,12 +551,13 @@ var reverseList = <span class="function"><span class="keyword">function</span>(<
     <link href="http://judastree.github.io/2015/07/29/LeetCode-Merge-Two-Sorted-Lists/"/>
     <id>http://judastree.github.io/2015/07/29/LeetCode-Merge-Two-Sorted-Lists/</id>
     <published>2015-07-29T02:31:25.000Z</published>
-    <updated>2015-07-29T02:48:44.000Z</updated>
+    <updated>2015-08-12T14:31:04.000Z</updated>
     <content type="html"><![CDATA[<h2 id="题目">题目</h2><p>  <a href="https://leetcode.com/problems/merge-two-sorted-lists/" target="_blank" rel="external">Merge Two Sorted Lists</a></p>
 <p>   有两个排序好的链表l1和l2，要求是合并为一个列表，并保持列表有序。</p>
 <h2 id="思路">思路</h2><p>   我的想法是先遍历两个链表找到较短的一个，然后把短链表上节点逐个插入到长链表中。</p>
 <p>   然后在网上看别人的代码，其实不用先找到短链。拿一个链表做基准，将另外一个插入就来，只遍历一次就好了。</p>
-<h2 id="实现">实现</h2><pre><code><span class="comment">/**
+<h2 id="实现">实现</h2><p>JavaScript:</p>
+<pre><code><span class="comment">/**
  * Definition for singly-linked list.
  * function ListNode(val) {
  *     this.val = val;
@@ -713,7 +766,7 @@ console.log(Object.keys(obj).length);
     <link href="http://judastree.github.io/2015/07/27/LeetCode-Isomorphic-String/"/>
     <id>http://judastree.github.io/2015/07/27/LeetCode-Isomorphic-String/</id>
     <published>2015-07-27T02:26:51.000Z</published>
-    <updated>2015-07-27T02:45:22.000Z</updated>
+    <updated>2015-08-12T14:31:45.000Z</updated>
     <content type="html"><![CDATA[<h2 id="题目">题目</h2><p><a href="https://leetcode.com/problems/isomorphic-strings/" target="_blank" rel="external">Isomorphic Strings</a></p>
 <p>判断两个字符串是否为同型构造的字符串。</p>
 <p>比如:</p>
@@ -722,7 +775,8 @@ console.log(Object.keys(obj).length);
 <p>Given “paper”, “title”, return true.</p>
 <p>如果s字符串的字母被替换可以得到t字符串的话，则说明s和t字符串的构造是相同的。</p>
 <h2 id="思路">思路</h2><p>按照同形构造的定义来，如果字母替换可以得到目标字符串，我们先建一个map来存储s和t/t和s字母的对应关系。<br>然后分别遍历s和t的字符串，只要出现当前字母和map表的字母不匹配的，就说明s和t不是同源的字母。</p>
-<h2 id="实现">实现</h2><pre><code><span class="comment">/**
+<h2 id="实现">实现</h2><p>JavaScript:</p>
+<pre><code><span class="comment">/**
  * @param {string} s
  * @param {string} t
  * @return {boolean}
@@ -779,12 +833,13 @@ console.log(Object.keys(obj).length);
     <link href="http://judastree.github.io/2015/07/26/LeetCode-Number-of-1-Bits/"/>
     <id>http://judastree.github.io/2015/07/26/LeetCode-Number-of-1-Bits/</id>
     <published>2015-07-26T04:36:48.000Z</published>
-    <updated>2015-07-26T04:48:18.000Z</updated>
+    <updated>2015-08-12T14:30:57.000Z</updated>
     <content type="html"><![CDATA[<h2 id="题目">题目</h2><p> <a href="https://leetcode.com/problems/number-of-1-bits/" target="_blank" rel="external">找出一个数字的二进制中有多少个1</a></p>
 <p> 给定一个无符号的整型数字，比如11,它的二进制是1011,所以返回1的个数3.</p>
 <h2 id="思路">思路</h2><p>对二进制进行位操作，每向右移1位和1做位与操作。是1的话计数器加1，直到右移到0截止。</p>
 <p>这个方法写得很轻松，但是耗时长。</p>
-<h2 id="实现">实现</h2><pre><code><span class="comment">/**
+<h2 id="实现">实现</h2><p>JavaScript:</p>
+<pre><code><span class="comment">/**
  * @param {number} n - a positive integer
  * @return {number}
  */</span>
@@ -805,58 +860,6 @@ console.log(Object.keys(obj).length);
     <summary type="html">
     <![CDATA[<h2 id="题目">题目</h2><p> <a href="https://leetcode.com/problems/number-of-1-bits/" target="_blank" rel="external">找出一个数字的二进制中有多少个1</a></p>
 <p>]]>
-    </summary>
-    
-      <category term="LeetCode" scheme="http://judastree.github.io/tags/LeetCode/"/>
-    
-      <category term="算法" scheme="http://judastree.github.io/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[LeetCode:Palindrome Linked List]]></title>
-    <link href="http://judastree.github.io/2015/07/26/LeetCode-Palindrome-Linked-List/"/>
-    <id>http://judastree.github.io/2015/07/26/LeetCode-Palindrome-Linked-List/</id>
-    <published>2015-07-25T16:03:00.000Z</published>
-    <updated>2015-07-26T04:35:55.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="题目">题目</h2><p><a href="https://leetcode.com/problems/palindrome-linked-list/" target="_blank" rel="external">Palindrome Linked List</a></p>
-<p>判断一个单向链表（没有环）是否是回文链表。</p>
-<p>要求时间复杂度在O(n),空间复杂度 O(1)</p>
-<h2 id="思路">思路</h2><pre><code>1, 找到链表的中间节点。
-2, 反转链表后半部分。
-3, 比较前半部分和后半部分的值是否相等
-4, 还原现场，将后半部分反转回原貌
-</code></pre><h2 id="查到链表的中间节点">查到链表的中间节点</h2><pre><code>var fPointer = sPointer = midPos= head;
-<span class="keyword">while</span> (fPointer.<span class="keyword">next</span>) {
-    sPointer = sPointer.<span class="keyword">next</span>;
-    fPointer = fPointer.<span class="keyword">next</span>;
-    <span class="keyword">if</span>(fPointer.<span class="keyword">next</span>){
-        fPointer = fPointer.<span class="keyword">next</span>;
-    }<span class="keyword">else</span>{
-        <span class="keyword">break</span>;
-    }
-}
-midPos = sPointer;
-</code></pre><h2 id="反转链表">反转链表</h2><p>PS: 反转还没有写出来，下面是错误的。</p>
-<p>  反转链表的方法是从第2个节点到第N个节点，依次逐节点插入到第1个节点(head节点)之后，最后将第一个节点挪到新表的表尾。</p>
-<p>  我们此时的head是midPos,移动sPointer指针。</p>
-<pre><code>fPointer = misPos;
-sPointer = sPointer.<span class="keyword">next</span>;
-
-<span class="keyword">while</span>(sPointer){
-    <span class="regexp">//</span>暂时保存head.<span class="keyword">next</span>
-    fPointer = midPos.<span class="keyword">next</span>;
-    <span class="regexp">//</span>将要插入的节点放到head的<span class="keyword">next</span>
-    midPos.<span class="keyword">next</span> = sPointer;
-    <span class="regexp">//</span>将插入节点的<span class="keyword">next</span>赋值为前面保存的head.<span class="keyword">next</span>
-    sPointer.<span class="keyword">next</span> = fPointer;
-
-    <span class="regexp">//</span>移动sPointer
-    sPointer = sPointer.<span class="keyword">next</span>   
-}
-</code></pre>]]></content>
-    <summary type="html">
-    <![CDATA[<h2 id="题目">题目</h2><p><a href="https://leetcode.com/problems/palindrome-linked-list/" target="_blank" rel="external">Palindrome Linked List<]]>
     </summary>
     
       <category term="LeetCode" scheme="http://judastree.github.io/tags/LeetCode/"/>
