@@ -5,7 +5,7 @@
   <subtitle><![CDATA[You are the pretty sunshine of my life]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://judastree.github.io//"/>
-  <updated>2015-08-17T12:17:56.000Z</updated>
+  <updated>2015-08-17T12:27:04.000Z</updated>
   <id>http://judastree.github.io//</id>
   
   <author>
@@ -14,6 +14,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[UnsatisfiedLinkError]]></title>
+    <link href="http://judastree.github.io/2015/08/17/UnsatisfiedLinkError/"/>
+    <id>http://judastree.github.io/2015/08/17/UnsatisfiedLinkError/</id>
+    <published>2015-08-17T12:22:37.000Z</published>
+    <updated>2015-08-17T12:27:04.000Z</updated>
+    <content type="html"><![CDATA[<p>这两天被这个异常搞死了：</p>
+<pre><code>java.lang.UnsatisfiedLinkError:dlopen failed: “<span class="keyword">*</span><span class="keyword">*</span>/<span class="keyword">*</span>/arm/<span class="keyword">*</span>.so” has unexpected e_machine: 3
+</code></pre><p><strong>原因是一个在x86机器编译的so文件放到了arm机器上。</strong></p>
+<p>apk安装时，系统把armeabi下的libBugly.so放入应用的私有目录中了。<br>但这个so不是arm的，而是x86编译的。<br>所以运行时，系统检察ELF文件中的e_machine字段的值，跟arm的不匹配，就会抛出这个异常了！</p>
+<p>参考资料:<a href="http://bugly.qq.com/blog/?p=34" target="_blank" rel="external">精神哥讲Crash（一）：UnsatisfiedLinkError</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>这两天被这个异常搞死了：</p>
+<pre><code>java.lang.UnsatisfiedLinkError:dlopen failed: “<span class="keyword">*</span><span class="keyword">*</span>/<]]>
+    </summary>
+    
+      <category term="Android" scheme="http://judastree.github.io/tags/Android/"/>
+    
+      <category term="异常" scheme="http://judastree.github.io/tags/%E5%BC%82%E5%B8%B8/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[ADB server didn't ACK]]></title>
@@ -769,40 +792,6 @@ var mergeTwoLists = function(l1, l2) {
 <ul>
 <li>内联样式: 写在标签内的样式，<div style=""></div></li>
 <li>嵌入样式: 写在<h]]>
-    </summary>
-    
-      <category term="JavaScript" scheme="http://judastree.github.io/tags/JavaScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[计算Object的长度]]></title>
-    <link href="http://judastree.github.io/2015/07/27/%E8%8E%B7%E5%8F%96object%E7%9A%84%E5%B1%9E%E6%80%A7%E9%95%BF%E5%BA%A6/"/>
-    <id>http://judastree.github.io/2015/07/27/获取object的属性长度/</id>
-    <published>2015-07-27T11:22:11.000Z</published>
-    <updated>2015-07-27T11:40:48.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="题目">题目</h2><p>对于Object来说，其实没有长度的概念，所以也并没有length的属性或者size()的方法来获取。</p>
-<p>那如果想要计算这个object中定义了多少属性值呢？(从Ojbect继承过来的不算)</p>
-<h2 id="思路">思路</h2><p>方法1:  Object中有hasOwnProperty()的方法，可以判断对象是否有某个特定的属性。<br>for-in 可以查找object的所有属性。而hasOwnProperty是判断本身对象的属性，不查找原型链的属性，这正好是我们要的。</p>
-<p>方法2:  Object还有另外一个keys的方法，可以返回所有的keys。</p>
-<h2 id="实现">实现</h2><p>方法1:</p>
-<pre><code> var obj = {a:<span class="string">"1"</span>,b:<span class="string">"2"</span>,c:<span class="string">"3"</span>},<span class="property">length</span>=<span class="number">0</span>;
-
- <span class="keyword">for</span> (var <span class="keyword">property</span> <span class="keyword">in</span> obj) {
-     <span class="keyword">if</span> (obj.hasOwnProperty(<span class="keyword">property</span>)) {
-         <span class="property">length</span>++;
-     }
- }
-
-console.<span class="command">log</span>(<span class="property">length</span>);
-</code></pre><p>方法2:</p>
-<pre><code>var obj = {<span class="string">a:</span><span class="string">"1"</span>,<span class="string">b:</span><span class="string">"2"</span>,<span class="string">c:</span><span class="string">"3"</span>};       
-console.log(Object.keys(obj).length);
-</code></pre>]]></content>
-    <summary type="html">
-    <![CDATA[<h2 id="题目">题目</h2><p>对于Object来说，其实没有长度的概念，所以也并没有length的属性或者size()的方法来获取。</p>
-<p>那如果想要计算这个object中定义了多少属性值呢？(从Ojbect继承过来的不算)</p>
-<h2 id="思路">]]>
     </summary>
     
       <category term="JavaScript" scheme="http://judastree.github.io/tags/JavaScript/"/>
