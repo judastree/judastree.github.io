@@ -189,6 +189,154 @@
           
           
             
+              <a class="post-title-link" href="/2015/08/17/ADB-server-didnot-ACK/" itemprop="url">
+                ADB server didn't ACK
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-08-17T17:06:41+08:00" content="2015-08-17">
+            2015-08-17
+          </time>
+        </span>
+
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2015/08/17/ADB-server-didnot-ACK/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/17/ADB-server-didnot-ACK/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><h2 id="问题描述">问题描述</h2><p>  Android真机调试的时候，出现ADB server didn’t ACK，明明设备已经连接上，开发者选项也打开了。</p>
+<h2 id="原因">原因</h2><p>  cmd，启动adb服务发现启动失败。</p>
+<p>  <img src="http://b.hiphotos.baidu.com/exp/w=500/sign=1823344a58ee3d6d22c687cb73176d41/37d3d539b6003af37399fb8d342ac65c1038b63f.jpg" alt="adb失败"></p>
+<p>  看下为什么会失败。</p>
+<pre><code>adb nodaemon <span class="keyword">server</span>
+</code></pre><p>  <img src="http://e.hiphotos.baidu.com/exp/w=500/sign=5de9828f9922720e7bcee2fa4bca0a3a/b3119313b07eca8031261e0a902397dda144833f.jpg" alt="nodaemonserver">  </p>
+<p>  原来是端口被占用了。</p>
+<p>  找到占用端口的进程，杀掉，重启adb server</p>
+<p>  <img src="http://h.hiphotos.baidu.com/exp/w=500/sign=b12f15d529381f309e198da999004c67/730e0cf3d7ca7bcb2546e0c2bf096b63f624a819.jpg" alt="adbstart"></p>
+<h2 id="Note:">Note:</h2><p>  转自<a href="http://jingyan.baidu.com/article/454316aba27e49f7a7c03ab1.html" target="_blank" rel="external">百度经验</a></p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2015/08/17/主流模引擎一览/" itemprop="url">
+                主流模引擎一览
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-08-17T17:04:21+08:00" content="2015-08-17">
+            2015-08-17
+          </time>
+        </span>
+
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2015/08/17/主流模引擎一览/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/17/主流模引擎一览/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p>Jade，Swig，Handlerbar，UnderScore，Ejs</p>
+<p>先占个坑，晚上填</p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2015/08/12/正则获取url中的参数/" itemprop="url">
                 正则获取url中的参数
               </a>
@@ -937,194 +1085,6 @@ var reverseList = <span class="function"><span class="keyword">function</span>(<
 
 
     
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/08/02/LeetCode-Valid-Anagram/" itemprop="url">
-                LeetCode:Valid Anagram
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-08-02T12:00:06+08:00" content="2015-08-02">
-            2015-08-02
-          </time>
-        </span>
-
-        
-
-        
-          
-            <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2015/08/02/LeetCode-Valid-Anagram/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/02/LeetCode-Valid-Anagram/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><h2 id="题目">题目</h2><p><a href="https://leetcode.com/problems/valid-anagram/" target="_blank" rel="external">Valid Anagram</a></p>
-<p>判断两个字符串是否易位构造，也就是字母种类和出现的次数一样。</p>
-<p>比如：</p>
-<p>  dear   和  read<br>  listen 和  silent<br>  loop   和  pool</p>
-<h2 id="思路">思路</h2><p>统计两个字符串的字母种类和出现的次数，如果相等则是易位构造。</p>
-<h2 id="实现">实现</h2><p>JavaScript:</p>
-<pre><code><span class="comment">/**
- * <span class="doctag">@param</span> {string} s
- * <span class="doctag">@param</span> {string} t
- * <span class="doctag">@return</span> {boolean}
- */</span>
-<span class="keyword">var</span> isAnagram = <span class="function"><span class="keyword">function</span><span class="params">(s, t)</span> </span>{
-    <span class="comment">//判断两个字符串是否同源，也就是字母种类和出现的次数一样</span>
-    <span class="keyword">var</span> sArray = s.split(<span class="string">""</span>),tArray= t.split(<span class="string">""</span>),sMap={};
-
-    <span class="comment">//先判断s和t的长度是否相等</span>
-    <span class="keyword">if</span>(s.length!== t.length){
-        <span class="keyword">return</span> <span class="keyword">false</span>;
-    }
-    <span class="comment">//获取s字符串的字母种类和每个字母出现的次数</span>
-    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;sArray.length;i++){
-        <span class="keyword">if</span>(!sMap[sArray[i]]){
-            sMap[sArray[i]] = <span class="number">1</span>;
-        }<span class="keyword">else</span>{
-            sMap[sArray[i]]++;
-        }
-    }
-
-    <span class="comment">//根据sMap来判断t字符串是否和s同源</span>
-    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;tArray.length;i++){
-        <span class="keyword">if</span>(sMap[tArray[i]]){
-            sMap[tArray[i]]--;
-            <span class="keyword">if</span>(sMap[tArray[i]]&lt;<span class="number">0</span>){
-                <span class="keyword">return</span> <span class="keyword">false</span>;
-            }
-        }<span class="keyword">else</span>{
-            <span class="keyword">return</span> <span class="keyword">false</span>;
-        }
-    }
-    <span class="keyword">return</span> <span class="keyword">true</span>;
-};
-</code></pre><p>PS: 因为这个题目在leetcode上比较新，所以还没有出来JS运行时常的比较。</p>
-</span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/08/01/如何利用好碎片化的事件/" itemprop="url">
-                如何有效利用碎片化的时间
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-08-01T10:48:06+08:00" content="2015-08-01">
-            2015-08-01
-          </time>
-        </span>
-
-        
-
-        
-          
-            <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2015/08/01/如何利用好碎片化的事件/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/01/如何利用好碎片化的事件/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><p>今天周末就不写技能性的学习了，讲下刚才逛知乎的一点感悟。</p>
-<p><a href="http://www.zhihu.com/question/19562330/answer/48706421" target="_blank" rel="external">如何有效地利用碎片化的时间</a></p>
-<p><strong>看了玉伯的回答顿时豁然开朗</strong></p>
-<pre><code>尽量减少碎片时间。
-
-对于无法减少的碎片时间，则好好感受天空、泥土与空气。
-</code></pre><p>常常抱怨时间不够，要学习的东西太多而自己总是浪费在无意义的事情上，也常常抱怨和家人和朋友的相处太少，更会因为男朋友和自己聊天也不时刷微博的恼怒。</p>
-<p>然后把自己陷入到烦恼自责的生活中，但其实这样不好。</p>
-<p>不要给自己上发条，要找到乐趣，并享受之。</p>
-<p>就像玉伯在签名一样，因上努力，果上随缘，这样不是更好么？</p>
-</span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1164,7 +1124,7 @@ var reverseList = <span class="function"><span class="keyword">function</span>(<
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">62</span>
+              <span class="site-state-item-count">64</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1178,7 +1138,7 @@ var reverseList = <span class="function"><span class="keyword">function</span>(<
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-count">15</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>

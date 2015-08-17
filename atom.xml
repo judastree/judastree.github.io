@@ -5,7 +5,7 @@
   <subtitle><![CDATA[You are the pretty sunshine of my life]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://judastree.github.io//"/>
-  <updated>2015-08-13T02:30:59.000Z</updated>
+  <updated>2015-08-17T09:16:41.000Z</updated>
   <id>http://judastree.github.io//</id>
   
   <author>
@@ -14,6 +14,54 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[ADB server didn't ACK]]></title>
+    <link href="http://judastree.github.io/2015/08/17/ADB-server-didnot-ACK/"/>
+    <id>http://judastree.github.io/2015/08/17/ADB-server-didnot-ACK/</id>
+    <published>2015-08-17T09:06:41.000Z</published>
+    <updated>2015-08-17T09:16:41.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="问题描述">问题描述</h2><p>  Android真机调试的时候，出现ADB server didn’t ACK，明明设备已经连接上，开发者选项也打开了。</p>
+<h2 id="原因">原因</h2><p>  cmd，启动adb服务发现启动失败。</p>
+<p>  <img src="http://b.hiphotos.baidu.com/exp/w=500/sign=1823344a58ee3d6d22c687cb73176d41/37d3d539b6003af37399fb8d342ac65c1038b63f.jpg" alt="adb失败"></p>
+<p>  看下为什么会失败。</p>
+<pre><code>adb nodaemon <span class="keyword">server</span>
+</code></pre><p>  <img src="http://e.hiphotos.baidu.com/exp/w=500/sign=5de9828f9922720e7bcee2fa4bca0a3a/b3119313b07eca8031261e0a902397dda144833f.jpg" alt="nodaemonserver">  </p>
+<p>  原来是端口被占用了。</p>
+<p>  找到占用端口的进程，杀掉，重启adb server</p>
+<p>  <img src="http://h.hiphotos.baidu.com/exp/w=500/sign=b12f15d529381f309e198da999004c67/730e0cf3d7ca7bcb2546e0c2bf096b63f624a819.jpg" alt="adbstart"></p>
+<h2 id="Note:">Note:</h2><p>  转自<a href="http://jingyan.baidu.com/article/454316aba27e49f7a7c03ab1.html" target="_blank" rel="external">百度经验</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="问题描述">问题描述</h2><p>  Android真机调试的时候，出现ADB server didn’t ACK，明明设备已经连接上，开发者选项也打开了。</p>
+<h2 id="原因">原因</h2><p>  cmd，启动adb服务发现启动失败。</p>
+<]]>
+    </summary>
+    
+      <category term="Android" scheme="http://judastree.github.io/tags/Android/"/>
+    
+      <category term="adb" scheme="http://judastree.github.io/tags/adb/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[主流模引擎一览]]></title>
+    <link href="http://judastree.github.io/2015/08/17/%E4%B8%BB%E6%B5%81%E6%A8%A1%E5%BC%95%E6%93%8E%E4%B8%80%E8%A7%88/"/>
+    <id>http://judastree.github.io/2015/08/17/主流模引擎一览/</id>
+    <published>2015-08-17T09:04:21.000Z</published>
+    <updated>2015-08-17T09:18:27.000Z</updated>
+    <content type="html"><![CDATA[<p>Jade，Swig，Handlerbar，UnderScore，Ejs</p>
+<p>先占个坑，晚上填</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Jade，Swig，Handlerbar，UnderScore，Ejs</p>
+<p>先占个坑，晚上填</p>
+]]>
+    </summary>
+    
+      <category term="Html" scheme="http://judastree.github.io/tags/Html/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[正则获取url中的参数]]></title>
@@ -758,113 +806,6 @@ console.log(Object.keys(obj).length);
     </summary>
     
       <category term="JavaScript" scheme="http://judastree.github.io/tags/JavaScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[LeetCode:Isomorphic Strings]]></title>
-    <link href="http://judastree.github.io/2015/07/27/LeetCode-Isomorphic-String/"/>
-    <id>http://judastree.github.io/2015/07/27/LeetCode-Isomorphic-String/</id>
-    <published>2015-07-27T02:26:51.000Z</published>
-    <updated>2015-08-12T14:31:45.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="题目">题目</h2><p><a href="https://leetcode.com/problems/isomorphic-strings/" target="_blank" rel="external">Isomorphic Strings</a></p>
-<p>判断两个字符串是否为同型构造的字符串。</p>
-<p>比如:</p>
-<p>Given “egg”, “add”, return true.</p>
-<p>Given “foo”, “bar”, return false.</p>
-<p>Given “paper”, “title”, return true.</p>
-<p>如果s字符串的字母被替换可以得到t字符串的话，则说明s和t字符串的构造是相同的。</p>
-<h2 id="思路">思路</h2><p>按照同形构造的定义来，如果字母替换可以得到目标字符串，我们先建一个map来存储s和t/t和s字母的对应关系。<br>然后分别遍历s和t的字符串，只要出现当前字母和map表的字母不匹配的，就说明s和t不是同源的字母。</p>
-<h2 id="实现">实现</h2><p>JavaScript:</p>
-<pre><code><span class="comment">/**
- * @param {string} s
- * @param {string} t
- * @return {boolean}
- */</span>
-<span class="keyword">var</span> isIsomorphic = function(s, t) {
-    <span class="keyword">if</span>(s===t){
-        <span class="keyword">return</span> <span class="literal">true</span>;
-    }<span class="keyword">else</span>{
-        <span class="keyword">var</span> sArray= s.<span class="built_in">split</span>(<span class="string">""</span>),tArray = t.<span class="built_in">split</span>(<span class="string">""</span>);
-        <span class="keyword">var</span> <span class="built_in">map</span> = {};
-
-        <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt; sArray.length;i++){
-            <span class="comment">//找出t和s 字母的匹配关系</span>
-            <span class="keyword">if</span>(!<span class="built_in">map</span>[tArray[i]]){
-                <span class="built_in">map</span>[tArray[i]] = sArray[i];
-            }<span class="keyword">else</span>{
-                <span class="comment">//如果当前字母和map中取出的字母不匹配，则返回false</span>
-                <span class="keyword">if</span>(sArray[i]!==<span class="built_in">map</span>[tArray[i]]){
-                    <span class="keyword">return</span> <span class="literal">false</span>;
-                }
-            }
-        }
-        <span class="comment">//清空map，反向查找匹配关系</span>
-        <span class="built_in">map</span> ={};
-        <span class="keyword">for</span>( i=<span class="number">0</span>;i&lt; tArray.length;i++){
-            <span class="comment">//找出s和t字母的匹配关系</span>
-            <span class="keyword">if</span>(!<span class="built_in">map</span>[sArray[i]]){
-                <span class="built_in">map</span>[sArray[i]] = tArray[i];
-            }<span class="keyword">else</span> <span class="keyword">if</span>(tArray[i]!==<span class="built_in">map</span>[sArray[i]]){
-                <span class="comment">//如果当前字母和map中取出的字母不匹配，则返回false</span>
-                <span class="keyword">return</span> <span class="literal">false</span>;
-            }
-
-        }
-        <span class="keyword">return</span> <span class="literal">true</span>;
-    }
-};
-</code></pre><h2 id="结果">结果</h2><p><img src="/images/isomorphicstring.png" alt="isomorphicstrings"></p>
-<h2 id="PS">PS</h2><p>一开始想的是replace的方法，但是后面验证出来发现输入的字符串有各种需要转义的特殊字符(*&amp;$’)。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h2 id="题目">题目</h2><p><a href="https://leetcode.com/problems/isomorphic-strings/" target="_blank" rel="external">Isomorphic Strings</a></p>
-]]>
-    </summary>
-    
-      <category term="LeetCode" scheme="http://judastree.github.io/tags/LeetCode/"/>
-    
-      <category term="算法" scheme="http://judastree.github.io/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[LeetCode:Number of 1 Bits]]></title>
-    <link href="http://judastree.github.io/2015/07/26/LeetCode-Number-of-1-Bits/"/>
-    <id>http://judastree.github.io/2015/07/26/LeetCode-Number-of-1-Bits/</id>
-    <published>2015-07-26T04:36:48.000Z</published>
-    <updated>2015-08-12T14:30:57.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="题目">题目</h2><p> <a href="https://leetcode.com/problems/number-of-1-bits/" target="_blank" rel="external">找出一个数字的二进制中有多少个1</a></p>
-<p> 给定一个无符号的整型数字，比如11,它的二进制是1011,所以返回1的个数3.</p>
-<h2 id="思路">思路</h2><p>对二进制进行位操作，每向右移1位和1做位与操作。是1的话计数器加1，直到右移到0截止。</p>
-<p>这个方法写得很轻松，但是耗时长。</p>
-<h2 id="实现">实现</h2><p>JavaScript:</p>
-<pre><code><span class="comment">/**
- * @param {number} n - a positive integer
- * @return {number}
- */</span>
-<span class="keyword">var</span> hammingWeight = function(<span class="keyword">n</span>,<span class="keyword">count</span>) {
-    <span class="keyword">if</span>(!<span class="keyword">count</span>){
-        <span class="keyword">count</span> = 0;
-    }
-    <span class="keyword">if</span>(<span class="keyword">n</span>&amp;1===1){
-        <span class="keyword">count</span>++;
-    }
-    <span class="keyword">if</span>(<span class="keyword">n</span>&gt;1){
-        <span class="keyword">return</span> hammingWeight(<span class="keyword">n</span>&gt;&gt;&gt;1,<span class="keyword">count</span>);
-    }<span class="keyword">else</span>{
-        <span class="keyword">return</span> <span class="keyword">count</span>;
-    }
-};
-</code></pre>]]></content>
-    <summary type="html">
-    <![CDATA[<h2 id="题目">题目</h2><p> <a href="https://leetcode.com/problems/number-of-1-bits/" target="_blank" rel="external">找出一个数字的二进制中有多少个1</a></p>
-<p>]]>
-    </summary>
-    
-      <category term="LeetCode" scheme="http://judastree.github.io/tags/LeetCode/"/>
-    
-      <category term="算法" scheme="http://judastree.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   

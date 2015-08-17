@@ -1138,6 +1138,7 @@ body {
   margin-right: 10px;
   margin-bottom: 10px;
   border-bottom-color: #555;
+  width: 80px;
   font-size: 13px;
 }
 .links-of-author a:before {
@@ -1148,7 +1149,7 @@ body {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff73e4;
+  background: #e0955b;
 }
 .sidebar-nav {
   margin: 0;
