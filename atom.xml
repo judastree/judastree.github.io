@@ -5,7 +5,7 @@
   <subtitle><![CDATA[You are the pretty sunshine of my life]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://judastree.github.io//"/>
-  <updated>2015-08-17T12:15:35.000Z</updated>
+  <updated>2015-08-17T12:17:56.000Z</updated>
   <id>http://judastree.github.io//</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://judastree.github.io/2015/08/17/ADB-server-didnot-ACK/"/>
     <id>http://judastree.github.io/2015/08/17/ADB-server-didnot-ACK/</id>
     <published>2015-08-17T09:06:41.000Z</published>
-    <updated>2015-08-17T12:15:35.000Z</updated>
+    <updated>2015-08-17T12:17:56.000Z</updated>
     <content type="html"><![CDATA[<h2 id="问题描述">问题描述</h2><p>  Android真机调试的时候，出现ADB server didn’t ACK，明明设备已经连接上，开发者选项也打开了。</p>
 <h2 id="原因">原因</h2><p>  cmd，启动adb服务发现启动失败。</p>
 <p>  <img src="/images/adbserverfail.jpg" alt="adb失败"></p>
@@ -29,7 +29,7 @@
 </code></pre><p>  <img src="/images/nodaemon.jpg" alt="nodaemonserver">  </p>
 <p>  原来是端口被占用了。</p>
 <p>  找到占用端口的进程，杀掉，重启adb server</p>
-<p>  <img src="/images/startabd.jpg" alt="adbstart"></p>
+<p>  <img src="/images/startadb.jpg" alt="adbstart"></p>
 <h2 id="Note:">Note:</h2><p>  转自<a href="http://jingyan.baidu.com/article/454316aba27e49f7a7c03ab1.html" target="_blank" rel="external">百度经验</a></p>
 ]]></content>
     <summary type="html">
