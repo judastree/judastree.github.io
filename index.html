@@ -230,7 +230,7 @@
           <span itemprop="articleBody"><p>这两天被这个异常搞死了：</p>
 <pre><code>java.lang.UnsatisfiedLinkError:dlopen failed: “<span class="keyword">*</span><span class="keyword">*</span>/<span class="keyword">*</span>/arm/<span class="keyword">*</span>.so” has unexpected e_machine: 3
 </code></pre><p><strong>原因是一个在x86机器编译的so文件放到了arm机器上。</strong></p>
-<p>apk安装时，系统把armeabi下的libBugly.so放入应用的私有目录中了。<br>但这个so不是arm的，而是x86编译的。<br>所以运行时，系统检察ELF文件中的e_machine字段的值，跟arm的不匹配，就会抛出这个异常了！</p>
+<p>apk安装时，系统把armeabi下的so动态库都放入应用的私有目录中了。<br>但这个so不是arm的，而是x86编译的。<br>所以运行时，系统检察ELF文件中的e_machine字段的值，跟arm的不匹配，就会抛出这个异常了！</p>
 <p>参考资料:<a href="http://bugly.qq.com/blog/?p=34" target="_blank" rel="external">精神哥讲Crash（一）：UnsatisfiedLinkError</a></p>
 </span>
         
