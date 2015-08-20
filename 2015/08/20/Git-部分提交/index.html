@@ -28,7 +28,7 @@
 
 
 
-  <meta name="keywords" content="css," />
+  <meta name="keywords" content="git,工具," />
 
 
 
@@ -39,33 +39,45 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.4" />
 
 
-<meta name="description" content="与其说这是一个css的关键字，但其实说是个变量更好理解一点。
-currentColor 代表了当前元素被应用的color颜色值。使用它可以将当前这个颜色值应用到其他属性上，或者嵌套元素的其他属性上。
-如果当前元素没有显示地指定一个color值，那么它的颜色值从父级集成而来。
-使用了currentColor之后，css更好维护了，一改全改。
-div{
-    color: #33; 
-    bor">
+<meta name="description" content="场景修改了四个文件，分别涉及到两个功能，需要把其中两个文件的修改当做一个功能的commit，另外两个文件的修改当做另一个功能的commit。
+但如果要用git add 的命令，会让当前所有的修改都加入commit。
+怎么办呢？
+用git stash 命令
+步骤
+用git add 命令添加第一个commit需要的文件
+git add file1
+
+git add file2
+
+隐藏其他修改，git">
 <meta property="og:type" content="article">
-<meta property="og:title" content="currentColor关键字">
-<meta property="og:url" content="http://judastree.github.io/2015/06/30/currentColor关键字/index.html">
+<meta property="og:title" content="Git 部分提交">
+<meta property="og:url" content="http://judastree.github.io/2015/08/20/Git-部分提交/index.html">
 <meta property="og:site_name" content="Judastree">
-<meta property="og:description" content="与其说这是一个css的关键字，但其实说是个变量更好理解一点。
-currentColor 代表了当前元素被应用的color颜色值。使用它可以将当前这个颜色值应用到其他属性上，或者嵌套元素的其他属性上。
-如果当前元素没有显示地指定一个color值，那么它的颜色值从父级集成而来。
-使用了currentColor之后，css更好维护了，一改全改。
-div{
-    color: #33; 
-    bor">
+<meta property="og:description" content="场景修改了四个文件，分别涉及到两个功能，需要把其中两个文件的修改当做一个功能的commit，另外两个文件的修改当做另一个功能的commit。
+但如果要用git add 的命令，会让当前所有的修改都加入commit。
+怎么办呢？
+用git stash 命令
+步骤
+用git add 命令添加第一个commit需要的文件
+git add file1
+
+git add file2
+
+隐藏其他修改，git">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="currentColor关键字">
-<meta name="twitter:description" content="与其说这是一个css的关键字，但其实说是个变量更好理解一点。
-currentColor 代表了当前元素被应用的color颜色值。使用它可以将当前这个颜色值应用到其他属性上，或者嵌套元素的其他属性上。
-如果当前元素没有显示地指定一个color值，那么它的颜色值从父级集成而来。
-使用了currentColor之后，css更好维护了，一改全改。
-div{
-    color: #33; 
-    bor">
+<meta name="twitter:title" content="Git 部分提交">
+<meta name="twitter:description" content="场景修改了四个文件，分别涉及到两个功能，需要把其中两个文件的修改当做一个功能的commit，另外两个文件的修改当做另一个功能的commit。
+但如果要用git add 的命令，会让当前所有的修改都加入commit。
+怎么办呢？
+用git stash 命令
+步骤
+用git add 命令添加第一个commit需要的文件
+git add file1
+
+git add file2
+
+隐藏其他修改，git">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -75,7 +87,7 @@ div{
   };
 </script>
 
-    <title> currentColor关键字 // Judastree </title>
+    <title> Git 部分提交 // Judastree </title>
 </head>
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 <!--[if lte IE 8]>
@@ -205,7 +217,7 @@ div{
           
           
             
-              currentColor关键字
+              Git 部分提交
             
           
         </h1>
@@ -214,8 +226,8 @@ div{
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-06-30T13:31:24+08:00" content="2015-06-30">
-            2015-06-30
+          <time itemprop="dateCreated" datetime="2015-08-20T17:39:51+08:00" content="2015-08-20">
+            2015-08-20
           </time>
         </span>
 
@@ -225,8 +237,8 @@ div{
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/06/30/currentColor关键字/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/06/30/currentColor关键字/" itemprop="commentsCount"></span>
+              <a href="/2015/08/20/Git-部分提交/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/20/Git-部分提交/" itemprop="commentsCount"></span>
               </a>
             </span>
           
@@ -240,16 +252,31 @@ div{
       
 
       
-        <span itemprop="articleBody"><p>与其说这是一个css的关键字，但其实说是个变量更好理解一点。</p>
-<p>currentColor 代表了当前元素被应用的color颜色值。使用它可以将当前这个颜色值应用到其他属性上，或者嵌套元素的其他属性上。</p>
-<p>如果当前元素没有显示地指定一个color值，那么它的颜色值从父级集成而来。</p>
-<p>使用了currentColor之后，css更好维护了，一改全改。</p>
-<pre><code><span class="tag">div</span><span class="rules">{
-    <span class="rule"><span class="attribute">color</span>:<span class="value"> <span class="hexcolor">#33</span></span></span>; 
-    <span class="rule"><span class="attribute">border</span>:<span class="value"> <span class="number">5px</span> solid currentColor</span></span>;
-    <span class="rule"><span class="attribute">box-shadow</span>:<span class="value"> <span class="number">0</span> <span class="number">0</span> <span class="number">5px</span> solid currentColor</span></span>;
-}</span>
-</code></pre><p>除了IE8，PC和手机上的浏览器基本都支持这个关键字。</p>
+        <span itemprop="articleBody"><h2 id="场景">场景</h2><p>修改了四个文件，分别涉及到两个功能，需要把其中两个文件的修改当做一个功能的commit，另外两个文件的修改当做另一个功能的commit。</p>
+<p>但如果要用git add 的命令，会让当前所有的修改都加入commit。</p>
+<p>怎么办呢？</p>
+<p><strong>用git stash 命令</strong></p>
+<h2 id="步骤">步骤</h2><ol>
+<li><p>用git add 命令添加第一个commit需要的文件</p>
+<pre><code><span class="label">git</span> <span class="keyword">add </span>file1
+
+<span class="label">git</span> <span class="keyword">add </span>file2
+</code></pre></li>
+<li><p>隐藏其他修改，git stash 的参数中 -k 开关告诉仓库保持文件的完整  -u 开关告诉仓库包括无路径的文件(那些新的和未添加到git的)<br>这时git status就只能看到file1 和file2，并且当你切换到实际的文件目录，file3 和file4的修改也随之不见。</p>
+<pre><code><span class="title">git</span> stash -k -u
+</code></pre></li>
+</ol>
+<ol>
+<li><p>提交第一个commit</p>
+<pre><code><span class="title">git</span> commit -m <span class="string">'submit function1'</span>
+</code></pre></li>
+<li><p>恢复之前隐藏的修改,这时再git status，file3和file4的修改又回来。</p>
+<pre><code>git stash <span class="keyword">pop</span>
+</code></pre></li>
+<li><p>提交第二个commit</p>
+<pre><code><span class="title">git</span> commit -m <span class="string">'submit function2'</span>
+</code></pre></li>
+</ol>
 </span>
       
     </div>
@@ -258,7 +285,9 @@ div{
       
         <div class="post-tags">
           
-            <a href="/tags/css/" rel="tag">#css</a>
+            <a href="/tags/git/" rel="tag">#git</a>
+          
+            <a href="/tags/工具/" rel="tag">#工具</a>
           
         </div>
       
@@ -267,13 +296,11 @@ div{
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/07/06/Mac版Webstorm的一些快捷键/" rel="prev">Mac版Webstorm的一些快捷键 </a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/06/29/Mac下取消Chrome的ajax请求跨域/" rel="next">Mac下取消Chrome的ajax请求跨域</a>
+              <a href="/2015/08/17/UnsatisfiedLinkError/" rel="next">UnsatisfiedLinkError</a>
             
           </div>
         </div>
@@ -299,8 +326,8 @@ div{
             
               <div class="comments" id="comments">
                 
-                  <div class="ds-thread" data-thread-key="2015/06/30/currentColor关键字/"
-                       data-title="currentColor关键字" data-url="http://judastree.github.io/2015/06/30/currentColor关键字/">
+                  <div class="ds-thread" data-thread-key="2015/08/20/Git-部分提交/"
+                       data-title="Git 部分提交" data-url="http://judastree.github.io/2015/08/20/Git-部分提交/">
                   </div>
                 
               </div>
@@ -407,7 +434,7 @@ div{
           <div class="post-toc">
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#场景"><span class="nav-number">1.</span> <span class="nav-text">场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#步骤"><span class="nav-number">2.</span> <span class="nav-text">步骤</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
