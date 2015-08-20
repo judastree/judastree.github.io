@@ -43,13 +43,11 @@
 但如果要用git add 的命令，会让当前所有的修改都加入commit。
 怎么办呢？
 用git stash 命令
-步骤
-用git add 命令添加第一个commit需要的文件
+步骤1 用git add 命令添加第一个commit需要的文件
 git add file1
 
 git add file2
-
-隐藏其他修改，git">
+2 隐藏其他修改，gi">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git 部分提交">
 <meta property="og:url" content="http://judastree.github.io/2015/08/20/Git-部分提交/index.html">
@@ -58,26 +56,22 @@ git add file2
 但如果要用git add 的命令，会让当前所有的修改都加入commit。
 怎么办呢？
 用git stash 命令
-步骤
-用git add 命令添加第一个commit需要的文件
+步骤1 用git add 命令添加第一个commit需要的文件
 git add file1
 
 git add file2
-
-隐藏其他修改，git">
+2 隐藏其他修改，gi">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git 部分提交">
 <meta name="twitter:description" content="场景修改了四个文件，分别涉及到两个功能，需要把其中两个文件的修改当做一个功能的commit，另外两个文件的修改当做另一个功能的commit。
 但如果要用git add 的命令，会让当前所有的修改都加入commit。
 怎么办呢？
 用git stash 命令
-步骤
-用git add 命令添加第一个commit需要的文件
+步骤1 用git add 命令添加第一个commit需要的文件
 git add file1
 
 git add file2
-
-隐藏其他修改，git">
+2 隐藏其他修改，gi">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -256,27 +250,19 @@ git add file2
 <p>但如果要用git add 的命令，会让当前所有的修改都加入commit。</p>
 <p>怎么办呢？</p>
 <p><strong>用git stash 命令</strong></p>
-<h2 id="步骤">步骤</h2><ol>
-<li><p>用git add 命令添加第一个commit需要的文件</p>
+<h2 id="步骤">步骤</h2><p>1 用git add 命令添加第一个commit需要的文件</p>
 <pre><code><span class="label">git</span> <span class="keyword">add </span>file1
 
 <span class="label">git</span> <span class="keyword">add </span>file2
-</code></pre></li>
-<li><p>隐藏其他修改，git stash 的参数中 -k 开关告诉仓库保持文件的完整  -u 开关告诉仓库包括无路径的文件(那些新的和未添加到git的)<br>这时git status就只能看到file1 和file2，并且当你切换到实际的文件目录，file3 和file4的修改也随之不见。</p>
+</code></pre><p>2 隐藏其他修改，git stash 的参数中 -k 开关告诉仓库保持文件的完整  -u 开关告诉仓库包括无路径的文件(那些新的和未添加到git的)<br>这时git status就只能看到file1 和file2，并且当你切换到实际的文件目录，file3 和file4的修改也随之不见。</p>
 <pre><code><span class="title">git</span> stash -k -u
-</code></pre></li>
-</ol>
-<ol>
-<li><p>提交第一个commit</p>
+</code></pre><p>3 提交第一个commit</p>
 <pre><code><span class="title">git</span> commit -m <span class="string">'submit function1'</span>
-</code></pre></li>
-<li><p>恢复之前隐藏的修改,这时再git status，file3和file4的修改又回来。</p>
+</code></pre><p>4 恢复之前隐藏的修改,这时再git status，file3和file4的修改又回来。</p>
 <pre><code>git stash <span class="keyword">pop</span>
-</code></pre></li>
-<li><p>提交第二个commit</p>
+</code></pre><p>5 提交第二个commit</p>
 <pre><code><span class="title">git</span> commit -m <span class="string">'submit function2'</span>
-</code></pre></li>
-</ol>
+</code></pre><h2 id="参考">参考</h2><p>   <a href="http://www.open-open.com/lib/view/open1413852243809.html" target="_blank" rel="external">http://www.open-open.com/lib/view/open1413852243809.html</a></p>
 </span>
       
     </div>
@@ -295,6 +281,8 @@ git add file2
       
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/08/20/git-stash-缓存当前的修改/" rel="prev">git stash 前缓存当前的修改</a>
             
           </div>
 
@@ -367,7 +355,7 @@ git add file2
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">66</span>
+              <span class="site-state-item-count">67</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -434,7 +422,7 @@ git add file2
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#场景"><span class="nav-number">1.</span> <span class="nav-text">场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#步骤"><span class="nav-number">2.</span> <span class="nav-text">步骤</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#场景"><span class="nav-number">1.</span> <span class="nav-text">场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#步骤"><span class="nav-number">2.</span> <span class="nav-text">步骤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">3.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
