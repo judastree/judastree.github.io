@@ -5,7 +5,7 @@
   <subtitle><![CDATA[You are the pretty sunshine of my life]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://judastree.github.io//"/>
-  <updated>2015-08-20T10:11:05.000Z</updated>
+  <updated>2015-09-07T04:20:04.000Z</updated>
   <id>http://judastree.github.io//</id>
   
   <author>
@@ -16,11 +16,57 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[Nexus 7 解锁]]></title>
+    <link href="http://judastree.github.io/2015/09/07/Nexus-7-%E8%A7%A3%E9%94%81/"/>
+    <id>http://judastree.github.io/2015/09/07/Nexus-7-解锁/</id>
+    <published>2015-09-07T03:50:46.000Z</published>
+    <updated>2015-09-07T04:20:04.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="安卓设备解锁和不解锁有什么区别？">安卓设备解锁和不解锁有什么区别？</h2><p>手机加锁是因为在出厂时，厂商已经安装好了操作系统和预置应用，这些东西都装在手机ROM中。<br>为了防止意外情况，比如不慎删除了系统重要应用导致系统不稳定甚至崩溃，因此厂商对ROM加了锁使你不能对系统文件做任何动作。<br>这就影响了后续的root和刷机。所以在刷机前一般都要先解锁。</p>
+<h2 id="解锁过程">解锁过程</h2><ol>
+<li><p>下载解压<a href="http://pan.baidu.com/share/link?shareid=3769076633&amp;uk=3793975982" target="_blank" rel="external">nexus_unlock</a></p>
+</li>
+<li><p>Nexus 7 USB连接电脑，打开开发者选项，然后关机。</p>
+</li>
+<li><p>再同时按住音量-键和电源键进入fastboot模式。</p>
+</li>
+<li><p>运行解锁.bat，nexus7中出现是否要解锁的界面，选择yes。</p>
+</li>
+<li><p>解锁完成后，再开机，可以看到google下面有个解开的锁，就表明解锁完成了。</p>
+</li>
+</ol>
+<h2 id="图片步骤">图片步骤</h2><p>  <img src="/images/fastbootmode.jpg" alt="fastboot mode"><br>  <img src="/images/bootlock.jpg" alt="bootlock"><br>  <img src="images/bootunlock.jpg" alt="bootunlock"></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="安卓设备解锁和不解锁有什么区别？">安卓设备解锁和不解锁有什么区别？</h2><p>手机加锁是因为在出厂时，厂商已经安装好了操作系统和预置应用，这些东西都装在手机ROM中。<br>为了防止意外情况，比如不慎删除了系统重要应用导致系统不稳定甚至崩溃，因此厂商对ROM]]>
+    </summary>
+    
+      <category term="Android" scheme="http://judastree.github.io/tags/Android/"/>
+    
+      <category term="工具" scheme="http://judastree.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Monkey日志分析]]></title>
+    <link href="http://judastree.github.io/2015/08/27/Monkey%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90/"/>
+    <id>http://judastree.github.io/2015/08/27/Monkey日志分析/</id>
+    <published>2015-08-27T05:18:49.000Z</published>
+    <updated>2015-08-27T05:19:09.000Z</updated>
+    <content type="html"></content>
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="Android" scheme="http://judastree.github.io/tags/Android/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[git stash 前缓存当前的修改]]></title>
     <link href="http://judastree.github.io/2015/08/20/git-stash-%E7%BC%93%E5%AD%98%E5%BD%93%E5%89%8D%E7%9A%84%E4%BF%AE%E6%94%B9/"/>
     <id>http://judastree.github.io/2015/08/20/git-stash-缓存当前的修改/</id>
     <published>2015-08-20T10:00:29.000Z</published>
-    <updated>2015-08-20T10:11:05.000Z</updated>
+    <updated>2015-08-20T10:15:15.000Z</updated>
     <content type="html"><![CDATA[<h2 id="场景">场景</h2><p>本地有修改，暂时不想commit，但又必须git pull 拉去最新的代码。这时可以用git stash来缓存当前的修改。</p>
 <h2 id="步骤">步骤</h2><p>1 先缓存当前修改。</p>
 <pre><code><span class="title">git</span> stash
@@ -29,10 +75,10 @@
 </code></pre><p>3 拉完最新的之后再恢复之前修改</p>
 <pre><code>git stash <span class="keyword">pop</span>
 </code></pre><h2 id="更多">更多</h2><p>git stash save “work in progress for foo feature”</p>
-<p>当你多次使用’git stash’命令后，你的栈里将充满了未提交的代码，这时候你会对将哪个版本应用回来有些困惑，</p>
-<p>’git stash list’ 命令可以将当前的Git栈信息打印出来，你只需要将找到对应的版本号，</p>
-<p>例如使用’git stash apply stash@{1}’就可以将你指定版本号为stash@{1}的工作取出来，</p>
-<p>当你将所有的栈都应用回来的时候，可以使用’git stash clear’来将栈清空。</p>
+<p>当你多次使用 <strong>git stash</strong>命令后，你的栈里将充满了未提交的代码，这时候你会对将哪个版本应用回来有些困惑，</p>
+<p><strong>git stash list</strong>命令可以将当前的Git栈信息打印出来，你只需要将找到对应的版本号，</p>
+<p>例如使用 <strong>git stash apply stash@{1}</strong>就可以将你指定版本号为stash@{1}的工作取出来，</p>
+<p>当你将所有的栈都应用回来的时候，可以使用 <strong>git stash clear</strong>来将栈清空。</p>
 <h2 id="参考">参考</h2><p>  <a href="http://blog.csdn.net/wh_19910525/article/details/7784901" target="_blank" rel="external">git stash和git stash pop</a></p>
 ]]></content>
     <summary type="html">
@@ -682,137 +728,6 @@ var reverseList = <span class="function"><span class="keyword">function</span>(<
       <category term="LeetCode" scheme="http://judastree.github.io/tags/LeetCode/"/>
     
       <category term="算法" scheme="http://judastree.github.io/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[LeetCode:Merge Two Sorted Lists]]></title>
-    <link href="http://judastree.github.io/2015/07/29/LeetCode-Merge-Two-Sorted-Lists/"/>
-    <id>http://judastree.github.io/2015/07/29/LeetCode-Merge-Two-Sorted-Lists/</id>
-    <published>2015-07-29T02:31:25.000Z</published>
-    <updated>2015-08-12T14:31:04.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="题目">题目</h2><p>  <a href="https://leetcode.com/problems/merge-two-sorted-lists/" target="_blank" rel="external">Merge Two Sorted Lists</a></p>
-<p>   有两个排序好的链表l1和l2，要求是合并为一个列表，并保持列表有序。</p>
-<h2 id="思路">思路</h2><p>   我的想法是先遍历两个链表找到较短的一个，然后把短链表上节点逐个插入到长链表中。</p>
-<p>   然后在网上看别人的代码，其实不用先找到短链。拿一个链表做基准，将另外一个插入就来，只遍历一次就好了。</p>
-<h2 id="实现">实现</h2><p>JavaScript:</p>
-<pre><code><span class="comment">/**
- * Definition for singly-linked list.
- * function ListNode(val) {
- *     this.val = val;
- *     this.next = null;
- * }
- */</span>
-<span class="comment">/**
- * @param {ListNode} l1
- * @param {ListNode} l2
- * @return {ListNode}
- */</span>
-var mergeTwoLists = function(l1, l2) {
-    <span class="comment">//定义指针</span>
-    var sPointer = l1,lPointer = l2;
-
-    <span class="comment">//一些特殊情况的处理</span>
-    <span class="keyword">if</span>(sPointer&amp;&amp;sPointer.val&amp;&amp;lPointer&amp;&amp;lPointer.val===<span class="keyword">null</span>){
-        <span class="keyword">return</span> sPointer;
-    }
-    <span class="keyword">if</span>(sPointer&amp;&amp;sPointer.val===<span class="keyword">null</span>&amp;&amp;lPointer&amp;&amp;lPointer.val){
-        <span class="keyword">return</span> lPointer;
-    }
-    <span class="keyword">if</span>(sPointer&amp;&amp;!lPointer){
-        <span class="keyword">return</span> sPointer;
-    }
-    <span class="keyword">if</span>(!sPointer&amp;&amp;lPointer){
-        <span class="keyword">return</span> lPointer;
-    }
-    <span class="keyword">if</span>(!sPointer&amp;&amp;!lPointer){
-        <span class="keyword">return</span> <span class="keyword">null</span>;
-    }
-
-     <span class="comment">//找到较短链表,逐个插入到长链表中</span>
-    <span class="keyword">while</span>(sPointer){
-        <span class="keyword">if</span>(!lPointer){ <span class="comment">//lpointer为null，说明l1&gt;l2</span>
-            sPointer = l2;
-            lPointer = l1;
-            <span class="keyword">break</span>;
-        }
-        sPointer = sPointer.<span class="keyword">next</span>;
-        lPointer = lPointer.<span class="keyword">next</span>;
-    }
-    <span class="keyword">if</span>(!sPointer){
-        <span class="comment">//l1&lt;=l2</span>
-        sPointer = l1;
-        lPointer = l2;
-    }
-
-    <span class="comment">//为了保存插入节点previous的位置，创建一个dummy的节点</span>
-    var dummy = <span class="keyword">new</span> ListNode(<span class="number">0</span>);
-    dummy.<span class="keyword">next</span> = lPointer;
-
-    var prePointer = dummy;
-
-    var insertnode = sPointer;
-    <span class="keyword">while</span>(sPointer){
-        <span class="keyword">if</span>(insertnode.val&lt;=lPointer.val){
-
-            prePointer.<span class="keyword">next</span> = insertnode;
-            sPointer = sPointer.<span class="keyword">next</span>;
-            insertnode.<span class="keyword">next</span> = lPointer;
-            <span class="comment">//短链的指针后移一位，长链不动</span>
-            insertnode = sPointer;
-            prePointer = prePointer.<span class="keyword">next</span>;
-        }<span class="keyword">else</span>{
-            <span class="keyword">if</span>(!lPointer.<span class="keyword">next</span>){
-                lPointer.<span class="keyword">next</span> = sPointer;
-                <span class="keyword">break</span>;
-            }
-            <span class="comment">//长链后移一位，短链不动</span>
-            prePointer =lPointer;
-            lPointer = lPointer.<span class="keyword">next</span>;
-        }
-
-
-    }
-    <span class="keyword">return</span> dummy.<span class="keyword">next</span>;
-};
-</code></pre><p>  <img src="/images/merge2sortedlists.png" alt="merge2sortedlists"></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h2 id="题目">题目</h2><p>  <a href="https://leetcode.com/problems/merge-two-sorted-lists/" target="_blank" rel="external">Merge Two Sorted List]]>
-    </summary>
-    
-      <category term="LeetCode" scheme="http://judastree.github.io/tags/LeetCode/"/>
-    
-      <category term="算法" scheme="http://judastree.github.io/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[requirejs 的运行机制]]></title>
-    <link href="http://judastree.github.io/2015/07/28/requirejs-%E7%9A%84%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6/"/>
-    <id>http://judastree.github.io/2015/07/28/requirejs-的运行机制/</id>
-    <published>2015-07-28T09:06:25.000Z</published>
-    <updated>2015-07-28T10:00:17.000Z</updated>
-    <content type="html"><![CDATA[<p>在requirejs的官网找到这样一段话：<br>    RequireJS loads each dependency as a script tag, using head.appendChild().<br>    RequireJS waits for all dependencies to load, figures out the right order in which to call the functions that define the modules,<br>    then calls the module definition functions once the dependencies for those functions have been called. </p>
-<p>翻译过来是：</p>
-<pre><code>RequireJS通过head.<span class="function"><span class="title">appendChild</span><span class="params">()</span></span>将每一个依赖加载为一个script标签。
-
-等到所有的依赖都加载完成之后，RequireJS计算出模块定义函数的调用顺序。
-
-一旦依赖这些功能的地方被调用时requiredjs会调用这些功能的模块定义。
-</code></pre><p><strong>requirejs是怎么做到模块化的？</strong> </p>
-<p>requirejs有个loader来保存和监听所有依赖的状态。script标签来加载这些文件，加载成功和失败都会更新依赖的状态。</p>
-<p><em>是否有重复引用?</em></p>
-<p>Requirejs是单例的设计，只要同名的被引入过一次（这里的同名相当于amd define的id）就一直是用这个模块的定义。</p>
-<p>为了避免全局污染，遵循AMD的规范，define和export。</p>
-<p>理想状况下，每个加载的脚本都是通过define()来定义的一个模块；</p>
-<p>但有些”浏览器全局变量注入”型的传统/遗留库并没有使用define()来定义它们的依赖关系，就必须为此使用shim config来指明它们的依赖关系。 </p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>在requirejs的官网找到这样一段话：<br>    RequireJS loads each dependency as a script tag, using head.appendChild().<br>    RequireJS waits for all de]]>
-    </summary>
-    
-      <category term="JavaScript" scheme="http://judastree.github.io/tags/JavaScript/"/>
     
   </entry>
   

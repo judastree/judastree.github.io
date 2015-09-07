@@ -189,6 +189,231 @@
           
           
             
+              <a class="post-title-link" href="/2015/08/07/LeetCode-Merge-Sorted-Array/" itemprop="url">
+                LeetCode: Merge Sorted Array
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-08-07T08:54:00+08:00" content="2015-08-07">
+            2015-08-07
+          </time>
+        </span>
+
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2015/08/07/LeetCode-Merge-Sorted-Array/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/07/LeetCode-Merge-Sorted-Array/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><h2 id="题目">题目</h2><p><a href="https://leetcode.com/problems/merge-sorted-array/" target="_blank" rel="external">Merge Sorted Array</a></p>
+<p>把两个有序的数组合并成一个，数组1有m个元素，数组2有n个元素。假设数组1有足够的长度（m+n）来容纳数组1和数组2，求合并后的数组1.</p>
+<h2 id="思路">思路</h2><p>因为不能用额外的存储空间，考虑用类似选择排序的方式来重新生成nums1.</p>
+<p>即，原nums1的最大值和num2的最大值比较，大者放到新nums1[m+n-1]位置。<br>并且指针向前移一位，继续比较原nums1和num2的最大值，把大的放到新nums1[m+n-2]位置，直到一个数组的指针已经到头了。</p>
+<h2 id="实现">实现</h2><p>JavaScript:</p>
+<pre><code><span class="comment">/**
+ * @param {number[]} nums1
+ * @param {number} m
+ * @param {number[]} nums2
+ * @param {number} n
+ * @return {void} Do not return anything, modify nums1 in-place instead.
+ */</span>
+<span class="keyword">var</span> <span class="keyword">merge</span> = function(nums1, <span class="keyword">m</span>, nums2, <span class="keyword">n</span>) {
+
+    <span class="keyword">var</span> k = 0,i= 0,j=0;
+
+    <span class="keyword">if</span>(<span class="keyword">m</span>===0&amp;&amp;<span class="keyword">n</span>===0){
+        nums1.length = 0;
+        <span class="keyword">return</span> nums1;
+    }
+    <span class="keyword">if</span>(<span class="keyword">n</span>===0){
+        nums1.length = <span class="keyword">m</span>;
+        <span class="keyword">return</span> nums1;
+    }
+    <span class="keyword">if</span>(<span class="keyword">m</span>===0){
+        <span class="keyword">for</span>(;i&lt;<span class="keyword">n</span>;i++){
+            nums1[i] = nums2[i];
+        }
+        nums1.length=<span class="keyword">n</span>;
+        <span class="keyword">return</span> nums1;
+    }
+    <span class="comment">//i指向原nums1中最大的数，j指向nums2中最大的数</span>
+    <span class="keyword">while</span>(i&lt;<span class="keyword">m</span>&amp;&amp;j&lt;<span class="keyword">n</span>){
+        <span class="comment">//把较大的数放在nums1[m+n-1-k]中</span>
+        <span class="keyword">if</span>(nums1[<span class="keyword">m</span>-1-i]&gt;=nums2[<span class="keyword">n</span>-1-j]){
+            nums1[<span class="keyword">m</span>+<span class="keyword">n</span>-1-k]  = nums1[<span class="keyword">m</span>-1-i];
+            i++;
+        }<span class="keyword">else</span>{
+            nums1[<span class="keyword">m</span>+<span class="keyword">n</span>-1-k]  = nums2[<span class="keyword">n</span>-1-j];
+            j++;
+        }
+        k++;
+    }
+    <span class="keyword">if</span>(i===<span class="keyword">m</span>){
+        <span class="keyword">while</span>(j&lt;<span class="keyword">n</span>){
+            nums1[<span class="keyword">m</span>+<span class="keyword">n</span>-1-k] = nums2[<span class="keyword">n</span>-1-j];
+            j++;
+            k++;
+        }
+    }
+};
+</code></pre><h2 id="耗时">耗时</h2><p> <img src="/images/mergesortedarray.png" alt="mergesortedarray"></p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2015/08/06/LeetCode-Count-and-Say/" itemprop="url">
+                LeetCode:Count and Say
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-08-06T10:53:41+08:00" content="2015-08-06">
+            2015-08-06
+          </time>
+        </span>
+
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2015/08/06/LeetCode-Count-and-Say/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/06/LeetCode-Count-and-Say/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><h2 id="题目">题目</h2><p><a href="https://leetcode.com/problems/count-and-say/" target="_blank" rel="external">Count And Say</a></p>
+<p>The count-and-say sequence is the sequence of integers beginning as follows:<br>1, 11, 21, 1211, 111221, …</p>
+<p>1 is read off as “one 1” or 11.<br>11 is read off as “two 1s” or 21.<br>21 is read off as “one 2, then one 1” or 1211.<br>Given an integer n, generate the nth sequence.</p>
+<p>Note: The sequence of integers will be represented as a string.</p>
+<h2 id="思路">思路</h2><p>递归的实现，找出CountAndSay(n)和CountAndSay(n-1)的关系。<br>比如1211拿一个数组记录下有多少个数组。</p>
+<h2 id="实现">实现</h2><p>JavaScript:</p>
+<pre><code><span class="comment">/**
+ * @param {number} n
+ * @return {string}
+ */</span>
+var countAndSay = <span class="function"><span class="keyword">function</span><span class="params">(n)</span> {</span>
+    <span class="keyword">if</span><span class="params">(n===<span class="number">0</span>)</span> return <span class="string">""</span>;
+    <span class="keyword">if</span><span class="params">(n===<span class="number">1</span>)</span> return <span class="string">"1"</span>;
+    <span class="keyword">if</span><span class="params">(n===<span class="number">2</span>)</span> return <span class="string">"11"</span>;
+
+    var preStrArray = countAndSay<span class="params">(n-<span class="number">1</span>)</span>.split<span class="params">(<span class="string">""</span>)</span>;
+    var tempArray=[];
+
+    tempArray[<span class="number">0</span>] = <span class="number">1</span>;
+    tempArray[<span class="number">1</span>] = preStrArray[<span class="number">0</span>];
+    <span class="keyword">for</span><span class="params">(var i = <span class="number">1</span>; i&lt;preStrArray.length-<span class="number">1</span>;i++)</span>{
+        <span class="keyword">if</span><span class="params">(preStrArray[i]!==preStrArray[i-<span class="number">1</span>])</span>{
+            tempArray.push<span class="params">(<span class="number">1</span>)</span>;
+            tempArray.push<span class="params">(preStrArray[i])</span>;
+        }<span class="keyword">else</span>{
+            tempArray[tempArray.length-<span class="number">2</span>]++;
+        }
+    }
+    <span class="keyword">if</span><span class="params">(preStrArray[i]!==preStrArray[i-<span class="number">1</span>])</span>{
+        tempArray.push<span class="params">(<span class="number">1</span>)</span>;
+        tempArray.push<span class="params">(preStrArray[i])</span>;
+    }<span class="keyword">else</span>{
+        tempArray[tempArray.length-<span class="number">2</span>] ++;
+    }
+    return tempArray.toString<span class="params">()</span>.replace<span class="params">(/,/g,<span class="string">""</span>)</span>;
+}
+</code></pre><h2 id="耗时">耗时</h2><p><img src="/images/countandsay.png" alt="countandsay.png"></p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2015/08/05/世界那么大翻墙出去看看/" itemprop="url">
                 世界那么大翻墙出去看看
               </a>
@@ -845,241 +1070,6 @@ var reverseList = <span class="function"><span class="keyword">function</span>(<
 
 
     
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/07/29/LeetCode-Merge-Two-Sorted-Lists/" itemprop="url">
-                LeetCode:Merge Two Sorted Lists
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-07-29T10:31:25+08:00" content="2015-07-29">
-            2015-07-29
-          </time>
-        </span>
-
-        
-
-        
-          
-            <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2015/07/29/LeetCode-Merge-Two-Sorted-Lists/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/29/LeetCode-Merge-Two-Sorted-Lists/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><h2 id="题目">题目</h2><p>  <a href="https://leetcode.com/problems/merge-two-sorted-lists/" target="_blank" rel="external">Merge Two Sorted Lists</a></p>
-<p>   有两个排序好的链表l1和l2，要求是合并为一个列表，并保持列表有序。</p>
-<h2 id="思路">思路</h2><p>   我的想法是先遍历两个链表找到较短的一个，然后把短链表上节点逐个插入到长链表中。</p>
-<p>   然后在网上看别人的代码，其实不用先找到短链。拿一个链表做基准，将另外一个插入就来，只遍历一次就好了。</p>
-<h2 id="实现">实现</h2><p>JavaScript:</p>
-<pre><code><span class="comment">/**
- * Definition for singly-linked list.
- * function ListNode(val) {
- *     this.val = val;
- *     this.next = null;
- * }
- */</span>
-<span class="comment">/**
- * @param {ListNode} l1
- * @param {ListNode} l2
- * @return {ListNode}
- */</span>
-var mergeTwoLists = function(l1, l2) {
-    <span class="comment">//定义指针</span>
-    var sPointer = l1,lPointer = l2;
-
-    <span class="comment">//一些特殊情况的处理</span>
-    <span class="keyword">if</span>(sPointer&amp;&amp;sPointer.val&amp;&amp;lPointer&amp;&amp;lPointer.val===<span class="keyword">null</span>){
-        <span class="keyword">return</span> sPointer;
-    }
-    <span class="keyword">if</span>(sPointer&amp;&amp;sPointer.val===<span class="keyword">null</span>&amp;&amp;lPointer&amp;&amp;lPointer.val){
-        <span class="keyword">return</span> lPointer;
-    }
-    <span class="keyword">if</span>(sPointer&amp;&amp;!lPointer){
-        <span class="keyword">return</span> sPointer;
-    }
-    <span class="keyword">if</span>(!sPointer&amp;&amp;lPointer){
-        <span class="keyword">return</span> lPointer;
-    }
-    <span class="keyword">if</span>(!sPointer&amp;&amp;!lPointer){
-        <span class="keyword">return</span> <span class="keyword">null</span>;
-    }
-
-     <span class="comment">//找到较短链表,逐个插入到长链表中</span>
-    <span class="keyword">while</span>(sPointer){
-        <span class="keyword">if</span>(!lPointer){ <span class="comment">//lpointer为null，说明l1&gt;l2</span>
-            sPointer = l2;
-            lPointer = l1;
-            <span class="keyword">break</span>;
-        }
-        sPointer = sPointer.<span class="keyword">next</span>;
-        lPointer = lPointer.<span class="keyword">next</span>;
-    }
-    <span class="keyword">if</span>(!sPointer){
-        <span class="comment">//l1&lt;=l2</span>
-        sPointer = l1;
-        lPointer = l2;
-    }
-
-    <span class="comment">//为了保存插入节点previous的位置，创建一个dummy的节点</span>
-    var dummy = <span class="keyword">new</span> ListNode(<span class="number">0</span>);
-    dummy.<span class="keyword">next</span> = lPointer;
-
-    var prePointer = dummy;
-
-    var insertnode = sPointer;
-    <span class="keyword">while</span>(sPointer){
-        <span class="keyword">if</span>(insertnode.val&lt;=lPointer.val){
-
-            prePointer.<span class="keyword">next</span> = insertnode;
-            sPointer = sPointer.<span class="keyword">next</span>;
-            insertnode.<span class="keyword">next</span> = lPointer;
-            <span class="comment">//短链的指针后移一位，长链不动</span>
-            insertnode = sPointer;
-            prePointer = prePointer.<span class="keyword">next</span>;
-        }<span class="keyword">else</span>{
-            <span class="keyword">if</span>(!lPointer.<span class="keyword">next</span>){
-                lPointer.<span class="keyword">next</span> = sPointer;
-                <span class="keyword">break</span>;
-            }
-            <span class="comment">//长链后移一位，短链不动</span>
-            prePointer =lPointer;
-            lPointer = lPointer.<span class="keyword">next</span>;
-        }
-
-
-    }
-    <span class="keyword">return</span> dummy.<span class="keyword">next</span>;
-};
-</code></pre><p>  <img src="/images/merge2sortedlists.png" alt="merge2sortedlists"></p>
-</span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/07/28/requirejs-的运行机制/" itemprop="url">
-                requirejs 的运行机制
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-07-28T17:06:25+08:00" content="2015-07-28">
-            2015-07-28
-          </time>
-        </span>
-
-        
-
-        
-          
-            <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2015/07/28/requirejs-的运行机制/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/28/requirejs-的运行机制/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><p>在requirejs的官网找到这样一段话：<br>    RequireJS loads each dependency as a script tag, using head.appendChild().<br>    RequireJS waits for all dependencies to load, figures out the right order in which to call the functions that define the modules,<br>    then calls the module definition functions once the dependencies for those functions have been called. </p>
-<p>翻译过来是：</p>
-<pre><code>RequireJS通过head.<span class="function"><span class="title">appendChild</span><span class="params">()</span></span>将每一个依赖加载为一个script标签。
-
-等到所有的依赖都加载完成之后，RequireJS计算出模块定义函数的调用顺序。
-
-一旦依赖这些功能的地方被调用时requiredjs会调用这些功能的模块定义。
-</code></pre><p><strong>requirejs是怎么做到模块化的？</strong> </p>
-<p>requirejs有个loader来保存和监听所有依赖的状态。script标签来加载这些文件，加载成功和失败都会更新依赖的状态。</p>
-<p><em>是否有重复引用?</em></p>
-<p>Requirejs是单例的设计，只要同名的被引入过一次（这里的同名相当于amd define的id）就一直是用这个模块的定义。</p>
-<p>为了避免全局污染，遵循AMD的规范，define和export。</p>
-<p>理想状况下，每个加载的脚本都是通过define()来定义的一个模块；</p>
-<p>但有些”浏览器全局变量注入”型的传统/遗留库并没有使用define()来定义它们的依赖关系，就必须为此使用shim config来指明它们的依赖关系。 </p>
-</span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1119,7 +1109,7 @@ var mergeTwoLists = function(l1, l2) {
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">67</span>
+              <span class="site-state-item-count">69</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
