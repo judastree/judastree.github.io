@@ -47,8 +47,7 @@ adb nodaemon server
     
   原来是端口被占用了。
   找到占用端口的进程，杀掉，重启adb server
-  
-Note:  转自百度经验">
+netstat -aon|findstr &quot;5037&quot;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ADB server didn't ACK">
 <meta property="og:url" content="http://judastree.github.io/2015/08/17/ADB-server-didnot-ACK/index.html">
@@ -61,8 +60,7 @@ adb nodaemon server
     
   原来是端口被占用了。
   找到占用端口的进程，杀掉，重启adb server
-  
-Note:  转自百度经验">
+netstat -aon|findstr &quot;5037&quot;">
 <meta property="og:image" content="/images/adbserverfail.jpg">
 <meta property="og:image" content="/images/nodaemon.jpg">
 <meta property="og:image" content="/images/startadb.jpg">
@@ -76,8 +74,7 @@ adb nodaemon server
     
   原来是端口被占用了。
   找到占用端口的进程，杀掉，重启adb server
-  
-Note:  转自百度经验">
+netstat -aon|findstr &quot;5037&quot;">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -260,7 +257,8 @@ Note:  转自百度经验">
 </code></pre><p>  <img src="/images/nodaemon.jpg" alt="nodaemonserver">  </p>
 <p>  原来是端口被占用了。</p>
 <p>  找到占用端口的进程，杀掉，重启adb server</p>
-<p>  <img src="/images/startadb.jpg" alt="adbstart"></p>
+<pre><code>netstat -aon<span class="string">|findstr "</span><span class="number">5037</span><span class="string">"</span>
+</code></pre><p>  <img src="/images/startadb.jpg" alt="adbstart"></p>
 <h2 id="Note:">Note:</h2><p>  转自<a href="http://jingyan.baidu.com/article/454316aba27e49f7a7c03ab1.html" target="_blank" rel="external">百度经验</a></p>
 </span>
       
@@ -354,7 +352,7 @@ Note:  转自百度经验">
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">70</span>
+              <span class="site-state-item-count">71</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -368,7 +366,7 @@ Note:  转自百度经验">
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">16</span>
+              <span class="site-state-item-count">17</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
