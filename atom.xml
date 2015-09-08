@@ -5,7 +5,7 @@
   <subtitle><![CDATA[You are the pretty sunshine of my life]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://judastree.github.io//"/>
-  <updated>2015-09-08T11:52:43.000Z</updated>
+  <updated>2015-09-08T11:55:52.000Z</updated>
   <id>http://judastree.github.io//</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://judastree.github.io/2015/09/08/%E5%A6%82%E4%BD%95%E8%BF%9B%E8%A1%8CMonkey%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/"/>
     <id>http://judastree.github.io/2015/09/08/如何进行Monkey自动化测试/</id>
     <published>2015-09-08T11:30:06.000Z</published>
-    <updated>2015-09-08T11:52:43.000Z</updated>
+    <updated>2015-09-08T11:55:52.000Z</updated>
     <content type="html"><![CDATA[<h2 id="简介">简介</h2><p>  Android Monkey自动化测试：Monkey是Android SDK中自带的一个命令行工具，可以运行在模拟器里或实际设备中。<br>  它向系统发送伪随机的用户事件流(如按键输入、触摸屏输入、手势输入等)，实现对正在开发的应用程序进行压力测试。</p>
 <h2 id="准备条件">准备条件</h2><ol>
 <li>Android SDK</li>
@@ -49,6 +49,7 @@
 <li>adb pull /data/anr/traces.txt C:\traces.txt(文件复制)       </li>
 </ol>
 <h2 id="Monkey命令行参数详解">Monkey命令行参数详解</h2><p>   -p: 所要测试的包。<br>         示例：-p com.android.test<br>   -throttle: 在事件之间插入固定延迟。<br>         示例：—throttle 1000（毫秒）<br>   -s: 伪随机数生成器的seed值。<br>         示例： -s 600（如果用相同的seed值再次运行monkey，它将生成相同的事件序列。）<br>   -v: 用于指定日志的详细程度。<br>         示例： -v -v -v 100（3个-v代表最详细的日志级别）（数字1000： 表示测试事件数）</p>
+<p>   <a href="http://developer.android.com/tools/help/monkey.html" target="_blank" rel="external">其他命令参数</a>      </p>
 ]]></content>
     <summary type="html">
     <![CDATA[<h2 id="简介">简介</h2><p>  Android Monkey自动化测试：Monkey是Android SDK中自带的一个命令行工具，可以运行在模拟器里或实际设备中。<br>  它向系统发送伪随机的用户事件流(如按键输入、触摸屏输入、手势输入等)，实现对正在开发的应]]>
