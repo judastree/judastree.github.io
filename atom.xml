@@ -5,7 +5,7 @@
   <subtitle><![CDATA[You are the pretty sunshine of my life]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://judastree.github.io//"/>
-  <updated>2015-09-08T11:55:52.000Z</updated>
+  <updated>2015-09-13T06:49:37.000Z</updated>
   <id>http://judastree.github.io//</id>
   
   <author>
@@ -14,6 +14,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[坑死的Amazon AWS]]></title>
+    <link href="http://judastree.github.io/2015/09/13/%E5%9D%91%E6%AD%BB%E7%9A%84Amazon-AWS/"/>
+    <id>http://judastree.github.io/2015/09/13/坑死的Amazon-AWS/</id>
+    <published>2015-09-13T06:42:28.000Z</published>
+    <updated>2015-09-13T06:49:37.000Z</updated>
+    <content type="html"><![CDATA[<p>很久前，想要找个免费的云空间搭服务，听说亚马逊的AWS可以免费使用多久，就去注册试了下，后面忙别的忘了这事。</p>
+<p>直到AWS的账单邮件一封封发来……</p>
+<p>一个月2，3刀就酱没了，坑死！！！！没钱了应该邮件提醒不续费就停止啊，一直不停止应用然后默默收费算什么啊。</p>
+<p>赶紧把应用停掉，以后再也不用AWS了。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>很久前，想要找个免费的云空间搭服务，听说亚马逊的AWS可以免费使用多久，就去注册试了下，后面忙别的忘了这事。</p>
+<p>直到AWS的账单邮件一封封发来……</p>
+<p>一个月2，3刀就酱没了，坑死！！！！没钱了应该邮件提醒不续费就停止啊，一直不停止应用然后默默收费算什]]>
+    </summary>
+    
+      <category term="工具" scheme="http://judastree.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[如何进行monkey自动化测试]]></title>
@@ -719,27 +740,6 @@ var reverseList = <span class="function"><span class="keyword">function</span>(<
     </summary>
     
       <category term="日常" scheme="http://judastree.github.io/tags/%E6%97%A5%E5%B8%B8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="http://judastree.github.io/2015/07/30/Debug-Grunt-in-Webstorm/"/>
-    <id>http://judastree.github.io/2015/07/30/Debug-Grunt-in-Webstorm/</id>
-    <published>2015-07-30T07:13:30.000Z</published>
-    <updated>2015-07-30T07:13:30.000Z</updated>
-    <content type="html"><![CDATA[<p>title: “Debug Grunt in Webstorm”<br>date: 2015-07-30 15:04:12</p>
-<h2 id="tags:_[工具]">tags: [工具]</h2><h2 id="Steps">Steps</h2><p>  1 Run  -&gt;  Edit Configuration</p>
-<p>  2 Press Add button (+)</p>
-<p>  3 Type the configurations</p>
-<p><img src="/images/gruntdebuginwebstorm.png" alt="gruntdebuginwebstorm"></p>
-<p>  4 Set breakpoint where you want </p>
-<p>  5 Press Shift+Ctrl+D to debug</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>title: “Debug Grunt in Webstorm”<br>date: 2015-07-30 15:04:12</p>
-<h2 id="tags:_[工具]">tags: [工具]</h2><h2 id="Steps">Steps</h2><p>  1 Run ]]>
-    </summary>
     
   </entry>
   
