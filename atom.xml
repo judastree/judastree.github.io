@@ -5,7 +5,7 @@
   <subtitle><![CDATA[You are the pretty sunshine of my life]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://judastree.github.io//"/>
-  <updated>2015-09-13T06:49:37.000Z</updated>
+  <updated>2015-09-16T06:56:11.000Z</updated>
   <id>http://judastree.github.io//</id>
   
   <author>
@@ -14,6 +14,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Android 录制操作视频]]></title>
+    <link href="http://judastree.github.io/2015/09/16/Android-%E5%BD%95%E5%88%B6%E6%93%8D%E4%BD%9C%E8%A7%86%E9%A2%91/"/>
+    <id>http://judastree.github.io/2015/09/16/Android-录制操作视频/</id>
+    <published>2015-09-16T06:49:49.000Z</published>
+    <updated>2015-09-16T06:56:11.000Z</updated>
+    <content type="html"><![CDATA[<p>利用adb screenrecord的命令，系统Android4.4(API level 19)以上，支持mp4的视频格式</p>
+<h2 id="开始录制的命令">开始录制的命令</h2><pre><code>adb shell screenrecord <span class="regexp">/sdcard/</span>demo.mp4
+</code></pre><h2 id="导出视屏">导出视屏</h2><pre><code>adb pull <span class="regexp">/sdcard/</span>demo.mp4 <span class="string">D:</span>/
+</code></pre><h2 id="其他命令参数">其他命令参数</h2><pre><code>adb <span class="built_in">shell</span> screenrecord <span class="comment">--help</span>
+</code></pre>]]></content>
+    <summary type="html">
+    <![CDATA[<p>利用adb screenrecord的命令，系统Android4.4(API level 19)以上，支持mp4的视频格式</p>
+<h2 id="开始录制的命令">开始录制的命令</h2><pre><code>adb shell screenrecord <span cl]]>
+    </summary>
+    
+      <category term="Android" scheme="http://judastree.github.io/tags/Android/"/>
+    
+      <category term="adb" scheme="http://judastree.github.io/tags/adb/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[坑死的Amazon AWS]]></title>
@@ -714,32 +736,6 @@ var reverseList = <span class="function"><span class="keyword">function</span>(<
       <category term="LeetCode" scheme="http://judastree.github.io/tags/LeetCode/"/>
     
       <category term="算法" scheme="http://judastree.github.io/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[如何有效利用碎片化的时间]]></title>
-    <link href="http://judastree.github.io/2015/08/01/%E5%A6%82%E4%BD%95%E5%88%A9%E7%94%A8%E5%A5%BD%E7%A2%8E%E7%89%87%E5%8C%96%E7%9A%84%E4%BA%8B%E4%BB%B6/"/>
-    <id>http://judastree.github.io/2015/08/01/如何利用好碎片化的事件/</id>
-    <published>2015-08-01T02:48:06.000Z</published>
-    <updated>2015-08-01T03:03:06.000Z</updated>
-    <content type="html"><![CDATA[<p>今天周末就不写技能性的学习了，讲下刚才逛知乎的一点感悟。</p>
-<p><a href="http://www.zhihu.com/question/19562330/answer/48706421" target="_blank" rel="external">如何有效地利用碎片化的时间</a></p>
-<p><strong>看了玉伯的回答顿时豁然开朗</strong></p>
-<pre><code>尽量减少碎片时间。
-
-对于无法减少的碎片时间，则好好感受天空、泥土与空气。
-</code></pre><p>常常抱怨时间不够，要学习的东西太多而自己总是浪费在无意义的事情上，也常常抱怨和家人和朋友的相处太少，更会因为男朋友和自己聊天也不时刷微博的恼怒。</p>
-<p>然后把自己陷入到烦恼自责的生活中，但其实这样不好。</p>
-<p>不要给自己上发条，要找到乐趣，并享受之。</p>
-<p>就像玉伯在签名一样，因上努力，果上随缘，这样不是更好么？</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>今天周末就不写技能性的学习了，讲下刚才逛知乎的一点感悟。</p>
-<p><a href="http://www.zhihu.com/question/19562330/answer/48706421" target="_blank" rel="external">如何有效地]]>
-    </summary>
-    
-      <category term="日常" scheme="http://judastree.github.io/tags/%E6%97%A5%E5%B8%B8/"/>
     
   </entry>
   
