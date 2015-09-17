@@ -189,6 +189,76 @@
           
           
             
+              <a class="post-title-link" href="/2015/09/17/IOS-模拟器回到主页/" itemprop="url">
+                IOS 模拟器回到主页
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-09-17T16:24:49+08:00" content="2015-09-17">
+            2015-09-17
+          </time>
+        </span>
+
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2015/09/17/IOS-模拟器回到主页/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/17/IOS-模拟器回到主页/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p>IOS 的模拟器上，没有HOME键，如果需要返回主页，按键盘shift+cmd+h</p>
+<p>在模拟器上实现缩放的功能比较费劲（按住option键），建议真机上试。</p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2015/09/16/Android-录制操作视频/" itemprop="url">
                 Android 录制操作视频
               </a>
@@ -892,85 +962,6 @@
 
 
     
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/08/17/ADB-server-didnot-ACK/" itemprop="url">
-                ADB server didn't ACK
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-08-17T17:06:41+08:00" content="2015-08-17">
-            2015-08-17
-          </time>
-        </span>
-
-        
-
-        
-          
-            <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2015/08/17/ADB-server-didnot-ACK/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/17/ADB-server-didnot-ACK/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><h2 id="问题描述">问题描述</h2><p>  Android真机调试的时候，出现ADB server didn’t ACK，明明设备已经连接上，开发者选项也打开了。</p>
-<h2 id="原因">原因</h2><p>  cmd，启动adb服务发现启动失败。</p>
-<p>  <img src="/images/adbserverfail.jpg" alt="adb失败"></p>
-<p>  看下为什么会失败。</p>
-<pre><code>adb nodaemon <span class="keyword">server</span>
-</code></pre><p>  <img src="/images/nodaemon.jpg" alt="nodaemonserver">  </p>
-<p>  原来是端口被占用了。</p>
-<p>  找到占用端口的进程，杀掉，重启adb server</p>
-<pre><code>netstat -aon<span class="string">|findstr "</span><span class="number">5037</span><span class="string">"</span>
-</code></pre><p>  <img src="/images/startadb.jpg" alt="adbstart"></p>
-<h2 id="Note:">Note:</h2><p>  转自<a href="http://jingyan.baidu.com/article/454316aba27e49f7a7c03ab1.html" target="_blank" rel="external">百度经验</a></p>
-</span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1010,7 +1001,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">73</span>
+              <span class="site-state-item-count">74</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1024,7 +1015,7 @@
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">17</span>
+              <span class="site-state-item-count">18</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>

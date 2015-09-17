@@ -28,7 +28,7 @@
 
 
 
-  <meta name="keywords" content="Android,异常," />
+  <meta name="keywords" content="IOS,工具," />
 
 
 
@@ -39,24 +39,18 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.4" />
 
 
-<meta name="description" content="这两天被这个异常搞死了：
-java.lang.UnsatisfiedLinkError:dlopen failed: “**/*/arm/*.so” has unexpected e_machine: 3
-原因是一个在x86机器编译的so文件放到了arm机器上。
-apk安装时，系统把armeabi下的so动态库都放入应用的私有目录中了。但这个so不是arm的，而是x86编译的。所以运行时，系统检察">
+<meta name="description" content="IOS 的模拟器上，没有HOME键，如果需要返回主页，按键盘shift+cmd+h
+在模拟器上实现缩放的功能比较费劲（按住option键），建议真机上试。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="UnsatisfiedLinkError">
-<meta property="og:url" content="http://judastree.github.io/2015/08/17/UnsatisfiedLinkError/index.html">
+<meta property="og:title" content="IOS 模拟器回到主页">
+<meta property="og:url" content="http://judastree.github.io/2015/09/17/IOS-模拟器回到主页/index.html">
 <meta property="og:site_name" content="Judastree">
-<meta property="og:description" content="这两天被这个异常搞死了：
-java.lang.UnsatisfiedLinkError:dlopen failed: “**/*/arm/*.so” has unexpected e_machine: 3
-原因是一个在x86机器编译的so文件放到了arm机器上。
-apk安装时，系统把armeabi下的so动态库都放入应用的私有目录中了。但这个so不是arm的，而是x86编译的。所以运行时，系统检察">
+<meta property="og:description" content="IOS 的模拟器上，没有HOME键，如果需要返回主页，按键盘shift+cmd+h
+在模拟器上实现缩放的功能比较费劲（按住option键），建议真机上试。">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="UnsatisfiedLinkError">
-<meta name="twitter:description" content="这两天被这个异常搞死了：
-java.lang.UnsatisfiedLinkError:dlopen failed: “**/*/arm/*.so” has unexpected e_machine: 3
-原因是一个在x86机器编译的so文件放到了arm机器上。
-apk安装时，系统把armeabi下的so动态库都放入应用的私有目录中了。但这个so不是arm的，而是x86编译的。所以运行时，系统检察">
+<meta name="twitter:title" content="IOS 模拟器回到主页">
+<meta name="twitter:description" content="IOS 的模拟器上，没有HOME键，如果需要返回主页，按键盘shift+cmd+h
+在模拟器上实现缩放的功能比较费劲（按住option键），建议真机上试。">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -66,7 +60,7 @@ apk安装时，系统把armeabi下的so动态库都放入应用的私有目录�
   };
 </script>
 
-    <title> UnsatisfiedLinkError // Judastree </title>
+    <title> IOS 模拟器回到主页 // Judastree </title>
 </head>
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 <!--[if lte IE 8]>
@@ -196,7 +190,7 @@ apk安装时，系统把armeabi下的so动态库都放入应用的私有目录�
           
           
             
-              UnsatisfiedLinkError
+              IOS 模拟器回到主页
             
           
         </h1>
@@ -205,8 +199,8 @@ apk安装时，系统把armeabi下的so动态库都放入应用的私有目录�
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-08-17T20:22:37+08:00" content="2015-08-17">
-            2015-08-17
+          <time itemprop="dateCreated" datetime="2015-09-17T16:24:49+08:00" content="2015-09-17">
+            2015-09-17
           </time>
         </span>
 
@@ -216,8 +210,8 @@ apk安装时，系统把armeabi下的so动态库都放入应用的私有目录�
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/08/17/UnsatisfiedLinkError/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/17/UnsatisfiedLinkError/" itemprop="commentsCount"></span>
+              <a href="/2015/09/17/IOS-模拟器回到主页/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/17/IOS-模拟器回到主页/" itemprop="commentsCount"></span>
               </a>
             </span>
           
@@ -231,11 +225,8 @@ apk安装时，系统把armeabi下的so动态库都放入应用的私有目录�
       
 
       
-        <span itemprop="articleBody"><p>这两天被这个异常搞死了：</p>
-<pre><code>java.lang.UnsatisfiedLinkError:dlopen failed: “<span class="keyword">*</span><span class="keyword">*</span>/<span class="keyword">*</span>/arm/<span class="keyword">*</span>.so” has unexpected e_machine: 3
-</code></pre><p><strong>原因是一个在x86机器编译的so文件放到了arm机器上。</strong></p>
-<p>apk安装时，系统把armeabi下的so动态库都放入应用的私有目录中了。<br>但这个so不是arm的，而是x86编译的。<br>所以运行时，系统检察ELF文件中的e_machine字段的值，跟arm的不匹配，就会抛出这个异常了！</p>
-<p>参考资料:<a href="http://bugly.qq.com/blog/?p=34" target="_blank" rel="external">精神哥讲Crash（一）：UnsatisfiedLinkError</a></p>
+        <span itemprop="articleBody"><p>IOS 的模拟器上，没有HOME键，如果需要返回主页，按键盘shift+cmd+h</p>
+<p>在模拟器上实现缩放的功能比较费劲（按住option键），建议真机上试。</p>
 </span>
       
     </div>
@@ -244,9 +235,9 @@ apk安装时，系统把armeabi下的so动态库都放入应用的私有目录�
       
         <div class="post-tags">
           
-            <a href="/tags/Android/" rel="tag">#Android</a>
+            <a href="/tags/IOS/" rel="tag">#IOS</a>
           
-            <a href="/tags/异常/" rel="tag">#异常</a>
+            <a href="/tags/工具/" rel="tag">#工具</a>
           
         </div>
       
@@ -255,13 +246,11 @@ apk安装时，系统把armeabi下的so动态库都放入应用的私有目录�
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/08/20/Git-部分提交/" rel="prev">Git 部分提交</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/08/17/ADB-server-didnot-ACK/" rel="next">ADB server didn't ACK</a>
+              <a href="/2015/09/16/Android-录制操作视频/" rel="next">Android 录制操作视频</a>
             
           </div>
         </div>
@@ -287,8 +276,8 @@ apk安装时，系统把armeabi下的so动态库都放入应用的私有目录�
             
               <div class="comments" id="comments">
                 
-                  <div class="ds-thread" data-thread-key="2015/08/17/UnsatisfiedLinkError/"
-                       data-title="UnsatisfiedLinkError" data-url="http://judastree.github.io/2015/08/17/UnsatisfiedLinkError/">
+                  <div class="ds-thread" data-thread-key="2015/09/17/IOS-模拟器回到主页/"
+                       data-title="IOS 模拟器回到主页" data-url="http://judastree.github.io/2015/09/17/IOS-模拟器回到主页/">
                   </div>
                 
               </div>

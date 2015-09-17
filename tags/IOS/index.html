@@ -28,7 +28,7 @@
 
 
 
-  <meta name="keywords" content="Android,异常," />
+  <meta name="keywords" content="Hexo,Judastree" />
 
 
 
@@ -39,24 +39,15 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.4" />
 
 
-<meta name="description" content="这两天被这个异常搞死了：
-java.lang.UnsatisfiedLinkError:dlopen failed: “**/*/arm/*.so” has unexpected e_machine: 3
-原因是一个在x86机器编译的so文件放到了arm机器上。
-apk安装时，系统把armeabi下的so动态库都放入应用的私有目录中了。但这个so不是arm的，而是x86编译的。所以运行时，系统检察">
-<meta property="og:type" content="article">
-<meta property="og:title" content="UnsatisfiedLinkError">
-<meta property="og:url" content="http://judastree.github.io/2015/08/17/UnsatisfiedLinkError/index.html">
+<meta name="description" content="You are the pretty sunshine of my life">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Judastree">
+<meta property="og:url" content="http://judastree.github.io/tags/IOS/index.html">
 <meta property="og:site_name" content="Judastree">
-<meta property="og:description" content="这两天被这个异常搞死了：
-java.lang.UnsatisfiedLinkError:dlopen failed: “**/*/arm/*.so” has unexpected e_machine: 3
-原因是一个在x86机器编译的so文件放到了arm机器上。
-apk安装时，系统把armeabi下的so动态库都放入应用的私有目录中了。但这个so不是arm的，而是x86编译的。所以运行时，系统检察">
+<meta property="og:description" content="You are the pretty sunshine of my life">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="UnsatisfiedLinkError">
-<meta name="twitter:description" content="这两天被这个异常搞死了：
-java.lang.UnsatisfiedLinkError:dlopen failed: “**/*/arm/*.so” has unexpected e_machine: 3
-原因是一个在x86机器编译的so文件放到了arm机器上。
-apk安装时，系统把armeabi下的so动态库都放入应用的私有目录中了。但这个so不是arm的，而是x86编译的。所以运行时，系统检察">
+<meta name="twitter:title" content="Judastree">
+<meta name="twitter:description" content="You are the pretty sunshine of my life">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -66,7 +57,7 @@ apk安装时，系统把armeabi下的so动态库都放入应用的私有目录�
   };
 </script>
 
-    <title> UnsatisfiedLinkError // Judastree </title>
+    <title> 标签: IOS // Judastree </title>
 </head>
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 <!--[if lte IE 8]>
@@ -91,7 +82,7 @@ apk安装时，系统把armeabi下的so动态库都放入应用的私有目录�
 
 
 
-<div class="container one-column page-post-detail">
+<div class="container one-column ">
     <div class="headband"></div>
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
         <div class="header-inner"><h1 class="site-meta">
@@ -184,114 +175,45 @@ apk安装时，系统把armeabi下的so动态库都放入应用的私有目录�
             <div id="content" class="content">
                 
 
-  <div id="posts" class="posts-expand">
-    
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              UnsatisfiedLinkError
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-08-17T20:22:37+08:00" content="2015-08-17">
-            2015-08-17
-          </time>
-        </span>
-
-        
-
-        
-          
-            <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2015/08/17/UnsatisfiedLinkError/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/17/UnsatisfiedLinkError/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        <span itemprop="articleBody"><p>这两天被这个异常搞死了：</p>
-<pre><code>java.lang.UnsatisfiedLinkError:dlopen failed: “<span class="keyword">*</span><span class="keyword">*</span>/<span class="keyword">*</span>/arm/<span class="keyword">*</span>.so” has unexpected e_machine: 3
-</code></pre><p><strong>原因是一个在x86机器编译的so文件放到了arm机器上。</strong></p>
-<p>apk安装时，系统把armeabi下的so动态库都放入应用的私有目录中了。<br>但这个so不是arm的，而是x86编译的。<br>所以运行时，系统检察ELF文件中的e_machine字段的值，跟arm的不匹配，就会抛出这个异常了！</p>
-<p>参考资料:<a href="http://bugly.qq.com/blog/?p=34" target="_blank" rel="external">精神哥讲Crash（一）：UnsatisfiedLinkError</a></p>
-</span>
-      
+  <div id="posts" class="posts-collapse">
+    <div class="collection-title">
+      <h2 >
+        IOS
+        <small>标签</small>
+      </h2>
     </div>
 
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/Android/" rel="tag">#Android</a>
-          
-            <a href="/tags/异常/" rel="tag">#异常</a>
-          
-        </div>
+    
       
 
-      
-        <div class="post-nav">
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2015/08/20/Git-部分提交/" rel="prev">Git 部分提交</a>
-            
-          </div>
+  <article class="post post-type-normal"itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
 
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2015/08/17/ADB-server-didnot-ACK/" rel="next">ADB server didn't ACK</a>
-            
-          </div>
-        </div>
-      
+      <h1 class="post-title">
+        
+            <a class="post-title-link" href="/2015/09/17/IOS-模拟器回到主页/" itemprop="url">
+              <span itemprop="name">IOS 模拟器回到主页</span>
+            </a>
+        
+      </h1>
 
-      
-      
-    </footer>
+      <div class="post-meta">
+        <time class="post-time" datetime="2015-09-17T08:24:49.000Z" itemprop="dateCreated" content="2015-09-17"> 09-17 </time>
+      </div>
+
+    </header>
   </article>
 
 
-
-    <div class="post-spread">
-      
-    </div>
+    
   </div>
 
+  
 
             </div>
 
             
 
-            
-              <div class="comments" id="comments">
-                
-                  <div class="ds-thread" data-thread-key="2015/08/17/UnsatisfiedLinkError/"
-                       data-title="UnsatisfiedLinkError" data-url="http://judastree.github.io/2015/08/17/UnsatisfiedLinkError/">
-                  </div>
-                
-              </div>
             
         </div>
 
@@ -308,15 +230,6 @@ apk安装时，系统把armeabi下的so动态库都放入应用的私有目录�
   <aside id="sidebar" class="sidebar">
     <div class="sidebar-inner">
 
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
       
 
       <section class="site-overview">
@@ -390,17 +303,6 @@ apk安装时，系统把armeabi下的so动态库都放入应用的私有目录�
       </section>
 
       
-        <section class="post-toc-wrap sidebar-panel-active">
-          <div class="post-toc-indicator-top post-toc-indicator"></div>
-          <div class="post-toc">
-            
-            
-              <p class="post-toc-empty">此文章未包含目录</p>
-            
-          </div>
-          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
-        </section>
-      
 
     </div>
   </aside>
@@ -443,6 +345,12 @@ apk安装时，系统把armeabi下的so动态库都放入应用的私有目录�
 
   
   
+  
+    <script type="text/javascript">
+      postMotionOptions = {stagger: 100, drag: true};
+    </script>
+  
+
   
     
 
@@ -487,144 +395,6 @@ apk安装时，系统把armeabi下的so动态库都放入应用的私有目录�
   <script type="text/javascript" src="/js/search-toggle.js"></script>
 
 
-  
-<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.4" id="bootstrap.scrollspy.custom"></script>
-
-
-<script type="text/javascript" id="sidebar.toc.highlight">
-  $(document).ready(function () {
-    var tocSelector = '.post-toc';
-    var $tocSelector = $(tocSelector);
-    var activeCurrentSelector = '.active-current';
-
-    $tocSelector
-      .on('activate.bs.scrollspy', function () {
-        var $currentActiveElement = $(tocSelector + ' .active').last();
-
-        removeCurrentActiveClass();
-        $currentActiveElement.addClass('active-current');
-
-        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
-      })
-      .on('clear.bs.scrollspy', function () {
-        removeCurrentActiveClass();
-      });
-
-    function removeCurrentActiveClass () {
-      $(tocSelector + ' ' + activeCurrentSelector)
-        .removeClass(activeCurrentSelector.substring(1));
-    }
-
-    function processTOC () {
-      getTOCMaxHeight();
-      toggleTOCOverflowIndicators();
-    }
-
-    function getTOCMaxHeight () {
-      var height = $('.sidebar').height() -
-                   $tocSelector.position().top -
-                   $('.post-toc-indicator-bottom').height();
-
-      $tocSelector.css('height', height);
-
-      return height;
-    }
-
-    function toggleTOCOverflowIndicators () {
-      tocOverflowIndicator(
-        '.post-toc-indicator-top',
-        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
-      );
-
-      tocOverflowIndicator(
-        '.post-toc-indicator-bottom',
-        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
-      )
-    }
-
-    $(document).on('sidebar.motion.complete', function () {
-      processTOC();
-    });
-
-    $('body').scrollspy({ target: tocSelector });
-    $(window).on('resize', function () {
-      if ( $('.sidebar').hasClass('sidebar-active') ) {
-        processTOC();
-      }
-    });
-
-    onScroll($tocSelector);
-
-    function onScroll (element) {
-      element.on('mousewheel DOMMouseScroll', function (event) {
-          var oe = event.originalEvent;
-          var delta = oe.wheelDelta || -oe.detail;
-          var self = this;
-
-          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
-          event.preventDefault();
-
-          toggleTOCOverflowIndicators();
-      });
-    }
-
-    function tocOverflowIndicator (indicator, action) {
-      $(indicator).velocity('stop').velocity({
-        opacity: action === 'show' ? 0.4 : 0
-      }, { duration: 100 });
-    }
-
-  });
-</script>
-
-
-  <script type="text/javascript" id="sidebar.nav">
-    $(document).ready(function () {
-      var html = $('html');
-
-      $('.sidebar-nav li').on('click', function () {
-        var item = $(this);
-        var activeTabClassName = 'sidebar-nav-active';
-        var activePanelClassName = 'sidebar-panel-active';
-        if (item.hasClass(activeTabClassName)) {
-          return;
-        }
-
-        var currentTarget = $('.' + activePanelClassName);
-        var target = $('.' + item.data('target'));
-
-        currentTarget.velocity('transition.slideUpOut', 200, function () {
-          target
-            .velocity('stop')
-            .velocity('transition.slideDownIn', 200)
-            .addClass(activePanelClassName);
-        });
-
-        item.siblings().removeClass(activeTabClassName);
-        item.addClass(activeTabClassName);
-      });
-
-      $('.post-toc a').on('click', function (e) {
-        e.preventDefault();
-        var offset = $(escapeSelector(this.getAttribute('href'))).offset().top;
-        html.velocity('stop').velocity('scroll', {
-          offset: offset  + 'px',
-          mobileHA: false
-        });
-      });
-
-      // Expand sidebar on post detail page by default, when post has a toc.
-      var $tocContent = $('.post-toc-content');
-      if (isDesktop() && CONFIG.sidebar === 'post') {
-        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
-          displaySidebar();
-        }
-      }
-    });
-  </script>
-
-
-
 
 <script type="text/javascript">
     $(document).ready(function () {
@@ -638,10 +408,6 @@ apk安装时，系统把armeabi下的so动态库都放入应用的私有目录�
 
 
 
-
-
-
-<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"3","bdPos":"left","bdTop":"250"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
 
 
 
