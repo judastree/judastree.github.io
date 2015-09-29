@@ -41,15 +41,15 @@
     <link href="http://judastree.github.io/blog/blog/2015/09/29/%E5%B0%86hexo%E9%83%A8%E7%BD%B2%E5%9C%A8github%20pages%20%E7%9A%84%E5%AD%90%E7%9B%AE%E5%BD%95/"/>
     <id>http://judastree.github.io/blog/blog/2015/09/29/将hexo部署在github pages 的子目录/</id>
     <published>2015-09-29T03:25:07.000Z</published>
-    <updated>2015-09-29T05:42:48.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="场景：">场景：</h2><p>  个人博客和个人一些项目都想放到github pages这个静态资源服务器上。</p>
+    <updated>2015-09-29T06:35:11.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="场景：">场景：</h2><p>  个人博客和个人一些项目都想放到github pages这个静态服务器上。</p>
 <h2 id="冲突：">冲突：</h2><ol>
 <li><p>最简单的想到的是在根目录下分blog和project的目录。</p>
 <p>但是我之前搭hexo的时候已经把博客的东西放到了根目录，试了一下整体搬迁到blog目录，会出现css，图片，js的路径问题。</p>
 <p>这里就要逐个修改hexo的路径配置。</p>
 </li>
 <li><p>还有另外一种办法就是，博客继续保留在github.io的根目录上，同时再建一个project目录。</p>
-<p>project目录下是一些需要运行在静态服务器上的代码，比如做demo得api。</p>
+<p>project目录下是一些需要运行在静态服务器上的代码，比如做demo。</p>
 <p>但用hexo deploy进行部署的时候，只能deploy 博客的代码，不能把自己project的代码也push上去。</p>
 <p>这里就需要修改hexo自带的deployer.js的文件。自行添加文件拷贝的任务。</p>
 </li>
@@ -104,10 +104,10 @@
 <p>   再加上博客和项目本地不再同一个目录，但都要push到远程的同一个仓库中。</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h2 id="场景：">场景：</h2><p>  个人博客和个人一些项目都想放到github pages这个静态资源服务器上。</p>
+    <![CDATA[<h2 id="场景：">场景：</h2><p>  个人博客和个人一些项目都想放到github pages这个静态服务器上。</p>
 <h2 id="冲突：">冲突：</h2><ol>
 <li><p>最简单的想到的是在根目录下分blog和project的目录。</p>
-<p>]]>
+<p>但是]]>
     </summary>
     
       <category term="工具" scheme="http://judastree.github.io/blog/blog/tags/%E5%B7%A5%E5%85%B7/"/>
@@ -246,7 +246,7 @@
     <link href="http://judastree.github.io/blog/blog/2015/09/07/Nexus-7-%E5%88%B7%E5%B0%8F%E7%B1%B3%E5%BC%80%E5%8F%91%E7%89%88%E7%B3%BB%E7%BB%9F%E5%8A%A9%E5%8A%9Bwebview%E8%B0%83%E8%AF%95/"/>
     <id>http://judastree.github.io/blog/blog/2015/09/07/Nexus-7-刷小米开发版系统助力webview调试/</id>
     <published>2015-09-07T04:22:12.000Z</published>
-    <updated>2015-09-29T05:15:05.000Z</updated>
+    <updated>2015-09-29T06:00:10.000Z</updated>
     <content type="html"><![CDATA[<p>偶然发现在小米开发版系统上装的app应用，其webview的debug模式是打开的！！！</p>
 <p>那么也就是说以后不管是qq，淘宝，只要是他们用了webview都可以直接在chrome中远程调试线上代码了的。</p>
 <p>好处不用多说，直接搞起来。</p>

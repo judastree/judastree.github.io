@@ -302,14 +302,14 @@
 
       
         
-          <span itemprop="articleBody"><h2 id="场景：">场景：</h2><p>  个人博客和个人一些项目都想放到github pages这个静态资源服务器上。</p>
+          <span itemprop="articleBody"><h2 id="场景：">场景：</h2><p>  个人博客和个人一些项目都想放到github pages这个静态服务器上。</p>
 <h2 id="冲突：">冲突：</h2><ol>
 <li><p>最简单的想到的是在根目录下分blog和project的目录。</p>
 <p>但是我之前搭hexo的时候已经把博客的东西放到了根目录，试了一下整体搬迁到blog目录，会出现css，图片，js的路径问题。</p>
 <p>这里就要逐个修改hexo的路径配置。</p>
 </li>
 <li><p>还有另外一种办法就是，博客继续保留在github.io的根目录上，同时再建一个project目录。</p>
-<p>project目录下是一些需要运行在静态服务器上的代码，比如做demo得api。</p>
+<p>project目录下是一些需要运行在静态服务器上的代码，比如做demo。</p>
 <p>但用hexo deploy进行部署的时候，只能deploy 博客的代码，不能把自己project的代码也push上去。</p>
 <p>这里就需要修改hexo自带的deployer.js的文件。自行添加文件拷贝的任务。</p>
 </li>
