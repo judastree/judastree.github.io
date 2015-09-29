@@ -5,7 +5,7 @@
   <subtitle><![CDATA[You are the pretty sunshine of my life]]></subtitle>
   <link href="/blog/atom.xml" rel="self"/>
   <link href="http://judastree.github.io/blog/blog//"/>
-  <updated>2015-09-29T04:06:35.000Z</updated>
+  <updated>2015-09-29T06:50:57.000Z</updated>
   <id>http://judastree.github.io/blog/blog//</id>
   
   <author>
@@ -19,13 +19,13 @@
     <title></title>
     <link href="http://judastree.github.io/blog/blog/2015/09/29/Debug-Grunt-in-Webstorm/"/>
     <id>http://judastree.github.io/blog/blog/2015/09/29/Debug-Grunt-in-Webstorm/</id>
-    <published>2015-09-29T04:06:35.000Z</published>
-    <updated>2015-09-29T04:06:35.000Z</updated>
+    <published>2015-09-29T06:50:57.000Z</published>
+    <updated>2015-09-29T06:50:57.000Z</updated>
     <content type="html"><![CDATA[<p>title: “Debug Grunt in Webstorm”<br>date: 2015-07-30 15:04:12</p>
 <h2 id="tags:_[工具]">tags: [工具]</h2><h2 id="Steps">Steps</h2><p>  1 Run  -&gt;  Edit Configuration</p>
 <p>  2 Press Add button (+)</p>
 <p>  3 Type the configurations</p>
-<p><img src="/blog/images/gruntdebuginwebstorm.png" alt="gruntdebuginwebstorm"></p>
+<p>  <img src="/blog/images/gruntdebuginwebstorm.png" alt="gruntdebuginwebstorm"></p>
 <p>  4 Set breakpoint where you want </p>
 <p>  5 Press Shift+Ctrl+D to debug</p>
 ]]></content>
@@ -41,7 +41,7 @@
     <link href="http://judastree.github.io/blog/blog/2015/09/29/%E5%B0%86hexo%E9%83%A8%E7%BD%B2%E5%9C%A8github%20pages%20%E7%9A%84%E5%AD%90%E7%9B%AE%E5%BD%95/"/>
     <id>http://judastree.github.io/blog/blog/2015/09/29/将hexo部署在github pages 的子目录/</id>
     <published>2015-09-29T03:25:07.000Z</published>
-    <updated>2015-09-29T06:35:11.000Z</updated>
+    <updated>2015-09-29T08:38:36.000Z</updated>
     <content type="html"><![CDATA[<h2 id="场景：">场景：</h2><p>  个人博客和个人一些项目都想放到github pages这个静态服务器上。</p>
 <h2 id="冲突：">冲突：</h2><ol>
 <li><p>最简单的想到的是在根目录下分blog和project的目录。</p>
@@ -63,7 +63,7 @@
 <pre><code><span class="string">home:</span> <span class="regexp">/blog/</span>
 <span class="string">archives:</span> <span class="regexp">/blog/</span>archives
 <span class="string">about:</span> <span class="regexp">/blog/</span>about
-<span class="string">tags:</span> <span class="regexp">/blog/</span>tags
+<span class="string">tags:</span> <span class="regexp">/blog/</span>tags            
 </code></pre><h1 id="头像">头像</h1><p>   avatar: /blog/images/profile.jpeg</p>
 </li>
 <li><p>再接下来是需要自己细看的修改的，比如图片的引用地址。</p>
@@ -99,9 +99,12 @@
 </li>
 </ol>
 <h2 id="博客文章的push问题">博客文章的push问题</h2><p>   我用第一种方法，将博客从根目录搬到blog子目录。 除了路径的问题，和第二种方法一样，也遇到了push的问题。</p>
-<p>   hexo deploy命令在这个场景下已经不再试用了。</p>
-<p>   因为git本地仓库和远程仓库对应，不能之只push某个目录，要push整个本地仓库都要push上去。</p>
-<p>   再加上博客和项目本地不再同一个目录，但都要push到远程的同一个仓库中。</p>
+<p>   因为git本地仓库和远程仓库对应，不能只push博客的目录，要push整个本地仓库都要push上去。</p>
+<p>   这里还是修改hexo 的deployer.js ，添加自定义的任务。</p>
+<p>   比如将hexo的public目录不是复制到.deploy_git目录，而是复制到我们本地的仓库的blog目录。</p>
+<pre><code>//<span class="keyword">var</span> deployDir = pathFn.join(baseDir, <span class="string">'.deploy_git'</span>);
+<span class="keyword">var</span> deployDir = <span class="variable">"/Users/judastree/Documents/code/github/judastree.github.io/blog"</span>;
+</code></pre><p>   这里commit可以，但是push会遇到问题   </p>
 ]]></content>
     <summary type="html">
     <![CDATA[<h2 id="场景：">场景：</h2><p>  个人博客和个人一些项目都想放到github pages这个静态服务器上。</p>
