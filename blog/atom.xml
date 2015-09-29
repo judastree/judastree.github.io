@@ -41,7 +41,7 @@
     <link href="http://judastree.github.io/blog/blog/2015/09/29/%E5%B0%86hexo%E9%83%A8%E7%BD%B2%E5%9C%A8github%20pages%20%E7%9A%84%E5%AD%90%E7%9B%AE%E5%BD%95/"/>
     <id>http://judastree.github.io/blog/blog/2015/09/29/将hexo部署在github pages 的子目录/</id>
     <published>2015-09-29T03:25:07.000Z</published>
-    <updated>2015-09-29T08:38:36.000Z</updated>
+    <updated>2015-09-29T09:00:14.000Z</updated>
     <content type="html"><![CDATA[<h2 id="场景：">场景：</h2><p>  个人博客和个人一些项目都想放到github pages这个静态服务器上。</p>
 <h2 id="冲突：">冲突：</h2><ol>
 <li><p>最简单的想到的是在根目录下分blog和project的目录。</p>
@@ -104,8 +104,11 @@
 <p>   比如将hexo的public目录不是复制到.deploy_git目录，而是复制到我们本地的仓库的blog目录。</p>
 <pre><code>//<span class="keyword">var</span> deployDir = pathFn.join(baseDir, <span class="string">'.deploy_git'</span>);
 <span class="keyword">var</span> deployDir = <span class="variable">"/Users/judastree/Documents/code/github/judastree.github.io/blog"</span>;
-</code></pre><p>   这里commit可以，但是push会遇到问题   </p>
-]]></content>
+</code></pre><p>   这里commit可以，但是push可能会遇到问题。 </p>
+<p>   继续修改deployer.js里的push代码。将push -u origin branch —force 改成直接push。github默认会给我们-u的。</p>
+<pre><code>//<span class="built_in">return</span> git(<span class="string">'push'</span>, <span class="string">'-u'</span>, repo.url, <span class="string">'master:'</span> + repo.branch, <span class="string">'--force'</span>);
+<span class="built_in">return</span> git(<span class="string">'push'</span>);
+</code></pre>]]></content>
     <summary type="html">
     <![CDATA[<h2 id="场景：">场景：</h2><p>  个人博客和个人一些项目都想放到github pages这个静态服务器上。</p>
 <h2 id="冲突：">冲突：</h2><ol>
