@@ -3,10 +3,10 @@
   
   <title><![CDATA[Judastree]]></title>
   <subtitle><![CDATA[You are the pretty sunshine of my life]]></subtitle>
-  <link href="/atom.xml" rel="self"/>
-  <link href="http://judastree.github.io//"/>
-  <updated>2015-09-18T02:31:46.000Z</updated>
-  <id>http://judastree.github.io//</id>
+  <link href="/blog/atom.xml" rel="self"/>
+  <link href="http://judastree.github.io/blog/blog//"/>
+  <updated>2015-09-29T04:06:35.000Z</updated>
+  <id>http://judastree.github.io/blog/blog//</id>
   
   <author>
     <name><![CDATA[Judastree]]></name>
@@ -16,9 +16,50 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title></title>
+    <link href="http://judastree.github.io/blog/blog/2015/09/29/Debug-Grunt-in-Webstorm/"/>
+    <id>http://judastree.github.io/blog/blog/2015/09/29/Debug-Grunt-in-Webstorm/</id>
+    <published>2015-09-29T04:06:35.000Z</published>
+    <updated>2015-09-29T04:06:35.000Z</updated>
+    <content type="html"><![CDATA[<p>title: “Debug Grunt in Webstorm”<br>date: 2015-07-30 15:04:12</p>
+<h2 id="tags:_[工具]">tags: [工具]</h2><h2 id="Steps">Steps</h2><p>  1 Run  -&gt;  Edit Configuration</p>
+<p>  2 Press Add button (+)</p>
+<p>  3 Type the configurations</p>
+<p><img src="/blog/images/gruntdebuginwebstorm.png" alt="gruntdebuginwebstorm"></p>
+<p>  4 Set breakpoint where you want </p>
+<p>  5 Press Shift+Ctrl+D to debug</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>title: “Debug Grunt in Webstorm”<br>date: 2015-07-30 15:04:12</p>
+<h2 id="tags:_[工具]">tags: [工具]</h2><h2 id="Steps">Steps</h2><p>  1 Run ]]>
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[将hexo部署在github pages 的子目录]]></title>
+    <link href="http://judastree.github.io/blog/blog/2015/09/29/%E5%B0%86hexo%E9%83%A8%E7%BD%B2%E5%9C%A8github%20pages%20%E7%9A%84%E5%AD%90%E7%9B%AE%E5%BD%95/"/>
+    <id>http://judastree.github.io/blog/blog/2015/09/29/将hexo部署在github pages 的子目录/</id>
+    <published>2015-09-29T03:25:07.000Z</published>
+    <updated>2015-09-29T03:37:11.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="场景：">场景：</h2><p>  个人博客和个人一些项目都想放到github pages这个静态资源服务器上。</p>
+<h2 id="解决：">解决：</h2><p>  最简单的办法就是根目录下分blog和project的目录。</p>
+<p>  但是我之前搭hexo的时候已经把博客的东西放到了根目录，试了一下整体搬迁到blog目录，会出现css，图片，js的路径问题。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="场景：">场景：</h2><p>  个人博客和个人一些项目都想放到github pages这个静态资源服务器上。</p>
+<h2 id="解决：">解决：</h2><p>  最简单的办法就是根目录下分blog和project的目录。</p>
+<p>  但是我之前搭]]>
+    </summary>
+    
+      <category term="工具" scheme="http://judastree.github.io/blog/blog//blog/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[React Native Node 4.0]]></title>
-    <link href="http://judastree.github.io/2015/09/18/React-Native-Node-4-0/"/>
-    <id>http://judastree.github.io/2015/09/18/React-Native-Node-4-0/</id>
+    <link href="http://judastree.github.io/blog/blog/2015/09/18/React-Native-Node-4-0/"/>
+    <id>http://judastree.github.io/blog/blog/2015/09/18/React-Native-Node-4-0/</id>
     <published>2015-09-18T02:27:20.000Z</published>
     <updated>2015-09-18T02:31:46.000Z</updated>
     <content type="html"><![CDATA[<p>今天跑了下React Native的Hello World。 发现Node的版本必须在4.0+， 不然终端的8081服务起不来。</p>
@@ -28,14 +69,14 @@
 ]]>
     </summary>
     
-      <category term="React" scheme="http://judastree.github.io/tags/React/"/>
+      <category term="React" scheme="http://judastree.github.io/blog/blog//blog/tags/React/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[IOS 模拟器回到主页]]></title>
-    <link href="http://judastree.github.io/2015/09/17/IOS-%E6%A8%A1%E6%8B%9F%E5%99%A8%E5%9B%9E%E5%88%B0%E4%B8%BB%E9%A1%B5/"/>
-    <id>http://judastree.github.io/2015/09/17/IOS-模拟器回到主页/</id>
+    <link href="http://judastree.github.io/blog/blog/2015/09/17/IOS-%E6%A8%A1%E6%8B%9F%E5%99%A8%E5%9B%9E%E5%88%B0%E4%B8%BB%E9%A1%B5/"/>
+    <id>http://judastree.github.io/blog/blog/2015/09/17/IOS-模拟器回到主页/</id>
     <published>2015-09-17T08:24:49.000Z</published>
     <updated>2015-09-17T08:34:07.000Z</updated>
     <content type="html"><![CDATA[<p>IOS 的模拟器上，没有HOME键，如果需要返回主页，按键盘shift+cmd+h</p>
@@ -47,16 +88,16 @@
 ]]>
     </summary>
     
-      <category term="IOS" scheme="http://judastree.github.io/tags/IOS/"/>
+      <category term="IOS" scheme="http://judastree.github.io/blog/blog//blog/tags/IOS/"/>
     
-      <category term="工具" scheme="http://judastree.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
+      <category term="工具" scheme="http://judastree.github.io/blog/blog//blog/tags/%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Android 录制操作视频]]></title>
-    <link href="http://judastree.github.io/2015/09/16/Android-%E5%BD%95%E5%88%B6%E6%93%8D%E4%BD%9C%E8%A7%86%E9%A2%91/"/>
-    <id>http://judastree.github.io/2015/09/16/Android-录制操作视频/</id>
+    <link href="http://judastree.github.io/blog/blog/2015/09/16/Android-%E5%BD%95%E5%88%B6%E6%93%8D%E4%BD%9C%E8%A7%86%E9%A2%91/"/>
+    <id>http://judastree.github.io/blog/blog/2015/09/16/Android-录制操作视频/</id>
     <published>2015-09-16T06:49:49.000Z</published>
     <updated>2015-09-16T06:56:11.000Z</updated>
     <content type="html"><![CDATA[<p>利用adb screenrecord的命令，系统Android4.4(API level 19)以上，支持mp4的视频格式</p>
@@ -69,16 +110,16 @@
 <h2 id="开始录制的命令">开始录制的命令</h2><pre><code>adb shell screenrecord <span cl]]>
     </summary>
     
-      <category term="Android" scheme="http://judastree.github.io/tags/Android/"/>
+      <category term="Android" scheme="http://judastree.github.io/blog/blog//blog/tags/Android/"/>
     
-      <category term="adb" scheme="http://judastree.github.io/tags/adb/"/>
+      <category term="adb" scheme="http://judastree.github.io/blog/blog//blog/tags/adb/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[坑死的Amazon AWS]]></title>
-    <link href="http://judastree.github.io/2015/09/13/%E5%9D%91%E6%AD%BB%E7%9A%84Amazon-AWS/"/>
-    <id>http://judastree.github.io/2015/09/13/坑死的Amazon-AWS/</id>
+    <link href="http://judastree.github.io/blog/blog/2015/09/13/%E5%9D%91%E6%AD%BB%E7%9A%84Amazon-AWS/"/>
+    <id>http://judastree.github.io/blog/blog/2015/09/13/坑死的Amazon-AWS/</id>
     <published>2015-09-13T06:42:28.000Z</published>
     <updated>2015-09-13T06:49:37.000Z</updated>
     <content type="html"><![CDATA[<p>很久前，想要找个免费的云空间搭服务，听说亚马逊的AWS可以免费使用多久，就去注册试了下，后面忙别的忘了这事。</p>
@@ -92,14 +133,14 @@
 <p>一个月2，3刀就酱没了，坑死！！！！没钱了应该邮件提醒不续费就停止啊，一直不停止应用然后默默收费算什]]>
     </summary>
     
-      <category term="工具" scheme="http://judastree.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
+      <category term="工具" scheme="http://judastree.github.io/blog/blog//blog/tags/%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[如何进行monkey自动化测试]]></title>
-    <link href="http://judastree.github.io/2015/09/08/%E5%A6%82%E4%BD%95%E8%BF%9B%E8%A1%8CMonkey%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/"/>
-    <id>http://judastree.github.io/2015/09/08/如何进行Monkey自动化测试/</id>
+    <link href="http://judastree.github.io/blog/blog/2015/09/08/%E5%A6%82%E4%BD%95%E8%BF%9B%E8%A1%8CMonkey%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/"/>
+    <id>http://judastree.github.io/blog/blog/2015/09/08/如何进行Monkey自动化测试/</id>
     <published>2015-09-08T11:30:06.000Z</published>
     <updated>2015-09-08T11:55:52.000Z</updated>
     <content type="html"><![CDATA[<h2 id="简介">简介</h2><p>  Android Monkey自动化测试：Monkey是Android SDK中自带的一个命令行工具，可以运行在模拟器里或实际设备中。<br>  它向系统发送伪随机的用户事件流(如按键输入、触摸屏输入、手势输入等)，实现对正在开发的应用程序进行压力测试。</p>
@@ -136,18 +177,18 @@
     <![CDATA[<h2 id="简介">简介</h2><p>  Android Monkey自动化测试：Monkey是Android SDK中自带的一个命令行工具，可以运行在模拟器里或实际设备中。<br>  它向系统发送伪随机的用户事件流(如按键输入、触摸屏输入、手势输入等)，实现对正在开发的应]]>
     </summary>
     
-      <category term="Android" scheme="http://judastree.github.io/tags/Android/"/>
+      <category term="Android" scheme="http://judastree.github.io/blog/blog//blog/tags/Android/"/>
     
-      <category term="Monkey" scheme="http://judastree.github.io/tags/Monkey/"/>
+      <category term="Monkey" scheme="http://judastree.github.io/blog/blog//blog/tags/Monkey/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[刷小米开发版系统助力安卓webview调试]]></title>
-    <link href="http://judastree.github.io/2015/09/07/Nexus-7-%E5%88%B7%E5%B0%8F%E7%B1%B3%E5%BC%80%E5%8F%91%E7%89%88%E7%B3%BB%E7%BB%9F%E5%8A%A9%E5%8A%9Bwebview%E8%B0%83%E8%AF%95/"/>
-    <id>http://judastree.github.io/2015/09/07/Nexus-7-刷小米开发版系统助力webview调试/</id>
+    <link href="http://judastree.github.io/blog/blog/2015/09/07/Nexus-7-%E5%88%B7%E5%B0%8F%E7%B1%B3%E5%BC%80%E5%8F%91%E7%89%88%E7%B3%BB%E7%BB%9F%E5%8A%A9%E5%8A%9Bwebview%E8%B0%83%E8%AF%95/"/>
+    <id>http://judastree.github.io/blog/blog/2015/09/07/Nexus-7-刷小米开发版系统助力webview调试/</id>
     <published>2015-09-07T04:22:12.000Z</published>
-    <updated>2015-09-07T07:00:30.000Z</updated>
+    <updated>2015-09-29T04:04:50.000Z</updated>
     <content type="html"><![CDATA[<p>偶然发现在小米开发版系统上装的app应用，其webview的debug模式是打开的！！！</p>
 <p>那么也就是说以后不管是qq，淘宝，只要是他们用了webview都可以直接在chrome中远程调试线上代码了的。</p>
 <p>好处不用多说，直接搞起来。</p>
@@ -161,9 +202,9 @@
 </li>
 </ol>
 <h2 id="效果">效果</h2><p>nexus上已经是小米的系统了。</p>
-<p><img src="/images/xiaomisystem.jpg" alt="xiaomisystem"></p>
+<p><img src="/blog/images/xiaomisystem.jpg" alt="xiaomisystem"></p>
 <p>在nexus上打开了qq，淘宝和电视淘宝的app， 直接可以在chrome中debug。</p>
-<p><img src="/images/removedebug.png" alt="removedebug"></p>
+<p><img src="/blog/images/removedebug.png" alt="removedebug"></p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>偶然发现在小米开发版系统上装的app应用，其webview的debug模式是打开的！！！</p>
@@ -172,18 +213,18 @@
 <h2 ]]>
     </summary>
     
-      <category term="Android" scheme="http://judastree.github.io/tags/Android/"/>
+      <category term="Android" scheme="http://judastree.github.io/blog/blog//blog/tags/Android/"/>
     
-      <category term="工具" scheme="http://judastree.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
+      <category term="工具" scheme="http://judastree.github.io/blog/blog//blog/tags/%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Nexus 7 解锁]]></title>
-    <link href="http://judastree.github.io/2015/09/07/Nexus-7-%E8%A7%A3%E9%94%81/"/>
-    <id>http://judastree.github.io/2015/09/07/Nexus-7-解锁/</id>
+    <link href="http://judastree.github.io/blog/blog/2015/09/07/Nexus-7-%E8%A7%A3%E9%94%81/"/>
+    <id>http://judastree.github.io/blog/blog/2015/09/07/Nexus-7-解锁/</id>
     <published>2015-09-07T03:50:46.000Z</published>
-    <updated>2015-09-07T04:20:04.000Z</updated>
+    <updated>2015-09-29T04:07:45.000Z</updated>
     <content type="html"><![CDATA[<h2 id="安卓设备解锁和不解锁有什么区别？">安卓设备解锁和不解锁有什么区别？</h2><p>手机加锁是因为在出厂时，厂商已经安装好了操作系统和预置应用，这些东西都装在手机ROM中。<br>为了防止意外情况，比如不慎删除了系统重要应用导致系统不稳定甚至崩溃，因此厂商对ROM加了锁使你不能对系统文件做任何动作。<br>这就影响了后续的root和刷机。所以在刷机前一般都要先解锁。</p>
 <h2 id="解锁过程">解锁过程</h2><ol>
 <li><p>下载解压<a href="http://pan.baidu.com/share/link?shareid=3769076633&amp;uk=3793975982" target="_blank" rel="external">nexus_unlock</a></p>
@@ -197,22 +238,22 @@
 <li><p>解锁完成后，再开机，可以看到google下面有个解开的锁，就表明解锁完成了。</p>
 </li>
 </ol>
-<h2 id="图片步骤">图片步骤</h2><p>  <img src="/images/fastbootmode.jpg" alt="fastboot mode"><br>  <img src="/images/bootlock.jpg" alt="bootlock"><br>  <img src="images/bootunlock.jpg" alt="bootunlock"></p>
+<h2 id="图片步骤">图片步骤</h2><p>  <img src="/blog/images/fastbootmode.jpg" alt="fastboot mode"><br>  <img src="/blog/images/bootlock.jpg" alt="bootlock"><br>  <img src="images/bootunlock.jpg" alt="bootunlock"></p>
 ]]></content>
     <summary type="html">
     <![CDATA[<h2 id="安卓设备解锁和不解锁有什么区别？">安卓设备解锁和不解锁有什么区别？</h2><p>手机加锁是因为在出厂时，厂商已经安装好了操作系统和预置应用，这些东西都装在手机ROM中。<br>为了防止意外情况，比如不慎删除了系统重要应用导致系统不稳定甚至崩溃，因此厂商对ROM]]>
     </summary>
     
-      <category term="Android" scheme="http://judastree.github.io/tags/Android/"/>
+      <category term="Android" scheme="http://judastree.github.io/blog/blog//blog/tags/Android/"/>
     
-      <category term="工具" scheme="http://judastree.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
+      <category term="工具" scheme="http://judastree.github.io/blog/blog//blog/tags/%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Monkey日志分析]]></title>
-    <link href="http://judastree.github.io/2015/08/27/Monkey%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90/"/>
-    <id>http://judastree.github.io/2015/08/27/Monkey日志分析/</id>
+    <link href="http://judastree.github.io/blog/blog/2015/08/27/Monkey%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90/"/>
+    <id>http://judastree.github.io/blog/blog/2015/08/27/Monkey日志分析/</id>
     <published>2015-08-27T05:18:49.000Z</published>
     <updated>2015-08-27T05:19:09.000Z</updated>
     <content type="html"></content>
@@ -220,14 +261,14 @@
     
     </summary>
     
-      <category term="Android" scheme="http://judastree.github.io/tags/Android/"/>
+      <category term="Android" scheme="http://judastree.github.io/blog/blog//blog/tags/Android/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[git stash 前缓存当前的修改]]></title>
-    <link href="http://judastree.github.io/2015/08/20/git-stash-%E7%BC%93%E5%AD%98%E5%BD%93%E5%89%8D%E7%9A%84%E4%BF%AE%E6%94%B9/"/>
-    <id>http://judastree.github.io/2015/08/20/git-stash-缓存当前的修改/</id>
+    <link href="http://judastree.github.io/blog/blog/2015/08/20/git-stash-%E7%BC%93%E5%AD%98%E5%BD%93%E5%89%8D%E7%9A%84%E4%BF%AE%E6%94%B9/"/>
+    <id>http://judastree.github.io/blog/blog/2015/08/20/git-stash-缓存当前的修改/</id>
     <published>2015-08-20T10:00:29.000Z</published>
     <updated>2015-08-20T10:15:15.000Z</updated>
     <content type="html"><![CDATA[<h2 id="场景">场景</h2><p>本地有修改，暂时不想commit，但又必须git pull 拉去最新的代码。这时可以用git stash来缓存当前的修改。</p>
@@ -250,16 +291,16 @@
 <pre><code><spa]]>
     </summary>
     
-      <category term="git" scheme="http://judastree.github.io/tags/git/"/>
+      <category term="git" scheme="http://judastree.github.io/blog/blog//blog/tags/git/"/>
     
-      <category term="工具" scheme="http://judastree.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
+      <category term="工具" scheme="http://judastree.github.io/blog/blog//blog/tags/%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Git 部分提交]]></title>
-    <link href="http://judastree.github.io/2015/08/20/Git-%E9%83%A8%E5%88%86%E6%8F%90%E4%BA%A4/"/>
-    <id>http://judastree.github.io/2015/08/20/Git-部分提交/</id>
+    <link href="http://judastree.github.io/blog/blog/2015/08/20/Git-%E9%83%A8%E5%88%86%E6%8F%90%E4%BA%A4/"/>
+    <id>http://judastree.github.io/blog/blog/2015/08/20/Git-部分提交/</id>
     <published>2015-08-20T09:39:51.000Z</published>
     <updated>2015-08-20T10:12:17.000Z</updated>
     <content type="html"><![CDATA[<h2 id="场景">场景</h2><p>修改了四个文件，分别涉及到两个功能，需要把其中两个文件的修改当做一个功能的commit，另外两个文件的修改当做另一个功能的commit。</p>
@@ -286,16 +327,16 @@
 <]]>
     </summary>
     
-      <category term="git" scheme="http://judastree.github.io/tags/git/"/>
+      <category term="git" scheme="http://judastree.github.io/blog/blog//blog/tags/git/"/>
     
-      <category term="工具" scheme="http://judastree.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
+      <category term="工具" scheme="http://judastree.github.io/blog/blog//blog/tags/%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[UnsatisfiedLinkError]]></title>
-    <link href="http://judastree.github.io/2015/08/17/UnsatisfiedLinkError/"/>
-    <id>http://judastree.github.io/2015/08/17/UnsatisfiedLinkError/</id>
+    <link href="http://judastree.github.io/blog/blog/2015/08/17/UnsatisfiedLinkError/"/>
+    <id>http://judastree.github.io/blog/blog/2015/08/17/UnsatisfiedLinkError/</id>
     <published>2015-08-17T12:22:37.000Z</published>
     <updated>2015-08-17T12:29:50.000Z</updated>
     <content type="html"><![CDATA[<p>这两天被这个异常搞死了：</p>
@@ -309,28 +350,28 @@
 <pre><code>java.lang.UnsatisfiedLinkError:dlopen failed: “<span class="keyword">*</span><span class="keyword">*</span>/<]]>
     </summary>
     
-      <category term="Android" scheme="http://judastree.github.io/tags/Android/"/>
+      <category term="Android" scheme="http://judastree.github.io/blog/blog//blog/tags/Android/"/>
     
-      <category term="异常" scheme="http://judastree.github.io/tags/%E5%BC%82%E5%B8%B8/"/>
+      <category term="异常" scheme="http://judastree.github.io/blog/blog//blog/tags/%E5%BC%82%E5%B8%B8/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[ADB server didn't ACK]]></title>
-    <link href="http://judastree.github.io/2015/08/17/ADB-server-didnot-ACK/"/>
-    <id>http://judastree.github.io/2015/08/17/ADB-server-didnot-ACK/</id>
+    <link href="http://judastree.github.io/blog/blog/2015/08/17/ADB-server-didnot-ACK/"/>
+    <id>http://judastree.github.io/blog/blog/2015/08/17/ADB-server-didnot-ACK/</id>
     <published>2015-08-17T09:06:41.000Z</published>
-    <updated>2015-09-08T07:33:29.000Z</updated>
+    <updated>2015-09-29T04:06:28.000Z</updated>
     <content type="html"><![CDATA[<h2 id="问题描述">问题描述</h2><p>  Android真机调试的时候，出现ADB server didn’t ACK，明明设备已经连接上，开发者选项也打开了。</p>
 <h2 id="原因">原因</h2><p>  cmd，启动adb服务发现启动失败。</p>
-<p>  <img src="/images/adbserverfail.jpg" alt="adb失败"></p>
+<p>  <img src="/blog/images/adbserverfail.jpg" alt="adb失败"></p>
 <p>  看下为什么会失败。</p>
 <pre><code>adb nodaemon <span class="keyword">server</span>
-</code></pre><p>  <img src="/images/nodaemon.jpg" alt="nodaemonserver">  </p>
+</code></pre><p>  <img src="/blog/images/nodaemon.jpg" alt="nodaemonserver">  </p>
 <p>  原来是端口被占用了。</p>
 <p>  找到占用端口的进程，杀掉，重启adb server</p>
 <pre><code>netstat -aon<span class="string">|findstr "</span><span class="number">5037</span><span class="string">"</span>
-</code></pre><p>  <img src="/images/startadb.jpg" alt="adbstart"></p>
+</code></pre><p>  <img src="/blog/images/startadb.jpg" alt="adbstart"></p>
 <h2 id="Note:">Note:</h2><p>  转自<a href="http://jingyan.baidu.com/article/454316aba27e49f7a7c03ab1.html" target="_blank" rel="external">百度经验</a></p>
 ]]></content>
     <summary type="html">
@@ -339,16 +380,16 @@
 <]]>
     </summary>
     
-      <category term="Android" scheme="http://judastree.github.io/tags/Android/"/>
+      <category term="Android" scheme="http://judastree.github.io/blog/blog//blog/tags/Android/"/>
     
-      <category term="adb" scheme="http://judastree.github.io/tags/adb/"/>
+      <category term="adb" scheme="http://judastree.github.io/blog/blog//blog/tags/adb/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[主流模引擎一览]]></title>
-    <link href="http://judastree.github.io/2015/08/17/%E4%B8%BB%E6%B5%81%E6%A8%A1%E5%BC%95%E6%93%8E%E4%B8%80%E8%A7%88/"/>
-    <id>http://judastree.github.io/2015/08/17/主流模引擎一览/</id>
+    <link href="http://judastree.github.io/blog/blog/2015/08/17/%E4%B8%BB%E6%B5%81%E6%A8%A1%E5%BC%95%E6%93%8E%E4%B8%80%E8%A7%88/"/>
+    <id>http://judastree.github.io/blog/blog/2015/08/17/主流模引擎一览/</id>
     <published>2015-08-17T09:04:21.000Z</published>
     <updated>2015-08-17T09:18:27.000Z</updated>
     <content type="html"><![CDATA[<p>Jade，Swig，Handlerbar，UnderScore，Ejs</p>
@@ -360,14 +401,14 @@
 ]]>
     </summary>
     
-      <category term="Html" scheme="http://judastree.github.io/tags/Html/"/>
+      <category term="Html" scheme="http://judastree.github.io/blog/blog//blog/tags/Html/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[正则获取url中的参数]]></title>
-    <link href="http://judastree.github.io/2015/08/12/%E6%AD%A3%E5%88%99%E8%8E%B7%E5%8F%96url%E4%B8%AD%E7%9A%84%E5%8F%82%E6%95%B0/"/>
-    <id>http://judastree.github.io/2015/08/12/正则获取url中的参数/</id>
+    <link href="http://judastree.github.io/blog/blog/2015/08/12/%E6%AD%A3%E5%88%99%E8%8E%B7%E5%8F%96url%E4%B8%AD%E7%9A%84%E5%8F%82%E6%95%B0/"/>
+    <id>http://judastree.github.io/blog/blog/2015/08/12/正则获取url中的参数/</id>
     <published>2015-08-12T14:26:32.000Z</published>
     <updated>2015-08-13T02:30:59.000Z</updated>
     <content type="html"><![CDATA[<h2 id="思路">思路</h2><p>url中的参数都是以[&amp;]name=value的形式带在url后面的，而location.search中可以拿到url中？之后的字符串（包括？在内）。</p>
@@ -403,18 +444,18 @@
 <p>那么通过处理location.search的字符串，即可得到想]]>
     </summary>
     
-      <category term="JavaScript" scheme="http://judastree.github.io/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="http://judastree.github.io/blog/blog//blog/tags/JavaScript/"/>
     
-      <category term="正则" scheme="http://judastree.github.io/tags/%E6%AD%A3%E5%88%99/"/>
+      <category term="正则" scheme="http://judastree.github.io/blog/blog//blog/tags/%E6%AD%A3%E5%88%99/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[LeetCode:Longest Common Prefix]]></title>
-    <link href="http://judastree.github.io/2015/08/09/LeetCode-Longest-Common-Prefix/"/>
-    <id>http://judastree.github.io/2015/08/09/LeetCode-Longest-Common-Prefix/</id>
+    <link href="http://judastree.github.io/blog/blog/2015/08/09/LeetCode-Longest-Common-Prefix/"/>
+    <id>http://judastree.github.io/blog/blog/2015/08/09/LeetCode-Longest-Common-Prefix/</id>
     <published>2015-08-09T05:52:02.000Z</published>
-    <updated>2015-08-12T14:31:20.000Z</updated>
+    <updated>2015-09-29T04:07:45.000Z</updated>
     <content type="html"><![CDATA[<h2 id="题目">题目</h2><p>   <a href="https://leetcode.com/problems/longest-common-prefix/" target="_blank" rel="external">LeetCode:Longest Common Prefix</a></p>
 <p>   找出一个字符串数组中所有元素的最长公共前缀。</p>
 <h2 id="思路">思路</h2><p>   先找出这个数组中最短的字符串，然后再遍历数组比较这个最短字符串是否当前元素的前缀。<br>   如果是的话，比较下一个数组元素。<br>   如果不是的话，最短字符串截断最后一位再和当前数组数组元素比较，直到最短字符串长度为0.</p>
@@ -446,24 +487,24 @@
     }
     <span class="keyword">return</span> shortestStr;
 };
-</code></pre><h2 id="耗时">耗时</h2><p><img src="/images/longestcommonprefix.png" alt="Runtime"></p>
+</code></pre><h2 id="耗时">耗时</h2><p><img src="/blog/images/longestcommonprefix.png" alt="Runtime"></p>
 ]]></content>
     <summary type="html">
     <![CDATA[<h2 id="题目">题目</h2><p>   <a href="https://leetcode.com/problems/longest-common-prefix/" target="_blank" rel="external">LeetCode:Longest Comm]]>
     </summary>
     
-      <category term="LeetCode" scheme="http://judastree.github.io/tags/LeetCode/"/>
+      <category term="LeetCode" scheme="http://judastree.github.io/blog/blog//blog/tags/LeetCode/"/>
     
-      <category term="算法" scheme="http://judastree.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="http://judastree.github.io/blog/blog//blog/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[LeetCode:Remove Nth Node from End of List]]></title>
-    <link href="http://judastree.github.io/2015/08/07/LeetCode-Remove-Nth-from-end/"/>
-    <id>http://judastree.github.io/2015/08/07/LeetCode-Remove-Nth-from-end/</id>
+    <link href="http://judastree.github.io/blog/blog/2015/08/07/LeetCode-Remove-Nth-from-end/"/>
+    <id>http://judastree.github.io/blog/blog/2015/08/07/LeetCode-Remove-Nth-from-end/</id>
     <published>2015-08-07T01:07:42.000Z</published>
-    <updated>2015-08-12T14:30:34.000Z</updated>
+    <updated>2015-09-29T04:07:45.000Z</updated>
     <content type="html"><![CDATA[<h2 id="题目">题目</h2><p><a href="https://leetcode.com/problems/remove-nth-node-from-end-of-list/" target="_blank" rel="external">Remove Nth Node from End of List</a></p>
 <p>把倒数第N个元素从链表中删除。</p>
 <p>比如链表1-&gt;2-&gt;3-&gt;4-&gt;5,  把倒数第二个删除（n=2），返回1-&gt;2-&gt;3-&gt;5</p>
@@ -504,24 +545,24 @@ var removeNthFromEnd = function(head, n) {
     }
     <span class="keyword">return</span> dumy.<span class="keyword">next</span>;
 };
-</code></pre><h2 id="耗时">耗时</h2><p><img src="/images/removenthfromend.png" alt="removenthfromend"></p>
+</code></pre><h2 id="耗时">耗时</h2><p><img src="/blog/images/removenthfromend.png" alt="removenthfromend"></p>
 ]]></content>
     <summary type="html">
     <![CDATA[<h2 id="题目">题目</h2><p><a href="https://leetcode.com/problems/remove-nth-node-from-end-of-list/" target="_blank" rel="external">Remove Nth No]]>
     </summary>
     
-      <category term="LeetCode" scheme="http://judastree.github.io/tags/LeetCode/"/>
+      <category term="LeetCode" scheme="http://judastree.github.io/blog/blog//blog/tags/LeetCode/"/>
     
-      <category term="算法" scheme="http://judastree.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="http://judastree.github.io/blog/blog//blog/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[LeetCode: Merge Sorted Array]]></title>
-    <link href="http://judastree.github.io/2015/08/07/LeetCode-Merge-Sorted-Array/"/>
-    <id>http://judastree.github.io/2015/08/07/LeetCode-Merge-Sorted-Array/</id>
+    <link href="http://judastree.github.io/blog/blog/2015/08/07/LeetCode-Merge-Sorted-Array/"/>
+    <id>http://judastree.github.io/blog/blog/2015/08/07/LeetCode-Merge-Sorted-Array/</id>
     <published>2015-08-07T00:54:00.000Z</published>
-    <updated>2015-08-12T14:31:09.000Z</updated>
+    <updated>2015-09-29T04:07:45.000Z</updated>
     <content type="html"><![CDATA[<h2 id="题目">题目</h2><p><a href="https://leetcode.com/problems/merge-sorted-array/" target="_blank" rel="external">Merge Sorted Array</a></p>
 <p>把两个有序的数组合并成一个，数组1有m个元素，数组2有n个元素。假设数组1有足够的长度（m+n）来容纳数组1和数组2，求合并后的数组1.</p>
 <h2 id="思路">思路</h2><p>因为不能用额外的存储空间，考虑用类似选择排序的方式来重新生成nums1.</p>
@@ -573,25 +614,25 @@ var removeNthFromEnd = function(head, n) {
         }
     }
 };
-</code></pre><h2 id="耗时">耗时</h2><p> <img src="/images/mergesortedarray.png" alt="mergesortedarray"></p>
+</code></pre><h2 id="耗时">耗时</h2><p> <img src="/blog/images/mergesortedarray.png" alt="mergesortedarray"></p>
 ]]></content>
     <summary type="html">
     <![CDATA[<h2 id="题目">题目</h2><p><a href="https://leetcode.com/problems/merge-sorted-array/" target="_blank" rel="external">Merge Sorted Array</a></p>
 ]]>
     </summary>
     
-      <category term="LeetCode" scheme="http://judastree.github.io/tags/LeetCode/"/>
+      <category term="LeetCode" scheme="http://judastree.github.io/blog/blog//blog/tags/LeetCode/"/>
     
-      <category term="算法" scheme="http://judastree.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="http://judastree.github.io/blog/blog//blog/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[LeetCode:Count and Say]]></title>
-    <link href="http://judastree.github.io/2015/08/06/LeetCode-Count-and-Say/"/>
-    <id>http://judastree.github.io/2015/08/06/LeetCode-Count-and-Say/</id>
+    <link href="http://judastree.github.io/blog/blog/2015/08/06/LeetCode-Count-and-Say/"/>
+    <id>http://judastree.github.io/blog/blog/2015/08/06/LeetCode-Count-and-Say/</id>
     <published>2015-08-06T02:53:41.000Z</published>
-    <updated>2015-08-12T14:32:02.000Z</updated>
+    <updated>2015-09-29T04:06:45.000Z</updated>
     <content type="html"><![CDATA[<h2 id="题目">题目</h2><p><a href="https://leetcode.com/problems/count-and-say/" target="_blank" rel="external">Count And Say</a></p>
 <p>The count-and-say sequence is the sequence of integers beginning as follows:<br>1, 11, 21, 1211, 111221, …</p>
 <p>1 is read off as “one 1” or 11.<br>11 is read off as “two 1s” or 21.<br>21 is read off as “one 2, then one 1” or 1211.<br>Given an integer n, generate the nth sequence.</p>
@@ -628,56 +669,16 @@ var countAndSay = <span class="function"><span class="keyword">function</span><s
     }
     return tempArray.toString<span class="params">()</span>.replace<span class="params">(/,/g,<span class="string">""</span>)</span>;
 }
-</code></pre><h2 id="耗时">耗时</h2><p><img src="/images/countandsay.png" alt="countandsay.png"></p>
+</code></pre><h2 id="耗时">耗时</h2><p><img src="/blog/images/countandsay.png" alt="countandsay.png"></p>
 ]]></content>
     <summary type="html">
     <![CDATA[<h2 id="题目">题目</h2><p><a href="https://leetcode.com/problems/count-and-say/" target="_blank" rel="external">Count And Say</a></p>
 <p>The cou]]>
     </summary>
     
-      <category term="LeetCode" scheme="http://judastree.github.io/tags/LeetCode/"/>
+      <category term="LeetCode" scheme="http://judastree.github.io/blog/blog//blog/tags/LeetCode/"/>
     
-      <category term="算法" scheme="http://judastree.github.io/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[世界那么大翻墙出去看看]]></title>
-    <link href="http://judastree.github.io/2015/08/05/%E4%B8%96%E7%95%8C%E9%82%A3%E4%B9%88%E5%A4%A7%E7%BF%BB%E5%A2%99%E5%87%BA%E5%8E%BB%E7%9C%8B%E7%9C%8B/"/>
-    <id>http://judastree.github.io/2015/08/05/世界那么大翻墙出去看看/</id>
-    <published>2015-08-05T02:31:28.000Z</published>
-    <updated>2015-08-05T13:11:02.000Z</updated>
-    <content type="html"><![CDATA[<p>一直用的红杏，前几天发现另外一个挺好用的翻墙方法，<a href="https://zqt.pw/" target="_blank" rel="external">最前台</a>的zpn。</p>
-<p>现在还在内测阶段，需要申请账号。</p>
-<p><img src="/images/zqtzhanghao.png" alt="zqtzhanghao"></p>
-<h2 id="常见问题">常见问题</h2><p><a href="http://mp.weixin.qq.com/s?__biz=MzAxOTU5Nzg1Ng==&amp;mid=210884848&amp;idx=1&amp;sn=b9eb764ce37198723266c611f548a074#rd" target="_blank" rel="external">无法使用zpn？</a></p>
-<p><a href="http://mp.weixin.qq.com/s?__biz=MzAxOTU5Nzg1Ng==&amp;mid=210885311&amp;idx=1&amp;sn=7be955b972eae3fd0603b95b39f5a993#wechat_redirect" target="_blank" rel="external">启动边缘模式</a></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>一直用的红杏，前几天发现另外一个挺好用的翻墙方法，<a href="https://zqt.pw/" target="_blank" rel="external">最前台</a>的zpn。</p>
-<p>现在还在内测阶段，需要申请账号。</p>
-<p><img src="/]]>
-    </summary>
-    
-      <category term="工具" scheme="http://judastree.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[微信、手Q、Qzone之x5内核inspect调试解决方案]]></title>
-    <link href="http://judastree.github.io/2015/08/04/%E5%BE%AE%E4%BF%A1%E3%80%81%E6%89%8BQ%E3%80%81Qzone%E4%B9%8Bx5%E5%86%85%E6%A0%B8inspect%E8%B0%83%E8%AF%95%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
-    <id>http://judastree.github.io/2015/08/04/微信、手Q、Qzone之x5内核inspect调试解决方案/</id>
-    <published>2015-08-04T11:33:53.000Z</published>
-    <updated>2015-08-04T11:36:34.000Z</updated>
-    <content type="html"><![CDATA[<p><a href="http://bbs.mb.qq.com/thread-243399-1-1.html?pid=313743&amp;fid=93" target="_blank" rel="external">具体操作点这里</a></p>
-<p>这个远程调试的方法和weinre类似，优势在于不用将调试脚本部署到线上，缺点就是只能安卓平台。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p><a href="http://bbs.mb.qq.com/thread-243399-1-1.html?pid=313743&amp;fid=93" target="_blank" rel="external">具体操作点这里</a></p>
-<p>这个远程调试的方法和w]]>
-    </summary>
-    
-      <category term="工具" scheme="http://judastree.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
+      <category term="算法" scheme="http://judastree.github.io/blog/blog//blog/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   

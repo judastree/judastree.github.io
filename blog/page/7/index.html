@@ -16,12 +16,12 @@
 
 
 
-  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+  <link rel="stylesheet" type="text/css" href="/blog/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
 
 
 
 
-<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.4"/>
+<link rel="stylesheet" type="text/css" href="/blog/css/main.css?v=0.4.4"/>
 
 
     <meta name="description" content="You are the pretty sunshine of my life" />
@@ -32,17 +32,17 @@
 
 
 
-  <link rel="alternate" href="/atom.xml" title="Judastree" type="application/atom+xml" />
+  <link rel="alternate" href="/blog/atom.xml" title="Judastree" type="application/atom+xml" />
 
 
 
-  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.4" />
+  <link rel="shorticon icon" type="image/x-icon" href="/blog/favicon.ico?v=0.4.4" />
 
 
 <meta name="description" content="You are the pretty sunshine of my life">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Judastree">
-<meta property="og:url" content="http://judastree.github.io/page/7/index.html">
+<meta property="og:url" content="http://judastree.github.io/blog/page/7/index.html">
 <meta property="og:site_name" content="Judastree">
 <meta property="og:description" content="You are the pretty sunshine of my life">
 <meta name="twitter:card" content="summary">
@@ -89,7 +89,7 @@
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
         <div class="header-inner"><h1 class="site-meta">
   <span class="logo-line-before"><i></i></span>
-  <a href="/" class="brand" rel="start">
+  <a href="/blog/" class="brand" rel="start">
       <span class="logo">
         <i class="icon-logo"></i>
       </span>
@@ -122,7 +122,7 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives" rel="section">
+          <a href="/blog/archives" rel="section">
             <i class="menu-item-icon icon-archives"></i> <br />
             归档
           </a>
@@ -130,7 +130,7 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about" rel="section">
+          <a href="/blog/about" rel="section">
             <i class="menu-item-icon icon-about"></i> <br />
             关于
           </a>
@@ -138,7 +138,7 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
+          <a href="/blog/tags" rel="section">
             <i class="menu-item-icon icon-tags"></i> <br />
             标签
           </a>
@@ -189,7 +189,97 @@
           
           
             
-              <a class="post-title-link" href="/2015/07/14/git .ignore无效?/" itemprop="url">
+              <a class="post-title-link" href="/blog/2015/07/14/Android Url Scheme-所谓的唤醒/" itemprop="url">
+                Android Url Scheme 所谓的唤醒
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-07-14T10:47:58+08:00" content="2015-07-14">
+            2015-07-14
+          </time>
+        </span>
+
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/blog/2015/07/14/Android Url Scheme-所谓的唤醒/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/14/Android Url Scheme-所谓的唤醒/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p>所谓的唤醒，就是从浏览器端（或者微信等第三方的app）打开指定app的动作。</p>
+<p>IOS上有Url scheme的概念，可以配置每个app的启动协议。就相当于用http的协议地址会默认打开Safari这个app一样。</p>
+<p>那么在安卓app中如何设置呢？</p>
+<p>只要在AndroidMainifest.xml中对你要启动的那个activity加入如下描述。</p>
+<pre><code><span class="tag">&lt;<span class="title">activity</span>
+    <span class="attribute">android:name</span>=<span class="value">"com.android.demo.MainActivity"</span>
+    <span class="attribute">android:label</span>=<span class="value">"@string/app_name"</span> &gt;</span>
+    <span class="tag">&lt;<span class="title">intent-filter</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">action</span> <span class="attribute">android:name</span>=<span class="value">"android.intent.action.MAIN"</span> /&gt;</span>
+        <span class="tag">&lt;<span class="title">category</span> <span class="attribute">android:name</span>=<span class="value">"android.intent.category.LAUNCHER"</span> /&gt;</span>
+    <span class="tag">&lt;/<span class="title">intent-filter</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">intent-filter</span> <span class="attribute">android:priority</span>=<span class="value">"4000"</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">action</span> <span class="attribute">android:name</span>=<span class="value">"android.intent.action.VIEW"</span>/&gt;</span>
+        <span class="tag">&lt;<span class="title">category</span> <span class="attribute">android:name</span>=<span class="value">"android.intent.category.DEFAULT"</span> /&gt;</span>
+        <span class="tag">&lt;<span class="title">category</span> <span class="attribute">android:name</span>=<span class="value">"android.intent.category.BROWSABLE"</span> /&gt;</span>
+        <span class="tag">&lt;<span class="title">data</span>
+            <span class="attribute">android:host</span>=<span class="value">"homepae"</span>
+            <span class="attribute">android:scheme</span>=<span class="value">"myapp"</span> /&gt;</span>
+    <span class="tag">&lt;/<span class="title">intent-filter</span>&gt;</span>
+
+<span class="tag">&lt;/<span class="title">activity</span>&gt;</span>
+</code></pre><p>那么当我在浏览器中访问如 “myapp://homepage”这个协议地址时，它就会唤醒com.android.demo.MainActivity这个客户端的页面。</p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/blog/2015/07/14/git .ignore无效?/" itemprop="url">
                 git ignore 无效?
               </a>
             
@@ -211,7 +301,7 @@
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/07/14/git .ignore无效?/#comments" itemprop="discussionUrl">
+              <a href="/blog/2015/07/14/git .ignore无效?/#comments" itemprop="discussionUrl">
                 <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/14/git .ignore无效?/" itemprop="commentsCount"></span>
               </a>
             </span>
@@ -265,7 +355,7 @@
           
           
             
-              <a class="post-title-link" href="/2015/07/14/box-sizing是什么东西/" itemprop="url">
+              <a class="post-title-link" href="/blog/2015/07/14/box-sizing是什么东西/" itemprop="url">
                 box-sizing 是什么东西
               </a>
             
@@ -287,7 +377,7 @@
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/07/14/box-sizing是什么东西/#comments" itemprop="discussionUrl">
+              <a href="/blog/2015/07/14/box-sizing是什么东西/#comments" itemprop="discussionUrl">
                 <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/14/box-sizing是什么东西/" itemprop="commentsCount"></span>
               </a>
             </span>
@@ -343,7 +433,7 @@
           
           
             
-              <a class="post-title-link" href="/2015/07/14/Android怎么打Log/" itemprop="url">
+              <a class="post-title-link" href="/blog/2015/07/14/Android怎么打Log/" itemprop="url">
                 Android怎么打Log
               </a>
             
@@ -365,7 +455,7 @@
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/07/14/Android怎么打Log/#comments" itemprop="discussionUrl">
+              <a href="/blog/2015/07/14/Android怎么打Log/#comments" itemprop="discussionUrl">
                 <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/14/Android怎么打Log/" itemprop="commentsCount"></span>
               </a>
             </span>
@@ -488,7 +578,7 @@ ERROR 类型调试信息，错误信息
           
           
             
-              <a class="post-title-link" href="/2015/07/13/生活好Boring啊/" itemprop="url">
+              <a class="post-title-link" href="/blog/2015/07/13/生活好Boring啊/" itemprop="url">
                 生活好boring啊
               </a>
             
@@ -510,7 +600,7 @@ ERROR 类型调试信息，错误信息
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/07/13/生活好Boring啊/#comments" itemprop="discussionUrl">
+              <a href="/blog/2015/07/13/生活好Boring啊/#comments" itemprop="discussionUrl">
                 <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/13/生活好Boring啊/" itemprop="commentsCount"></span>
               </a>
             </span>
@@ -560,7 +650,7 @@ ERROR 类型调试信息，错误信息
           
           
             
-              <a class="post-title-link" href="/2015/07/07/mac 调出adb shell/" itemprop="url">
+              <a class="post-title-link" href="/blog/2015/07/07/mac 调出adb shell/" itemprop="url">
                 mac调出adb shell
               </a>
             
@@ -582,7 +672,7 @@ ERROR 类型调试信息，错误信息
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/07/07/mac 调出adb shell/#comments" itemprop="discussionUrl">
+              <a href="/blog/2015/07/07/mac 调出adb shell/#comments" itemprop="discussionUrl">
                 <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/07/mac 调出adb shell/" itemprop="commentsCount"></span>
               </a>
             </span>
@@ -646,7 +736,7 @@ ERROR 类型调试信息，错误信息
           
           
             
-              <a class="post-title-link" href="/2015/07/06/markdown语法总忘/" itemprop="url">
+              <a class="post-title-link" href="/blog/2015/07/06/markdown语法总忘/" itemprop="url">
                 markdown语法总忘
               </a>
             
@@ -668,7 +758,7 @@ ERROR 类型调试信息，错误信息
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/07/06/markdown语法总忘/#comments" itemprop="discussionUrl">
+              <a href="/blog/2015/07/06/markdown语法总忘/#comments" itemprop="discussionUrl">
                 <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/06/markdown语法总忘/" itemprop="commentsCount"></span>
               </a>
             </span>
@@ -907,7 +997,7 @@ ERROR 类型调试信息，错误信息
           
           
             
-              <a class="post-title-link" href="/2015/07/06/React学习笔记/" itemprop="url">
+              <a class="post-title-link" href="/blog/2015/07/06/React学习笔记/" itemprop="url">
                 React 学习 笔记 
               </a>
             
@@ -929,7 +1019,7 @@ ERROR 类型调试信息，错误信息
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/07/06/React学习笔记/#comments" itemprop="discussionUrl">
+              <a href="/blog/2015/07/06/React学习笔记/#comments" itemprop="discussionUrl">
                 <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/06/React学习笔记/" itemprop="commentsCount"></span>
               </a>
             </span>
@@ -1027,7 +1117,7 @@ ERROR 类型调试信息，错误信息
           
           
             
-              <a class="post-title-link" href="/2015/07/06/Mac版Webstorm的一些快捷键/" itemprop="url">
+              <a class="post-title-link" href="/blog/2015/07/06/Mac版Webstorm的一些快捷键/" itemprop="url">
                 Mac版Webstorm的一些快捷键 
               </a>
             
@@ -1049,7 +1139,7 @@ ERROR 类型调试信息，错误信息
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/07/06/Mac版Webstorm的一些快捷键/#comments" itemprop="discussionUrl">
+              <a href="/blog/2015/07/06/Mac版Webstorm的一些快捷键/#comments" itemprop="discussionUrl">
                 <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/06/Mac版Webstorm的一些快捷键/" itemprop="commentsCount"></span>
               </a>
             </span>
@@ -1101,7 +1191,7 @@ ERROR 类型调试信息，错误信息
           
           
             
-              <a class="post-title-link" href="/2015/06/30/currentColor关键字/" itemprop="url">
+              <a class="post-title-link" href="/blog/2015/06/30/currentColor关键字/" itemprop="url">
                 currentColor关键字
               </a>
             
@@ -1123,7 +1213,7 @@ ERROR 类型调试信息，错误信息
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/06/30/currentColor关键字/#comments" itemprop="discussionUrl">
+              <a href="/blog/2015/06/30/currentColor关键字/#comments" itemprop="discussionUrl">
                 <span class="post-comments-count ds-thread-count" data-thread-key="2015/06/30/currentColor关键字/" itemprop="commentsCount"></span>
               </a>
             </span>
@@ -1168,82 +1258,11 @@ ERROR 类型调试信息，错误信息
 
 
     
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/06/29/Mac下取消Chrome的ajax请求跨域/" itemprop="url">
-                Mac下取消Chrome的ajax请求跨域
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-06-29T17:33:36+08:00" content="2015-06-29">
-            2015-06-29
-          </time>
-        </span>
-
-        
-
-        
-          
-            <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2015/06/29/Mac下取消Chrome的ajax请求跨域/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/06/29/Mac下取消Chrome的ajax请求跨域/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><p>本地调试的时候总是说Origin * is not allowed by Access-Control-Allow-Origin好烦。</p>
-<p>打开终端，输入命令</p>
-<pre><code>$<span class="built_in">open</span> -<span class="operator">a</span> <span class="string">"Google Chrome"</span> <span class="comment">--args --disable-web-security</span>
-</code></pre></span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/6/">&laquo;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/8/">&raquo;</a>
+    <a class="extend prev" rel="prev" href="/blog/page/6/">&laquo;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/blog/page/8/">8</a><a class="extend next" rel="next" href="/blog/page/8/">&raquo;</a>
   </nav>
 
 
@@ -1271,14 +1290,14 @@ ERROR 类型调试信息，错误信息
 
       <section class="site-overview">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" src="/images/profile.jpeg" alt="Judastree" itemprop="image"/>
+          <img class="site-author-image" src="/blog/images/profile.jpeg" alt="Judastree" itemprop="image"/>
           <p class="site-author-name" itemprop="name">Judastree</p>
         </div>
         <p class="site-description motion-element" itemprop="description">You are the pretty sunshine of my life</p>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
-            <a href="/archives">
-              <span class="site-state-item-count">75</span>
+            <a href="/blog/archives">
+              <span class="site-state-item-count">76</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1291,7 +1310,7 @@ ERROR 类型调试信息，错误信息
           </div>
 
           <div class="site-state-item site-state-tags">
-            <a href="/tags">
+            <a href="/blog/tags">
               <span class="site-state-item-count">18</span>
               <span class="site-state-item-name">标签</span>
               </a>
@@ -1301,7 +1320,7 @@ ERROR 类型调试信息，错误信息
 
         
           <div class="feed-link motion-element">
-            <a href="/atom.xml" rel="alternate">
+            <a href="/blog/atom.xml" rel="alternate">
               <i class="menu-item-icon icon-feed"></i>
               RSS
             </a>
@@ -1378,7 +1397,7 @@ ERROR 类型调试信息，错误信息
     <div class="back-to-top"></div>
 </div>
 
-<script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+<script type="text/javascript" src="/blog/vendors/jquery/index.js?v=2.1.3"></script>
 
   
   
@@ -1402,28 +1421,28 @@ ERROR 类型调试信息，错误信息
   </script>
     
      
-  	<script src="/js/ua-parser.min.js"></script>
-  	<script src="/js/hook-duoshuo.js"></script>
+  	<script src="/blog/js/ua-parser.min.js"></script>
+  	<script src="/blog/js/hook-duoshuo.js"></script>
   
 
   
 
   
-  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
-  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.4"></script>
+  <script type="text/javascript" src="/blog/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/blog/js/fancy-box.js?v=0.4.4"></script>
 
 
-  <script type="text/javascript" src="/js/helpers.js?v=0.4.4"></script>
+  <script type="text/javascript" src="/blog/js/helpers.js?v=0.4.4"></script>
   
 
-  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
-  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+  <script type="text/javascript" src="/blog/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/blog/vendors/velocity/velocity.ui.min.js"></script>
 
-  <script type="text/javascript" src="/js/motion_global.js?v=0.4.4" id="motion.global"></script>
+  <script type="text/javascript" src="/blog/js/motion_global.js?v=0.4.4" id="motion.global"></script>
 
 
 
-  <script type="text/javascript" src="/js/search-toggle.js"></script>
+  <script type="text/javascript" src="/blog/js/search-toggle.js"></script>
 
 
 
@@ -1457,8 +1476,8 @@ ERROR 类型调试信息，错误信息
   </script>
     
      
-  	<script src="/js/ua-parser.min.js"></script>
-  	<script src="/js/hook-duoshuo.js"></script>
+  	<script src="/blog/js/ua-parser.min.js"></script>
+  	<script src="/blog/js/hook-duoshuo.js"></script>
   
 
   
@@ -1468,11 +1487,11 @@ ERROR 类型调试信息，错误信息
 
 
 <!-- lazyload -->
-<script type="text/javascript" src="/js/lazyload.js"></script>
+<script type="text/javascript" src="/blog/js/lazyload.js"></script>
 <script type="text/javascript">
     jQuery(function () {
         jQuery("#posts img").lazyload({
-            placeholder: "/images/loading.gif",
+            placeholder: "/blog/images/loading.gif",
             effect: "fadeIn"
         });
     });

@@ -16,12 +16,12 @@
 
 
 
-  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+  <link rel="stylesheet" type="text/css" href="/blog/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
 
 
 
 
-<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.4"/>
+<link rel="stylesheet" type="text/css" href="/blog/css/main.css?v=0.4.4"/>
 
 
     <meta name="description" content="You are the pretty sunshine of my life" />
@@ -32,17 +32,17 @@
 
 
 
-  <link rel="alternate" href="/atom.xml" title="Judastree" type="application/atom+xml" />
+  <link rel="alternate" href="/blog/atom.xml" title="Judastree" type="application/atom+xml" />
 
 
 
-  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.4" />
+  <link rel="shorticon icon" type="image/x-icon" href="/blog/favicon.ico?v=0.4.4" />
 
 
 <meta name="description" content="You are the pretty sunshine of my life">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Judastree">
-<meta property="og:url" content="http://judastree.github.io/page/4/index.html">
+<meta property="og:url" content="http://judastree.github.io/blog/page/4/index.html">
 <meta property="og:site_name" content="Judastree">
 <meta property="og:description" content="You are the pretty sunshine of my life">
 <meta name="twitter:card" content="summary">
@@ -89,7 +89,7 @@
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
         <div class="header-inner"><h1 class="site-meta">
   <span class="logo-line-before"><i></i></span>
-  <a href="/" class="brand" rel="start">
+  <a href="/blog/" class="brand" rel="start">
       <span class="logo">
         <i class="icon-logo"></i>
       </span>
@@ -122,7 +122,7 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives" rel="section">
+          <a href="/blog/archives" rel="section">
             <i class="menu-item-icon icon-archives"></i> <br />
             归档
           </a>
@@ -130,7 +130,7 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about" rel="section">
+          <a href="/blog/about" rel="section">
             <i class="menu-item-icon icon-about"></i> <br />
             关于
           </a>
@@ -138,7 +138,7 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
+          <a href="/blog/tags" rel="section">
             <i class="menu-item-icon icon-tags"></i> <br />
             标签
           </a>
@@ -189,7 +189,86 @@
           
           
             
-              <a class="post-title-link" href="/2015/07/27/获取object的属性长度/" itemprop="url">
+              <a class="post-title-link" href="/blog/2015/07/27/style-currentStyle-getComputedStyle-三者区别/" itemprop="url">
+                style currentStyle getComputedStyle 三者区别
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-07-27T19:58:26+08:00" content="2015-07-27">
+            2015-07-27
+          </time>
+        </span>
+
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/blog/2015/07/27/style-currentStyle-getComputedStyle-三者区别/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/27/style-currentStyle-getComputedStyle-三者区别/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p>JS中通过style来获取元素的样式有时并获取不到，为什么呢?</p>
+<p>一个元素的样式由三部分组成，嵌入样式，内联样式和外联样式。</p>
+<ul>
+<li>内联样式: 写在标签内的样式，<div style=""></div></li>
+<li>嵌入样式: 写在<html>和<head>之间，用<style></style>包住的样式</head></html></li>
+<li>外联样式: 由<link>标签引入的外部css</li>
+</ul>
+<p>document.getElementById(“ID”).style 只可以获取到内嵌样式，也就是写在标签内style属性中定义的样式。</p>
+<p>在IE下可以用<strong>currentStyle</strong>中获取其他样式,但在别的浏览器中不支持。</p>
+<p>而火狐,chrome等可以通过getComputedStyle这个方法来获取所有计算过的样式。</p>
+<pre><code>getComputedStyle<span class="list">(<span class="keyword">document</span>.getElementById<span class="list">(<span class="string">"ID"</span>)</span>)</span>
+</code></pre></span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/blog/2015/07/27/获取object的属性长度/" itemprop="url">
                 计算Object的长度
               </a>
             
@@ -211,7 +290,7 @@
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/07/27/获取object的属性长度/#comments" itemprop="discussionUrl">
+              <a href="/blog/2015/07/27/获取object的属性长度/#comments" itemprop="discussionUrl">
                 <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/27/获取object的属性长度/" itemprop="commentsCount"></span>
               </a>
             </span>
@@ -274,7 +353,7 @@ console.log(Object.keys(obj).length);
           
           
             
-              <a class="post-title-link" href="/2015/07/27/LeetCode-Isomorphic-String/" itemprop="url">
+              <a class="post-title-link" href="/blog/2015/07/27/LeetCode-Isomorphic-String/" itemprop="url">
                 LeetCode:Isomorphic Strings
               </a>
             
@@ -296,7 +375,7 @@ console.log(Object.keys(obj).length);
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/07/27/LeetCode-Isomorphic-String/#comments" itemprop="discussionUrl">
+              <a href="/blog/2015/07/27/LeetCode-Isomorphic-String/#comments" itemprop="discussionUrl">
                 <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/27/LeetCode-Isomorphic-String/" itemprop="commentsCount"></span>
               </a>
             </span>
@@ -359,7 +438,7 @@ console.log(Object.keys(obj).length);
         <span class="keyword">return</span> <span class="literal">true</span>;
     }
 };
-</code></pre><h2 id="结果">结果</h2><p><img src="/images/isomorphicstring.png" alt="isomorphicstrings"></p>
+</code></pre><h2 id="结果">结果</h2><p><img src="/blog/images/isomorphicstring.png" alt="isomorphicstrings"></p>
 <h2 id="PS">PS</h2><p>一开始想的是replace的方法，但是后面验证出来发现输入的字符串有各种需要转义的特殊字符(*&amp;$’)。</p>
 </span>
         
@@ -391,7 +470,7 @@ console.log(Object.keys(obj).length);
           
           
             
-              <a class="post-title-link" href="/2015/07/26/LeetCode-Number-of-1-Bits/" itemprop="url">
+              <a class="post-title-link" href="/blog/2015/07/26/LeetCode-Number-of-1-Bits/" itemprop="url">
                 LeetCode:Number of 1 Bits
               </a>
             
@@ -413,7 +492,7 @@ console.log(Object.keys(obj).length);
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/07/26/LeetCode-Number-of-1-Bits/#comments" itemprop="discussionUrl">
+              <a href="/blog/2015/07/26/LeetCode-Number-of-1-Bits/#comments" itemprop="discussionUrl">
                 <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/26/LeetCode-Number-of-1-Bits/" itemprop="commentsCount"></span>
               </a>
             </span>
@@ -481,7 +560,7 @@ console.log(Object.keys(obj).length);
           
           
             
-              <a class="post-title-link" href="/2015/07/26/LeetCode-Palindrome-Linked-List/" itemprop="url">
+              <a class="post-title-link" href="/blog/2015/07/26/LeetCode-Palindrome-Linked-List/" itemprop="url">
                 LeetCode:Palindrome Linked List
               </a>
             
@@ -503,7 +582,7 @@ console.log(Object.keys(obj).length);
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/07/26/LeetCode-Palindrome-Linked-List/#comments" itemprop="discussionUrl">
+              <a href="/blog/2015/07/26/LeetCode-Palindrome-Linked-List/#comments" itemprop="discussionUrl">
                 <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/26/LeetCode-Palindrome-Linked-List/" itemprop="commentsCount"></span>
               </a>
             </span>
@@ -584,7 +663,7 @@ sPointer = sPointer.<span class="keyword">next</span>;
           
           
             
-              <a class="post-title-link" href="/2015/07/25/将数字转换为千分位的金额格式/" itemprop="url">
+              <a class="post-title-link" href="/blog/2015/07/25/将数字转换为千分位的金额格式/" itemprop="url">
                 将数字转换为千分位的金额格式
               </a>
             
@@ -606,7 +685,7 @@ sPointer = sPointer.<span class="keyword">next</span>;
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/07/25/将数字转换为千分位的金额格式/#comments" itemprop="discussionUrl">
+              <a href="/blog/2015/07/25/将数字转换为千分位的金额格式/#comments" itemprop="discussionUrl">
                 <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/25/将数字转换为千分位的金额格式/" itemprop="commentsCount"></span>
               </a>
             </span>
@@ -678,7 +757,7 @@ console.<span class="built_in">log</span> <span class="params">(<span class="par
           
           
             
-              <a class="post-title-link" href="/2015/07/24/Darling,我好想去死/" itemprop="url">
+              <a class="post-title-link" href="/blog/2015/07/24/Darling,我好想去死/" itemprop="url">
                 Darling，我想去死
               </a>
             
@@ -700,7 +779,7 @@ console.<span class="built_in">log</span> <span class="params">(<span class="par
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/07/24/Darling,我好想去死/#comments" itemprop="discussionUrl">
+              <a href="/blog/2015/07/24/Darling,我好想去死/#comments" itemprop="discussionUrl">
                 <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/24/Darling,我好想去死/" itemprop="commentsCount"></span>
               </a>
             </span>
@@ -753,7 +832,7 @@ console.<span class="built_in">log</span> <span class="params">(<span class="par
           
           
             
-              <a class="post-title-link" href="/2015/07/24/LeetCode-Intersection-of-Two-Linked-Lists/" itemprop="url">
+              <a class="post-title-link" href="/blog/2015/07/24/LeetCode-Intersection-of-Two-Linked-Lists/" itemprop="url">
                 LeetCode:Intersection of Two Linked Lists
               </a>
             
@@ -775,7 +854,7 @@ console.<span class="built_in">log</span> <span class="params">(<span class="par
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/07/24/LeetCode-Intersection-of-Two-Linked-Lists/#comments" itemprop="discussionUrl">
+              <a href="/blog/2015/07/24/LeetCode-Intersection-of-Two-Linked-Lists/#comments" itemprop="discussionUrl">
                 <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/24/LeetCode-Intersection-of-Two-Linked-Lists/" itemprop="commentsCount"></span>
               </a>
             </span>
@@ -880,7 +959,7 @@ var <span class="variable">getIntersectionNode =</span> function(headA, headB) {
         return <span class="constant">null</span>;
     }
 };
-</code></pre><p> <img src="/images/intersection.png" alt="intersection"></p>
+</code></pre><p> <img src="/blog/images/intersection.png" alt="intersection"></p>
 </span>
         
       
@@ -911,7 +990,7 @@ var <span class="variable">getIntersectionNode =</span> function(headA, headB) {
           
           
             
-              <a class="post-title-link" href="/2015/07/23/页面性能分析工具/" itemprop="url">
+              <a class="post-title-link" href="/blog/2015/07/23/页面性能分析工具/" itemprop="url">
                 页面性能分析工具
               </a>
             
@@ -933,7 +1012,7 @@ var <span class="variable">getIntersectionNode =</span> function(headA, headB) {
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/07/23/页面性能分析工具/#comments" itemprop="discussionUrl">
+              <a href="/blog/2015/07/23/页面性能分析工具/#comments" itemprop="discussionUrl">
                 <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/23/页面性能分析工具/" itemprop="commentsCount"></span>
               </a>
             </span>
@@ -981,7 +1060,7 @@ var <span class="variable">getIntersectionNode =</span> function(headA, headB) {
           
           
             
-              <a class="post-title-link" href="/2015/07/23/LeetCode-Rotate-Array/" itemprop="url">
+              <a class="post-title-link" href="/blog/2015/07/23/LeetCode-Rotate-Array/" itemprop="url">
                 LeetCode:Rotate Array 
               </a>
             
@@ -1003,7 +1082,7 @@ var <span class="variable">getIntersectionNode =</span> function(headA, headB) {
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/07/23/LeetCode-Rotate-Array/#comments" itemprop="discussionUrl">
+              <a href="/blog/2015/07/23/LeetCode-Rotate-Array/#comments" itemprop="discussionUrl">
                 <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/23/LeetCode-Rotate-Array/" itemprop="commentsCount"></span>
               </a>
             </span>
@@ -1051,106 +1130,7 @@ var <span class="variable">getIntersectionNode =</span> function(headA, headB) {
     }
 };
 </code></pre><p>PS：验证虽然通过了，但总感觉有点投机，因为我重新复制了一下这个数组。虽然只用了这一个额外变量，但从空间存储上还是O(n)的。</p>
-<p><img src="/images/rotatearray.png" alt="RotateArray"></p>
-</span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/07/23/LeetCode-Maximum-Depth-of-Binary-Tree/" itemprop="url">
-                LeetCode:Maximum Depth of Binary Tree
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-07-23T10:37:29+08:00" content="2015-07-23">
-            2015-07-23
-          </time>
-        </span>
-
-        
-
-        
-          
-            <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2015/07/23/LeetCode-Maximum-Depth-of-Binary-Tree/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/23/LeetCode-Maximum-Depth-of-Binary-Tree/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><h2 id="题目来源">题目来源</h2><p><a href="https://leetcode.com/problems/maximum-depth-of-binary-tree/" target="_blank" rel="external">查找二叉树的最大深度</a></p>
-<h2 id="思路">思路</h2><p>二叉树的最大深度，等于根节点的深度。根节点的深度等于左子树和右子树深度的较大者。</p>
-<p>所以这个题可以递归遍历每一个节点的深度。</p>
-<h2 id="实现">实现</h2><p>JavaScript:</p>
-<pre><code><span class="comment">/**
- * Definition for a binary tree node.
- * function TreeNode(val) {
- *     this.val = val;
- *     this.left = this.right = null;
- * }
- */</span>
-<span class="comment">/**
- * <span class="doctag">@param</span> {TreeNode} root
- * <span class="doctag">@return</span> {number}
- */</span>
-<span class="keyword">var</span> maxDepth = <span class="function"><span class="keyword">function</span><span class="params">(root)</span> </span>{
-    <span class="function"><span class="keyword">function</span> <span class="title">findDepth</span><span class="params">(node,currentDepth)</span></span>{
-        <span class="keyword">if</span>(node!==<span class="keyword">null</span>){
-            currentDepth++;
-            <span class="comment">//每个节点的深度，等于左深度和右深度的较大者</span>
-            <span class="keyword">var</span> leftDepth =  findDepth(node.left,currentDepth);
-            <span class="keyword">var</span> rightDepth = findDepth(node.right,currentDepth);
-            <span class="keyword">return</span> leftDepth&gt;rightDepth?leftDepth:rightDepth;
-        }<span class="keyword">else</span>{
-            <span class="keyword">return</span> currentDepth;
-        }
-    }
-    <span class="comment">//返回根节点的深度</span>
-    <span class="keyword">return</span> findDepth(root,<span class="number">0</span>);
-};
-</code></pre><p><img src="/images/maxdepth.png" alt="MaxDepth">        </p>
+<p><img src="/blog/images/rotatearray.png" alt="RotateArray"></p>
 </span>
         
       
@@ -1174,7 +1154,7 @@ var <span class="variable">getIntersectionNode =</span> function(headA, headB) {
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/3/">&laquo;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/5/">&raquo;</a>
+    <a class="extend prev" rel="prev" href="/blog/page/3/">&laquo;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/blog/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/8/">8</a><a class="extend next" rel="next" href="/blog/page/5/">&raquo;</a>
   </nav>
 
 
@@ -1202,14 +1182,14 @@ var <span class="variable">getIntersectionNode =</span> function(headA, headB) {
 
       <section class="site-overview">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" src="/images/profile.jpeg" alt="Judastree" itemprop="image"/>
+          <img class="site-author-image" src="/blog/images/profile.jpeg" alt="Judastree" itemprop="image"/>
           <p class="site-author-name" itemprop="name">Judastree</p>
         </div>
         <p class="site-description motion-element" itemprop="description">You are the pretty sunshine of my life</p>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
-            <a href="/archives">
-              <span class="site-state-item-count">75</span>
+            <a href="/blog/archives">
+              <span class="site-state-item-count">76</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1222,7 +1202,7 @@ var <span class="variable">getIntersectionNode =</span> function(headA, headB) {
           </div>
 
           <div class="site-state-item site-state-tags">
-            <a href="/tags">
+            <a href="/blog/tags">
               <span class="site-state-item-count">18</span>
               <span class="site-state-item-name">标签</span>
               </a>
@@ -1232,7 +1212,7 @@ var <span class="variable">getIntersectionNode =</span> function(headA, headB) {
 
         
           <div class="feed-link motion-element">
-            <a href="/atom.xml" rel="alternate">
+            <a href="/blog/atom.xml" rel="alternate">
               <i class="menu-item-icon icon-feed"></i>
               RSS
             </a>
@@ -1309,7 +1289,7 @@ var <span class="variable">getIntersectionNode =</span> function(headA, headB) {
     <div class="back-to-top"></div>
 </div>
 
-<script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+<script type="text/javascript" src="/blog/vendors/jquery/index.js?v=2.1.3"></script>
 
   
   
@@ -1333,28 +1313,28 @@ var <span class="variable">getIntersectionNode =</span> function(headA, headB) {
   </script>
     
      
-  	<script src="/js/ua-parser.min.js"></script>
-  	<script src="/js/hook-duoshuo.js"></script>
+  	<script src="/blog/js/ua-parser.min.js"></script>
+  	<script src="/blog/js/hook-duoshuo.js"></script>
   
 
   
 
   
-  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
-  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.4"></script>
+  <script type="text/javascript" src="/blog/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/blog/js/fancy-box.js?v=0.4.4"></script>
 
 
-  <script type="text/javascript" src="/js/helpers.js?v=0.4.4"></script>
+  <script type="text/javascript" src="/blog/js/helpers.js?v=0.4.4"></script>
   
 
-  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
-  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+  <script type="text/javascript" src="/blog/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/blog/vendors/velocity/velocity.ui.min.js"></script>
 
-  <script type="text/javascript" src="/js/motion_global.js?v=0.4.4" id="motion.global"></script>
+  <script type="text/javascript" src="/blog/js/motion_global.js?v=0.4.4" id="motion.global"></script>
 
 
 
-  <script type="text/javascript" src="/js/search-toggle.js"></script>
+  <script type="text/javascript" src="/blog/js/search-toggle.js"></script>
 
 
 
@@ -1388,8 +1368,8 @@ var <span class="variable">getIntersectionNode =</span> function(headA, headB) {
   </script>
     
      
-  	<script src="/js/ua-parser.min.js"></script>
-  	<script src="/js/hook-duoshuo.js"></script>
+  	<script src="/blog/js/ua-parser.min.js"></script>
+  	<script src="/blog/js/hook-duoshuo.js"></script>
   
 
   
@@ -1399,11 +1379,11 @@ var <span class="variable">getIntersectionNode =</span> function(headA, headB) {
 
 
 <!-- lazyload -->
-<script type="text/javascript" src="/js/lazyload.js"></script>
+<script type="text/javascript" src="/blog/js/lazyload.js"></script>
 <script type="text/javascript">
     jQuery(function () {
         jQuery("#posts img").lazyload({
-            placeholder: "/images/loading.gif",
+            placeholder: "/blog/images/loading.gif",
             effect: "fadeIn"
         });
     });
