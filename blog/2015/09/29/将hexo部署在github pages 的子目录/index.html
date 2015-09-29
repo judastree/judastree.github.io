@@ -305,7 +305,7 @@
 </code></pre><p>   这里commit可以，但是push可能会遇到问题。 </p>
 <p>   继续修改deployer.js里的push代码。将push -u origin branch —force 改成直接push。github默认会给我们-u的。</p>
 <pre><code>//<span class="built_in">return</span> git(<span class="string">'push'</span>, <span class="string">'-u'</span>, repo.url, <span class="string">'master:'</span> + repo.branch, <span class="string">'--force'</span>);
-<span class="built_in">return</span> git(<span class="string">'push'</span>);
+<span class="built_in">return</span> git(<span class="string">'push'</span>,<span class="string">'-u'</span>,<span class="string">'origin'</span>,repo.branch);
 </code></pre></span>
       
     </div>
