@@ -189,6 +189,88 @@
           
           
             
+              <a class="post-title-link" href="/blog/2015/09/07/Nexus-7-解锁/" itemprop="url">
+                Nexus 7 解锁
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-09-07T11:50:46+08:00" content="2015-09-07">
+            2015-09-07
+          </time>
+        </span>
+
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/blog/2015/09/07/Nexus-7-解锁/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/07/Nexus-7-解锁/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><h2 id="安卓设备解锁和不解锁有什么区别？">安卓设备解锁和不解锁有什么区别？</h2><p>手机加锁是因为在出厂时，厂商已经安装好了操作系统和预置应用，这些东西都装在手机ROM中。<br>为了防止意外情况，比如不慎删除了系统重要应用导致系统不稳定甚至崩溃，因此厂商对ROM加了锁使你不能对系统文件做任何动作。<br>这就影响了后续的root和刷机。所以在刷机前一般都要先解锁。</p>
+<h2 id="解锁过程">解锁过程</h2><ol>
+<li><p>下载解压<a href="http://pan.baidu.com/share/link?shareid=3769076633&amp;uk=3793975982" target="_blank" rel="external">nexus_unlock</a></p>
+</li>
+<li><p>Nexus 7 USB连接电脑，打开开发者选项，然后关机。</p>
+</li>
+<li><p>再同时按住音量-键和电源键进入fastboot模式。</p>
+</li>
+<li><p>运行解锁.bat，nexus7中出现是否要解锁的界面，选择yes。</p>
+</li>
+<li><p>解锁完成后，再开机，可以看到google下面有个解开的锁，就表明解锁完成了。</p>
+</li>
+</ol>
+<h2 id="图片步骤">图片步骤</h2><p>  <img src="/blog/images/fastbootmode.jpg" alt="fastboot mode"><br>  <img src="/blog/images/bootlock.jpg" alt="bootlock"><br>  <img src="images/bootunlock.jpg" alt="bootunlock"></p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/blog/2015/08/27/Monkey日志分析/" itemprop="url">
                 Monkey日志分析
               </a>
@@ -938,126 +1020,6 @@ var removeNthFromEnd = function(head, n) {
 
 
     
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/blog/2015/08/07/LeetCode-Merge-Sorted-Array/" itemprop="url">
-                LeetCode: Merge Sorted Array
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-08-07T08:54:00+08:00" content="2015-08-07">
-            2015-08-07
-          </time>
-        </span>
-
-        
-
-        
-          
-            <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/blog/2015/08/07/LeetCode-Merge-Sorted-Array/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/07/LeetCode-Merge-Sorted-Array/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><h2 id="题目">题目</h2><p><a href="https://leetcode.com/problems/merge-sorted-array/" target="_blank" rel="external">Merge Sorted Array</a></p>
-<p>把两个有序的数组合并成一个，数组1有m个元素，数组2有n个元素。假设数组1有足够的长度（m+n）来容纳数组1和数组2，求合并后的数组1.</p>
-<h2 id="思路">思路</h2><p>因为不能用额外的存储空间，考虑用类似选择排序的方式来重新生成nums1.</p>
-<p>即，原nums1的最大值和num2的最大值比较，大者放到新nums1[m+n-1]位置。<br>并且指针向前移一位，继续比较原nums1和num2的最大值，把大的放到新nums1[m+n-2]位置，直到一个数组的指针已经到头了。</p>
-<h2 id="实现">实现</h2><p>JavaScript:</p>
-<pre><code><span class="comment">/**
- * @param {number[]} nums1
- * @param {number} m
- * @param {number[]} nums2
- * @param {number} n
- * @return {void} Do not return anything, modify nums1 in-place instead.
- */</span>
-<span class="keyword">var</span> <span class="keyword">merge</span> = function(nums1, <span class="keyword">m</span>, nums2, <span class="keyword">n</span>) {
-
-    <span class="keyword">var</span> k = 0,i= 0,j=0;
-
-    <span class="keyword">if</span>(<span class="keyword">m</span>===0&amp;&amp;<span class="keyword">n</span>===0){
-        nums1.length = 0;
-        <span class="keyword">return</span> nums1;
-    }
-    <span class="keyword">if</span>(<span class="keyword">n</span>===0){
-        nums1.length = <span class="keyword">m</span>;
-        <span class="keyword">return</span> nums1;
-    }
-    <span class="keyword">if</span>(<span class="keyword">m</span>===0){
-        <span class="keyword">for</span>(;i&lt;<span class="keyword">n</span>;i++){
-            nums1[i] = nums2[i];
-        }
-        nums1.length=<span class="keyword">n</span>;
-        <span class="keyword">return</span> nums1;
-    }
-    <span class="comment">//i指向原nums1中最大的数，j指向nums2中最大的数</span>
-    <span class="keyword">while</span>(i&lt;<span class="keyword">m</span>&amp;&amp;j&lt;<span class="keyword">n</span>){
-        <span class="comment">//把较大的数放在nums1[m+n-1-k]中</span>
-        <span class="keyword">if</span>(nums1[<span class="keyword">m</span>-1-i]&gt;=nums2[<span class="keyword">n</span>-1-j]){
-            nums1[<span class="keyword">m</span>+<span class="keyword">n</span>-1-k]  = nums1[<span class="keyword">m</span>-1-i];
-            i++;
-        }<span class="keyword">else</span>{
-            nums1[<span class="keyword">m</span>+<span class="keyword">n</span>-1-k]  = nums2[<span class="keyword">n</span>-1-j];
-            j++;
-        }
-        k++;
-    }
-    <span class="keyword">if</span>(i===<span class="keyword">m</span>){
-        <span class="keyword">while</span>(j&lt;<span class="keyword">n</span>){
-            nums1[<span class="keyword">m</span>+<span class="keyword">n</span>-1-k] = nums2[<span class="keyword">n</span>-1-j];
-            j++;
-            k++;
-        }
-    }
-};
-</code></pre><h2 id="耗时">耗时</h2><p> <img src="/blog/images/mergesortedarray.png" alt="mergesortedarray"></p>
-</span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1097,7 +1059,7 @@ var removeNthFromEnd = function(head, n) {
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/blog/archives">
-              <span class="site-state-item-count">77</span>
+              <span class="site-state-item-count">78</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

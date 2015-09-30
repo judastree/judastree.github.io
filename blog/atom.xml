@@ -5,7 +5,7 @@
   <subtitle><![CDATA[You are the pretty sunshine of my life]]></subtitle>
   <link href="/blog/atom.xml" rel="self"/>
   <link href="http://judastree.github.io/blog/blog//"/>
-  <updated>2015-09-30T05:22:04.000Z</updated>
+  <updated>2015-09-30T09:04:37.000Z</updated>
   <id>http://judastree.github.io/blog/blog//</id>
   
   <author>
@@ -14,6 +14,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[ubuntu 上安装最新版本的express]]></title>
+    <link href="http://judastree.github.io/blog/blog/2015/09/30/ubuntu-%E4%B8%8A%E5%AE%89%E8%A3%85%E6%9C%80%E6%96%B0%E7%89%88%E6%9C%AC%E7%9A%84express/"/>
+    <id>http://judastree.github.io/blog/blog/2015/09/30/ubuntu-上安装最新版本的express/</id>
+    <published>2015-09-30T08:58:37.000Z</published>
+    <updated>2015-09-30T09:04:37.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="问题描述">问题描述</h2><p>  在ubuntu上通过apt-get install node-express命令安装的express版本只有2.5.8</p>
+<p>  用npm install express@4.13.1 -g 命令可以安装高版本的express</p>
+<p>  但是执行express —version时却返现并没有这个目录。</p>
+<h2 id="解决办法">解决办法</h2><p>  这个问题是express的安装目录并不在系统的环境变量之中。</p>
+<p>  1 将 express的实际安装目录加入环境变量。</p>
+<pre><code>sudo vi <span class="regexp">/etc/</span>environment 
+</code></pre><p>  2 保存</p>
+<p>  3 使它立即生效</p>
+<pre><code><span class="keyword">source</span> <span class="regexp">/etc/</span>environment 
+</code></pre>]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="问题描述">问题描述</h2><p>  在ubuntu上通过apt-get install node-express命令安装的express版本只有2.5.8</p>
+<p>  用npm install express@4.13.1 -g 命令可以安装高版本的ex]]>
+    </summary>
+    
+      <category term="工具" scheme="http://judastree.github.io/blog/blog/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[node 应用绑定80端口]]></title>
@@ -630,76 +655,6 @@ var removeNthFromEnd = function(head, n) {
 ]]></content>
     <summary type="html">
     <![CDATA[<h2 id="题目">题目</h2><p><a href="https://leetcode.com/problems/remove-nth-node-from-end-of-list/" target="_blank" rel="external">Remove Nth No]]>
-    </summary>
-    
-      <category term="LeetCode" scheme="http://judastree.github.io/blog/blog/tags/LeetCode/"/>
-    
-      <category term="算法" scheme="http://judastree.github.io/blog/blog/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[LeetCode: Merge Sorted Array]]></title>
-    <link href="http://judastree.github.io/blog/blog/2015/08/07/LeetCode-Merge-Sorted-Array/"/>
-    <id>http://judastree.github.io/blog/blog/2015/08/07/LeetCode-Merge-Sorted-Array/</id>
-    <published>2015-08-07T00:54:00.000Z</published>
-    <updated>2015-09-29T04:07:45.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="题目">题目</h2><p><a href="https://leetcode.com/problems/merge-sorted-array/" target="_blank" rel="external">Merge Sorted Array</a></p>
-<p>把两个有序的数组合并成一个，数组1有m个元素，数组2有n个元素。假设数组1有足够的长度（m+n）来容纳数组1和数组2，求合并后的数组1.</p>
-<h2 id="思路">思路</h2><p>因为不能用额外的存储空间，考虑用类似选择排序的方式来重新生成nums1.</p>
-<p>即，原nums1的最大值和num2的最大值比较，大者放到新nums1[m+n-1]位置。<br>并且指针向前移一位，继续比较原nums1和num2的最大值，把大的放到新nums1[m+n-2]位置，直到一个数组的指针已经到头了。</p>
-<h2 id="实现">实现</h2><p>JavaScript:</p>
-<pre><code><span class="comment">/**
- * @param {number[]} nums1
- * @param {number} m
- * @param {number[]} nums2
- * @param {number} n
- * @return {void} Do not return anything, modify nums1 in-place instead.
- */</span>
-<span class="keyword">var</span> <span class="keyword">merge</span> = function(nums1, <span class="keyword">m</span>, nums2, <span class="keyword">n</span>) {
-
-    <span class="keyword">var</span> k = 0,i= 0,j=0;
-
-    <span class="keyword">if</span>(<span class="keyword">m</span>===0&amp;&amp;<span class="keyword">n</span>===0){
-        nums1.length = 0;
-        <span class="keyword">return</span> nums1;
-    }
-    <span class="keyword">if</span>(<span class="keyword">n</span>===0){
-        nums1.length = <span class="keyword">m</span>;
-        <span class="keyword">return</span> nums1;
-    }
-    <span class="keyword">if</span>(<span class="keyword">m</span>===0){
-        <span class="keyword">for</span>(;i&lt;<span class="keyword">n</span>;i++){
-            nums1[i] = nums2[i];
-        }
-        nums1.length=<span class="keyword">n</span>;
-        <span class="keyword">return</span> nums1;
-    }
-    <span class="comment">//i指向原nums1中最大的数，j指向nums2中最大的数</span>
-    <span class="keyword">while</span>(i&lt;<span class="keyword">m</span>&amp;&amp;j&lt;<span class="keyword">n</span>){
-        <span class="comment">//把较大的数放在nums1[m+n-1-k]中</span>
-        <span class="keyword">if</span>(nums1[<span class="keyword">m</span>-1-i]&gt;=nums2[<span class="keyword">n</span>-1-j]){
-            nums1[<span class="keyword">m</span>+<span class="keyword">n</span>-1-k]  = nums1[<span class="keyword">m</span>-1-i];
-            i++;
-        }<span class="keyword">else</span>{
-            nums1[<span class="keyword">m</span>+<span class="keyword">n</span>-1-k]  = nums2[<span class="keyword">n</span>-1-j];
-            j++;
-        }
-        k++;
-    }
-    <span class="keyword">if</span>(i===<span class="keyword">m</span>){
-        <span class="keyword">while</span>(j&lt;<span class="keyword">n</span>){
-            nums1[<span class="keyword">m</span>+<span class="keyword">n</span>-1-k] = nums2[<span class="keyword">n</span>-1-j];
-            j++;
-            k++;
-        }
-    }
-};
-</code></pre><h2 id="耗时">耗时</h2><p> <img src="/blog/images/mergesortedarray.png" alt="mergesortedarray"></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h2 id="题目">题目</h2><p><a href="https://leetcode.com/problems/merge-sorted-array/" target="_blank" rel="external">Merge Sorted Array</a></p>
-]]>
     </summary>
     
       <category term="LeetCode" scheme="http://judastree.github.io/blog/blog/tags/LeetCode/"/>
