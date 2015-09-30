@@ -5,7 +5,7 @@
   <subtitle><![CDATA[You are the pretty sunshine of my life]]></subtitle>
   <link href="/blog/atom.xml" rel="self"/>
   <link href="http://judastree.github.io/blog/blog//"/>
-  <updated>2015-09-29T06:50:57.000Z</updated>
+  <updated>2015-09-30T05:22:04.000Z</updated>
   <id>http://judastree.github.io/blog/blog//</id>
   
   <author>
@@ -14,6 +14,23 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[node 应用绑定80端口]]></title>
+    <link href="http://judastree.github.io/blog/blog/2015/09/30/node-%E5%BA%94%E7%94%A8%E7%BB%91%E5%AE%9A80%E7%AB%AF%E5%8F%A3/"/>
+    <id>http://judastree.github.io/blog/blog/2015/09/30/node-应用绑定80端口/</id>
+    <published>2015-09-30T05:20:41.000Z</published>
+    <updated>2015-09-30T05:22:04.000Z</updated>
+    <content type="html"><![CDATA[<p>node 应用绑定80端口，启动时需要管理员权限。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>node 应用绑定80端口，启动时需要管理员权限。</p>
+]]>
+    </summary>
+    
+      <category term="node" scheme="http://judastree.github.io/blog/blog/tags/node/"/>
+    
+  </entry>
   
   <entry>
     <title></title>
@@ -683,61 +700,6 @@ var removeNthFromEnd = function(head, n) {
     <summary type="html">
     <![CDATA[<h2 id="题目">题目</h2><p><a href="https://leetcode.com/problems/merge-sorted-array/" target="_blank" rel="external">Merge Sorted Array</a></p>
 ]]>
-    </summary>
-    
-      <category term="LeetCode" scheme="http://judastree.github.io/blog/blog/tags/LeetCode/"/>
-    
-      <category term="算法" scheme="http://judastree.github.io/blog/blog/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[LeetCode:Count and Say]]></title>
-    <link href="http://judastree.github.io/blog/blog/2015/08/06/LeetCode-Count-and-Say/"/>
-    <id>http://judastree.github.io/blog/blog/2015/08/06/LeetCode-Count-and-Say/</id>
-    <published>2015-08-06T02:53:41.000Z</published>
-    <updated>2015-09-29T04:06:45.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="题目">题目</h2><p><a href="https://leetcode.com/problems/count-and-say/" target="_blank" rel="external">Count And Say</a></p>
-<p>The count-and-say sequence is the sequence of integers beginning as follows:<br>1, 11, 21, 1211, 111221, …</p>
-<p>1 is read off as “one 1” or 11.<br>11 is read off as “two 1s” or 21.<br>21 is read off as “one 2, then one 1” or 1211.<br>Given an integer n, generate the nth sequence.</p>
-<p>Note: The sequence of integers will be represented as a string.</p>
-<h2 id="思路">思路</h2><p>递归的实现，找出CountAndSay(n)和CountAndSay(n-1)的关系。<br>比如1211拿一个数组记录下有多少个数组。</p>
-<h2 id="实现">实现</h2><p>JavaScript:</p>
-<pre><code><span class="comment">/**
- * @param {number} n
- * @return {string}
- */</span>
-var countAndSay = <span class="function"><span class="keyword">function</span><span class="params">(n)</span> {</span>
-    <span class="keyword">if</span><span class="params">(n===<span class="number">0</span>)</span> return <span class="string">""</span>;
-    <span class="keyword">if</span><span class="params">(n===<span class="number">1</span>)</span> return <span class="string">"1"</span>;
-    <span class="keyword">if</span><span class="params">(n===<span class="number">2</span>)</span> return <span class="string">"11"</span>;
-
-    var preStrArray = countAndSay<span class="params">(n-<span class="number">1</span>)</span>.split<span class="params">(<span class="string">""</span>)</span>;
-    var tempArray=[];
-
-    tempArray[<span class="number">0</span>] = <span class="number">1</span>;
-    tempArray[<span class="number">1</span>] = preStrArray[<span class="number">0</span>];
-    <span class="keyword">for</span><span class="params">(var i = <span class="number">1</span>; i&lt;preStrArray.length-<span class="number">1</span>;i++)</span>{
-        <span class="keyword">if</span><span class="params">(preStrArray[i]!==preStrArray[i-<span class="number">1</span>])</span>{
-            tempArray.push<span class="params">(<span class="number">1</span>)</span>;
-            tempArray.push<span class="params">(preStrArray[i])</span>;
-        }<span class="keyword">else</span>{
-            tempArray[tempArray.length-<span class="number">2</span>]++;
-        }
-    }
-    <span class="keyword">if</span><span class="params">(preStrArray[i]!==preStrArray[i-<span class="number">1</span>])</span>{
-        tempArray.push<span class="params">(<span class="number">1</span>)</span>;
-        tempArray.push<span class="params">(preStrArray[i])</span>;
-    }<span class="keyword">else</span>{
-        tempArray[tempArray.length-<span class="number">2</span>] ++;
-    }
-    return tempArray.toString<span class="params">()</span>.replace<span class="params">(/,/g,<span class="string">""</span>)</span>;
-}
-</code></pre><h2 id="耗时">耗时</h2><p><img src="/blog/images/countandsay.png" alt="countandsay.png"></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h2 id="题目">题目</h2><p><a href="https://leetcode.com/problems/count-and-say/" target="_blank" rel="external">Count And Say</a></p>
-<p>The cou]]>
     </summary>
     
       <category term="LeetCode" scheme="http://judastree.github.io/blog/blog/tags/LeetCode/"/>

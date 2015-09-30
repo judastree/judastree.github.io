@@ -189,6 +189,111 @@
           
           
             
+              <a class="post-title-link" href="/blog/2015/08/06/LeetCode-Count-and-Say/" itemprop="url">
+                LeetCode:Count and Say
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-08-06T10:53:41+08:00" content="2015-08-06">
+            2015-08-06
+          </time>
+        </span>
+
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/blog/2015/08/06/LeetCode-Count-and-Say/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/06/LeetCode-Count-and-Say/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><h2 id="题目">题目</h2><p><a href="https://leetcode.com/problems/count-and-say/" target="_blank" rel="external">Count And Say</a></p>
+<p>The count-and-say sequence is the sequence of integers beginning as follows:<br>1, 11, 21, 1211, 111221, …</p>
+<p>1 is read off as “one 1” or 11.<br>11 is read off as “two 1s” or 21.<br>21 is read off as “one 2, then one 1” or 1211.<br>Given an integer n, generate the nth sequence.</p>
+<p>Note: The sequence of integers will be represented as a string.</p>
+<h2 id="思路">思路</h2><p>递归的实现，找出CountAndSay(n)和CountAndSay(n-1)的关系。<br>比如1211拿一个数组记录下有多少个数组。</p>
+<h2 id="实现">实现</h2><p>JavaScript:</p>
+<pre><code><span class="comment">/**
+ * @param {number} n
+ * @return {string}
+ */</span>
+var countAndSay = <span class="function"><span class="keyword">function</span><span class="params">(n)</span> {</span>
+    <span class="keyword">if</span><span class="params">(n===<span class="number">0</span>)</span> return <span class="string">""</span>;
+    <span class="keyword">if</span><span class="params">(n===<span class="number">1</span>)</span> return <span class="string">"1"</span>;
+    <span class="keyword">if</span><span class="params">(n===<span class="number">2</span>)</span> return <span class="string">"11"</span>;
+
+    var preStrArray = countAndSay<span class="params">(n-<span class="number">1</span>)</span>.split<span class="params">(<span class="string">""</span>)</span>;
+    var tempArray=[];
+
+    tempArray[<span class="number">0</span>] = <span class="number">1</span>;
+    tempArray[<span class="number">1</span>] = preStrArray[<span class="number">0</span>];
+    <span class="keyword">for</span><span class="params">(var i = <span class="number">1</span>; i&lt;preStrArray.length-<span class="number">1</span>;i++)</span>{
+        <span class="keyword">if</span><span class="params">(preStrArray[i]!==preStrArray[i-<span class="number">1</span>])</span>{
+            tempArray.push<span class="params">(<span class="number">1</span>)</span>;
+            tempArray.push<span class="params">(preStrArray[i])</span>;
+        }<span class="keyword">else</span>{
+            tempArray[tempArray.length-<span class="number">2</span>]++;
+        }
+    }
+    <span class="keyword">if</span><span class="params">(preStrArray[i]!==preStrArray[i-<span class="number">1</span>])</span>{
+        tempArray.push<span class="params">(<span class="number">1</span>)</span>;
+        tempArray.push<span class="params">(preStrArray[i])</span>;
+    }<span class="keyword">else</span>{
+        tempArray[tempArray.length-<span class="number">2</span>] ++;
+    }
+    return tempArray.toString<span class="params">()</span>.replace<span class="params">(/,/g,<span class="string">""</span>)</span>;
+}
+</code></pre><h2 id="耗时">耗时</h2><p><img src="/blog/images/countandsay.png" alt="countandsay.png"></p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/blog/2015/08/05/世界那么大翻墙出去看看/" itemprop="url">
                 世界那么大翻墙出去看看
               </a>
@@ -1005,77 +1110,6 @@ var mergeTwoLists = function(l1, l2) {
 
 
     
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/blog/2015/07/28/Android-Studio-Gradle-Error-java-io-IOException-Operation-not-supported/" itemprop="url">
-                Android Studio Gradle Error:java.io.IOException: Operation not supported
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-07-28T10:38:06+08:00" content="2015-07-28">
-            2015-07-28
-          </time>
-        </span>
-
-        
-
-        
-          
-            <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/blog/2015/07/28/Android-Studio-Gradle-Error-java-io-IOException-Operation-not-supported/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/28/Android-Studio-Gradle-Error-java-io-IOException-Operation-not-supported/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><p>在mac上每次build gradle 都报这样的错误，java.io.IOException: Operation not supported</p>
-<p>原因是我的代码放在了windows上共享给mac，gradle不支持远程</p>
-<h2 id="参考">参考</h2><p><a href="http://stackoverflow.com/questions/28751793/android-studio-on-mac" target="_blank" rel="external">same problem in stackoverflow</a></p>
-</span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1115,7 +1149,7 @@ var mergeTwoLists = function(l1, l2) {
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/blog/archives">
-              <span class="site-state-item-count">76</span>
+              <span class="site-state-item-count">77</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1129,7 +1163,7 @@ var mergeTwoLists = function(l1, l2) {
 
           <div class="site-state-item site-state-tags">
             <a href="/blog/tags">
-              <span class="site-state-item-count">18</span>
+              <span class="site-state-item-count">19</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
