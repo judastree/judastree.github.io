@@ -1,0 +1,666 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  
+  <title><![CDATA[Judastree]]></title>
+  <subtitle><![CDATA[You are the pretty sunshine of my life]]></subtitle>
+  <link href="/atom.xml" rel="self"/>
+  <link href="http://judastree.github.io//"/>
+  <updated>2015-10-01T08:29:16.000Z</updated>
+  <id>http://judastree.github.io//</id>
+  
+  <author>
+    <name><![CDATA[Judastree]]></name>
+    <email><![CDATA[judastree@live.cn]]></email>
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://judastree.github.io/2015/10/01/Debug-Grunt-in-Webstorm/"/>
+    <id>http://judastree.github.io/2015/10/01/Debug-Grunt-in-Webstorm/</id>
+    <published>2015-10-01T08:29:16.000Z</published>
+    <updated>2015-10-01T08:29:16.000Z</updated>
+    <content type="html"><![CDATA[<p>title: “Debug Grunt in Webstorm”<br>date: 2015-07-30 15:04:12</p>
+<h2 id="tags:_[工具]">tags: [工具]</h2><h2 id="Steps">Steps</h2><p>  1 Run  -&gt;  Edit Configuration</p>
+<p>  2 Press Add button (+)</p>
+<p>  3 Type the configurations</p>
+<p>  <img src="/images/gruntdebuginwebstorm.png" alt="gruntdebuginwebstorm"></p>
+<p>  4 Set breakpoint where you want </p>
+<p>  5 Press Shift+Ctrl+D to debug</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>title: “Debug Grunt in Webstorm”<br>date: 2015-07-30 15:04:12</p>
+<h2 id="tags:_[工具]">tags: [工具]</h2><h2 id="Steps">Steps</h2><p>  1 Run ]]>
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[ubuntu 上安装最新版本的express]]></title>
+    <link href="http://judastree.github.io/2015/09/30/ubuntu-%E4%B8%8A%E5%AE%89%E8%A3%85%E6%9C%80%E6%96%B0%E7%89%88%E6%9C%AC%E7%9A%84express/"/>
+    <id>http://judastree.github.io/2015/09/30/ubuntu-上安装最新版本的express/</id>
+    <published>2015-09-30T08:58:37.000Z</published>
+    <updated>2015-09-30T09:04:37.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="问题描述">问题描述</h2><p>  在ubuntu上通过apt-get install node-express命令安装的express版本只有2.5.8</p>
+<p>  用npm install express@4.13.1 -g 命令可以安装高版本的express</p>
+<p>  但是执行express —version时却返现并没有这个目录。</p>
+<h2 id="解决办法">解决办法</h2><p>  这个问题是express的安装目录并不在系统的环境变量之中。</p>
+<p>  1 将 express的实际安装目录加入环境变量。</p>
+<pre><code>sudo vi <span class="regexp">/etc/</span>environment 
+</code></pre><p>  2 保存</p>
+<p>  3 使它立即生效</p>
+<pre><code><span class="keyword">source</span> <span class="regexp">/etc/</span>environment 
+</code></pre>]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="问题描述">问题描述</h2><p>  在ubuntu上通过apt-get install node-express命令安装的express版本只有2.5.8</p>
+<p>  用npm install express@4.13.1 -g 命令可以安装高版本的ex]]>
+    </summary>
+    
+      <category term="工具" scheme="http://judastree.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[node 应用绑定80端口]]></title>
+    <link href="http://judastree.github.io/2015/09/30/node-%E5%BA%94%E7%94%A8%E7%BB%91%E5%AE%9A80%E7%AB%AF%E5%8F%A3/"/>
+    <id>http://judastree.github.io/2015/09/30/node-应用绑定80端口/</id>
+    <published>2015-09-30T05:20:41.000Z</published>
+    <updated>2015-09-30T05:22:04.000Z</updated>
+    <content type="html"><![CDATA[<p>node 应用绑定80端口，启动时需要管理员权限。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>node 应用绑定80端口，启动时需要管理员权限。</p>
+]]>
+    </summary>
+    
+      <category term="node" scheme="http://judastree.github.io/tags/node/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[将hexo部署在github pages 的子目录]]></title>
+    <link href="http://judastree.github.io/2015/09/29/%E5%B0%86hexo%E9%83%A8%E7%BD%B2%E5%9C%A8github%20pages%20%E7%9A%84%E5%AD%90%E7%9B%AE%E5%BD%95/"/>
+    <id>http://judastree.github.io/2015/09/29/将hexo部署在github pages 的子目录/</id>
+    <published>2015-09-29T03:25:07.000Z</published>
+    <updated>2015-09-29T09:06:29.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="场景：">场景：</h2><p>  个人博客和个人一些项目都想放到github pages这个静态服务器上。</p>
+<h2 id="冲突：">冲突：</h2><ol>
+<li><p>最简单的想到的是在根目录下分blog和project的目录。</p>
+<p>但是我之前搭hexo的时候已经把博客的东西放到了根目录，试了一下整体搬迁到blog目录，会出现css，图片，js的路径问题。</p>
+<p>这里就要逐个修改hexo的路径配置。</p>
+</li>
+<li><p>还有另外一种办法就是，博客继续保留在github.io的根目录上，同时再建一个project目录。</p>
+<p>project目录下是一些需要运行在静态服务器上的代码，比如做demo。</p>
+<p>但用hexo deploy进行部署的时候，只能deploy 博客的代码，不能把自己project的代码也push上去。</p>
+<p>这里就需要修改hexo自带的deployer.js的文件。自行添加文件拷贝的任务。</p>
+</li>
+</ol>
+<h2 id="修改hexo的路径配置">修改hexo的路径配置</h2><ol>
+<li><p>首先是博客目录下的_config.yml 文件</p>
+<p>   url: <a href="http://judastree.github.io/blog/" target="_blank" rel="external">http://judastree.github.io/blog/</a><br>   root: /blog/</p>
+</li>
+<li><p>然后是主题目录下的_config.yml 文件</p>
+<h1 id="菜单">菜单</h1><p>   menu:</p>
+<pre><code><span class="string">home:</span> <span class="regexp">/blog/</span>
+<span class="string">archives:</span> <span class="regexp">/blog/</span>archives
+<span class="string">about:</span> <span class="regexp">/blog/</span>about
+<span class="string">tags:</span> <span class="regexp">/blog/</span>tags            
+</code></pre><h1 id="头像">头像</h1><p>   avatar: /blog/images/profile.jpeg</p>
+</li>
+<li><p>再接下来是需要自己细看的修改的，比如图片的引用地址。</p>
+</li>
+</ol>
+<h2 id="修改hexo_deployer-js文件">修改hexo deployer.js文件</h2><ol>
+<li><p>打开文件:node_modules/hexo-deployer-git/lib/deployer.js</p>
+</li>
+<li><p>找到对应代码片段，拷贝project目录，还有gitignore的文件，hexo的.deploy_git目录下原来没有gitignore文件</p>
+<p>   return fs.exists(deployDir).then(function(exist){</p>
+<pre><code><span class="keyword">if</span> (exist) <span class="keyword">return</span>;
+<span class="built_in">log</span>.info(<span class="string">'Setting up Git deployment...'</span>);
+<span class="keyword">return</span> <span class="title">setup</span>();
+</code></pre><p>   }).then(function(){</p>
+<pre><code>//<span class="keyword">log</span>.info(<span class="string">'Git pull first'</span>);
+<span class="regexp">//git</span>(<span class="string">'pull'</span>);
+<span class="keyword">log</span>.info(<span class="string">'Clearing .deploy folder...'</span>);
+<span class="keyword">return</span> fs.emptyDir(deployDir);
+</code></pre><p>   }).then(function(){</p>
+<pre><code>//log.<span class="keyword">info</span>(<span class="string">'Copying files from public folder...'</span>);
+<span class="keyword">return</span> fs.copyDir(publicDir, deployDir);
+//log.<span class="keyword">info</span>(<span class="string">'Copying gitignore...'</span>);
+//fs.copyFile(gitignoreFile,deployDir+<span class="string">"/.gitignore"</span>);
+//log.<span class="keyword">info</span>(<span class="string">'Copying files from other project folder...'</span>);
+//<span class="keyword">return</span> fs.copyDir(otherProjectFolderDir,deployDir+<span class="string">"/projects"</span>);
+</code></pre><p>   }).then(function(){</p>
+<pre><code><span class="function"><span class="keyword">return</span> <span class="title">parseConfig</span><span class="params">(args)</span></span>;
+</code></pre><p>   }).map(function(repo){</p>
+<pre><code><span class="function"><span class="keyword">return</span> <span class="title">push</span><span class="params">(repo)</span></span>;
+</code></pre><p>   });</p>
+</li>
+<li><p>注意这里还要加入git pull 的命令，因为当你在project的目录提交了代码，博客的目录不拉取最新的commit的话，提交会有问题的。</p>
+</li>
+</ol>
+<h2 id="博客文章的push问题">博客文章的push问题</h2><p>   我用第一种方法，将博客从根目录搬到blog子目录。 除了路径的问题，和第二种方法一样，也遇到了push的问题。</p>
+<p>   因为git本地仓库和远程仓库对应，不能只push博客的目录，要push整个本地仓库都要push上去。</p>
+<p>   这里还是修改hexo 的deployer.js ，添加自定义的任务。</p>
+<p>   比如将hexo的public目录不是复制到.deploy_git目录，而是复制到我们本地的仓库的blog目录。</p>
+<pre><code>//<span class="keyword">var</span> deployDir = pathFn.join(baseDir, <span class="string">'.deploy_git'</span>);
+<span class="keyword">var</span> deployDir = <span class="variable">"/Users/judastree/Documents/code/github/judastree.github.io/blog"</span>;
+</code></pre><p>   这里commit可以，但是push可能会遇到问题。 </p>
+<p>   继续修改deployer.js里的push代码。将push -u origin branch —force 改成直接push。github默认会给我们-u的。</p>
+<pre><code>//<span class="built_in">return</span> git(<span class="string">'push'</span>, <span class="string">'-u'</span>, repo.url, <span class="string">'master:'</span> + repo.branch, <span class="string">'--force'</span>);
+<span class="built_in">return</span> git(<span class="string">'push'</span>,<span class="string">'-u'</span>,<span class="string">'origin'</span>,repo.branch);
+</code></pre>]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="场景：">场景：</h2><p>  个人博客和个人一些项目都想放到github pages这个静态服务器上。</p>
+<h2 id="冲突：">冲突：</h2><ol>
+<li><p>最简单的想到的是在根目录下分blog和project的目录。</p>
+<p>但是]]>
+    </summary>
+    
+      <category term="工具" scheme="http://judastree.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[React Native Node 4.0]]></title>
+    <link href="http://judastree.github.io/2015/09/18/React-Native-Node-4-0/"/>
+    <id>http://judastree.github.io/2015/09/18/React-Native-Node-4-0/</id>
+    <published>2015-09-18T02:27:20.000Z</published>
+    <updated>2015-09-18T02:31:46.000Z</updated>
+    <content type="html"><![CDATA[<p>今天跑了下React Native的Hello World。 发现Node的版本必须在4.0+， 不然终端的8081服务起不来。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>今天跑了下React Native的Hello World。 发现Node的版本必须在4.0+， 不然终端的8081服务起不来。</p>
+]]>
+    </summary>
+    
+      <category term="React" scheme="http://judastree.github.io/tags/React/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[IOS 模拟器回到主页]]></title>
+    <link href="http://judastree.github.io/2015/09/17/IOS-%E6%A8%A1%E6%8B%9F%E5%99%A8%E5%9B%9E%E5%88%B0%E4%B8%BB%E9%A1%B5/"/>
+    <id>http://judastree.github.io/2015/09/17/IOS-模拟器回到主页/</id>
+    <published>2015-09-17T08:24:49.000Z</published>
+    <updated>2015-09-17T08:34:07.000Z</updated>
+    <content type="html"><![CDATA[<p>IOS 的模拟器上，没有HOME键，如果需要返回主页，按键盘shift+cmd+h</p>
+<p>在模拟器上实现缩放的功能比较费劲（按住option键），建议真机上试。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>IOS 的模拟器上，没有HOME键，如果需要返回主页，按键盘shift+cmd+h</p>
+<p>在模拟器上实现缩放的功能比较费劲（按住option键），建议真机上试。</p>
+]]>
+    </summary>
+    
+      <category term="IOS" scheme="http://judastree.github.io/tags/IOS/"/>
+    
+      <category term="工具" scheme="http://judastree.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Android 录制操作视频]]></title>
+    <link href="http://judastree.github.io/2015/09/16/Android-%E5%BD%95%E5%88%B6%E6%93%8D%E4%BD%9C%E8%A7%86%E9%A2%91/"/>
+    <id>http://judastree.github.io/2015/09/16/Android-录制操作视频/</id>
+    <published>2015-09-16T06:49:49.000Z</published>
+    <updated>2015-09-16T06:56:11.000Z</updated>
+    <content type="html"><![CDATA[<p>利用adb screenrecord的命令，系统Android4.4(API level 19)以上，支持mp4的视频格式</p>
+<h2 id="开始录制的命令">开始录制的命令</h2><pre><code>adb shell screenrecord <span class="regexp">/sdcard/</span>demo.mp4
+</code></pre><h2 id="导出视屏">导出视屏</h2><pre><code>adb pull <span class="regexp">/sdcard/</span>demo.mp4 <span class="string">D:</span>/
+</code></pre><h2 id="其他命令参数">其他命令参数</h2><pre><code>adb <span class="built_in">shell</span> screenrecord <span class="comment">--help</span>
+</code></pre>]]></content>
+    <summary type="html">
+    <![CDATA[<p>利用adb screenrecord的命令，系统Android4.4(API level 19)以上，支持mp4的视频格式</p>
+<h2 id="开始录制的命令">开始录制的命令</h2><pre><code>adb shell screenrecord <span cl]]>
+    </summary>
+    
+      <category term="Android" scheme="http://judastree.github.io/tags/Android/"/>
+    
+      <category term="adb" scheme="http://judastree.github.io/tags/adb/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[坑死的Amazon AWS]]></title>
+    <link href="http://judastree.github.io/2015/09/13/%E5%9D%91%E6%AD%BB%E7%9A%84Amazon-AWS/"/>
+    <id>http://judastree.github.io/2015/09/13/坑死的Amazon-AWS/</id>
+    <published>2015-09-13T06:42:28.000Z</published>
+    <updated>2015-09-13T06:49:37.000Z</updated>
+    <content type="html"><![CDATA[<p>很久前，想要找个免费的云空间搭服务，听说亚马逊的AWS可以免费使用多久，就去注册试了下，后面忙别的忘了这事。</p>
+<p>直到AWS的账单邮件一封封发来……</p>
+<p>一个月2，3刀就酱没了，坑死！！！！没钱了应该邮件提醒不续费就停止啊，一直不停止应用然后默默收费算什么啊。</p>
+<p>赶紧把应用停掉，以后再也不用AWS了。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>很久前，想要找个免费的云空间搭服务，听说亚马逊的AWS可以免费使用多久，就去注册试了下，后面忙别的忘了这事。</p>
+<p>直到AWS的账单邮件一封封发来……</p>
+<p>一个月2，3刀就酱没了，坑死！！！！没钱了应该邮件提醒不续费就停止啊，一直不停止应用然后默默收费算什]]>
+    </summary>
+    
+      <category term="工具" scheme="http://judastree.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[如何进行monkey自动化测试]]></title>
+    <link href="http://judastree.github.io/2015/09/08/%E5%A6%82%E4%BD%95%E8%BF%9B%E8%A1%8CMonkey%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/"/>
+    <id>http://judastree.github.io/2015/09/08/如何进行Monkey自动化测试/</id>
+    <published>2015-09-08T11:30:06.000Z</published>
+    <updated>2015-09-08T11:55:52.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="简介">简介</h2><p>  Android Monkey自动化测试：Monkey是Android SDK中自带的一个命令行工具，可以运行在模拟器里或实际设备中。<br>  它向系统发送伪随机的用户事件流(如按键输入、触摸屏输入、手势输入等)，实现对正在开发的应用程序进行压力测试。</p>
+<h2 id="准备条件">准备条件</h2><ol>
+<li>Android SDK</li>
+<li>USB数据线</li>
+<li>将sdk中的adb加入全局环境变量</li>
+</ol>
+<h2 id="步骤">步骤</h2><ol>
+<li><p>确认设备已经连接到PC上</p>
+<p>   adb devices</p>
+<p>2.你可以指定要测试的app的包名，如果没有指定的话是测试所有的app。将日志输出到c盘monkeylog.txt中</p>
+<p>   adb shell monkey -p com.android.test  —throttle 1000 -s 600 -v -v -v 1000&gt;C:\monkeylog.txt</p>
+</li>
+</ol>
+<h2 id="如何停止Monkey测试">如何停止Monkey测试</h2><ol>
+<li><p>adb shell(登录设备)。</p>
+</li>
+<li><p>ps|grep monkey(查找进程)。</p>
+</li>
+<li><p>kill ID(结束进程)。 </p>
+</li>
+</ol>
+<h2 id="如何获取ANR文件？（需要具备root权限）">如何获取ANR文件？（需要具备root权限）</h2><ol>
+<li>adb shell(登录设备)</li>
+<li>cd /data/anr(进入到anr文件夹)</li>
+<li>ll(查看文件)</li>
+<li>adb pull /data/anr/traces.txt C:\traces.txt(文件复制)       </li>
+</ol>
+<h2 id="Monkey命令行参数详解">Monkey命令行参数详解</h2><p>   -p: 所要测试的包。<br>         示例：-p com.android.test<br>   -throttle: 在事件之间插入固定延迟。<br>         示例：—throttle 1000（毫秒）<br>   -s: 伪随机数生成器的seed值。<br>         示例： -s 600（如果用相同的seed值再次运行monkey，它将生成相同的事件序列。）<br>   -v: 用于指定日志的详细程度。<br>         示例： -v -v -v 100（3个-v代表最详细的日志级别）（数字1000： 表示测试事件数）</p>
+<p>   <a href="http://developer.android.com/tools/help/monkey.html" target="_blank" rel="external">其他命令参数</a>      </p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="简介">简介</h2><p>  Android Monkey自动化测试：Monkey是Android SDK中自带的一个命令行工具，可以运行在模拟器里或实际设备中。<br>  它向系统发送伪随机的用户事件流(如按键输入、触摸屏输入、手势输入等)，实现对正在开发的应]]>
+    </summary>
+    
+      <category term="Android" scheme="http://judastree.github.io/tags/Android/"/>
+    
+      <category term="Monkey" scheme="http://judastree.github.io/tags/Monkey/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[刷小米开发版系统助力安卓webview调试]]></title>
+    <link href="http://judastree.github.io/2015/09/07/Nexus-7-%E5%88%B7%E5%B0%8F%E7%B1%B3%E5%BC%80%E5%8F%91%E7%89%88%E7%B3%BB%E7%BB%9F%E5%8A%A9%E5%8A%9Bwebview%E8%B0%83%E8%AF%95/"/>
+    <id>http://judastree.github.io/2015/09/07/Nexus-7-刷小米开发版系统助力webview调试/</id>
+    <published>2015-09-07T04:22:12.000Z</published>
+    <updated>2015-10-01T08:29:16.000Z</updated>
+    <content type="html"><![CDATA[<p>偶然发现在小米开发版系统上装的app应用，其webview的debug模式是打开的！！！</p>
+<p>那么也就是说以后不管是qq，淘宝，只要是他们用了webview都可以直接在chrome中远程调试线上代码了的。</p>
+<p>好处不用多说，直接搞起来。</p>
+<h2 id="刷机步骤">刷机步骤</h2><p>以我的nexus 7 为例。</p>
+<ol>
+<li><p>首先需要<a href="http://judastree.github.io/blog/2015/09/07/Nexus-7-%E8%A7%A3%E9%94%81/" target="_blank" rel="external">解锁设备</a> </p>
+</li>
+<li><p>然后准备好小米开发版系统，我在rom基地下的<a href="http://www.romjd.com/Rom/Detail/26195" target="_blank" rel="external">Google Nexus 7(第二代)刷机包 官方MIUI V5 4.8.22 开发版</a></p>
+</li>
+<li><p>PC端下载刷机精灵，之后的操作就很简单了，按着刷机精灵的步骤来。</p>
+</li>
+</ol>
+<h2 id="效果">效果</h2><p>nexus上已经是小米的系统了。</p>
+<p><img src="/images/xiaomisystem.jpg" alt="xiaomisystem"></p>
+<p>在nexus上打开了qq，淘宝和电视淘宝的app， 直接可以在chrome中debug。</p>
+<p><img src="/images/removedebug.png" alt="removedebug"></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>偶然发现在小米开发版系统上装的app应用，其webview的debug模式是打开的！！！</p>
+<p>那么也就是说以后不管是qq，淘宝，只要是他们用了webview都可以直接在chrome中远程调试线上代码了的。</p>
+<p>好处不用多说，直接搞起来。</p>
+<h2 ]]>
+    </summary>
+    
+      <category term="Android" scheme="http://judastree.github.io/tags/Android/"/>
+    
+      <category term="工具" scheme="http://judastree.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Nexus 7 解锁]]></title>
+    <link href="http://judastree.github.io/2015/09/07/Nexus-7-%E8%A7%A3%E9%94%81/"/>
+    <id>http://judastree.github.io/2015/09/07/Nexus-7-解锁/</id>
+    <published>2015-09-07T03:50:46.000Z</published>
+    <updated>2015-10-01T08:29:16.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="安卓设备解锁和不解锁有什么区别？">安卓设备解锁和不解锁有什么区别？</h2><p>手机加锁是因为在出厂时，厂商已经安装好了操作系统和预置应用，这些东西都装在手机ROM中。<br>为了防止意外情况，比如不慎删除了系统重要应用导致系统不稳定甚至崩溃，因此厂商对ROM加了锁使你不能对系统文件做任何动作。<br>这就影响了后续的root和刷机。所以在刷机前一般都要先解锁。</p>
+<h2 id="解锁过程">解锁过程</h2><ol>
+<li><p>下载解压<a href="http://pan.baidu.com/share/link?shareid=3769076633&amp;uk=3793975982" target="_blank" rel="external">nexus_unlock</a></p>
+</li>
+<li><p>Nexus 7 USB连接电脑，打开开发者选项，然后关机。</p>
+</li>
+<li><p>再同时按住音量-键和电源键进入fastboot模式。</p>
+</li>
+<li><p>运行解锁.bat，nexus7中出现是否要解锁的界面，选择yes。</p>
+</li>
+<li><p>解锁完成后，再开机，可以看到google下面有个解开的锁，就表明解锁完成了。</p>
+</li>
+</ol>
+<h2 id="图片步骤">图片步骤</h2><p>  <img src="/images/fastbootmode.jpg" alt="fastboot mode"><br>  <img src="/images/bootlock.jpg" alt="bootlock"><br>  <img src="images/bootunlock.jpg" alt="bootunlock"></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="安卓设备解锁和不解锁有什么区别？">安卓设备解锁和不解锁有什么区别？</h2><p>手机加锁是因为在出厂时，厂商已经安装好了操作系统和预置应用，这些东西都装在手机ROM中。<br>为了防止意外情况，比如不慎删除了系统重要应用导致系统不稳定甚至崩溃，因此厂商对ROM]]>
+    </summary>
+    
+      <category term="Android" scheme="http://judastree.github.io/tags/Android/"/>
+    
+      <category term="工具" scheme="http://judastree.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Monkey日志分析]]></title>
+    <link href="http://judastree.github.io/2015/08/27/Monkey%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90/"/>
+    <id>http://judastree.github.io/2015/08/27/Monkey日志分析/</id>
+    <published>2015-08-27T05:18:49.000Z</published>
+    <updated>2015-08-27T05:19:09.000Z</updated>
+    <content type="html"></content>
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="Android" scheme="http://judastree.github.io/tags/Android/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[git stash 前缓存当前的修改]]></title>
+    <link href="http://judastree.github.io/2015/08/20/git-stash-%E7%BC%93%E5%AD%98%E5%BD%93%E5%89%8D%E7%9A%84%E4%BF%AE%E6%94%B9/"/>
+    <id>http://judastree.github.io/2015/08/20/git-stash-缓存当前的修改/</id>
+    <published>2015-08-20T10:00:29.000Z</published>
+    <updated>2015-08-20T10:15:15.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="场景">场景</h2><p>本地有修改，暂时不想commit，但又必须git pull 拉去最新的代码。这时可以用git stash来缓存当前的修改。</p>
+<h2 id="步骤">步骤</h2><p>1 先缓存当前修改。</p>
+<pre><code><span class="title">git</span> stash
+</code></pre><p>2 拉取最新的代码</p>
+<pre><code><span class="title">git</span> pull
+</code></pre><p>3 拉完最新的之后再恢复之前修改</p>
+<pre><code>git stash <span class="keyword">pop</span>
+</code></pre><h2 id="更多">更多</h2><p>git stash save “work in progress for foo feature”</p>
+<p>当你多次使用 <strong>git stash</strong>命令后，你的栈里将充满了未提交的代码，这时候你会对将哪个版本应用回来有些困惑，</p>
+<p><strong>git stash list</strong>命令可以将当前的Git栈信息打印出来，你只需要将找到对应的版本号，</p>
+<p>例如使用 <strong>git stash apply stash@{1}</strong>就可以将你指定版本号为stash@{1}的工作取出来，</p>
+<p>当你将所有的栈都应用回来的时候，可以使用 <strong>git stash clear</strong>来将栈清空。</p>
+<h2 id="参考">参考</h2><p>  <a href="http://blog.csdn.net/wh_19910525/article/details/7784901" target="_blank" rel="external">git stash和git stash pop</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="场景">场景</h2><p>本地有修改，暂时不想commit，但又必须git pull 拉去最新的代码。这时可以用git stash来缓存当前的修改。</p>
+<h2 id="步骤">步骤</h2><p>1 先缓存当前修改。</p>
+<pre><code><spa]]>
+    </summary>
+    
+      <category term="git" scheme="http://judastree.github.io/tags/git/"/>
+    
+      <category term="工具" scheme="http://judastree.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Git 部分提交]]></title>
+    <link href="http://judastree.github.io/2015/08/20/Git-%E9%83%A8%E5%88%86%E6%8F%90%E4%BA%A4/"/>
+    <id>http://judastree.github.io/2015/08/20/Git-部分提交/</id>
+    <published>2015-08-20T09:39:51.000Z</published>
+    <updated>2015-08-20T10:12:17.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="场景">场景</h2><p>修改了四个文件，分别涉及到两个功能，需要把其中两个文件的修改当做一个功能的commit，另外两个文件的修改当做另一个功能的commit。</p>
+<p>但如果要用git add 的命令，会让当前所有的修改都加入commit。</p>
+<p>怎么办呢？</p>
+<p><strong>用git stash 命令</strong></p>
+<h2 id="步骤">步骤</h2><p>1 用git add 命令添加第一个commit需要的文件</p>
+<pre><code><span class="label">git</span> <span class="keyword">add </span>file1
+
+<span class="label">git</span> <span class="keyword">add </span>file2
+</code></pre><p>2 隐藏其他修改，git stash 的参数中 -k 开关告诉仓库保持文件的完整  -u 开关告诉仓库包括无路径的文件(那些新的和未添加到git的)<br>这时git status就只能看到file1 和file2，并且当你切换到实际的文件目录，file3 和file4的修改也随之不见。</p>
+<pre><code><span class="title">git</span> stash -k -u
+</code></pre><p>3 提交第一个commit</p>
+<pre><code><span class="title">git</span> commit -m <span class="string">'submit function1'</span>
+</code></pre><p>4 恢复之前隐藏的修改,这时再git status，file3和file4的修改又回来。</p>
+<pre><code>git stash <span class="keyword">pop</span>
+</code></pre><p>5 提交第二个commit</p>
+<pre><code><span class="title">git</span> commit -m <span class="string">'submit function2'</span>
+</code></pre><h2 id="参考">参考</h2><p>   <a href="http://www.open-open.com/lib/view/open1413852243809.html" target="_blank" rel="external">http://www.open-open.com/lib/view/open1413852243809.html</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="场景">场景</h2><p>修改了四个文件，分别涉及到两个功能，需要把其中两个文件的修改当做一个功能的commit，另外两个文件的修改当做另一个功能的commit。</p>
+<p>但如果要用git add 的命令，会让当前所有的修改都加入commit。</p>
+<]]>
+    </summary>
+    
+      <category term="git" scheme="http://judastree.github.io/tags/git/"/>
+    
+      <category term="工具" scheme="http://judastree.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[UnsatisfiedLinkError]]></title>
+    <link href="http://judastree.github.io/2015/08/17/UnsatisfiedLinkError/"/>
+    <id>http://judastree.github.io/2015/08/17/UnsatisfiedLinkError/</id>
+    <published>2015-08-17T12:22:37.000Z</published>
+    <updated>2015-08-17T12:29:50.000Z</updated>
+    <content type="html"><![CDATA[<p>这两天被这个异常搞死了：</p>
+<pre><code>java.lang.UnsatisfiedLinkError:dlopen failed: “<span class="keyword">*</span><span class="keyword">*</span>/<span class="keyword">*</span>/arm/<span class="keyword">*</span>.so” has unexpected e_machine: 3
+</code></pre><p><strong>原因是一个在x86机器编译的so文件放到了arm机器上。</strong></p>
+<p>apk安装时，系统把armeabi下的so动态库都放入应用的私有目录中了。<br>但这个so不是arm的，而是x86编译的。<br>所以运行时，系统检察ELF文件中的e_machine字段的值，跟arm的不匹配，就会抛出这个异常了！</p>
+<p>参考资料:<a href="http://bugly.qq.com/blog/?p=34" target="_blank" rel="external">精神哥讲Crash（一）：UnsatisfiedLinkError</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>这两天被这个异常搞死了：</p>
+<pre><code>java.lang.UnsatisfiedLinkError:dlopen failed: “<span class="keyword">*</span><span class="keyword">*</span>/<]]>
+    </summary>
+    
+      <category term="Android" scheme="http://judastree.github.io/tags/Android/"/>
+    
+      <category term="异常" scheme="http://judastree.github.io/tags/%E5%BC%82%E5%B8%B8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[ADB server didn't ACK]]></title>
+    <link href="http://judastree.github.io/2015/08/17/ADB-server-didnot-ACK/"/>
+    <id>http://judastree.github.io/2015/08/17/ADB-server-didnot-ACK/</id>
+    <published>2015-08-17T09:06:41.000Z</published>
+    <updated>2015-10-01T08:29:16.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="问题描述">问题描述</h2><p>  Android真机调试的时候，出现ADB server didn’t ACK，明明设备已经连接上，开发者选项也打开了。</p>
+<h2 id="原因">原因</h2><p>  cmd，启动adb服务发现启动失败。</p>
+<p>  <img src="/images/adbserverfail.jpg" alt="adb失败"></p>
+<p>  看下为什么会失败。</p>
+<pre><code>adb nodaemon <span class="keyword">server</span>
+</code></pre><p>  <img src="/images/nodaemon.jpg" alt="nodaemonserver">  </p>
+<p>  原来是端口被占用了。</p>
+<p>  找到占用端口的进程，杀掉，重启adb server</p>
+<pre><code>netstat -aon<span class="string">|findstr "</span><span class="number">5037</span><span class="string">"</span>
+</code></pre><p>  <img src="/images/startadb.jpg" alt="adbstart"></p>
+<h2 id="Note:">Note:</h2><p>  转自<a href="http://jingyan.baidu.com/article/454316aba27e49f7a7c03ab1.html" target="_blank" rel="external">百度经验</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="问题描述">问题描述</h2><p>  Android真机调试的时候，出现ADB server didn’t ACK，明明设备已经连接上，开发者选项也打开了。</p>
+<h2 id="原因">原因</h2><p>  cmd，启动adb服务发现启动失败。</p>
+<]]>
+    </summary>
+    
+      <category term="Android" scheme="http://judastree.github.io/tags/Android/"/>
+    
+      <category term="adb" scheme="http://judastree.github.io/tags/adb/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[主流模引擎一览]]></title>
+    <link href="http://judastree.github.io/2015/08/17/%E4%B8%BB%E6%B5%81%E6%A8%A1%E5%BC%95%E6%93%8E%E4%B8%80%E8%A7%88/"/>
+    <id>http://judastree.github.io/2015/08/17/主流模引擎一览/</id>
+    <published>2015-08-17T09:04:21.000Z</published>
+    <updated>2015-08-17T09:18:27.000Z</updated>
+    <content type="html"><![CDATA[<p>Jade，Swig，Handlerbar，UnderScore，Ejs</p>
+<p>先占个坑，晚上填</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Jade，Swig，Handlerbar，UnderScore，Ejs</p>
+<p>先占个坑，晚上填</p>
+]]>
+    </summary>
+    
+      <category term="Html" scheme="http://judastree.github.io/tags/Html/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[正则获取url中的参数]]></title>
+    <link href="http://judastree.github.io/2015/08/12/%E6%AD%A3%E5%88%99%E8%8E%B7%E5%8F%96url%E4%B8%AD%E7%9A%84%E5%8F%82%E6%95%B0/"/>
+    <id>http://judastree.github.io/2015/08/12/正则获取url中的参数/</id>
+    <published>2015-08-12T14:26:32.000Z</published>
+    <updated>2015-08-13T02:30:59.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="思路">思路</h2><p>url中的参数都是以[&amp;]name=value的形式带在url后面的，而location.search中可以拿到url中？之后的字符串（包括？在内）。</p>
+<p>那么通过处理location.search的字符串，即可得到想要的参数。</p>
+<p>我们用正则匹配的方式,给一个参数name，求它的value。</p>
+<pre><code><span class="function"><span class="keyword">function</span> <span class="title">getQueryString</span>(<span class="params">param</span>)</span>{
+    <span class="keyword">var</span> reg = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">'(^|&amp;)'</span> + name + <span class="string">'=([^&amp;]*)(&amp;|$)'</span>, <span class="string">'i'</span>);
+    <span class="keyword">var</span> r = <span class="built_in">window</span>.location.search.substr(<span class="number">1</span>).match(reg);
+    <span class="keyword">if</span> (r != <span class="literal">null</span>) {
+        <span class="keyword">return</span> <span class="built_in">unescape</span>(r[<span class="number">2</span>]);      
+    }
+    <span class="keyword">return</span> <span class="literal">null</span>;
+}
+</code></pre><p>这个正则是找以 &amp;name 或者 name 为开头，以 =value&amp; 或者 =value 结尾的字符串，忽略大小写，一次匹配不循环。</p>
+<p>以 a=2&amp;b=3&amp;c=4 为例子.</p>
+<p>当name=a时:</p>
+<pre><code><span class="setting">r= <span class="value">[<span class="string">"a=2&amp;"</span>,<span class="string">""</span>,<span class="string">"2"</span>,<span class="string">"$"</span>]</span></span>
+</code></pre><p>当name=b时:</p>
+<pre><code><span class="setting">r = <span class="value">[<span class="string">"&amp;b=3&amp;"</span>,<span class="string">"&amp;"</span>,<span class="string">"3"</span>,<span class="string">"&amp;"</span>]</span></span>
+</code></pre><p>当name=c时:</p>
+<pre><code><span class="setting">r = <span class="value">[<span class="string">"&amp;c=4"</span>,<span class="string">"&amp;"</span>,<span class="string">"4"</span>,<span class="string">""</span>]</span></span>
+</code></pre><h2 id="match的用法">match的用法</h2><p>match() 方法将检索字符串 stringObject，以找到一个或多个与 regexp 匹配的文本。</p>
+<p>这个方法的行为在很大程度上有赖于 regexp 是否具有标志 g。</p>
+<p>如果 regexp 没有标志 g，那么 match() 方法就只能在 stringObject 中执行一次匹配。</p>
+<p>如果没有找到任何匹配的文本， match() 将返回 null。否则，它将返回一个数组，其中存放了与它找到的匹配文本有关的信息。</p>
+<p>该数组的第 0 个元素存放的是匹配文本，而其余的元素存放的是与正则表达式的子表达式匹配的文本。</p>
+<p>除了这些常规的数组元素之外，返回的数组还含有两个对象属性。index 属性声明的是匹配文本的起始字符在 stringObject 中的位置，input 属性声明的是对 stringObject 的引用。</p>
+<p>如果 regexp 具有标志 g，则 match() 方法将执行全局检索，找到 stringObject 中的所有匹配子字符串。若没有找到任何匹配的子串，则返回 null。如果找到了一个或多个匹配子串，则返回一个数组。不过全局匹配返回的数组的内容与前者大不相同，它的数组元素中存放的是 stringObject 中所有的匹配子串，而且也没有 index 属性或 input 属性。</p>
+<p>注意：在全局检索模式下，match() 即不提供与子表达式匹配的文本的信息，也不声明每个匹配子串的位置。如果您需要这些全局检索的信息，可以使用 RegExp.exec()。    </p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="思路">思路</h2><p>url中的参数都是以[&amp;]name=value的形式带在url后面的，而location.search中可以拿到url中？之后的字符串（包括？在内）。</p>
+<p>那么通过处理location.search的字符串，即可得到想]]>
+    </summary>
+    
+      <category term="JavaScript" scheme="http://judastree.github.io/tags/JavaScript/"/>
+    
+      <category term="正则" scheme="http://judastree.github.io/tags/%E6%AD%A3%E5%88%99/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[LeetCode:Longest Common Prefix]]></title>
+    <link href="http://judastree.github.io/2015/08/09/LeetCode-Longest-Common-Prefix/"/>
+    <id>http://judastree.github.io/2015/08/09/LeetCode-Longest-Common-Prefix/</id>
+    <published>2015-08-09T05:52:02.000Z</published>
+    <updated>2015-10-01T08:29:16.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="题目">题目</h2><p>   <a href="https://leetcode.com/problems/longest-common-prefix/" target="_blank" rel="external">LeetCode:Longest Common Prefix</a></p>
+<p>   找出一个字符串数组中所有元素的最长公共前缀。</p>
+<h2 id="思路">思路</h2><p>   先找出这个数组中最短的字符串，然后再遍历数组比较这个最短字符串是否当前元素的前缀。<br>   如果是的话，比较下一个数组元素。<br>   如果不是的话，最短字符串截断最后一位再和当前数组数组元素比较，直到最短字符串长度为0.</p>
+<h2 id="实现">实现</h2><p>JavaScript:</p>
+<pre><code><span class="comment">/**
+ * <span class="doctag">@param</span> {string[]} strs
+ * <span class="doctag">@return</span> {string}
+ */</span>
+<span class="keyword">var</span> longestCommonPrefix = <span class="function"><span class="keyword">function</span><span class="params">(strs)</span> </span>{
+    <span class="keyword">if</span>(strs.length===<span class="number">0</span>){
+        <span class="keyword">return</span> <span class="string">""</span>;
+    }
+    <span class="keyword">var</span> shortestStr=strs[<span class="number">0</span>];
+    <span class="comment">//找出最短的字符串</span>
+    <span class="keyword">for</span>(<span class="keyword">var</span> i =<span class="number">1</span>; i&lt;strs.length;i++){
+        <span class="keyword">if</span>(strs[i].length&lt;shortestStr.length){
+            shortestStr = strs[i]
+        }
+    }
+    <span class="comment">//判断最短字符串是否是当前元素的前缀</span>
+    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;strs.length;i++){
+        <span class="keyword">while</span>(shortestStr.length&gt;<span class="number">0</span>) {
+            <span class="keyword">if</span> (strs[i].indexOf(shortestStr) === <span class="number">0</span>) {
+                <span class="keyword">break</span>;
+            } <span class="keyword">else</span> {
+                shortestStr = shortestStr.substring(<span class="number">0</span>,shortestStr.length-<span class="number">1</span>);
+            }
+        }
+    }
+    <span class="keyword">return</span> shortestStr;
+};
+</code></pre><h2 id="耗时">耗时</h2><p><img src="/images/longestcommonprefix.png" alt="Runtime"></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="题目">题目</h2><p>   <a href="https://leetcode.com/problems/longest-common-prefix/" target="_blank" rel="external">LeetCode:Longest Comm]]>
+    </summary>
+    
+      <category term="LeetCode" scheme="http://judastree.github.io/tags/LeetCode/"/>
+    
+      <category term="算法" scheme="http://judastree.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[LeetCode:Remove Nth Node from End of List]]></title>
+    <link href="http://judastree.github.io/2015/08/07/LeetCode-Remove-Nth-from-end/"/>
+    <id>http://judastree.github.io/2015/08/07/LeetCode-Remove-Nth-from-end/</id>
+    <published>2015-08-07T01:07:42.000Z</published>
+    <updated>2015-10-01T08:29:16.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="题目">题目</h2><p><a href="https://leetcode.com/problems/remove-nth-node-from-end-of-list/" target="_blank" rel="external">Remove Nth Node from End of List</a></p>
+<p>把倒数第N个元素从链表中删除。</p>
+<p>比如链表1-&gt;2-&gt;3-&gt;4-&gt;5,  把倒数第二个删除（n=2），返回1-&gt;2-&gt;3-&gt;5</p>
+<h2 id="思路">思路</h2><p>首先是遍历整个链表，拿到链表的长度，然后根据这个长度值length和指定的n值再遍历一次链表，找到要删除节点的父节点。</p>
+<h2 id="实现">实现</h2><p>JavaScript:</p>
+<pre><code><span class="comment">/**
+ * Definition for singly-linked list.
+ */</span>
+  function ListNode(val) {
+      <span class="keyword">this</span>.val = val;
+      <span class="keyword">this</span>.<span class="keyword">next</span> = <span class="keyword">null</span>;
+  }
+
+<span class="comment">/**
+ * @param {ListNode} head
+ * @param {number} n
+ * @return {ListNode}
+ */</span>
+var removeNthFromEnd = function(head, n) {
+    var dumy = <span class="keyword">new</span> ListNode(<span class="number">0</span>), p=head,length=<span class="number">0</span>;
+    dumy.<span class="keyword">next</span> =head;
+    <span class="comment">//获取链表长度</span>
+    <span class="keyword">while</span>(p){
+        length++;
+        p = p.<span class="keyword">next</span>;
+    }
+    p = dumy;
+    <span class="comment">//找到要删除元素的父元素</span>
+    <span class="keyword">while</span>(length&gt;n){
+        p = p.<span class="keyword">next</span>;
+        length--;
+    }
+    <span class="comment">//删除元素</span>
+    <span class="keyword">if</span>(p.<span class="keyword">next</span>){
+        p.<span class="keyword">next</span> = p.<span class="keyword">next</span>.<span class="keyword">next</span>;
+    }<span class="keyword">else</span>{
+        p = <span class="keyword">null</span>;
+    }
+    <span class="keyword">return</span> dumy.<span class="keyword">next</span>;
+};
+</code></pre><h2 id="耗时">耗时</h2><p><img src="/images/removenthfromend.png" alt="removenthfromend"></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="题目">题目</h2><p><a href="https://leetcode.com/problems/remove-nth-node-from-end-of-list/" target="_blank" rel="external">Remove Nth No]]>
+    </summary>
+    
+      <category term="LeetCode" scheme="http://judastree.github.io/tags/LeetCode/"/>
+    
+      <category term="算法" scheme="http://judastree.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+</feed>
