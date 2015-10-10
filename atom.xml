@@ -5,7 +5,7 @@
   <subtitle><![CDATA[You are the pretty sunshine of my life]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://judastree.github.io//"/>
-  <updated>2015-10-01T08:29:16.000Z</updated>
+  <updated>2015-10-10T13:02:40.000Z</updated>
   <id>http://judastree.github.io//</id>
   
   <author>
@@ -16,12 +16,62 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[LeetCode Move Zeroes]]></title>
+    <link href="http://judastree.github.io/2015/10/10/LeetCode-Move-Zeroes/"/>
+    <id>http://judastree.github.io/2015/10/10/LeetCode-Move-Zeroes/</id>
+    <published>2015-10-10T12:51:48.000Z</published>
+    <updated>2015-10-10T13:02:40.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="题目">题目</h2><p><a href="https://leetcode.com/problems/move-zeroes/" target="_blank" rel="external">Move Zeroes</a></p>
+<p>将一个数组中的0元素都移到最后面，同时保持非0元素的顺序不变。</p>
+<p>比如，[0,1,0,3,12] 移动后变成了[1,3,12,0,0]</p>
+<h2 id="思路">思路</h2><ol>
+<li>找到第一个0元素的位置，从第一个0元素的位置往后遍历</li>
+<li>发现非0元素，则与第一个0元素互换位置，并将第一个0元素的位置往后移一位。</li>
+<li>继续遍历，重复2动作直到遍历结束。</li>
+</ol>
+<h2 id="实现">实现</h2><p>Javascript</p>
+<pre><code><span class="comment">/**
+ * <span class="doctag">@param</span> {number[]} nums
+ * <span class="doctag">@return</span> {void} Do not return anything, modify nums in-place instead.
+ */</span>
+<span class="keyword">var</span> moveZeroes = <span class="function"><span class="keyword">function</span><span class="params">(nums)</span> </span>{
+    <span class="keyword">var</span> firstzero = <span class="number">0</span>,temp;
+    <span class="keyword">for</span>(;firstzero&lt;nums.length-<span class="number">1</span>;firstzero++){
+        <span class="comment">//find first zero</span>
+        <span class="keyword">if</span>(nums[firstzero]===<span class="number">0</span>) <span class="keyword">break</span>;
+    }
+    <span class="keyword">for</span>(<span class="keyword">var</span> j=firstzero+<span class="number">1</span>;j&lt;nums.length;j++){
+        <span class="keyword">if</span>(nums[j]!==<span class="number">0</span>){
+            <span class="comment">//non-zero, change and move on</span>
+            temp = nums[j];
+            nums[j]=nums[firstzero];
+            nums[firstzero]=temp;
+            firstzero ++;
+        }
+
+    }
+
+};
+</code></pre><h2 id="耗时">耗时</h2><p><img src="/images/movezeroes.png" alt="movezeroes"></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="题目">题目</h2><p><a href="https://leetcode.com/problems/move-zeroes/" target="_blank" rel="external">Move Zeroes</a></p>
+<p>将一个数组中的0元素都]]>
+    </summary>
+    
+      <category term="LeetCode" scheme="http://judastree.github.io/tags/LeetCode/"/>
+    
+      <category term="算法" scheme="http://judastree.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
     <title></title>
-    <link href="http://judastree.github.io/2015/10/01/Debug-Grunt-in-Webstorm/"/>
-    <id>http://judastree.github.io/2015/10/01/Debug-Grunt-in-Webstorm/</id>
-    <published>2015-10-01T08:29:16.000Z</published>
-    <updated>2015-10-01T08:29:16.000Z</updated>
-    <content type="html"><![CDATA[<p>title: “Debug Grunt in Webstorm”<br>date: 2015-07-30 15:04:12</p>
+    <link href="http://judastree.github.io/2015/10/09/Debug-Grunt-in-Webstorm/"/>
+    <id>http://judastree.github.io/2015/10/09/Debug-Grunt-in-Webstorm/</id>
+    <published>2015-10-09T03:14:46.000Z</published>
+    <updated>2015-10-09T03:14:46.000Z</updated>
+    <content type="html"><![CDATA[<p>title: “Debug Grunt in Webstorm “<br>date: 2015-07-30 15:04:12</p>
 <h2 id="tags:_[工具]">tags: [工具]</h2><h2 id="Steps">Steps</h2><p>  1 Run  -&gt;  Edit Configuration</p>
 <p>  2 Press Add button (+)</p>
 <p>  3 Type the configurations</p>
@@ -30,8 +80,8 @@
 <p>  5 Press Shift+Ctrl+D to debug</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>title: “Debug Grunt in Webstorm”<br>date: 2015-07-30 15:04:12</p>
-<h2 id="tags:_[工具]">tags: [工具]</h2><h2 id="Steps">Steps</h2><p>  1 Run ]]>
+    <![CDATA[<p>title: “Debug Grunt in Webstorm “<br>date: 2015-07-30 15:04:12</p>
+<h2 id="tags:_[工具]">tags: [工具]</h2><h2 id="Steps">Steps</h2><p>  1 Run]]>
     </summary>
     
   </entry>
@@ -597,64 +647,6 @@
 ]]></content>
     <summary type="html">
     <![CDATA[<h2 id="题目">题目</h2><p>   <a href="https://leetcode.com/problems/longest-common-prefix/" target="_blank" rel="external">LeetCode:Longest Comm]]>
-    </summary>
-    
-      <category term="LeetCode" scheme="http://judastree.github.io/tags/LeetCode/"/>
-    
-      <category term="算法" scheme="http://judastree.github.io/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[LeetCode:Remove Nth Node from End of List]]></title>
-    <link href="http://judastree.github.io/2015/08/07/LeetCode-Remove-Nth-from-end/"/>
-    <id>http://judastree.github.io/2015/08/07/LeetCode-Remove-Nth-from-end/</id>
-    <published>2015-08-07T01:07:42.000Z</published>
-    <updated>2015-10-01T08:29:16.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="题目">题目</h2><p><a href="https://leetcode.com/problems/remove-nth-node-from-end-of-list/" target="_blank" rel="external">Remove Nth Node from End of List</a></p>
-<p>把倒数第N个元素从链表中删除。</p>
-<p>比如链表1-&gt;2-&gt;3-&gt;4-&gt;5,  把倒数第二个删除（n=2），返回1-&gt;2-&gt;3-&gt;5</p>
-<h2 id="思路">思路</h2><p>首先是遍历整个链表，拿到链表的长度，然后根据这个长度值length和指定的n值再遍历一次链表，找到要删除节点的父节点。</p>
-<h2 id="实现">实现</h2><p>JavaScript:</p>
-<pre><code><span class="comment">/**
- * Definition for singly-linked list.
- */</span>
-  function ListNode(val) {
-      <span class="keyword">this</span>.val = val;
-      <span class="keyword">this</span>.<span class="keyword">next</span> = <span class="keyword">null</span>;
-  }
-
-<span class="comment">/**
- * @param {ListNode} head
- * @param {number} n
- * @return {ListNode}
- */</span>
-var removeNthFromEnd = function(head, n) {
-    var dumy = <span class="keyword">new</span> ListNode(<span class="number">0</span>), p=head,length=<span class="number">0</span>;
-    dumy.<span class="keyword">next</span> =head;
-    <span class="comment">//获取链表长度</span>
-    <span class="keyword">while</span>(p){
-        length++;
-        p = p.<span class="keyword">next</span>;
-    }
-    p = dumy;
-    <span class="comment">//找到要删除元素的父元素</span>
-    <span class="keyword">while</span>(length&gt;n){
-        p = p.<span class="keyword">next</span>;
-        length--;
-    }
-    <span class="comment">//删除元素</span>
-    <span class="keyword">if</span>(p.<span class="keyword">next</span>){
-        p.<span class="keyword">next</span> = p.<span class="keyword">next</span>.<span class="keyword">next</span>;
-    }<span class="keyword">else</span>{
-        p = <span class="keyword">null</span>;
-    }
-    <span class="keyword">return</span> dumy.<span class="keyword">next</span>;
-};
-</code></pre><h2 id="耗时">耗时</h2><p><img src="/images/removenthfromend.png" alt="removenthfromend"></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h2 id="题目">题目</h2><p><a href="https://leetcode.com/problems/remove-nth-node-from-end-of-list/" target="_blank" rel="external">Remove Nth No]]>
     </summary>
     
       <category term="LeetCode" scheme="http://judastree.github.io/tags/LeetCode/"/>

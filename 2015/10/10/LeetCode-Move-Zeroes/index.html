@@ -28,7 +28,7 @@
 
 
 
-  <meta name="keywords" content="JavaScript," />
+  <meta name="keywords" content="LeetCode,算法," />
 
 
 
@@ -39,33 +39,46 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.4" />
 
 
-<meta name="description" content="Node入门
-很久前就把它加入了手机的书签栏，然后陆陆续续利用吃饭排队的事件看完的。
-文章是翻译的，写得很清晰易懂，node细节的我就不说了，因为也不是完全懂，就谈谈读后感。
-nodejs很早就听过，也很早就去看过一些介绍的文章、入门的文章，快速搭建的文章，在JS权威指南里也有关于nodejs的介绍。
-为什么这次看的这篇文章和以前看的感觉就不一样呢？
-我仔细地想了下。
-因为那时我还不知道JS是单线">
+<meta name="description" content="题目Move Zeroes
+将一个数组中的0元素都移到最后面，同时保持非0元素的顺序不变。
+比如，[0,1,0,3,12] 移动后变成了[1,3,12,0,0]
+思路
+找到第一个0元素的位置，从第一个0元素的位置往后遍历
+发现非0元素，则与第一个0元素互换位置，并将第一个0元素的位置往后移一位。
+继续遍历，重复2动作直到遍历结束。
+
+实现Javascript
+/**
+ * @param {numb">
 <meta property="og:type" content="article">
-<meta property="og:title" content="nodejs入门文章读后感">
-<meta property="og:url" content="http://judastree.github.io/2015/07/17/nodejs入门文章读后感/index.html">
+<meta property="og:title" content="LeetCode Move Zeroes">
+<meta property="og:url" content="http://judastree.github.io/2015/10/10/LeetCode-Move-Zeroes/index.html">
 <meta property="og:site_name" content="Judastree">
-<meta property="og:description" content="Node入门
-很久前就把它加入了手机的书签栏，然后陆陆续续利用吃饭排队的事件看完的。
-文章是翻译的，写得很清晰易懂，node细节的我就不说了，因为也不是完全懂，就谈谈读后感。
-nodejs很早就听过，也很早就去看过一些介绍的文章、入门的文章，快速搭建的文章，在JS权威指南里也有关于nodejs的介绍。
-为什么这次看的这篇文章和以前看的感觉就不一样呢？
-我仔细地想了下。
-因为那时我还不知道JS是单线">
+<meta property="og:description" content="题目Move Zeroes
+将一个数组中的0元素都移到最后面，同时保持非0元素的顺序不变。
+比如，[0,1,0,3,12] 移动后变成了[1,3,12,0,0]
+思路
+找到第一个0元素的位置，从第一个0元素的位置往后遍历
+发现非0元素，则与第一个0元素互换位置，并将第一个0元素的位置往后移一位。
+继续遍历，重复2动作直到遍历结束。
+
+实现Javascript
+/**
+ * @param {numb">
+<meta property="og:image" content="/images/movezeroes.png">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="nodejs入门文章读后感">
-<meta name="twitter:description" content="Node入门
-很久前就把它加入了手机的书签栏，然后陆陆续续利用吃饭排队的事件看完的。
-文章是翻译的，写得很清晰易懂，node细节的我就不说了，因为也不是完全懂，就谈谈读后感。
-nodejs很早就听过，也很早就去看过一些介绍的文章、入门的文章，快速搭建的文章，在JS权威指南里也有关于nodejs的介绍。
-为什么这次看的这篇文章和以前看的感觉就不一样呢？
-我仔细地想了下。
-因为那时我还不知道JS是单线">
+<meta name="twitter:title" content="LeetCode Move Zeroes">
+<meta name="twitter:description" content="题目Move Zeroes
+将一个数组中的0元素都移到最后面，同时保持非0元素的顺序不变。
+比如，[0,1,0,3,12] 移动后变成了[1,3,12,0,0]
+思路
+找到第一个0元素的位置，从第一个0元素的位置往后遍历
+发现非0元素，则与第一个0元素互换位置，并将第一个0元素的位置往后移一位。
+继续遍历，重复2动作直到遍历结束。
+
+实现Javascript
+/**
+ * @param {numb">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -75,7 +88,7 @@ nodejs很早就听过，也很早就去看过一些介绍的文章、入门的�
   };
 </script>
 
-    <title> nodejs入门文章读后感 // Judastree </title>
+    <title> LeetCode Move Zeroes // Judastree </title>
 </head>
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 <!--[if lte IE 8]>
@@ -205,7 +218,7 @@ nodejs很早就听过，也很早就去看过一些介绍的文章、入门的�
           
           
             
-              nodejs入门文章读后感
+              LeetCode Move Zeroes
             
           
         </h1>
@@ -214,8 +227,8 @@ nodejs很早就听过，也很早就去看过一些介绍的文章、入门的�
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-07-17T10:38:43+08:00" content="2015-07-17">
-            2015-07-17
+          <time itemprop="dateCreated" datetime="2015-10-10T20:51:48+08:00" content="2015-10-10">
+            2015-10-10
           </time>
         </span>
 
@@ -225,8 +238,8 @@ nodejs很早就听过，也很早就去看过一些介绍的文章、入门的�
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/07/17/nodejs入门文章读后感/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/17/nodejs入门文章读后感/" itemprop="commentsCount"></span>
+              <a href="/2015/10/10/LeetCode-Move-Zeroes/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/10/LeetCode-Move-Zeroes/" itemprop="commentsCount"></span>
               </a>
             </span>
           
@@ -240,22 +253,38 @@ nodejs很早就听过，也很早就去看过一些介绍的文章、入门的�
       
 
       
-        <span itemprop="articleBody"><p><a href="http://www.nodebeginner.org/index-zh-cn.html" target="_blank" rel="external">Node入门</a></p>
-<p>很久前就把它加入了手机的书签栏，然后陆陆续续利用吃饭排队的事件看完的。</p>
-<p>文章是翻译的，写得很清晰易懂，node细节的我就不说了，因为也不是完全懂，就谈谈读后感。</p>
-<p>nodejs很早就听过，也很早就去看过一些介绍的文章、入门的文章，快速搭建的文章，在JS权威指南里也有关于nodejs的介绍。</p>
-<p>为什么这次看的这篇文章和以前看的感觉就不一样呢？</p>
-<p>我仔细地想了下。</p>
-<p><strong>因为那时我还不知道JS是单线程的，是基于事件驱动的</strong></p>
-<p>没有这样的一层基础去看node(注意是【看】 不是【学习】)，根本理解不了，只能是别人说什么是什么，然后转天就忘了。</p>
-<p><strong>在学习的路上，我们看了很多东西。</strong></p>
-<p>有些让你豁然开朗，有些让你越看越迷糊。豁然开朗的就很有兴趣地看下去，越看越迷糊的就被搁浅了，而搁浅的时间以年为单位。</p>
-<p>看完文章，我想到之前ES6中的一个generator概念还是不清楚，或许现在可以更好地理解了。</p>
-<ul>
-<li>事件轮询</li>
-<li>非阻塞的实现机制</li>
-<li>generator</li>
-</ul>
+        <span itemprop="articleBody"><h2 id="题目">题目</h2><p><a href="https://leetcode.com/problems/move-zeroes/" target="_blank" rel="external">Move Zeroes</a></p>
+<p>将一个数组中的0元素都移到最后面，同时保持非0元素的顺序不变。</p>
+<p>比如，[0,1,0,3,12] 移动后变成了[1,3,12,0,0]</p>
+<h2 id="思路">思路</h2><ol>
+<li>找到第一个0元素的位置，从第一个0元素的位置往后遍历</li>
+<li>发现非0元素，则与第一个0元素互换位置，并将第一个0元素的位置往后移一位。</li>
+<li>继续遍历，重复2动作直到遍历结束。</li>
+</ol>
+<h2 id="实现">实现</h2><p>Javascript</p>
+<pre><code><span class="comment">/**
+ * <span class="doctag">@param</span> {number[]} nums
+ * <span class="doctag">@return</span> {void} Do not return anything, modify nums in-place instead.
+ */</span>
+<span class="keyword">var</span> moveZeroes = <span class="function"><span class="keyword">function</span><span class="params">(nums)</span> </span>{
+    <span class="keyword">var</span> firstzero = <span class="number">0</span>,temp;
+    <span class="keyword">for</span>(;firstzero&lt;nums.length-<span class="number">1</span>;firstzero++){
+        <span class="comment">//find first zero</span>
+        <span class="keyword">if</span>(nums[firstzero]===<span class="number">0</span>) <span class="keyword">break</span>;
+    }
+    <span class="keyword">for</span>(<span class="keyword">var</span> j=firstzero+<span class="number">1</span>;j&lt;nums.length;j++){
+        <span class="keyword">if</span>(nums[j]!==<span class="number">0</span>){
+            <span class="comment">//non-zero, change and move on</span>
+            temp = nums[j];
+            nums[j]=nums[firstzero];
+            nums[firstzero]=temp;
+            firstzero ++;
+        }
+
+    }
+
+};
+</code></pre><h2 id="耗时">耗时</h2><p><img src="/images/movezeroes.png" alt="movezeroes"></p>
 </span>
       
     </div>
@@ -264,7 +293,9 @@ nodejs很早就听过，也很早就去看过一些介绍的文章、入门的�
       
         <div class="post-tags">
           
-            <a href="/tags/JavaScript/" rel="tag">#JavaScript</a>
+            <a href="/tags/LeetCode/" rel="tag">#LeetCode</a>
+          
+            <a href="/tags/算法/" rel="tag">#算法</a>
           
         </div>
       
@@ -273,13 +304,11 @@ nodejs很早就听过，也很早就去看过一些介绍的文章、入门的�
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/07/18/求一个集合的所有子集/" rel="prev">求一个集合的所有子集</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/07/16/冥王星为什么有个心呢？/" rel="next">冥王星为什么有个心呢？</a>
+              <a href="/2015/10/09/Debug-Grunt-in-Webstorm/" rel="next"></a>
             
           </div>
         </div>
@@ -305,8 +334,8 @@ nodejs很早就听过，也很早就去看过一些介绍的文章、入门的�
             
               <div class="comments" id="comments">
                 
-                  <div class="ds-thread" data-thread-key="2015/07/17/nodejs入门文章读后感/"
-                       data-title="nodejs入门文章读后感" data-url="http://judastree.github.io/2015/07/17/nodejs入门文章读后感/">
+                  <div class="ds-thread" data-thread-key="2015/10/10/LeetCode-Move-Zeroes/"
+                       data-title="LeetCode Move Zeroes" data-url="http://judastree.github.io/2015/10/10/LeetCode-Move-Zeroes/">
                   </div>
                 
               </div>
@@ -413,7 +442,7 @@ nodejs很早就听过，也很早就去看过一些介绍的文章、入门的�
           <div class="post-toc">
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目"><span class="nav-number">1.</span> <span class="nav-text">题目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#思路"><span class="nav-number">2.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现"><span class="nav-number">3.</span> <span class="nav-text">实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#耗时"><span class="nav-number">4.</span> <span class="nav-text">耗时</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
