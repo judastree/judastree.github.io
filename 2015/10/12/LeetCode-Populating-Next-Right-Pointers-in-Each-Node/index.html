@@ -28,7 +28,7 @@
 
 
 
-  <meta name="keywords" content="IOS,工具," />
+  <meta name="keywords" content="LeetCode,算法," />
 
 
 
@@ -39,18 +39,25 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.4" />
 
 
-<meta name="description" content="IOS 的模拟器上，没有HOME键，如果需要返回主页，按键盘shift+cmd+h
-在模拟器上实现缩放的功能比较费劲（按住option键），建议真机上试。">
+<meta name="description" content="题目Populating Next Right Pointers in Each Node
+给一个平衡二叉树的每个节点加上next属性,next 指向起相邻的节点，如果没有则指向null;
+Given the following perfect binary tree,         1       /  \      2    3     / \  / \    4  5  6  7
+Afte">
 <meta property="og:type" content="article">
-<meta property="og:title" content="IOS 模拟器回到主页">
-<meta property="og:url" content="http://judastree.github.io/2015/09/17/IOS-模拟器回到主页/index.html">
+<meta property="og:title" content="LeetCode Populating Next Right Pointers in Each Node">
+<meta property="og:url" content="http://judastree.github.io/2015/10/12/LeetCode-Populating-Next-Right-Pointers-in-Each-Node/index.html">
 <meta property="og:site_name" content="Judastree">
-<meta property="og:description" content="IOS 的模拟器上，没有HOME键，如果需要返回主页，按键盘shift+cmd+h
-在模拟器上实现缩放的功能比较费劲（按住option键），建议真机上试。">
+<meta property="og:description" content="题目Populating Next Right Pointers in Each Node
+给一个平衡二叉树的每个节点加上next属性,next 指向起相邻的节点，如果没有则指向null;
+Given the following perfect binary tree,         1       /  \      2    3     / \  / \    4  5  6  7
+Afte">
+<meta property="og:image" content="/images/nextpointer.png">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="IOS 模拟器回到主页">
-<meta name="twitter:description" content="IOS 的模拟器上，没有HOME键，如果需要返回主页，按键盘shift+cmd+h
-在模拟器上实现缩放的功能比较费劲（按住option键），建议真机上试。">
+<meta name="twitter:title" content="LeetCode Populating Next Right Pointers in Each Node">
+<meta name="twitter:description" content="题目Populating Next Right Pointers in Each Node
+给一个平衡二叉树的每个节点加上next属性,next 指向起相邻的节点，如果没有则指向null;
+Given the following perfect binary tree,         1       /  \      2    3     / \  / \    4  5  6  7
+Afte">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -60,7 +67,7 @@
   };
 </script>
 
-    <title> IOS 模拟器回到主页 // Judastree </title>
+    <title> LeetCode Populating Next Right Pointers in Each Node // Judastree </title>
 </head>
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 <!--[if lte IE 8]>
@@ -190,7 +197,7 @@
           
           
             
-              IOS 模拟器回到主页
+              LeetCode Populating Next Right Pointers in Each Node
             
           
         </h1>
@@ -199,8 +206,8 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-09-17T16:24:49+08:00" content="2015-09-17">
-            2015-09-17
+          <time itemprop="dateCreated" datetime="2015-10-12T15:22:17+08:00" content="2015-10-12">
+            2015-10-12
           </time>
         </span>
 
@@ -210,8 +217,8 @@
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/09/17/IOS-模拟器回到主页/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/17/IOS-模拟器回到主页/" itemprop="commentsCount"></span>
+              <a href="/2015/10/12/LeetCode-Populating-Next-Right-Pointers-in-Each-Node/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/12/LeetCode-Populating-Next-Right-Pointers-in-Each-Node/" itemprop="commentsCount"></span>
               </a>
             </span>
           
@@ -225,8 +232,63 @@
       
 
       
-        <span itemprop="articleBody"><p>IOS 的模拟器上，没有HOME键，如果需要返回主页，按键盘shift+cmd+h</p>
-<p>在模拟器上实现缩放的功能比较费劲（按住option键），建议真机上试。</p>
+        <span itemprop="articleBody"><h2 id="题目">题目</h2><p><a href="https://leetcode.com/problems/populating-next-right-pointers-in-each-node/" target="_blank" rel="external">Populating Next Right Pointers in Each Node</a></p>
+<p>给一个平衡二叉树的每个节点加上next属性,next 指向起相邻的节点，如果没有则指向null;</p>
+<p>Given the following perfect binary tree,<br>         1<br>       /  \<br>      2    3<br>     / \  / \<br>    4  5  6  7</p>
+<p>After calling your function, the tree should look like:<br>         1 -&gt; NULL<br>       /  \<br>      2 -&gt; 3 -&gt; NULL<br>     / \  / \<br>    4-&gt;5-&gt;6-&gt;7 -&gt; NULL</p>
+<h2 id="思路">思路</h2><p>   1.对于一个父节点来说，它左孩子的next指向它的右孩子，它的右孩子的next指向它自己next节点的左孩子。<br>   2.遍历整个二叉树，对每个父节点进行1操作。</p>
+<h2 id="实现">实现</h2><p>JavaScript:</p>
+<pre><code>/**
+ * Definition <span class="keyword">for</span> binary tree <span class="keyword">with</span> <span class="keyword">next</span> pointer.
+ * <span class="keyword">function</span> TreeLinkNode(val) {
+ *     this.val = val;
+ *     this.<span class="built_in">left</span> = this.<span class="built_in">right</span> = this.<span class="keyword">next</span> = <span class="literal">null</span>;
+ * }
+ */
+
+/**
+ * @param {TreeLinkNode} root
+ * @return {void} <span class="keyword">Do</span> <span class="keyword">not</span> return anything, modify tree <span class="keyword">in</span>-place instead.
+ */
+var connect = <span class="keyword">function</span>(root) {
+    <span class="keyword">if</span>(root===<span class="literal">null</span>) return;
+    root.<span class="keyword">next</span> =<span class="literal">null</span>;
+
+
+    <span class="keyword">function</span> traversal(node){
+        <span class="keyword">if</span>(node){
+            <span class="keyword">if</span>(node.<span class="built_in">left</span>){
+                connectLeftChild(node,node.<span class="built_in">left</span>);
+                traversal(node.<span class="built_in">left</span>);
+            }
+            <span class="keyword">if</span>(node.<span class="built_in">right</span>){
+                connectRightChild(node,node.<span class="built_in">right</span>);
+                traversal(node.<span class="built_in">right</span>);
+            }
+        }
+
+
+    }
+    <span class="keyword">function</span> connectLeftChild(parent,node){
+
+        <span class="keyword">if</span>(node){
+             node.<span class="keyword">next</span> = parent.<span class="built_in">right</span>;
+        }
+    } 
+    <span class="keyword">function</span> connectRightChild(parent,node){
+        <span class="keyword">if</span>(node){
+            <span class="keyword">if</span>(parent.<span class="keyword">next</span>){
+                node.<span class="keyword">next</span> = parent.<span class="keyword">next</span>.<span class="built_in">left</span>;
+            }<span class="keyword">else</span>{
+                node.<span class="keyword">next</span> = <span class="literal">null</span>;
+            }
+
+        }
+
+    }
+    traversal(root);
+};
+</code></pre><h2 id="耗时">耗时</h2><p>  <img src="/images/nextpointer.png" alt="nextpointerruntime"></p>
 </span>
       
     </div>
@@ -235,9 +297,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/IOS/" rel="tag">#IOS</a>
+            <a href="/tags/LeetCode/" rel="tag">#LeetCode</a>
           
-            <a href="/tags/工具/" rel="tag">#工具</a>
+            <a href="/tags/算法/" rel="tag">#算法</a>
           
         </div>
       
@@ -246,13 +308,11 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/09/18/React-Native-Node-4-0/" rel="prev">React Native Node 4.0</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/09/16/Android-录制操作视频/" rel="next">Android 录制操作视频</a>
+              <a href="/2015/10/10/LeetCode-Move-Zeroes/" rel="next">LeetCode Move Zeroes</a>
             
           </div>
         </div>
@@ -278,8 +338,8 @@
             
               <div class="comments" id="comments">
                 
-                  <div class="ds-thread" data-thread-key="2015/09/17/IOS-模拟器回到主页/"
-                       data-title="IOS 模拟器回到主页" data-url="http://judastree.github.io/2015/09/17/IOS-模拟器回到主页/">
+                  <div class="ds-thread" data-thread-key="2015/10/12/LeetCode-Populating-Next-Right-Pointers-in-Each-Node/"
+                       data-title="LeetCode Populating Next Right Pointers in Each Node" data-url="http://judastree.github.io/2015/10/12/LeetCode-Populating-Next-Right-Pointers-in-Each-Node/">
                   </div>
                 
               </div>
@@ -386,7 +446,7 @@
           <div class="post-toc">
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目"><span class="nav-number">1.</span> <span class="nav-text">题目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#思路"><span class="nav-number">2.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现"><span class="nav-number">3.</span> <span class="nav-text">实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#耗时"><span class="nav-number">4.</span> <span class="nav-text">耗时</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
