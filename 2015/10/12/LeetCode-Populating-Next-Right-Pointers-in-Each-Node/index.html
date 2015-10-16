@@ -41,23 +41,38 @@
 
 <meta name="description" content="题目Populating Next Right Pointers in Each Node
 给一个平衡二叉树的每个节点加上next属性,next 指向起相邻的节点，如果没有则指向null;
-Given the following perfect binary tree,         1       /  \      2    3     / \  / \    4  5  6  7
-Afte">
+Given the following perfect binary tree,
+     1
+   /  \
+  2    3
+ / \  / \
+4  5  6  7
+After calling your">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LeetCode Populating Next Right Pointers in Each Node">
 <meta property="og:url" content="http://judastree.github.io/2015/10/12/LeetCode-Populating-Next-Right-Pointers-in-Each-Node/index.html">
 <meta property="og:site_name" content="Judastree">
 <meta property="og:description" content="题目Populating Next Right Pointers in Each Node
 给一个平衡二叉树的每个节点加上next属性,next 指向起相邻的节点，如果没有则指向null;
-Given the following perfect binary tree,         1       /  \      2    3     / \  / \    4  5  6  7
-Afte">
+Given the following perfect binary tree,
+     1
+   /  \
+  2    3
+ / \  / \
+4  5  6  7
+After calling your">
 <meta property="og:image" content="/images/nextpointer.png">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LeetCode Populating Next Right Pointers in Each Node">
 <meta name="twitter:description" content="题目Populating Next Right Pointers in Each Node
 给一个平衡二叉树的每个节点加上next属性,next 指向起相邻的节点，如果没有则指向null;
-Given the following perfect binary tree,         1       /  \      2    3     / \  / \    4  5  6  7
-Afte">
+Given the following perfect binary tree,
+     1
+   /  \
+  2    3
+ / \  / \
+4  5  6  7
+After calling your">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -234,9 +249,19 @@ Afte">
       
         <span itemprop="articleBody"><h2 id="题目">题目</h2><p><a href="https://leetcode.com/problems/populating-next-right-pointers-in-each-node/" target="_blank" rel="external">Populating Next Right Pointers in Each Node</a></p>
 <p>给一个平衡二叉树的每个节点加上next属性,next 指向起相邻的节点，如果没有则指向null;</p>
-<p>Given the following perfect binary tree,<br>         1<br>       /  \<br>      2    3<br>     / \  / \<br>    4  5  6  7</p>
-<p>After calling your function, the tree should look like:<br>         1 -&gt; NULL<br>       /  \<br>      2 -&gt; 3 -&gt; NULL<br>     / \  / \<br>    4-&gt;5-&gt;6-&gt;7 -&gt; NULL</p>
-<h2 id="思路">思路</h2><p>   1.对于一个父节点来说，它左孩子的next指向它的右孩子，它的右孩子的next指向它自己next节点的左孩子。<br>   2.遍历整个二叉树，对每个父节点进行1操作。</p>
+<p>Given the following perfect binary tree,</p>
+<pre><code>     <span class="number">1</span>
+   /  <span class="string">\</span>
+  <span class="number">2</span>    <span class="number">3</span>
+ / <span class="string">\</span>  / <span class="string">\</span>
+<span class="number">4</span>  <span class="number">5</span>  <span class="number">6</span>  <span class="number">7</span>
+</code></pre><p>After calling your function, the tree should look like:</p>
+<pre><code>     <span class="number">1</span> <span class="subst">-&gt; </span><span class="built_in">NULL</span>
+   <span class="subst">/</span>  <span class="subst">\</span>
+  <span class="number">2</span> <span class="subst">-&gt; </span><span class="number">3</span> <span class="subst">-&gt; </span><span class="built_in">NULL</span>
+ <span class="subst">/</span> <span class="subst">\</span>  <span class="subst">/</span> <span class="subst">\</span>
+<span class="number">4</span><span class="subst">-&gt;</span><span class="number">5</span><span class="subst">-&gt;</span><span class="number">6</span><span class="subst">-&gt;</span><span class="number">7</span> <span class="subst">-&gt; </span><span class="built_in">NULL</span>
+</code></pre><h2 id="思路">思路</h2><p>   1.对于一个父节点来说，它左孩子的next指向它的右孩子，它的右孩子的next指向它自己next节点的左孩子。<br>   2.遍历整个二叉树，对每个父节点进行1操作。</p>
 <h2 id="实现">实现</h2><p>JavaScript:</p>
 <pre><code>/**
  * Definition <span class="keyword">for</span> binary tree <span class="keyword">with</span> <span class="keyword">next</span> pointer.
@@ -307,6 +332,8 @@ var connect = <span class="keyword">function</span>(root) {
       
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/10/16/获取keystore签名中得sha1/" rel="prev">获取安卓签名keystore中的sha1</a>
             
           </div>
 
@@ -379,7 +406,7 @@ var connect = <span class="keyword">function</span>(root) {
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">80</span>
+              <span class="site-state-item-count">81</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

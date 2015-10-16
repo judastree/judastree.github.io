@@ -189,6 +189,101 @@
           
           
             
+              <a class="post-title-link" href="/2015/08/12/正则获取url中的参数/" itemprop="url">
+                正则获取url中的参数
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-08-12T22:26:32+08:00" content="2015-08-12">
+            2015-08-12
+          </time>
+        </span>
+
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2015/08/12/正则获取url中的参数/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/12/正则获取url中的参数/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><h2 id="思路">思路</h2><p>url中的参数都是以[&amp;]name=value的形式带在url后面的，而location.search中可以拿到url中？之后的字符串（包括？在内）。</p>
+<p>那么通过处理location.search的字符串，即可得到想要的参数。</p>
+<p>我们用正则匹配的方式,给一个参数name，求它的value。</p>
+<pre><code><span class="function"><span class="keyword">function</span> <span class="title">getQueryString</span>(<span class="params">param</span>)</span>{
+    <span class="keyword">var</span> reg = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">'(^|&amp;)'</span> + name + <span class="string">'=([^&amp;]*)(&amp;|$)'</span>, <span class="string">'i'</span>);
+    <span class="keyword">var</span> r = <span class="built_in">window</span>.location.search.substr(<span class="number">1</span>).match(reg);
+    <span class="keyword">if</span> (r != <span class="literal">null</span>) {
+        <span class="keyword">return</span> <span class="built_in">unescape</span>(r[<span class="number">2</span>]);      
+    }
+    <span class="keyword">return</span> <span class="literal">null</span>;
+}
+</code></pre><p>这个正则是找以 &amp;name 或者 name 为开头，以 =value&amp; 或者 =value 结尾的字符串，忽略大小写，一次匹配不循环。</p>
+<p>以 a=2&amp;b=3&amp;c=4 为例子.</p>
+<p>当name=a时:</p>
+<pre><code><span class="setting">r= <span class="value">[<span class="string">"a=2&amp;"</span>,<span class="string">""</span>,<span class="string">"2"</span>,<span class="string">"$"</span>]</span></span>
+</code></pre><p>当name=b时:</p>
+<pre><code><span class="setting">r = <span class="value">[<span class="string">"&amp;b=3&amp;"</span>,<span class="string">"&amp;"</span>,<span class="string">"3"</span>,<span class="string">"&amp;"</span>]</span></span>
+</code></pre><p>当name=c时:</p>
+<pre><code><span class="setting">r = <span class="value">[<span class="string">"&amp;c=4"</span>,<span class="string">"&amp;"</span>,<span class="string">"4"</span>,<span class="string">""</span>]</span></span>
+</code></pre><h2 id="match的用法">match的用法</h2><p>match() 方法将检索字符串 stringObject，以找到一个或多个与 regexp 匹配的文本。</p>
+<p>这个方法的行为在很大程度上有赖于 regexp 是否具有标志 g。</p>
+<p>如果 regexp 没有标志 g，那么 match() 方法就只能在 stringObject 中执行一次匹配。</p>
+<p>如果没有找到任何匹配的文本， match() 将返回 null。否则，它将返回一个数组，其中存放了与它找到的匹配文本有关的信息。</p>
+<p>该数组的第 0 个元素存放的是匹配文本，而其余的元素存放的是与正则表达式的子表达式匹配的文本。</p>
+<p>除了这些常规的数组元素之外，返回的数组还含有两个对象属性。index 属性声明的是匹配文本的起始字符在 stringObject 中的位置，input 属性声明的是对 stringObject 的引用。</p>
+<p>如果 regexp 具有标志 g，则 match() 方法将执行全局检索，找到 stringObject 中的所有匹配子字符串。若没有找到任何匹配的子串，则返回 null。如果找到了一个或多个匹配子串，则返回一个数组。不过全局匹配返回的数组的内容与前者大不相同，它的数组元素中存放的是 stringObject 中所有的匹配子串，而且也没有 index 属性或 input 属性。</p>
+<p>注意：在全局检索模式下，match() 即不提供与子表达式匹配的文本的信息，也不声明每个匹配子串的位置。如果您需要这些全局检索的信息，可以使用 RegExp.exec()。    </p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2015/08/09/LeetCode-Longest-Common-Prefix/" itemprop="url">
                 LeetCode:Longest Common Prefix
               </a>
@@ -1030,81 +1125,11 @@ var reverseList = <span class="function"><span class="keyword">function</span>(<
 
 
     
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/07/30/setWebChromeClient-setWebClient的区别/" itemprop="url">
-                setWebChromeClient setWebviewClient的区别
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-07-30T14:23:10+08:00" content="2015-07-30">
-            2015-07-30
-          </time>
-        </span>
-
-        
-
-        
-          
-            <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2015/07/30/setWebChromeClient-setWebClient的区别/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/30/setWebChromeClient-setWebClient的区别/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><p>webChromeClient 比webviewclient功能更强大，支持页面js。</p>
-<p><a href="http://stackoverflow.com/questions/2835556/whats-the-difference-between-setwebviewclient-vs-setwebchromeclient" target="_blank" rel="external">same question in stackoverflow</a></p>
-</span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/">&laquo;</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/4/">&raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/2/">&laquo;</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/4/">&raquo;</a>
   </nav>
 
 
@@ -1139,7 +1164,7 @@ var reverseList = <span class="function"><span class="keyword">function</span>(<
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">80</span>
+              <span class="site-state-item-count">81</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

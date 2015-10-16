@@ -189,6 +189,201 @@
           
           
             
+              <a class="post-title-link" href="/2015/07/20/二叉排序树的实现/" itemprop="url">
+                二叉排序树的实现
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-07-20T18:44:33+08:00" content="2015-07-20">
+            2015-07-20
+          </time>
+        </span>
+
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2015/07/20/二叉排序树的实现/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/20/二叉排序树的实现/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p>二叉排序树或者是一棵空树，或者是具有下列性质的二叉树：<br>（1）若左子树不空，则左子树上所有结点的值均小于它的根结点的值；<br>（2）若右子树不空，则右子树上所有结点的值均大于或等于它的根结点的值；<br>（3）左、右子树也分别为二叉排序树；<br>（4）没有键值相等的节点。</p>
+<pre><code><span class="comment">/**
+ * Created by judastree on 15/7/20.
+ * 二叉排序树
+ */</span>
+
+
+<span class="function"><span class="keyword">function</span> <span class="title">Node</span>(<span class="params">value, left, right</span>) </span>{
+    <span class="keyword">this</span>.value = value;
+    <span class="keyword">this</span>.left = left;
+    <span class="keyword">this</span>.right = right;
+}
+<span class="function"><span class="keyword">function</span> <span class="title">BST</span>(<span class="params"></span>) </span>{
+    <span class="keyword">this</span>.root = <span class="literal">null</span>;
+}
+BST.prototype = {
+    add: <span class="function"><span class="keyword">function</span> (<span class="params">value</span>) </span>{
+        <span class="keyword">var</span> n = <span class="keyword">new</span> Node(value, <span class="literal">null</span>, <span class="literal">null</span>);
+        <span class="keyword">if</span> (<span class="keyword">this</span>.root == <span class="literal">null</span>) {
+            <span class="comment">//根节点为空，直接插入</span>
+            <span class="keyword">this</span>.root = n;
+            <span class="keyword">return</span> <span class="literal">true</span>;
+        } <span class="keyword">else</span> {
+            <span class="comment">//根节点不为空，找到匹配的子节点插</span>
+            <span class="keyword">var</span> current = <span class="keyword">this</span>.root;
+            <span class="keyword">while</span> (<span class="literal">true</span>) {
+                <span class="keyword">if</span> (value &lt; current.value) {
+                    <span class="comment">//比当前节点小，而且当前节点没有左孩子，直接插入</span>
+                    <span class="keyword">if</span> (current.left == <span class="literal">null</span>) {
+                        current.left = n;
+                        <span class="keyword">break</span>;
+                    } <span class="keyword">else</span> {
+                        <span class="comment">//当前节点有左孩子，往下遍历，再和左孩子比较</span>
+                        current = current.left;
+                    }
+                } <span class="keyword">else</span> <span class="keyword">if</span> (value &gt; current.value) {
+                    <span class="comment">//大于当前节点，而且当前节点没有右孩子，直接插入</span>
+                    <span class="keyword">if</span> (current.right == <span class="literal">null</span>) {
+                        current.right = n;
+                        <span class="keyword">break</span>;
+                    } <span class="keyword">else</span> {
+                        <span class="comment">//当前节点有右孩子，往下遍历，再和右孩子比较</span>
+                        current = current.right;
+                    }
+
+                } <span class="keyword">else</span> {
+                    <span class="comment">//等于的情况，忽略不进行插入</span>
+                    <span class="keyword">break</span>;
+                }
+            }
+        }
+
+    },
+    <span class="comment">//中序遍历</span>
+    inOrder: <span class="function"><span class="keyword">function</span> (<span class="params">node, fn</span>) </span>{
+        <span class="keyword">if</span> (node) {
+            <span class="keyword">if</span> (node.left != <span class="literal">null</span>) {
+                <span class="keyword">this</span>.inOrder(node.left, fn);
+            }
+            fn.call(<span class="keyword">this</span>, node);
+
+            <span class="keyword">if</span> (node.right != <span class="literal">null</span>) {
+                <span class="keyword">this</span>.inOrder(node.right, fn);
+            }
+        }
+    },
+    <span class="comment">//先序遍历</span>
+    preOrder: <span class="function"><span class="keyword">function</span> (<span class="params">node, fn</span>) </span>{
+        <span class="keyword">if</span> (node) {
+            fn.call(<span class="keyword">this</span>, node);
+            <span class="keyword">if</span> (node.left != <span class="literal">null</span>) {
+                <span class="keyword">this</span>.preOrder(node.left, fn);
+            }
+            <span class="keyword">if</span> (node.right != <span class="literal">null</span>) {
+                <span class="keyword">this</span>.preOrder(node.right, fn);
+            }
+        }
+    },
+    <span class="comment">//后序遍历</span>
+    postOrder: <span class="function"><span class="keyword">function</span> (<span class="params">node, fn</span>) </span>{
+        <span class="keyword">if</span> (node) {
+
+            <span class="keyword">if</span> (node.left != <span class="literal">null</span>) {
+                <span class="keyword">this</span>.postOrder(node.left, fn);
+            }
+            <span class="keyword">if</span> (node.right != <span class="literal">null</span>) {
+                <span class="keyword">this</span>.postOrder(node.right, fn);
+            }
+            fn.call(<span class="keyword">this</span>, node);
+        }
+    },
+    <span class="comment">//默认调用中序遍历</span>
+    toArray: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{
+        <span class="keyword">var</span> result = [];
+        <span class="keyword">this</span>.inOrder(<span class="keyword">this</span>.root, <span class="function"><span class="keyword">function</span> (<span class="params">node</span>) </span>{
+            result.push(node.value);
+        });
+        <span class="keyword">return</span> result;
+    },
+    toString: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{
+        <span class="keyword">return</span> <span class="keyword">this</span>.toArray().toString();
+    }
+};
+
+<span class="keyword">var</span> bst = <span class="keyword">new</span> BST();
+
+bst.add(<span class="number">4</span>);
+bst.add(<span class="number">8</span>);
+bst.add(<span class="number">3</span>);
+bst.add(<span class="number">7</span>);
+bst.add(<span class="number">1</span>);
+bst.add(<span class="number">2</span>);
+<span class="built_in">console</span>.log(<span class="string">"中序遍历："</span>);
+<span class="built_in">console</span>.log(bst.toString());
+<span class="built_in">console</span>.log(<span class="string">"先序遍历"</span>);
+<span class="keyword">var</span> preResults = [];
+bst.preOrder(bst.root, <span class="function"><span class="keyword">function</span> (<span class="params">node</span>) </span>{
+    preResults.push(node.value);
+});
+<span class="built_in">console</span>.log(preResults.toString());
+<span class="built_in">console</span>.log(<span class="string">"后序遍历"</span>);
+<span class="keyword">var</span> postResults = [];
+bst.postOrder(bst.root, <span class="function"><span class="keyword">function</span> (<span class="params">node</span>) </span>{
+    postResults.push(node.value);
+});
+<span class="built_in">console</span>.log(postResults.toString());
+</code></pre><p>PS: 边参考别人的，写了一个小时。            </p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2015/07/20/Chrome和Chromium的区别/" itemprop="url">
                 Chrome和Chromium的区别
               </a>
@@ -919,132 +1114,11 @@ console.<span class="built_in">log</span><span class="params">(i)</span>
 
 
     
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/07/15/快速排序算法/" itemprop="url">
-                快速排序算法
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-07-15T11:15:22+08:00" content="2015-07-15">
-            2015-07-15
-          </time>
-        </span>
-
-        
-
-        
-          
-            <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2015/07/15/快速排序算法/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/15/快速排序算法/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><h2 id="概念">概念</h2><p>通过一趟排序将要排序的数据分割成独立的两部分，其中一部分的所有数据都比另外一部分的所有数据都要小。<br>然后再按此方法对这两部分数据分别进行快速排序，以此达到整个数据变成有序序列。</p>
-<h2 id="思路">思路</h2><p>一趟快速排序的算法是：<br>1）设置两个变量i、j，排序开始的时候：i=0，j=N-1；<br>2）以第一个数组元素作为关键数据，赋值给key，即key=A[0]；<br>3）从j开始向前搜索，即由后开始向前搜索(j—)，找到第一个小于key的值A[j]，将A[j]和A[i]互换；<br>4）从i开始向后搜索，即由前开始向后搜索(i++)，找到第一个大于key的A[i]，将A[i]和A[j]互换；<br>5）重复第3、4步，直到i=j； (3,4步中，没找到符合条件的值，即3中A[j]不小于key,4中A[i]不大于key的时候改变j、i的值，使得j=j-1，i=i+1，直至找到为止。找到符合条件的值，进行交换的时候i， j指针位置不变。另外，i==j这一过程一定正好是i+或j-完成的时候，此时令循环结束）。</p>
-<h2 id="时间复杂度">时间复杂度</h2><p>假设其数组长度为n，其算法复杂度为o（nlog（n））</p>
-<h2 id="实现">实现</h2><pre><code><span class="comment">//var array = [3, 8, 1, 9, 0, 6, 5, 2, 4, 7];</span>
-<span class="keyword">var</span> <span class="keyword">array</span> = [<span class="number">111</span>,<span class="number">34</span>,<span class="number">231</span>,<span class="number">89</span>,<span class="number">22</span>,<span class="number">90</span>,<span class="number">1</span>,<span class="number">23</span>,<span class="number">7</span>,<span class="number">45</span>,<span class="number">222</span>,<span class="number">55</span>,<span class="number">2456</span>,<span class="number">34</span>,<span class="number">33</span>,<span class="number">9</span>,<span class="number">3</span>,<span class="number">55</span>,<span class="number">1234</span>,<span class="number">67</span>,<span class="number">3</span>,<span class="number">80</span>,<span class="number">46</span>,<span class="number">37</span>,<span class="number">48</span>,<span class="number">24</span>,<span class="number">16</span>];
-  console.log(<span class="keyword">array</span>.toString());
-
-<span class="function"><span class="keyword">function</span> <span class="title">quickSort</span><span class="params">(array)</span> </span>{
-    <span class="keyword">var</span> count = <span class="number">0</span>;
-
-
-    <span class="function"><span class="keyword">function</span> <span class="title">sortPartial</span><span class="params">(front, back)</span> </span>{
-
-        <span class="keyword">var</span> key = <span class="keyword">array</span>[front], i = front, j = back;
-        <span class="keyword">if</span>(j-i&gt;=<span class="number">1</span>){
-
-            <span class="keyword">while</span> ( i &lt; j) {
-                <span class="comment">//从后往前遍历，找到第一个比key小的替换位置。</span>
-                <span class="keyword">for</span> (; j &gt;i; j--) {
-
-                    <span class="keyword">if</span> (<span class="keyword">array</span>[j] &lt; key) {
-                        <span class="keyword">array</span>[i] = <span class="keyword">array</span>[j];
-                        <span class="keyword">array</span>[j] = key;
-                        console.log(<span class="keyword">array</span>.toString());
-                        <span class="keyword">break</span>;
-                    }
-                }
-                <span class="comment">//从前往后遍历，找到第一个比key大的替换位置</span>
-                <span class="keyword">for</span> (; i &lt; j; i++) {
-                    count++;
-                    <span class="keyword">if</span> (<span class="keyword">array</span>[i] &gt; key) {
-                        <span class="keyword">array</span>[j] = <span class="keyword">array</span>[i];
-                        <span class="keyword">array</span>[i] = key;
-                        console.log(<span class="keyword">array</span>.toString());
-                        <span class="keyword">break</span>;
-                    }
-                }
-            }
-
-            <span class="comment">//当前key的位置确定，开始递归key前半部分，和key后半部分。</span>
-             sortPartial(front, i-<span class="number">1</span>);
-             sortPartial(j+<span class="number">1</span>, back);
-        }
-
-    }
-
-    sortPartial(<span class="number">0</span>, <span class="keyword">array</span>.length - <span class="number">1</span>);
-    <span class="keyword">return</span> <span class="keyword">array</span>;
-
-}
-
-console.log(quickSort(<span class="keyword">array</span>).toString());
-</code></pre><p>PS: 写了一个小时。。。也真是醉了。</p>
-</span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/5/">&laquo;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/7/">&raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/5/">&laquo;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/7/">&raquo;</a>
   </nav>
 
 
@@ -1079,7 +1153,7 @@ console.log(quickSort(<span class="keyword">array</span>).toString());
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">80</span>
+              <span class="site-state-item-count">81</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
