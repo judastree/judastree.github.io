@@ -5,7 +5,7 @@
   <subtitle><![CDATA[You are the pretty sunshine of my life]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://judastree.github.io//"/>
-  <updated>2015-11-04T15:31:41.000Z</updated>
+  <updated>2015-11-10T05:51:24.000Z</updated>
   <id>http://judastree.github.io//</id>
   
   <author>
@@ -14,6 +14,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Mac ox 默认环境变量]]></title>
+    <link href="http://judastree.github.io/2015/11/10/Mac-ox-%E9%BB%98%E8%AE%A4%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/"/>
+    <id>http://judastree.github.io/2015/11/10/Mac-ox-默认环境变量/</id>
+    <published>2015-11-10T05:47:55.000Z</published>
+    <updated>2015-11-10T05:51:24.000Z</updated>
+    <content type="html"><![CDATA[<p>  今天设置环境变量设置错了，导致整个mac的终端命令（sudo,ls,open,vi等）都不能用了。</p>
+<p>  执行下面的命令，保证一些默认的可以用：</p>
+<pre><code>export <span class="constant">PATH=</span>/<span class="symbol">bin:</span>/sbin/<span class="symbol">:/usr/bin</span><span class="symbol">:/usr/sbin</span><span class="symbol">:/usr/local/bin</span><span class="symbol">:/opt/local/sbin</span><span class="symbol">:/opt/local/sbin</span>
+</code></pre><p>  之后再设置你要的环境变量</p>
+<pre><code><span class="title">vim</span> ~/.bash_profile
+</code></pre><p>  立即生效命令</p>
+<pre><code><span class="built_in">source</span> ~/.bash_profile
+</code></pre>]]></content>
+    <summary type="html">
+    <![CDATA[<p>  今天设置环境变量设置错了，导致整个mac的终端命令（sudo,ls,open,vi等）都不能用了。</p>
+<p>  执行下面的命令，保证一些默认的可以用：</p>
+<pre><code>export <span class="constant">PATH=</span]]>
+    </summary>
+    
+      <category term="mac" scheme="http://judastree.github.io/tags/mac/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[JS判断一个变量是否是Array]]></title>
@@ -653,36 +677,6 @@ var connect = <span class="keyword">function</span>(root) {
       <category term="Android" scheme="http://judastree.github.io/tags/Android/"/>
     
       <category term="异常" scheme="http://judastree.github.io/tags/%E5%BC%82%E5%B8%B8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[ADB server didn't ACK]]></title>
-    <link href="http://judastree.github.io/2015/08/17/ADB-server-didnot-ACK/"/>
-    <id>http://judastree.github.io/2015/08/17/ADB-server-didnot-ACK/</id>
-    <published>2015-08-17T09:06:41.000Z</published>
-    <updated>2015-10-01T08:29:16.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="问题描述">问题描述</h2><p>  Android真机调试的时候，出现ADB server didn’t ACK，明明设备已经连接上，开发者选项也打开了。</p>
-<h2 id="原因">原因</h2><p>  cmd，启动adb服务发现启动失败。</p>
-<p>  <img src="/images/adbserverfail.jpg" alt="adb失败"></p>
-<p>  看下为什么会失败。</p>
-<pre><code>adb nodaemon <span class="keyword">server</span>
-</code></pre><p>  <img src="/images/nodaemon.jpg" alt="nodaemonserver">  </p>
-<p>  原来是端口被占用了。</p>
-<p>  找到占用端口的进程，杀掉，重启adb server</p>
-<pre><code>netstat -aon<span class="string">|findstr "</span><span class="number">5037</span><span class="string">"</span>
-</code></pre><p>  <img src="/images/startadb.jpg" alt="adbstart"></p>
-<h2 id="Note:">Note:</h2><p>  转自<a href="http://jingyan.baidu.com/article/454316aba27e49f7a7c03ab1.html" target="_blank" rel="external">百度经验</a></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h2 id="问题描述">问题描述</h2><p>  Android真机调试的时候，出现ADB server didn’t ACK，明明设备已经连接上，开发者选项也打开了。</p>
-<h2 id="原因">原因</h2><p>  cmd，启动adb服务发现启动失败。</p>
-<]]>
-    </summary>
-    
-      <category term="Android" scheme="http://judastree.github.io/tags/Android/"/>
-    
-      <category term="adb" scheme="http://judastree.github.io/tags/adb/"/>
     
   </entry>
   
