@@ -189,6 +189,76 @@
           
           
             
+              <a class="post-title-link" href="/2015/08/04/微信、手Q、Qzone之x5内核inspect调试解决方案/" itemprop="url">
+                微信、手Q、Qzone之x5内核inspect调试解决方案
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-08-04T19:33:53+08:00" content="2015-08-04">
+            2015-08-04
+          </time>
+        </span>
+
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2015/08/04/微信、手Q、Qzone之x5内核inspect调试解决方案/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/04/微信、手Q、Qzone之x5内核inspect调试解决方案/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p><a href="http://bbs.mb.qq.com/thread-243399-1-1.html?pid=313743&amp;fid=93" target="_blank" rel="external">具体操作点这里</a></p>
+<p>这个远程调试的方法和weinre类似，优势在于不用将调试脚本部署到线上，缺点就是只能安卓平台。</p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2015/08/04/LeetCode-Reverse-Linked-List/" itemprop="url">
                 LeetCode:Reverse Linked List
               </a>
@@ -1012,91 +1082,6 @@ var mergeTwoLists = function(l1, l2) {
 
 
     
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/07/27/获取object的属性长度/" itemprop="url">
-                计算Object的长度
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-07-27T19:22:11+08:00" content="2015-07-27">
-            2015-07-27
-          </time>
-        </span>
-
-        
-
-        
-          
-            <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2015/07/27/获取object的属性长度/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/27/获取object的属性长度/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><h2 id="题目">题目</h2><p>对于Object来说，其实没有长度的概念，所以也并没有length的属性或者size()的方法来获取。</p>
-<p>那如果想要计算这个object中定义了多少属性值呢？(从Ojbect继承过来的不算)</p>
-<h2 id="思路">思路</h2><p>方法1:  Object中有hasOwnProperty()的方法，可以判断对象是否有某个特定的属性。<br>for-in 可以查找object的所有属性。而hasOwnProperty是判断本身对象的属性，不查找原型链的属性，这正好是我们要的。</p>
-<p>方法2:  Object还有另外一个keys的方法，可以返回所有的keys。</p>
-<h2 id="实现">实现</h2><p>方法1:</p>
-<pre><code> var obj = {a:<span class="string">"1"</span>,b:<span class="string">"2"</span>,c:<span class="string">"3"</span>},<span class="property">length</span>=<span class="number">0</span>;
-
- <span class="keyword">for</span> (var <span class="keyword">property</span> <span class="keyword">in</span> obj) {
-     <span class="keyword">if</span> (obj.hasOwnProperty(<span class="keyword">property</span>)) {
-         <span class="property">length</span>++;
-     }
- }
-
-console.<span class="command">log</span>(<span class="property">length</span>);
-</code></pre><p>方法2:</p>
-<pre><code>var obj = {<span class="string">a:</span><span class="string">"1"</span>,<span class="string">b:</span><span class="string">"2"</span>,<span class="string">c:</span><span class="string">"3"</span>};       
-console.log(Object.keys(obj).length);
-</code></pre></span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1136,7 +1121,7 @@ console.log(Object.keys(obj).length);
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">84</span>
+              <span class="site-state-item-count">85</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

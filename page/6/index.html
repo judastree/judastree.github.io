@@ -189,6 +189,103 @@
           
           
             
+              <a class="post-title-link" href="/2015/07/22/LeetCode-Plus-One/" itemprop="url">
+                LeetCode:Plus One
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-07-22T11:17:26+08:00" content="2015-07-22">
+            2015-07-22
+          </time>
+        </span>
+
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2015/07/22/LeetCode-Plus-One/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/22/LeetCode-Plus-One/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><h2 id="题目来源">题目来源</h2><p><a href="https://leetcode.com/problems/plus-one/" target="_blank" rel="external">Plus One</a></p>
+<p>有一个数组代表一个非负的数字，求这个数字+1之后的数组。<br>比如这个数组是[1,2,3,4]它代表数字1234，那么这个数字加1之后是1235。希望得到这个数字代表的数组[1,2,3,5]</p>
+<h2 id="思路">思路</h2><p>从最后一位开始，对当前值+1，如果当前值不为9则正常返回结果。如果当前值为9，则当前值变为0，再递归调用前一位的+1操作。</p>
+<h2 id="实现">实现</h2><p>JavaScript:</p>
+<pre><code>/**
+ * @param {<span class="keyword">number</span>[]} <span class="built_in">digits</span>
+ * @<span class="keyword">return</span> {<span class="keyword">number</span>[]}
+ */
+var plusOne = <span class="function"><span class="keyword">function</span><span class="params">(digits)</span></span> {
+    <span class="function"><span class="keyword">function</span></span> plus(<span class="built_in">digits</span>,i){
+        <span class="keyword">if</span>(<span class="built_in">digits</span>[i]===<span class="number">9</span>){
+            <span class="built_in">digits</span>[i]=<span class="number">0</span>;
+            <span class="keyword">if</span>(i===<span class="number">0</span>){
+                var head = [<span class="number">1</span>];
+                <span class="keyword">return</span> head.concat(<span class="built_in">digits</span>);
+            }<span class="keyword">else</span>{
+                <span class="keyword">return</span> plus(<span class="built_in">digits</span>,i-<span class="number">1</span>);
+            }
+
+        }<span class="keyword">else</span>{
+            <span class="built_in">digits</span>[i] = <span class="built_in">digits</span>[i]+<span class="number">1</span>;
+            <span class="keyword">return</span> <span class="built_in">digits</span>;
+        }
+
+    }
+    <span class="keyword">return</span> plus(<span class="built_in">digits</span>,<span class="built_in">digits</span>.length-<span class="number">1</span>);
+};
+</code></pre><p>PS：上面的代码性能不是很好，肯定有更好的算法的。</p>
+<p> <img src="/images/plusone.png" alt="PlusOneRuntime">     </p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2015/07/22/LeetCode-Single-Number/" itemprop="url">
                 LeetCode:Single Number
               </a>
@@ -1045,90 +1142,6 @@ bst.postOrder(bst.root, <span class="function"><span class="keyword">function</s
 
 
     
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/07/17/nodejs入门文章读后感/" itemprop="url">
-                nodejs入门文章读后感
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-07-17T10:38:43+08:00" content="2015-07-17">
-            2015-07-17
-          </time>
-        </span>
-
-        
-
-        
-          
-            <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2015/07/17/nodejs入门文章读后感/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/17/nodejs入门文章读后感/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><p><a href="http://www.nodebeginner.org/index-zh-cn.html" target="_blank" rel="external">Node入门</a></p>
-<p>很久前就把它加入了手机的书签栏，然后陆陆续续利用吃饭排队的事件看完的。</p>
-<p>文章是翻译的，写得很清晰易懂，node细节的我就不说了，因为也不是完全懂，就谈谈读后感。</p>
-<p>nodejs很早就听过，也很早就去看过一些介绍的文章、入门的文章，快速搭建的文章，在JS权威指南里也有关于nodejs的介绍。</p>
-<p>为什么这次看的这篇文章和以前看的感觉就不一样呢？</p>
-<p>我仔细地想了下。</p>
-<p><strong>因为那时我还不知道JS是单线程的，是基于事件驱动的</strong></p>
-<p>没有这样的一层基础去看node(注意是【看】 不是【学习】)，根本理解不了，只能是别人说什么是什么，然后转天就忘了。</p>
-<p><strong>在学习的路上，我们看了很多东西。</strong></p>
-<p>有些让你豁然开朗，有些让你越看越迷糊。豁然开朗的就很有兴趣地看下去，越看越迷糊的就被搁浅了，而搁浅的时间以年为单位。</p>
-<p>看完文章，我想到之前ES6中的一个generator概念还是不清楚，或许现在可以更好地理解了。</p>
-<ul>
-<li>事件轮询</li>
-<li>非阻塞的实现机制</li>
-<li>generator</li>
-</ul>
-</span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1168,7 +1181,7 @@ bst.postOrder(bst.root, <span class="function"><span class="keyword">function</s
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">84</span>
+              <span class="site-state-item-count">85</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

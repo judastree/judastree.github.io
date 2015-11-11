@@ -28,7 +28,7 @@
 
 
 
-  <meta name="keywords" content="工具," />
+  <meta name="keywords" content="mac,node," />
 
 
 
@@ -39,18 +39,21 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.4" />
 
 
-<meta name="description" content="昨天下了QQ浏览器来用，查看关于发现QQ浏览器的内核是Chromium的。那个Chrome和Chromium是什么关系呢？
-chromium是谷歌的开源项目，有很多开发者共同的去改进，谷歌收集改进后会发布安装包，也就是chromium，然后会将chromium的东西更新到chrome中，chrome不是开源项目，而在chrome内的更新也有一个过程，先更新到chrome的金丝雀版（未验证bug），">
+<meta name="description" content="问题描述(Issue)  it throws “Cannot find module ‘./lib’” when I run “npm install -g xxx” command.
+  Mac升级到node 5.0之后，执行npm install命令出现Cannot find module ‘./lib’的错误。
+问题原因（Cause）   The current theory is that">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Chrome和Chromium的区别">
-<meta property="og:url" content="http://judastree.github.io/2015/07/20/Chrome和Chromium的区别/index.html">
+<meta property="og:title" content="Node 5.0: Cannot find module ./lib">
+<meta property="og:url" content="http://judastree.github.io/2015/11/11/Node-5-0-Cannot-find-module-lib/index.html">
 <meta property="og:site_name" content="Judastree">
-<meta property="og:description" content="昨天下了QQ浏览器来用，查看关于发现QQ浏览器的内核是Chromium的。那个Chrome和Chromium是什么关系呢？
-chromium是谷歌的开源项目，有很多开发者共同的去改进，谷歌收集改进后会发布安装包，也就是chromium，然后会将chromium的东西更新到chrome中，chrome不是开源项目，而在chrome内的更新也有一个过程，先更新到chrome的金丝雀版（未验证bug），">
+<meta property="og:description" content="问题描述(Issue)  it throws “Cannot find module ‘./lib’” when I run “npm install -g xxx” command.
+  Mac升级到node 5.0之后，执行npm install命令出现Cannot find module ‘./lib’的错误。
+问题原因（Cause）   The current theory is that">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chrome和Chromium的区别">
-<meta name="twitter:description" content="昨天下了QQ浏览器来用，查看关于发现QQ浏览器的内核是Chromium的。那个Chrome和Chromium是什么关系呢？
-chromium是谷歌的开源项目，有很多开发者共同的去改进，谷歌收集改进后会发布安装包，也就是chromium，然后会将chromium的东西更新到chrome中，chrome不是开源项目，而在chrome内的更新也有一个过程，先更新到chrome的金丝雀版（未验证bug），">
+<meta name="twitter:title" content="Node 5.0: Cannot find module ./lib">
+<meta name="twitter:description" content="问题描述(Issue)  it throws “Cannot find module ‘./lib’” when I run “npm install -g xxx” command.
+  Mac升级到node 5.0之后，执行npm install命令出现Cannot find module ‘./lib’的错误。
+问题原因（Cause）   The current theory is that">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -60,7 +63,7 @@ chromium是谷歌的开源项目，有很多开发者共同的去改进，谷歌
   };
 </script>
 
-    <title> Chrome和Chromium的区别 // Judastree </title>
+    <title> Node 5.0: Cannot find module ./lib // Judastree </title>
 </head>
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 <!--[if lte IE 8]>
@@ -190,7 +193,7 @@ chromium是谷歌的开源项目，有很多开发者共同的去改进，谷歌
           
           
             
-              Chrome和Chromium的区别
+              Node 5.0: Cannot find module ./lib
             
           
         </h1>
@@ -199,8 +202,8 @@ chromium是谷歌的开源项目，有很多开发者共同的去改进，谷歌
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-07-20T12:06:10+08:00" content="2015-07-20">
-            2015-07-20
+          <time itemprop="dateCreated" datetime="2015-11-11T16:33:41+08:00" content="2015-11-11">
+            2015-11-11
           </time>
         </span>
 
@@ -210,8 +213,8 @@ chromium是谷歌的开源项目，有很多开发者共同的去改进，谷歌
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/07/20/Chrome和Chromium的区别/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/20/Chrome和Chromium的区别/" itemprop="commentsCount"></span>
+              <a href="/2015/11/11/Node-5-0-Cannot-find-module-lib/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/11/11/Node-5-0-Cannot-find-module-lib/" itemprop="commentsCount"></span>
               </a>
             </span>
           
@@ -225,10 +228,12 @@ chromium是谷歌的开源项目，有很多开发者共同的去改进，谷歌
       
 
       
-        <span itemprop="articleBody"><p>昨天下了QQ浏览器来用，查看关于发现QQ浏览器的内核是Chromium的。那个Chrome和Chromium是什么关系呢？</p>
-<p>chromium是谷歌的开源项目，有很多开发者共同的去改进，谷歌收集改进后会发布安装包，也就是chromium，然后会将chromium的东西更新到chrome中，chrome不是开源项目，而在chrome内的更新也有一个过程，先更新到chrome的金丝雀版（未验证bug），接着到dev版（大问题已经验证），接着beta（小问题已经验证），都没问题了，再更新到稳定版。</p>
-<p>Chrome浏览器各版本的特点：<br>1、Chromium<br>Chromium是Google为发展Chrome浏览器而启动的开源项目，Chromium相当于Chrome的工程版或称实验版（尽管Chrome自身也有β版阶段），新功能会率先在Chromium上实现，待验证后才会应用在Chrome上，故Chrome的功能会相对落后但较稳定（实际上稳定性也差不多）；Chromium的更新速度很快，每隔数小时即有新的开发版本。<br>2、Chrome dev<br>基于最新的Chromium Build，经常每周就更新推出新功能；与Beta版十分相似，但稳定性较差，不适合公共使用。<br>3、Chrome beta<br>基于Chrome dev；按月更新；崩溃等重大故障较少发生，功能比dev更加完善。<br>4、Chrome stable</p>
-<p>然后…然后我瞬间找到了我的QQ浏览器为什么一直崩溃he的原因了。</p>
+        <span itemprop="articleBody"><h2 id="问题描述(Issue)">问题描述(Issue)</h2><p>  it throws “Cannot find module ‘./lib’” when I run “npm install -g xxx” command.</p>
+<p>  Mac升级到node 5.0之后，执行npm install命令出现Cannot find module ‘./lib’的错误。</p>
+<h2 id="问题原因（Cause）">问题原因（Cause）</h2><p>   The current theory is that a change made to the OS X installer for Node is causing two npm installations to be overlaid, which is understandably causing problems. </p>
+<h2 id="解决办法（Solution）">解决办法（Solution）</h2><p>   If you remove /usr/local/lib/node_modules/npm and rerun the Node 5.0 installer, you should be left with a working npm.</p>
+<p>   移除 /usr/local/lib/node_modules/npm目录，重装node 5.0.</p>
+<h2 id="参考(Refer)">参考(Refer)</h2><p>   <a href="https://github.com/npm/npm/issues/10166" target="_blank" rel="external">Error with install of npm 3 via Node.js v5</a></p>
 </span>
       
     </div>
@@ -237,7 +242,9 @@ chromium是谷歌的开源项目，有很多开发者共同的去改进，谷歌
       
         <div class="post-tags">
           
-            <a href="/tags/工具/" rel="tag">#工具</a>
+            <a href="/tags/mac/" rel="tag">#mac</a>
+          
+            <a href="/tags/node/" rel="tag">#node</a>
           
         </div>
       
@@ -246,13 +253,11 @@ chromium是谷歌的开源项目，有很多开发者共同的去改进，谷歌
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/07/20/二叉排序树的实现/" rel="prev">二叉排序树的实现</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/07/19/LeetCode:Path Sum/" rel="next">LeetCode:Path-Sum</a>
+              <a href="/2015/11/11/这里面的一些console方法请用起来/" rel="next">这里面的一些console方法请用起来</a>
             
           </div>
         </div>
@@ -278,8 +283,8 @@ chromium是谷歌的开源项目，有很多开发者共同的去改进，谷歌
             
               <div class="comments" id="comments">
                 
-                  <div class="ds-thread" data-thread-key="2015/07/20/Chrome和Chromium的区别/"
-                       data-title="Chrome和Chromium的区别" data-url="http://judastree.github.io/2015/07/20/Chrome和Chromium的区别/">
+                  <div class="ds-thread" data-thread-key="2015/11/11/Node-5-0-Cannot-find-module-lib/"
+                       data-title="Node 5.0: Cannot find module ./lib" data-url="http://judastree.github.io/2015/11/11/Node-5-0-Cannot-find-module-lib/">
                   </div>
                 
               </div>
@@ -386,7 +391,7 @@ chromium是谷歌的开源项目，有很多开发者共同的去改进，谷歌
           <div class="post-toc">
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题描述(Issue)"><span class="nav-number">1.</span> <span class="nav-text">问题描述(Issue)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题原因（Cause）"><span class="nav-number">2.</span> <span class="nav-text">问题原因（Cause）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决办法（Solution）"><span class="nav-number">3.</span> <span class="nav-text">解决办法（Solution）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考(Refer)"><span class="nav-number">4.</span> <span class="nav-text">参考(Refer)</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>

@@ -189,6 +189,91 @@
           
           
             
+              <a class="post-title-link" href="/2015/08/20/Git-部分提交/" itemprop="url">
+                Git 部分提交
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-08-20T17:39:51+08:00" content="2015-08-20">
+            2015-08-20
+          </time>
+        </span>
+
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2015/08/20/Git-部分提交/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/20/Git-部分提交/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><h2 id="场景">场景</h2><p>修改了四个文件，分别涉及到两个功能，需要把其中两个文件的修改当做一个功能的commit，另外两个文件的修改当做另一个功能的commit。</p>
+<p>但如果要用git add 的命令，会让当前所有的修改都加入commit。</p>
+<p>怎么办呢？</p>
+<p><strong>用git stash 命令</strong></p>
+<h2 id="步骤">步骤</h2><p>1 用git add 命令添加第一个commit需要的文件</p>
+<pre><code><span class="label">git</span> <span class="keyword">add </span>file1
+
+<span class="label">git</span> <span class="keyword">add </span>file2
+</code></pre><p>2 隐藏其他修改，git stash 的参数中 -k 开关告诉仓库保持文件的完整  -u 开关告诉仓库包括无路径的文件(那些新的和未添加到git的)<br>这时git status就只能看到file1 和file2，并且当你切换到实际的文件目录，file3 和file4的修改也随之不见。</p>
+<pre><code><span class="title">git</span> stash -k -u
+</code></pre><p>3 提交第一个commit</p>
+<pre><code><span class="title">git</span> commit -m <span class="string">'submit function1'</span>
+</code></pre><p>4 恢复之前隐藏的修改,这时再git status，file3和file4的修改又回来。</p>
+<pre><code>git stash <span class="keyword">pop</span>
+</code></pre><p>5 提交第二个commit</p>
+<pre><code><span class="title">git</span> commit -m <span class="string">'submit function2'</span>
+</code></pre><h2 id="参考">参考</h2><p>   <a href="http://www.open-open.com/lib/view/open1413852243809.html" target="_blank" rel="external">http://www.open-open.com/lib/view/open1413852243809.html</a></p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2015/08/17/UnsatisfiedLinkError/" itemprop="url">
                 UnsatisfiedLinkError
               </a>
@@ -1002,76 +1087,6 @@ var countAndSay = <span class="function"><span class="keyword">function</span><s
 
 
     
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/08/04/微信、手Q、Qzone之x5内核inspect调试解决方案/" itemprop="url">
-                微信、手Q、Qzone之x5内核inspect调试解决方案
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-08-04T19:33:53+08:00" content="2015-08-04">
-            2015-08-04
-          </time>
-        </span>
-
-        
-
-        
-          
-            <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2015/08/04/微信、手Q、Qzone之x5内核inspect调试解决方案/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/04/微信、手Q、Qzone之x5内核inspect调试解决方案/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><p><a href="http://bbs.mb.qq.com/thread-243399-1-1.html?pid=313743&amp;fid=93" target="_blank" rel="external">具体操作点这里</a></p>
-<p>这个远程调试的方法和weinre类似，优势在于不用将调试脚本部署到线上，缺点就是只能安卓平台。</p>
-</span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1111,7 +1126,7 @@ var countAndSay = <span class="function"><span class="keyword">function</span><s
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">84</span>
+              <span class="site-state-item-count">85</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
