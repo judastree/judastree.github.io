@@ -189,6 +189,84 @@
           
           
             
+              <a class="post-title-link" href="/2015/12/13/自定义错误模块无法识别此错误/" itemprop="url">
+                自定义错误模块无法识别此错误
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-12-13T19:00:22+08:00" content="2015-12-13">
+            2015-12-13
+          </time>
+        </span>
+
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2015/12/13/自定义错误模块无法识别此错误/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/13/自定义错误模块无法识别此错误/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><h2 id="问题描述">问题描述</h2><p>前两天生产上发现某地区的部分用户手机扫码打开页面出现【自定义错误模块无法识别此错误】。</p>
+<h2 id="排查过程">排查过程</h2><p>1.前端代码中并没有过这样的处理，所以就先查服务接口是否有这样的报错。</p>
+<p>2.但发现服务接口并没有异常，于是去看页面请求的日志，发现当前页面出现了大量的429错。</p>
+<p>3.http 的 429 错误码是Too Many Request.因为请求太多服务器拒绝了该IP的访问。查了下被拒绝的IP，刚好地区与故障用户的地区一致。</p>
+<p>4.问题基本就是这个了，服务器返回了429的错误码，不像404，502这些常见的，用户的手机浏览器一般都没有去处理这个错误码，于是返回的【自定义错误模块无法识别此错误】</p>
+<p>5.和业务反映原因，可能是手机连的wifi，出口ip一致，请求过多导致服务器拒绝，建议用户扫码时用移动网络。</p>
+<p>6.业务反馈说，用户确实用的是移动网络啊。</p>
+<ol>
+<li>= =！继续查，发现曾经那个地方有爬虫访问公司网络，那个移动基站的IP被封了20几个。</li>
+</ol>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2015/11/11/Node-5-0-Cannot-find-module-lib/" itemprop="url">
                 Node 5.0: Cannot find module ./lib
               </a>
@@ -948,75 +1026,6 @@ var connect = <span class="keyword">function</span>(root) {
 
 
     
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/09/30/node-应用绑定80端口/" itemprop="url">
-                node 应用绑定80端口
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-09-30T13:20:41+08:00" content="2015-09-30">
-            2015-09-30
-          </time>
-        </span>
-
-        
-
-        
-          
-            <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2015/09/30/node-应用绑定80端口/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/30/node-应用绑定80端口/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><p>node 应用绑定80端口，启动时需要管理员权限。</p>
-</span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1056,7 +1065,7 @@ var connect = <span class="keyword">function</span>(root) {
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">85</span>
+              <span class="site-state-item-count">86</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1070,7 +1079,7 @@ var connect = <span class="keyword">function</span>(root) {
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">19</span>
+              <span class="site-state-item-count">20</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>

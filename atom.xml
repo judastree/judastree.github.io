@@ -5,7 +5,7 @@
   <subtitle><![CDATA[You are the pretty sunshine of my life]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://judastree.github.io//"/>
-  <updated>2015-11-11T08:42:41.000Z</updated>
+  <updated>2015-12-13T11:49:35.000Z</updated>
   <id>http://judastree.github.io//</id>
   
   <author>
@@ -14,6 +14,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[自定义错误模块无法识别此错误]]></title>
+    <link href="http://judastree.github.io/2015/12/13/%E8%87%AA%E5%AE%9A%E4%B9%89%E9%94%99%E8%AF%AF%E6%A8%A1%E5%9D%97%E6%97%A0%E6%B3%95%E8%AF%86%E5%88%AB%E6%AD%A4%E9%94%99%E8%AF%AF/"/>
+    <id>http://judastree.github.io/2015/12/13/自定义错误模块无法识别此错误/</id>
+    <published>2015-12-13T11:00:22.000Z</published>
+    <updated>2015-12-13T11:49:35.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="问题描述">问题描述</h2><p>前两天生产上发现某地区的部分用户手机扫码打开页面出现【自定义错误模块无法识别此错误】。</p>
+<h2 id="排查过程">排查过程</h2><p>1.前端代码中并没有过这样的处理，所以就先查服务接口是否有这样的报错。</p>
+<p>2.但发现服务接口并没有异常，于是去看页面请求的日志，发现当前页面出现了大量的429错。</p>
+<p>3.http 的 429 错误码是Too Many Request.因为请求太多服务器拒绝了该IP的访问。查了下被拒绝的IP，刚好地区与故障用户的地区一致。</p>
+<p>4.问题基本就是这个了，服务器返回了429的错误码，不像404，502这些常见的，用户的手机浏览器一般都没有去处理这个错误码，于是返回的【自定义错误模块无法识别此错误】</p>
+<p>5.和业务反映原因，可能是手机连的wifi，出口ip一致，请求过多导致服务器拒绝，建议用户扫码时用移动网络。</p>
+<p>6.业务反馈说，用户确实用的是移动网络啊。</p>
+<ol>
+<li>= =！继续查，发现曾经那个地方有爬虫访问公司网络，那个移动基站的IP被封了20几个。</li>
+</ol>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="问题描述">问题描述</h2><p>前两天生产上发现某地区的部分用户手机扫码打开页面出现【自定义错误模块无法识别此错误】。</p>
+<h2 id="排查过程">排查过程</h2><p>1.前端代码中并没有过这样的处理，所以就先查服务接口是否有这样的报错。</p>
+]]>
+    </summary>
+    
+      <category term="故障排查" scheme="http://judastree.github.io/tags/%E6%95%85%E9%9A%9C%E6%8E%92%E6%9F%A5/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Node 5.0: Cannot find module ./lib]]></title>
@@ -634,38 +661,6 @@ var connect = <span class="keyword">function</span>(root) {
     </summary>
     
       <category term="Android" scheme="http://judastree.github.io/tags/Android/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[git stash 前缓存当前的修改]]></title>
-    <link href="http://judastree.github.io/2015/08/20/git-stash-%E7%BC%93%E5%AD%98%E5%BD%93%E5%89%8D%E7%9A%84%E4%BF%AE%E6%94%B9/"/>
-    <id>http://judastree.github.io/2015/08/20/git-stash-缓存当前的修改/</id>
-    <published>2015-08-20T10:00:29.000Z</published>
-    <updated>2015-08-20T10:15:15.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="场景">场景</h2><p>本地有修改，暂时不想commit，但又必须git pull 拉去最新的代码。这时可以用git stash来缓存当前的修改。</p>
-<h2 id="步骤">步骤</h2><p>1 先缓存当前修改。</p>
-<pre><code><span class="title">git</span> stash
-</code></pre><p>2 拉取最新的代码</p>
-<pre><code><span class="title">git</span> pull
-</code></pre><p>3 拉完最新的之后再恢复之前修改</p>
-<pre><code>git stash <span class="keyword">pop</span>
-</code></pre><h2 id="更多">更多</h2><p>git stash save “work in progress for foo feature”</p>
-<p>当你多次使用 <strong>git stash</strong>命令后，你的栈里将充满了未提交的代码，这时候你会对将哪个版本应用回来有些困惑，</p>
-<p><strong>git stash list</strong>命令可以将当前的Git栈信息打印出来，你只需要将找到对应的版本号，</p>
-<p>例如使用 <strong>git stash apply stash@{1}</strong>就可以将你指定版本号为stash@{1}的工作取出来，</p>
-<p>当你将所有的栈都应用回来的时候，可以使用 <strong>git stash clear</strong>来将栈清空。</p>
-<h2 id="参考">参考</h2><p>  <a href="http://blog.csdn.net/wh_19910525/article/details/7784901" target="_blank" rel="external">git stash和git stash pop</a></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h2 id="场景">场景</h2><p>本地有修改，暂时不想commit，但又必须git pull 拉去最新的代码。这时可以用git stash来缓存当前的修改。</p>
-<h2 id="步骤">步骤</h2><p>1 先缓存当前修改。</p>
-<pre><code><spa]]>
-    </summary>
-    
-      <category term="git" scheme="http://judastree.github.io/tags/git/"/>
-    
-      <category term="工具" scheme="http://judastree.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   
