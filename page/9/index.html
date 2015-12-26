@@ -597,6 +597,23 @@ x 系统默认颜色
 </code></pre></li>
 </ol>
 <hr>
+<h3 id="访问权限问题">访问权限问题</h3><p>可能会遇到403 Forbidden，这时就需要修改<directory>的配置了。</directory></p>
+<ol>
+<li><p>打开 <strong>/etc/apache2/httpd.conf</strong>文件</p>
+<pre><code><span class="label">$sudo</span> vim /etc/apache2/httpd.<span class="keyword">conf</span>
+</code></pre></li>
+<li><p>找到<strong>Directory</strong>标签,将标签内的配置Deny from all删掉，改成allow from all</p>
+<pre><code><span class="tag">&lt;Directory /&gt;</span>
+    <span class="keyword"><span class="common">Options</span></span> Indexes FollowSymLinks
+    <span class="keyword">AllowOverride</span> None
+    <span class="keyword"><span class="common">Order</span></span> deny,allow
+    <span class="keyword"><span class="common">allow</span></span> from <span class="literal">all</span>
+<span class="tag">&lt;/Directory&gt;</span>
+</code></pre></li>
+<li><p>然后继续重启</p>
+</li>
+</ol>
+<p>Ps：Options Indexes FollowSymLinks中得Indexes是指如果你的文件根目录里有 index.html，浏览器就会显示 index.html的内容。<br>如果没有 index.html，浏览器就会显示文件根目录的目录列表，目录列表包括文件根目录下的文件和子目录。<br>要关闭文件目录显示的话，只需将Indexes去掉即可。</p>
 <h3 id="修改默认端口">修改默认端口</h3><ol>
 <li><p>打开 <strong>/etc/apache2/httpd.conf</strong>文件</p>
 <pre><code><span class="label">$sudo</span> vim /etc/apache2/httpd.<span class="keyword">conf</span>
