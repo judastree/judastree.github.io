@@ -189,6 +189,74 @@
           
           
             
+              <a class="post-title-link" href="/2015/08/27/Monkey日志分析/" itemprop="url">
+                Monkey日志分析
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-08-27T13:18:49+08:00" content="2015-08-27">
+            2015-08-27
+          </time>
+        </span>
+
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2015/08/27/Monkey日志分析/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/27/Monkey日志分析/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"></span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2015/08/20/git-stash-缓存当前的修改/" itemprop="url">
                 git stash 前缓存当前的修改
               </a>
@@ -990,111 +1058,6 @@ var removeNthFromEnd = function(head, n) {
 
 
     
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/08/06/LeetCode-Count-and-Say/" itemprop="url">
-                LeetCode:Count and Say
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-08-06T10:53:41+08:00" content="2015-08-06">
-            2015-08-06
-          </time>
-        </span>
-
-        
-
-        
-          
-            <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2015/08/06/LeetCode-Count-and-Say/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/06/LeetCode-Count-and-Say/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><h2 id="题目">题目</h2><p><a href="https://leetcode.com/problems/count-and-say/" target="_blank" rel="external">Count And Say</a></p>
-<p>The count-and-say sequence is the sequence of integers beginning as follows:<br>1, 11, 21, 1211, 111221, …</p>
-<p>1 is read off as “one 1” or 11.<br>11 is read off as “two 1s” or 21.<br>21 is read off as “one 2, then one 1” or 1211.<br>Given an integer n, generate the nth sequence.</p>
-<p>Note: The sequence of integers will be represented as a string.</p>
-<h2 id="思路">思路</h2><p>递归的实现，找出CountAndSay(n)和CountAndSay(n-1)的关系。<br>比如1211拿一个数组记录下有多少个数组。</p>
-<h2 id="实现">实现</h2><p>JavaScript:</p>
-<pre><code><span class="comment">/**
- * @param {number} n
- * @return {string}
- */</span>
-var countAndSay = <span class="function"><span class="keyword">function</span><span class="params">(n)</span> {</span>
-    <span class="keyword">if</span><span class="params">(n===<span class="number">0</span>)</span> return <span class="string">""</span>;
-    <span class="keyword">if</span><span class="params">(n===<span class="number">1</span>)</span> return <span class="string">"1"</span>;
-    <span class="keyword">if</span><span class="params">(n===<span class="number">2</span>)</span> return <span class="string">"11"</span>;
-
-    var preStrArray = countAndSay<span class="params">(n-<span class="number">1</span>)</span>.split<span class="params">(<span class="string">""</span>)</span>;
-    var tempArray=[];
-
-    tempArray[<span class="number">0</span>] = <span class="number">1</span>;
-    tempArray[<span class="number">1</span>] = preStrArray[<span class="number">0</span>];
-    <span class="keyword">for</span><span class="params">(var i = <span class="number">1</span>; i&lt;preStrArray.length-<span class="number">1</span>;i++)</span>{
-        <span class="keyword">if</span><span class="params">(preStrArray[i]!==preStrArray[i-<span class="number">1</span>])</span>{
-            tempArray.push<span class="params">(<span class="number">1</span>)</span>;
-            tempArray.push<span class="params">(preStrArray[i])</span>;
-        }<span class="keyword">else</span>{
-            tempArray[tempArray.length-<span class="number">2</span>]++;
-        }
-    }
-    <span class="keyword">if</span><span class="params">(preStrArray[i]!==preStrArray[i-<span class="number">1</span>])</span>{
-        tempArray.push<span class="params">(<span class="number">1</span>)</span>;
-        tempArray.push<span class="params">(preStrArray[i])</span>;
-    }<span class="keyword">else</span>{
-        tempArray[tempArray.length-<span class="number">2</span>] ++;
-    }
-    return tempArray.toString<span class="params">()</span>.replace<span class="params">(/,/g,<span class="string">""</span>)</span>;
-}
-</code></pre><h2 id="耗时">耗时</h2><p><img src="/images/countandsay.png" alt="countandsay.png"></p>
-</span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1134,7 +1097,7 @@ var countAndSay = <span class="function"><span class="keyword">function</span><s
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">86</span>
+              <span class="site-state-item-count">87</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

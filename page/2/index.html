@@ -189,6 +189,83 @@
           
           
             
+              <a class="post-title-link" href="/2015/09/30/ubuntu-上安装最新版本的express/" itemprop="url">
+                ubuntu 上安装最新版本的express
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-09-30T16:58:37+08:00" content="2015-09-30">
+            2015-09-30
+          </time>
+        </span>
+
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2015/09/30/ubuntu-上安装最新版本的express/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/30/ubuntu-上安装最新版本的express/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><h2 id="问题描述">问题描述</h2><p>  在ubuntu上通过apt-get install node-express命令安装的express版本只有2.5.8</p>
+<p>  用npm install express@4.13.1 -g 命令可以安装高版本的express</p>
+<p>  但是执行express —version时却返现并没有这个目录。</p>
+<h2 id="解决办法">解决办法</h2><p>  这个问题是express的安装目录并不在系统的环境变量之中。</p>
+<p>  1 将 express的实际安装目录加入环境变量。</p>
+<pre><code>sudo vi <span class="regexp">/etc/</span>environment 
+</code></pre><p>  2 保存</p>
+<p>  3 使它立即生效</p>
+<pre><code><span class="keyword">source</span> <span class="regexp">/etc/</span>environment 
+</code></pre></span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2015/09/30/node-应用绑定80端口/" itemprop="url">
                 node 应用绑定80端口
               </a>
@@ -927,74 +1004,6 @@
 
 
     
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/08/27/Monkey日志分析/" itemprop="url">
-                Monkey日志分析
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-08-27T13:18:49+08:00" content="2015-08-27">
-            2015-08-27
-          </time>
-        </span>
-
-        
-
-        
-          
-            <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2015/08/27/Monkey日志分析/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/27/Monkey日志分析/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"></span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1034,7 +1043,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">86</span>
+              <span class="site-state-item-count">87</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
