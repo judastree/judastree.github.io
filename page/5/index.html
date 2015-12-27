@@ -189,6 +189,88 @@
           
           
             
+              <a class="post-title-link" href="/2015/07/28/requirejs-的运行机制/" itemprop="url">
+                requirejs 的运行机制
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-07-28T17:06:25+08:00" content="2015-07-28">
+            2015-07-28
+          </time>
+        </span>
+
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2015/07/28/requirejs-的运行机制/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/28/requirejs-的运行机制/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p>在requirejs的官网找到这样一段话：<br>    RequireJS loads each dependency as a script tag, using head.appendChild().<br>    RequireJS waits for all dependencies to load, figures out the right order in which to call the functions that define the modules,<br>    then calls the module definition functions once the dependencies for those functions have been called. </p>
+<p>翻译过来是：</p>
+<pre><code>RequireJS通过head.<span class="function"><span class="title">appendChild</span><span class="params">()</span></span>将每一个依赖加载为一个script标签。
+
+等到所有的依赖都加载完成之后，RequireJS计算出模块定义函数的调用顺序。
+
+一旦依赖这些功能的地方被调用时requiredjs会调用这些功能的模块定义。
+</code></pre><p><strong>requirejs是怎么做到模块化的？</strong> </p>
+<p>requirejs有个loader来保存和监听所有依赖的状态。script标签来加载这些文件，加载成功和失败都会更新依赖的状态。</p>
+<p><em>是否有重复引用?</em></p>
+<p>Requirejs是单例的设计，只要同名的被引入过一次（这里的同名相当于amd define的id）就一直是用这个模块的定义。</p>
+<p>为了避免全局污染，遵循AMD的规范，define和export。</p>
+<p>理想状况下，每个加载的脚本都是通过define()来定义的一个模块；</p>
+<p>但有些”浏览器全局变量注入”型的传统/遗留库并没有使用define()来定义它们的依赖关系，就必须为此使用shim config来指明它们的依赖关系。 </p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2015/07/28/Android-Studio-Gradle-Error-java-io-IOException-Operation-not-supported/" itemprop="url">
                 Android Studio Gradle Error:java.io.IOException: Operation not supported
               </a>
@@ -1050,76 +1132,6 @@ var <span class="variable">getIntersectionNode =</span> function(headA, headB) {
 
 
     
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/07/23/页面性能分析工具/" itemprop="url">
-                页面性能分析工具
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-07-23T22:09:38+08:00" content="2015-07-23">
-            2015-07-23
-          </time>
-        </span>
-
-        
-
-        
-          
-            <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2015/07/23/页面性能分析工具/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/23/页面性能分析工具/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><p><a href="https://developers.google.com/speed/pagespeed/insights/" target="_blank" rel="external">Google Page Speed Insights</a></p>
-<p><a href="http://www.webpagetest.org/" target="_blank" rel="external">webpagetest</a></p>
-</span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1159,7 +1171,7 @@ var <span class="variable">getIntersectionNode =</span> function(headA, headB) {
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">87</span>
+              <span class="site-state-item-count">88</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

@@ -5,7 +5,7 @@
   <subtitle><![CDATA[You are the pretty sunshine of my life]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://judastree.github.io//"/>
-  <updated>2015-12-26T09:16:52.000Z</updated>
+  <updated>2015-12-27T08:16:23.000Z</updated>
   <id>http://judastree.github.io//</id>
   
   <author>
@@ -14,6 +14,24 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Mitmproxy 抓包工具]]></title>
+    <link href="http://judastree.github.io/2015/12/27/Mitmproxy-%E6%8A%93%E5%8C%85%E5%B7%A5%E5%85%B7/"/>
+    <id>http://judastree.github.io/2015/12/27/Mitmproxy-抓包工具/</id>
+    <published>2015-12-27T08:13:49.000Z</published>
+    <updated>2015-12-27T08:16:23.000Z</updated>
+    <content type="html"><![CDATA[<p>Windows下的Fiddler是神器，具备抓包，代理，文件替换等各种功能。但因为Fiddler是由.netframework开发的，不能在mac下跑。</p>
+<p>虽然官方也出过fiddler的mac版，但不好用。所以在寻求mac下的替换工具时找到了这个Mitmproxy。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Windows下的Fiddler是神器，具备抓包，代理，文件替换等各种功能。但因为Fiddler是由.netframework开发的，不能在mac下跑。</p>
+<p>虽然官方也出过fiddler的mac版，但不好用。所以在寻求mac下的替换工具时找到了这个Mitmprox]]>
+    </summary>
+    
+      <category term="工具" scheme="http://judastree.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[webstorm 11激活]]></title>
@@ -634,37 +652,6 @@ var connect = <span class="keyword">function</span>(root) {
 <p>那么也就是说以后不管是qq，淘宝，只要是他们用了webview都可以直接在chrome中远程调试线上代码了的。</p>
 <p>好处不用多说，直接搞起来。</p>
 <h2 ]]>
-    </summary>
-    
-      <category term="Android" scheme="http://judastree.github.io/tags/Android/"/>
-    
-      <category term="工具" scheme="http://judastree.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Nexus 7 解锁]]></title>
-    <link href="http://judastree.github.io/2015/09/07/Nexus-7-%E8%A7%A3%E9%94%81/"/>
-    <id>http://judastree.github.io/2015/09/07/Nexus-7-解锁/</id>
-    <published>2015-09-07T03:50:46.000Z</published>
-    <updated>2015-10-01T08:29:16.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="安卓设备解锁和不解锁有什么区别？">安卓设备解锁和不解锁有什么区别？</h2><p>手机加锁是因为在出厂时，厂商已经安装好了操作系统和预置应用，这些东西都装在手机ROM中。<br>为了防止意外情况，比如不慎删除了系统重要应用导致系统不稳定甚至崩溃，因此厂商对ROM加了锁使你不能对系统文件做任何动作。<br>这就影响了后续的root和刷机。所以在刷机前一般都要先解锁。</p>
-<h2 id="解锁过程">解锁过程</h2><ol>
-<li><p>下载解压<a href="http://pan.baidu.com/share/link?shareid=3769076633&amp;uk=3793975982" target="_blank" rel="external">nexus_unlock</a></p>
-</li>
-<li><p>Nexus 7 USB连接电脑，打开开发者选项，然后关机。</p>
-</li>
-<li><p>再同时按住音量-键和电源键进入fastboot模式。</p>
-</li>
-<li><p>运行解锁.bat，nexus7中出现是否要解锁的界面，选择yes。</p>
-</li>
-<li><p>解锁完成后，再开机，可以看到google下面有个解开的锁，就表明解锁完成了。</p>
-</li>
-</ol>
-<h2 id="图片步骤">图片步骤</h2><p>  <img src="/images/fastbootmode.jpg" alt="fastboot mode"><br>  <img src="/images/bootlock.jpg" alt="bootlock"><br>  <img src="images/bootunlock.jpg" alt="bootunlock"></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h2 id="安卓设备解锁和不解锁有什么区别？">安卓设备解锁和不解锁有什么区别？</h2><p>手机加锁是因为在出厂时，厂商已经安装好了操作系统和预置应用，这些东西都装在手机ROM中。<br>为了防止意外情况，比如不慎删除了系统重要应用导致系统不稳定甚至崩溃，因此厂商对ROM]]>
     </summary>
     
       <category term="Android" scheme="http://judastree.github.io/tags/Android/"/>
